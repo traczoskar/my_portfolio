@@ -1,4 +1,7 @@
 const colorNames = {
+  white: "#ffffff",
+  darkGray: "#222222",
+  ligthGray: "#d2d2d2",
   // ---darkTheme---
   platinum: "#eaeaeaff",
   byzantium: "#893168ff",
@@ -6,7 +9,7 @@ const colorNames = {
   darkPurple: "#2e1c2bff",
   black: "#050404ff",
   darkGradient: "linear-gradient(to right, #141e30, #011225)",
-  textGradient: "#a770ff",
+  violet: "#a770ff",
   // ---lightTheme---
   onyx: "#2e3532ff",
   claret: "#8b2635ff",
@@ -39,10 +42,16 @@ export const themeLight = {
 export const themeDark = {
   ...common,
   colors: {
-    basic: colorNames.textGradient,
+    basic: colorNames.violet,
     textBasic: colorNames.platinum,
     app: {
       background: colorNames.darkGradient,
+    },
+    projects: {
+      primary: colorNames.platinum,
+      secondary: colorNames.platinum,
+      text: colorNames.black,
+      selected: colorNames.ligthGray,
     },
   },
 };
