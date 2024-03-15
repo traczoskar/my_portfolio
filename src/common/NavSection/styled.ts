@@ -30,9 +30,12 @@ export const NavLinks = styled.ul`
 export const NavLink = styled.li`
   margin: 0 1rem;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: 0.3s;
+  font-weight: 500;
+  padding: 1rem 0;
 
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
+    transform: translateY(-5px);
   }
 `;
