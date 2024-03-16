@@ -12,12 +12,12 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: "Inter", sans-serif;
         word-break: break-word;
-        transition: background 0.3s;
+        transition: background ease 1s ;
+        transition: color ease 0.5s;
         font-size: 18px;
         background: ${({ theme }) => theme.colors.app.background};
         color: ${({ theme }) => theme.colors.textBasic};
         letter-spacing: 0.03em;
         line-height: 1.3;
-        padding-bottom: 108px;      
     }
 `;
