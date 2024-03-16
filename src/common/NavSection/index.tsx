@@ -1,15 +1,32 @@
-import { NavBar, NavHeader, NavLink, NavLinks } from "./styled";
+import { ThemeSwitch } from "../ThemeSwitch";
+import {
+  NavBar,
+  NavHeader,
+  NavHeaderLink,
+  NavLink,
+  NavLinks,
+  NavRouterLink,
+  NavWrapper,
+} from "./styled";
+import { Link } from "react-router-dom";
 
-const NavSection = () => {
+const NavSection: React.FC = () => {
   return (
     <NavBar>
-      <NavHeader>traczoskar.dev</NavHeader>
-      <NavLinks>
-        <NavLink>AboutMe</NavLink>
-        <NavLink>GitHub</NavLink>
-        <NavLink>LinkedIn</NavLink>
-        <NavLink>Contact</NavLink>
-      </NavLinks>
+      <NavWrapper>
+        <NavHeaderLink to="/">
+          <NavHeader>traczoskar.dev</NavHeader>
+        </NavHeaderLink>
+        <NavLinks>
+          <NavLink>AboutMe</NavLink>
+          <NavLink>GitHub</NavLink>
+          <NavLink>LinkedIn</NavLink>
+          <NavRouterLink title="Contact" to="/contact">
+            Contact
+          </NavRouterLink>
+          <ThemeSwitch />
+        </NavLinks>
+      </NavWrapper>
     </NavBar>
   );
 };
