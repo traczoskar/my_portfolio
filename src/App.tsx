@@ -1,14 +1,30 @@
-import { MainContainer } from "./common/Main/styled";
 import NavSection from "./common/NavSection";
-import MainPage from "./views/MainPage";
+import HomePage from "./views/HomePage";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./app/GlobalStyle";
+import { themeDark, themeLight } from "./app/theme";
+import { useSelector } from "react-redux";
+import { selectIsDarkTheme } from "./common/ThemeSwitch/themeSlice";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ContactPage from "./views/ContactPage";
 
-export const App = () => {
+const App = () => {
+  const isDarkTheme = useSelector(selectIsDarkTheme);
   return (
-    <>
-      <MainContainer>
-        <NavSection />
-        <MainPage />
-      </MainContainer>
-    </>
+    <ThemeProvider theme={isDarkTheme ? themeDark : themeLight}>
+      <GlobalStyle />
+      <>
+        <Router>
+          <NavSection />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<div>Not Found</div>} />
+          </Routes>
+        </Router>
+      </>
+    </ThemeProvider>
   );
 };
+
+export default App;
