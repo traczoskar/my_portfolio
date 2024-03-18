@@ -6,14 +6,24 @@ import personalHomepage from "../../../../assets/portfolio_personalHomepage.png"
 export interface Projects {
   label: string;
   image: string;
+  route: string;
 }
 
 export const projects: Projects[] = [
-  { label: "Personal Homepage", image: personalHomepage },
-  { label: "Movies Browser", image: moviesBrowser },
-  { label: "To Do List", image: taskList },
   {
-    label: "Currency Converter",
+    label: "Personal Homepage",
+    image: personalHomepage,
+    route: "/projects/personal-homepage",
+  },
+  {
+    label: "Movies Browser",
+    image: moviesBrowser,
+    route: "/projects/movies-browser",
+  },
+  { label: "To Do List", image: taskList, route: "/projects/to-do-list" },
+  {
+    label: "Currency Calculator",
     image: currencyConverter,
+    route: "/projects/currency-calculator",
   },
 ];
