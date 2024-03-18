@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const CardsContainer = styled.section`
   width: 600px;
@@ -42,7 +43,6 @@ export const ProjectTab = styled.li`
   list-style: none;
   padding: 0;
   margin: 0;
-
   color: ${({ theme }) => theme.colors.projects.text};
   font-weight: 500;
   font-size: 12px;
@@ -81,7 +81,7 @@ export const ProjectContainer = styled.article`
   overflow: hidden;
 `;
 
-export const ProjectImage = styled.img`
+export const ProjectImage = styled(Link).attrs({ as: "img" })`
   width: 100%;
   height: 100%;
   object-fit: cover;
