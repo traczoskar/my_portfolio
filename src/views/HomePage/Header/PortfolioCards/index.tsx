@@ -45,10 +45,12 @@ export default function PortfolioCards() {
             transition={{ duration: 0.2 }}
           >
             {selectedTab ? (
-              <ProjectImage src={selectedTab.image} alt={selectedTab.label} />
-            ) : (
-              "😋"
-            )}
+              <ProjectImage
+                to={selectedTab.route}
+                src={selectedTab.image}
+                alt={selectedTab.label}
+              />
+            ) : null}
           </motion.div>
         </AnimatePresence>
       </ProjectContainer>
