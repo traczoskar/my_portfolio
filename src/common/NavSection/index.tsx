@@ -18,10 +18,32 @@ const NavSection: React.FC = () => {
           <NavHeader>traczoskar.dev</NavHeader>
         </NavHeaderLink>
         <NavLinks>
-          <NavLink>AboutMe</NavLink>
-          <NavLink>GitHub</NavLink>
-          <NavLink>LinkedIn</NavLink>
-          <NavRouterLink title="Contact" to="/contact">
+          <NavLink title="About Me" aria-label="Link to About Me page">
+            AboutMe
+          </NavLink>
+          <NavLink
+            href="https://github.com/traczoskar"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Link to GitHub profile"
+            title="Link to GitHub profile"
+          >
+            GitHub
+          </NavLink>
+          <NavLink
+            href="https://www.linkedin.com/in/traczoskar/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Link to LinkedIn profile"
+            title="Link to LinkedIn profile"
+          >
+            LinkedIn
+          </NavLink>
+          <NavRouterLink
+            title="Contact"
+            aria-label="Link to Contact page"
+            to="/contact"
+          >
             Contact
           </NavRouterLink>
           <ThemeSwitch />
