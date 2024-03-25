@@ -48,12 +48,17 @@ export const NavLinks = styled.ul`
   margin: 0;
 `;
 
-export const NavLink = styled.li`
+export const NavLink = styled.a`
+  text-decoration: none;
   margin: 0 1rem;
   cursor: pointer;
   transition: 0.3s;
   font-weight: 500;
   padding: 1rem 0;
+
+  &:visited {
+    color: inherit;
+  }
 
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
