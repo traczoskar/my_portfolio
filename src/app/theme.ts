@@ -74,7 +74,7 @@ export const themeLight = {
     themeSwitch: {
       background: colorNames.alabaster,
       button: colorNames.onyx,
-      border: colorNames.byzantium,
+      border: colorNames.orange,
     },
   },
 };
