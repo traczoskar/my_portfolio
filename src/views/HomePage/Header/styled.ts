@@ -23,7 +23,20 @@ export const HeaderSectionWrapper = styled.div`
   margin: 8vw 0;
 `;
 
-export const HeaderContent = styled.h2`
+export const HeaderGreeter = styled.h2`
+  font-weight: 400;
+  font-size: 2.4vw;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  letter-spacing: 0.03rem;
+  text-align: center;
+`;
+
+export const SpecialTextGreeter = styled.span`
+  font-weight: 700;
+`;
+
+export const HeaderContent = styled.h3`
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -39,11 +52,17 @@ export const SpecialText = styled.span`
   transition: color ease 0.5s;
 `;
 
-export const SubHeaderContent = styled.h3`
-  margin-top: 0.5rem;
+export const SubHeaderContent = styled.h4`
+  margin: 1rem 0 1rem 0;
   font-size: 1.2vw;
   font-weight: 400;
   letter-spacing: 0.03rem;
+`;
+
+export const CurlyBraces = styled.span`
+  font-weight: 500;
+  color: #777777;
+  font-size: 2.7vw;
 `;
 
 export const Paragraph = styled.p`
