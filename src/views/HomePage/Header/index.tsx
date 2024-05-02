@@ -2,17 +2,21 @@ import { GridSection } from "../../../common/GridSection/styled";
 import { Button } from "./Button/styled";
 import PortfolioCards from "./PortfolioCards";
 import {
+  CurlyBraces,
   HeaderContent,
+  HeaderGreeter,
   HeaderSectionWrapper,
   HeaderWrapper,
   Paragraph,
   Section,
   SectionDividerPurposeOnly,
   SpecialText,
+  SpecialTextGreeter,
   SubHeaderContent,
 } from "./styled";
 import { ReactComponent as ShapeDivider } from "./ShapeDivider/shape.svg";
 import "./ShapeDivider/style.css";
+import { TypingLine } from "./TypingLine";
 
 interface HeaderProps {
   title: string;
@@ -26,8 +30,16 @@ const Header = ({ title, subtitle }: HeaderProps) => {
         <HeaderSectionWrapper>
           <GridSection>
             <HeaderWrapper>
+              <HeaderGreeter>
+                Hello, I'm <SpecialTextGreeter>Oskar Tracz</SpecialTextGreeter>
+              </HeaderGreeter>
               <HeaderContent>
-                {title} <SpecialText>Developer</SpecialText>
+                {title}{" "}
+                <SpecialText>
+                  <CurlyBraces>{"{ "}</CurlyBraces>
+                  <TypingLine content={["Developer"]} />
+                  <CurlyBraces>{" }"}</CurlyBraces>
+                </SpecialText>
               </HeaderContent>
               <SubHeaderContent>{subtitle}</SubHeaderContent>
               <Paragraph>
