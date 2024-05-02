@@ -26,19 +26,27 @@ export const NavHeaderLink = styled(Link)`
 `;
 
 export const NavHeader = styled.h1`
+  display: flex;
+  gap: 1.25rem;
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
+  letter-spacing: 0.005rem;
   padding: 0.5rem 0;
   transition: 0.3s;
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.basic};
-    transform: translateY(-5px);
-    text-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
+    background-image: ${({ theme }) => theme.colors.header.text};
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
+`;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const NavLinks = styled.ul`
