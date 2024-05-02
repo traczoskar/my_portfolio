@@ -1,5 +1,8 @@
 import { ThemeSwitch } from "../ThemeSwitch";
+import { selectIsDarkTheme } from "../ThemeSwitch/themeSlice";
+import Logo from "./SVGLogo";
 import {
+  LogoContainer,
   NavBar,
   NavHeader,
   NavHeaderLink,
@@ -8,14 +11,25 @@ import {
   NavRouterLink,
   NavWrapper,
 } from "./styled";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavSection: React.FC = () => {
+  const isDarkTheme = useSelector(selectIsDarkTheme);
+
   return (
     <NavBar>
       <NavWrapper>
         <NavHeaderLink to="/">
-          <NavHeader>traczoskar.dev</NavHeader>
+          <NavHeader>
+            <LogoContainer>
+              <Logo
+                stroke={isDarkTheme ? "#DDDDDD" : "#222222"}
+                height={30}
+                width={30}
+              />
+            </LogoContainer>
+            traczoskar.dev
+          </NavHeader>
         </NavHeaderLink>
         <NavLinks>
           <NavLink title="About Me" aria-label="Link to About Me page">
