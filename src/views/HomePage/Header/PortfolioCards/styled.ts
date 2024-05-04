@@ -81,7 +81,7 @@ export const ProjectContainer = styled.article`
   overflow: hidden;
 `;
 
-export const ProjectImage = styled(Link).attrs({ as: "img" })`
+export const ProjectImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
