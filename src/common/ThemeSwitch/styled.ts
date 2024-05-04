@@ -13,7 +13,7 @@ export const Button = styled.button`
 `;
 
 interface IconWrapperProps {
-  changeposition?: boolean;
+  $changeposition?: boolean;
 }
 
 export const IconWrapper = styled.div<IconWrapperProps>`
@@ -29,8 +29,8 @@ export const IconWrapper = styled.div<IconWrapperProps>`
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
   transition: transform ease-in-out 0.5s;
 
-  ${({ changeposition }) =>
-    changeposition &&
+  ${({ $changeposition }) =>
+    $changeposition &&
     css`
       transform: rotateY(360deg);
     `}
