@@ -12,7 +12,7 @@ export const ThemeSwitch = () => {
       aria-hidden="true"
       onClick={() => dispatch(toggleTheme())}
     >
-      <IconWrapper changeposition={isDarkTheme}>
+      <IconWrapper $changeposition={isDarkTheme}>
         <Icon />
       </IconWrapper>
     </Button>
