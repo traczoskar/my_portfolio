@@ -1,5 +1,5 @@
 import { ThemeSwitch } from "../ThemeSwitch";
-import { selectIsDarkTheme } from "../ThemeSwitch/themeSlice";
+import { selectIsDarkTheme } from "../../slices/themeSlice";
 import Logo from "./SVGLogo";
 import {
   LogoContainer,
@@ -32,9 +32,13 @@ const NavSection: React.FC = () => {
           </NavHeader>
         </NavHeaderLink>
         <NavLinks>
-          <NavLink title="About Me" aria-label="Link to About Me page">
+          <NavRouterLink
+            title="About Me"
+            aria-label="Link to About Me page"
+            to="/about"
+          >
             AboutMe
-          </NavLink>
+          </NavRouterLink>
           <NavLink
             href="https://github.com/traczoskar"
             target="_blank"
