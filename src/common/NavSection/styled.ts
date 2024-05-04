@@ -70,7 +70,6 @@ export const NavLink = styled.a`
 
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
-    transform: translateY(-5px);
     text-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
       0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   }
@@ -90,7 +89,6 @@ export const NavRouterLink = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
-    transform: translateY(-5px);
     text-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
       0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   }
