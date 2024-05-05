@@ -7,7 +7,15 @@ import {
 } from "../../../../slices/projectDetailsSlice";
 import { Project } from "../../../../types/types";
 import { projects } from "../PortfolioCards/portfolioList";
-import { ProjectDetailsContainer, ProjectHeader } from "./styled";
+import {
+  ProjectDescription,
+  ProjectDescriptionTitle,
+  ProjectDetailsContainer,
+  ProjectFeature,
+  ProjectFeatureList,
+  ProjectFeatureName,
+  ProjectHeader,
+} from "./styled";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -27,6 +35,21 @@ const ProjectDetails = () => {
         <ProjectHeader>
           {project?.icon} {project?.label}
         </ProjectHeader>
+        <ProjectDescriptionTitle>Description:</ProjectDescriptionTitle>
+        <ProjectDescription>{project?.description}</ProjectDescription>
+        {project?.features && (
+          <>
+            <ProjectDescriptionTitle>Features:</ProjectDescriptionTitle>
+            <ProjectFeatureList>
+              {project.features.map((feature, index) => (
+                <ProjectFeature key={index}>
+                  <ProjectFeatureName>{feature.name}</ProjectFeatureName>
+                  {`: ${feature.content}`}
+                </ProjectFeature>
+              ))}
+            </ProjectFeatureList>
+          </>
+        )}
       </ProjectDetailsContainer>
     </Modal>
   );
