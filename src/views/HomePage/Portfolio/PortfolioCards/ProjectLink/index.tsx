@@ -1,7 +1,11 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { openProjectDetails } from "../../../../../slices/projectDetailsSlice";
+import styled from "styled-components";
 
+const Link = styled.a`
+  position: relative;
+`;
 interface ProjectLinkProps {
   project: {
     label: string;
@@ -20,7 +24,7 @@ const ProjectLink = ({ project, children }: ProjectLinkProps) => {
     navigate(`/projects/${project.route}`);
   };
 
-  return <a onClick={handleLinkClick}>{children}</a>;
+  return <Link onClick={handleLinkClick}>{children}</Link>;
 };
 
 export default ProjectLink;
