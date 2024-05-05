@@ -7,6 +7,7 @@ import {
 } from "../../../../slices/projectDetailsSlice";
 import { Project } from "../../../../types/types";
 import { projects } from "../PortfolioCards/portfolioList";
+import { ProjectDetailsContainer, ProjectHeader } from "./styled";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -22,8 +23,11 @@ const ProjectDetails = () => {
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
-      <h2>{project?.label}</h2>
-      <p>{project?.route}</p>
+      <ProjectDetailsContainer>
+        <ProjectHeader>
+          {project?.icon} {project?.label}
+        </ProjectHeader>
+      </ProjectDetailsContainer>
     </Modal>
   );
 };
