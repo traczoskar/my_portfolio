@@ -1,12 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Modal from "../../../common/Modal";
-import { projects } from "../../HomePage/Header/PortfolioCards/portfolioList";
+import Modal from "../../../../common/Modal";
 import {
   closeProjectDetails,
   selectProjectDetailsState,
-} from "../../../slices/projectDetailsSlice";
-import { Project } from "../../../types/types";
+} from "../../../../slices/projectDetailsSlice";
+import { Project } from "../../../../types/types";
+import { projects } from "../PortfolioCards/portfolioList";
 
 const ProjectDetails = () => {
   const { id } = useParams();

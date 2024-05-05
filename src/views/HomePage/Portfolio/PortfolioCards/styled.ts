@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const CardsContainer = styled.section`
-  width: 600px;
-  height: 455px;
+  max-width: 1200px;
+  height: auto;
   border-radius: 15px;
   background: ${({ theme }) => theme.colors.projects.primary};
   margin: 0;
@@ -74,9 +73,9 @@ export const ProjectContainer = styled.article`
   justify-content: center;
   align-items: center;
   padding: 10px 5px;
-  width: 600px;
+  width: 750px;
   user-select: none;
-  height: 400px;
+  height: auto;
   user-select: none;
   overflow: hidden;
 `;
