@@ -13,9 +13,9 @@ export const Button = styled(Link)`
   color: ${({ theme }) => theme.colors.button.text};
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
-  transition: background-position 0.5s ease-in-out;
+  transition: 0.3s ease;
 
   &:hover {
-    background-position: 100% 0;
+    filter: brightness(120%);
   }
 `;
