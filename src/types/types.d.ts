@@ -18,5 +18,10 @@ export interface Project {
   repo: string;
   live: string;
   description: string;
-  features?: string[];
+  features?: Feature[];
+}
+
+interface Feature {
+  name: string;
+  content: string;
 }
