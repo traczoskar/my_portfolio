@@ -1,14 +1,22 @@
-import { useSelector } from "react-redux";
-import { selectIsModalOpen } from "../../slices/modalSlice";
+import { CloseButton, ModalContent, ModalOverlay } from "./styled";
 
-const Modal = () => {
-  const isOpen: boolean = useSelector(selectIsModalOpen);
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
 
+const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div>
-      <h1>Modal</h1>
-    </div>
+    <ModalOverlay>
+      <ModalContent>
+        <CloseButton onClick={onClose}>X</CloseButton>
+        {children}
+      </ModalContent>
+    </ModalOverlay>
   );
 };
+
+export default Modal;
