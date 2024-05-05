@@ -21,7 +21,7 @@ const colorNames = {
   gradientRedDark: "linear-gradient(to right, #ff512f, #f09819)",
   // ---lightTheme---
   onyx: "#2e3532ff",
-  claret: "#8b2635ff",
+  leather: "#A17B5E",
   orange: "#d66802",
   alabaster: "#E3E3E3",
   timberWolf: "#d2d4c8ff",
@@ -46,7 +46,7 @@ export const themeLight = {
   colors: {
     basic: colorNames.orange,
     textBasic: colorNames.onyx,
-    textAdditional: colorNames.claret,
+    textAdditional: colorNames.leather,
     app: {
       background: colorNames.alabaster,
     },
@@ -63,6 +63,7 @@ export const themeLight = {
     },
     advantages: {
       text: colorNames.platinum,
+      textSecondary: colorNames.leather,
       background: colorNames.gradientRedDark,
     },
     projects: {
