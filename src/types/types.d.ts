@@ -10,7 +10,13 @@ export interface ThemeState {
 }
 
 export interface Project {
+  route: string;
   label: string;
   image: string;
-  route: string;
+  icon: string;
+  tech: string[];
+  repo: string;
+  live: string;
+  description: string;
+  features?: string[];
 }
