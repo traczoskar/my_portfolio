@@ -1,17 +1,17 @@
 import { ReactComponent as RWDIcon } from "../../../assets/advantages/responsive.svg";
 import { ReactComponent as UXIcon } from "../../../assets/advantages/friends.svg";
-import { ReactComponent as SemanticIcon } from "../../../assets/advantages/accesibility.svg";
+import { ReactComponent as SemanticIcon } from "../../../assets/advantages/accessibility.svg";
 import { ReactComponent as WebsiteIcon } from "../../../assets/advantages/web-design.svg";
 import { ReactComponent as WorkEthicsIcon } from "../../../assets/advantages/ethic.svg";
 import { ReactComponent as TeamWorkIcon } from "../../../assets/advantages/support.svg";
 
-interface Advantages {
+interface Advantage {
   icon: React.ElementType;
   title: string;
   description: string;
 }
 
-export const advantagesList: Advantages[] = [
+export const advantagesList: Advantage[] = [
   {
     icon: RWDIcon,
     title: "RWD",
