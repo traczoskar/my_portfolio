@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { selectIsDarkTheme } from "./slices/themeSlice";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactPage from "./views/ContactPage";
-import ProjectDetails from "./views/projects/ProjectDetails";
+import ProjectDetails from "./views/HomePage/Portfolio/ProjectDetails";
 
 const App = () => {
   const isDarkTheme = useSelector(selectIsDarkTheme);
