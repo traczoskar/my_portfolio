@@ -1,9 +1,9 @@
-import moviesBrowser from "../../../../assets/portfolio_moviesBrowser.png";
-import taskList from "../../../../assets/portfolio_taskList.png";
-import currencyConverter from "../../../../assets/portfolio_currencyConverter.png";
-import personalHomepage from "../../../../assets/portfolio_personalHomepage.png";
-import aiWeatherApp from "../../../../assets/portfolio_aiWeatherApp.png";
-import portfolioPage from "../../../../assets/portfolio_portfolioPage.png";
+import moviesBrowser from "../../../../assets/portfolio/portfolio_moviesBrowser.png";
+import taskList from "../../../../assets/portfolio/portfolio_taskList.png";
+import currencyConverter from "../../../../assets/portfolio/portfolio_currencyConverter.png";
+import personalHomepage from "../../../../assets/portfolio/portfolio_personalHomepage.png";
+import aiWeatherApp from "../../../../assets/portfolio/portfolio_aiWeatherApp.png";
+import portfolioPage from "../../../../assets/portfolio/portfolio_portfolioPage.png";
 import { Project } from "../../../../types/types";
 
 export const projects: Project[] = [
@@ -18,12 +18,35 @@ export const projects: Project[] = [
     description:
       "🗒 As a title suggest it's my personal homepage, a virtual CV👨🏻‍💻 You can find here information about me, showcase of my programming skills, what I want to learn, GitHub repositories and contact section.",
     features: [
-      "About Me 🙋‍♂️: Interactive section featuring a profile photo and a brief introduction.",
-      "Theme Switch 🌗: You can choose between using dark or light mode up to your preferences.",
-      "Skillset 💪: Detailed list of my current tech skills.",
-      " Learning Goals 🚀: A forward-looking section about skills I'm actively learning.",
-      "GitHub Repositories 📁: Dynamic tiles populated with real-time data from my GitHub repositories using the GitHub API.",
-      " Contact Section 📩: Footer section contains my social media links and my e-mail address.",
+      {
+        name: "About Me 🙋‍♂️",
+        content:
+          "Interactive section featuring a profile photo and a brief introduction.",
+      },
+      {
+        name: "Theme Switch 🌗",
+        content:
+          "You can choose between using dark or light mode up to your preferences.",
+      },
+      {
+        name: "Skillset 💪",
+        content: "Detailed list of my current tech skills.",
+      },
+      {
+        name: "Learning Goals 🚀",
+        content:
+          "A forward-looking section about skills I'm actively learning.",
+      },
+      {
+        name: "GitHub Repositories 📁",
+        content:
+          "Dynamic tiles populated with real-time data from my GitHub repositories using the GitHub API.",
+      },
+      {
+        name: "Contact Section 📩",
+        content:
+          "Footer section contains my social media links and my e-mail address.",
+      },
     ],
   },
   {
