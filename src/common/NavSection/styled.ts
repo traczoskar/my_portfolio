@@ -60,7 +60,7 @@ export const NavLink = styled.a`
   text-decoration: none;
   margin: 0 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
   font-weight: 500;
   padding: 1rem 0;
 
@@ -70,15 +70,13 @@ export const NavLink = styled.a`
 
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
-    text-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   }
 `;
 
 export const NavRouterLink = styled(Link)`
   margin: 0 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
   font-weight: 500;
   padding: 1rem 0;
   text-decoration: none;
@@ -89,8 +87,6 @@ export const NavRouterLink = styled(Link)`
 
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
-    text-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   }
 
   &:active {
