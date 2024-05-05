@@ -12,6 +12,7 @@ import {
 } from "./styled";
 import "./underline.css";
 import ProjectLink from "./ProjectLink";
+import ClickHere from "./ClickHere";
 
 export default function PortfolioCards() {
   const [selectedTab, setSelectedTab] = useState(projects[0]);
@@ -48,6 +49,7 @@ export default function PortfolioCards() {
             {selectedTab ? (
               <ProjectLink project={selectedTab}>
                 <ProjectImage src={selectedTab.image} alt={selectedTab.label} />
+                <ClickHere />
               </ProjectLink>
             ) : null}
           </motion.div>
