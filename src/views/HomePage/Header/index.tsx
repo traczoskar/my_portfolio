@@ -1,12 +1,13 @@
 import { GridSection } from "../../../common/GridSection/styled";
 import { Button } from "./Button/styled";
-import PortfolioCards from "./PortfolioCards";
 import {
   CurlyBraces,
   HeaderContent,
   HeaderGreeter,
   HeaderSectionWrapper,
   HeaderWrapper,
+  Image,
+  ImageWrapper,
   Paragraph,
   Section,
   SectionDividerPurposeOnly,
@@ -17,7 +18,7 @@ import {
 import { ReactComponent as ShapeDivider } from "./ShapeDivider/shape.svg";
 import "./ShapeDivider/style.css";
 import { TypingLine } from "./TypingLine";
-
+import photo from "../../../assets/photo.png";
 interface HeaderProps {
   title: string;
   subtitle: string;
@@ -48,7 +49,9 @@ const Header = ({ title, subtitle }: HeaderProps) => {
               </Paragraph>
               <Button to="/contact">Contact me</Button>
             </HeaderWrapper>
-            <PortfolioCards />
+            <ImageWrapper>
+              <Image src={photo} alt="Oskar Tracz" />
+            </ImageWrapper>
           </GridSection>
         </HeaderSectionWrapper>
       </Section>
