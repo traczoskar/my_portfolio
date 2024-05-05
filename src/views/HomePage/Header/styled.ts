@@ -72,3 +72,21 @@ export const Paragraph = styled.p`
   letter-spacing: 0.03rem;
   line-height: 1.8;
 `;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Image = styled.img`
+  border-radius: 50%;
+  width: 25vw;
+  height: auto;
+  transition: 0.5s ease;
+
+  &:hover {
+    filter: drop-shadow(0 10px 10px #aaaaaa);
+    transform: translateY(-5px);
+  }
+`;
