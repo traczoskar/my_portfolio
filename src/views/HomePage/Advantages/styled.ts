@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const AdvantagesSection = styled.section`
   padding-top: 10rem;
-  padding-bottom: 6rem;
   background-color: ${({ theme }) => theme.colors.section.primary};
   color: ${({ theme }) => theme.colors.text};
 `;
@@ -36,6 +35,8 @@ export const AdvantagesIcon = styled.div`
   background-image: ${({ theme }) => theme.colors.advantages.background};
   margin-right: 1.5rem;
   color: ${({ theme }) => theme.colors.advantages.text};
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   transition: filter ease 0.3s;
   &:hover {
     filter: brightness(130%);
@@ -60,7 +61,7 @@ export const AdvantageTitle = styled.h3`
 `;
 
 export const AdvantageDescription = styled.p`
-  color: ${({ theme }) => theme.colors.textAdditional};
+  color: ${({ theme }) => theme.colors.advantages.textSecondary};
   margin-top: 0.5rem;
   padding: 0;
   font-weight: 400;
