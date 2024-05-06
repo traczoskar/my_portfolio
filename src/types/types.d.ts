@@ -14,11 +14,12 @@ export interface Project {
   label: string;
   image: string;
   icon: string;
-  tech: string[];
-  repo: string;
-  live: string;
   description: string;
   features?: Feature[];
+  tech: string[];
+  whatDidILearn?: string[];
+  repo: string;
+  live: string;
 }
 
 interface Feature {
