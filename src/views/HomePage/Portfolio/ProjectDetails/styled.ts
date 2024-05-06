@@ -14,7 +14,7 @@ export const Section = styled.section`
 
 export const SectionTitle = styled.h3`
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 600;
 `;
 
@@ -27,9 +27,9 @@ export const SectionDivider = styled.div`
 //---Header---
 
 export const ProjectHeader = styled.h2`
-  margin: 2rem 0 0 0;
-  padding: 0 2rem 2rem 2rem;
-  font-size: 2rem;
+  margin: 0;
+  padding: 3rem 2.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   border-bottom: 1px solid #ddd;
 `;
@@ -139,7 +139,6 @@ export const ButtonsWrapper = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 2rem 0;
-  margin: 2rem;
 `;
 
 export const LinkButton = styled.a`
