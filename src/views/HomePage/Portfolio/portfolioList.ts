@@ -7,6 +7,7 @@ import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.png
 import { Project } from "../../../types/types";
 
 export const projects: Project[] = [
+  //---Personal Homepage---
   {
     route: "personal-homepage",
     label: "Personal Homepage",
@@ -67,6 +68,7 @@ export const projects: Project[] = [
     repo: "https://github.com/traczoskar/personal_homepage",
     live: "https://traczoskar.github.io/personal_homepage/",
   },
+  //---AI Weather App---
   {
     route: "ai-weather-app",
     label: "AI - Weather App",
@@ -91,6 +93,7 @@ export const projects: Project[] = [
     repo: "https://github.com/traczoskar/weatherwise_ai",
     live: "https://traczoskar.github.io/weatherwise_ai/",
   },
+  //---Portfolio Page---
   {
     route: "portfolio-page",
     label: "Portfolio Page",
@@ -102,17 +105,97 @@ export const projects: Project[] = [
     description:
       "📁 Portfolio Page is a showcase of my projects. It's a single-page application that allows you to view detailed information about each project, including a description, features, and technologies used.",
   },
+  //---Movies Browser---
   {
     route: "movies-browser",
     label: "Movies Browser",
     image: moviesBrowser,
     icon: "🎬",
-    tech: ["React", "TypeScript", "Styled Components"],
+    description:
+      "🎥 This app will let you discover most popular movies, search actual info about them, the ratings and their cast. To use it just type in the name of movie or person and find out the details. This app is built with React.js ⚛️ and uses data provided by connection with outer API.",
+    features: [
+      {
+        name: "Search Functionality 🔍",
+        content:
+          "Use the search bar to find movies or people based on specific query parameters, making your exploration targeted and efficient.",
+      },
+      {
+        name: "Popular Movie List 🌟",
+        content:
+          "Delve into a handpicked selection of hit movies featured prominently on our main homepage for easy access.",
+      },
+      {
+        name: "Movie Details 🎬",
+        content:
+          "Get an in-depth look at movies by selecting any title from the popular lists to view its comprehensive details.",
+      },
+      {
+        name: "People List 👥",
+        content:
+          "Uncover a roster of actors or crew and dive into individual profiles to learn more about their filmography and details.",
+      },
+      {
+        name: "People Details 🎭",
+        content:
+          "Delve into dedicated pages for actors and crew where you can explore extensive details about their careers and film contributions.",
+      },
+      {
+        name: "Navigation 🚶",
+        content:
+          "Effortlessly move between distinct sections dedicated to movies and people, enabling a structured and comprehensive browsing experience.",
+      },
+      {
+        name: "Pagination 📄",
+        content:
+          "Experience enhanced navigation with pagination. Our app incorporates page-specific URL parameters and offers intuitive navigation buttons—First, Previous, Next, and Last—to streamline your journey through Movie and People Lists.",
+      },
+      {
+        name: "Enhanced UI - Hover Styling 🖱️",
+        content:
+          "Our interface comes alive as you hover over elements like movies, actors, or buttons, providing a dynamic and engaging user interaction.",
+      },
+      {
+        name: "Responsiveness 📱",
+        content:
+          "Enjoy a consistent and fluid experience across a variety of devices, ensuring the app adapts gracefully from mobiles to tablets.",
+      },
+      {
+        name: "Loading Page ⏳",
+        content:
+          "Our app adeptly manages loading sequences, ensuring a smooth and uninterrupted browsing experience.",
+      },
+      {
+        name: "Error Page 🆘",
+        content:
+          "It also handles error notifications efficiently, maintaining a seamless user interaction even when unexpected issues arise.",
+      },
+      {
+        name: "No Results Page 🚫",
+        content:
+          "Encounter a clear and instructive page when searches yield no results, designed to guide users effectively during their quest for movies or people.",
+      },
+    ],
+    tech: [
+      "React",
+      "JavaScript ES6+",
+      "HTML5",
+      "CSS3",
+      "Styled Components",
+      "Redux",
+      "Redux Saga",
+      "Figma",
+      "NPM",
+    ],
+    whatDidILearn: [
+      "💼 During this 5 week group project I learned the value of teamwork while collaborating on the Movies Browser, where coordination and communication between my colleagues were key to success.",
+      "🛠 Explored a diverse tech stack alongside talented teammates, diving into React, Redux, and other cutting-edge technologies to create a feature-rich movie browsing experience.",
+      "🌟 Gained insights into effective project management and division of tasks, ensuring smooth development cycles and delivering a polished product for cinephiles and tech enthusiasts alike.",
+      "🚀 Leveraged various technologies like React, Redux, and Styled Components, coupled with integration of external APIs, to craft a seamless browsing experience and robust feature set.",
+    ],
     repo: "https://github.com/traczoskar/movies-browser",
     live: "https://olgacybulska.github.io/movies-browser/",
-    description:
-      "🎬 Movies Browser is a simple application that allows you to search for movies and view detailed information about them. The app uses The Movie Database API to fetch movie data.",
   },
+  //---To Do List---
   {
     route: "to-do-list",
     label: "To Do List",
@@ -124,6 +207,7 @@ export const projects: Project[] = [
     description:
       "📝 To Do List is a simple task management application that allows you to add, remove, and mark tasks as completed.",
   },
+  //---Currency Calculator---
   {
     route: "currency-calculator",
     label: "Currency Calculator",
