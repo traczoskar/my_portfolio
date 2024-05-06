@@ -25,3 +25,8 @@ interface Feature {
   name: string;
   content: string;
 }
+
+export interface Technology {
+  name: string;
+  icon: string;
+}
