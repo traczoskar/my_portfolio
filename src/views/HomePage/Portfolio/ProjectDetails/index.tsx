@@ -79,42 +79,59 @@ const ProjectDetails = () => {
         )}
         <Section>
           <SectionDivider>
+            {
+              //---Technologies Used---
+            }
             <div>
               <SectionTitle>Technologies Used 🛠 </SectionTitle>
-              <TechnologiesWrapper>
-                {project?.tech.map((tech) => (
-                  <TechnologyContainer>
-                    <TechnologyIcon
-                      key={tech}
-                      src={technologies.find((t) => t.name === tech)?.icon}
-                      alt={tech}
-                    />
-                    <TechnologySubtitle>{tech}</TechnologySubtitle>
-                  </TechnologyContainer>
-                ))}
-              </TechnologiesWrapper>
+              {project?.tech ? (
+                <TechnologiesWrapper>
+                  {project?.tech.map((tech) => (
+                    <TechnologyContainer>
+                      <TechnologyIcon
+                        key={tech}
+                        src={technologies.find((t) => t.name === tech)?.icon}
+                        alt={tech}
+                      />
+                      <TechnologySubtitle>{tech}</TechnologySubtitle>
+                    </TechnologyContainer>
+                  ))}
+                </TechnologiesWrapper>
+              ) : (
+                <p>Sorry 😭 - technologies not available for this project</p>
+              )}
             </div>
+            {
+              //---What Did I Learn?---
+            }
             <WhatDidILearnWrapper>
               <SectionTitle>What Did I Learn? 📚</SectionTitle>
-              <WhatDidILearnList>
-                {project?.whatDidILearn?.map((listItem, index) => (
-                  <WhatDidILearnItem key={index}>{listItem}</WhatDidILearnItem>
-                ))}
-              </WhatDidILearnList>
+              {project?.whatDidILearn ? (
+                <WhatDidILearnList>
+                  {project?.whatDidILearn?.map((listItem, index) => (
+                    <WhatDidILearnItem key={index}>
+                      {listItem}
+                    </WhatDidILearnItem>
+                  ))}
+                </WhatDidILearnList>
+              ) : (
+                <p>Sorry 😭 - learning points not available for this project</p>
+              )}
             </WhatDidILearnWrapper>
           </SectionDivider>
         </Section>
-
-        <ButtonsWrapper>
-          <LinkButton href={project?.repo} target="_blank">
-            <GitHubIcon width={30} height={30} />
-            GitHub Repository
-          </LinkButton>
-          <LinkButton href={project?.live} target="_blank">
-            <LiveIcon width={30} height={30} />
-            Live Demo
-          </LinkButton>
-        </ButtonsWrapper>
+        <Section>
+          <ButtonsWrapper>
+            <LinkButton href={project?.repo} target="_blank">
+              <GitHubIcon width={30} height={30} />
+              GitHub Repository
+            </LinkButton>
+            <LinkButton href={project?.live} target="_blank">
+              <LiveIcon width={30} height={30} />
+              Live Demo
+            </LinkButton>
+          </ButtonsWrapper>
+        </Section>
       </ProjectDetailsContainer>
     </Modal>
   );
