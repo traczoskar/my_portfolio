@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { projects } from "./portfolioList";
+import { projects } from "../portfolioList";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CardsContainer,
