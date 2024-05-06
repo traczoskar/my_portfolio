@@ -6,7 +6,7 @@ import {
   selectProjectDetailsState,
 } from "../../../../slices/projectDetailsSlice";
 import { Project } from "../../../../types/types";
-import { projects } from "../PortfolioCards/portfolioList";
+import { projects } from "../portfolioList";
 import {
   ProjectDescription,
   ProjectDescriptionTitle,
@@ -15,7 +15,12 @@ import {
   ProjectFeatureList,
   ProjectFeatureName,
   ProjectHeader,
+  TechnologiesWrapper,
+  TechnologyContainer,
+  TechnologyIcon,
+  TechnologySubtitle,
 } from "./styled";
+import { technologies } from "../technologies";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -35,11 +40,11 @@ const ProjectDetails = () => {
         <ProjectHeader>
           {project?.icon} {project?.label}
         </ProjectHeader>
-        <ProjectDescriptionTitle>Description:</ProjectDescriptionTitle>
+        <ProjectDescriptionTitle>Description</ProjectDescriptionTitle>
         <ProjectDescription>{project?.description}</ProjectDescription>
         {project?.features && (
           <>
-            <ProjectDescriptionTitle>Features:</ProjectDescriptionTitle>
+            <ProjectDescriptionTitle>Features ✅</ProjectDescriptionTitle>
             <ProjectFeatureList>
               {project.features.map((feature, index) => (
                 <ProjectFeature key={index}>
@@ -50,6 +55,19 @@ const ProjectDetails = () => {
             </ProjectFeatureList>
           </>
         )}
+        <ProjectDescriptionTitle>Technologies Used 🛠 </ProjectDescriptionTitle>
+        <TechnologiesWrapper>
+          {project?.tech.map((tech) => (
+            <TechnologyContainer>
+              <TechnologyIcon
+                key={tech}
+                src={technologies.find((t) => t.name === tech)?.icon}
+                alt={tech}
+              />
+              <TechnologySubtitle>{tech}</TechnologySubtitle>
+            </TechnologyContainer>
+          ))}
+        </TechnologiesWrapper>
       </ProjectDetailsContainer>
     </Modal>
   );
