@@ -1,24 +1,26 @@
 import styled, { keyframes } from "styled-components";
 
 export const Button = styled.button`
-  position: absolute;
-  top: -460px;
-  right: 18px;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 400;
-  background-color: #ffffff;
-  color: #555555;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #f9ad66;
   border: 1px solid #888888;
-  border-radius: 0.75rem;
+  color: #333333;
+  border-radius: 2rem;
   cursor: pointer;
   transition: 0.2s ease;
 
   &:hover {
-    background-color: orange;
+    filter: brightness(115%);
+  }
+
+  &:active {
+    filter: brightness(85%);
   }
 `;
 
@@ -26,14 +28,17 @@ const arrowAnimation = keyframes`
   0% {
     transform: translateX(0) rotate(0);
   }
-  25% {
-    transform: translateX(-5px) rotate(-5deg);
+  10% {
+    transform: translateX(-5px) rotate(5deg);
+  }
+  20% {
+    transform: translateX(5px) rotate(-5deg);
+  }
+  30% {
+    transform: translateX(-5px) rotate(5deg);
   }
   50% {
-    transform: translateX(5px) rotate(5deg);
-  }
-  75% {
-    transform: translateX(-5px) rotate(-5deg);
+    transform: translateX(0) rotate(0);
   }
   100% {
     transform: translateX(0) rotate(0);
@@ -43,5 +48,5 @@ const arrowAnimation = keyframes`
 export const AnimatedDiv = styled.div`
   margin: 0;
   padding: 0;
-  animation: ${arrowAnimation} 1s ease-in-out infinite;
+  animation: ${arrowAnimation} 4s ease-in-out infinite;
 `;
