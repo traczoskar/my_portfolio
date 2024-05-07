@@ -12,7 +12,7 @@ export const PortfolioSection = styled.section`
 export const PortfolioWrapper = styled.div`
   max-width: 1200px;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
 `;
