@@ -2,14 +2,13 @@ import { projects } from "../portfolioList";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   CardsContainer,
+  DetailsButton,
   Nav,
   ProjectContainer,
   ProjectImage,
   ProjectList,
   ProjectTab,
-  UnderlineSpan,
 } from "./styled";
-import "./underline.css";
 import ProjectLink from "./ProjectLink";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -36,36 +35,38 @@ export default function PortfolioCards() {
               className={project === selectedProject ? "selected" : ""}
               onClick={() => selectProject(project)}
             >
-              {`${project?.label}`}
+              {project?.icon} {project?.label}
               {project === selectedProject ? (
-                <UnderlineSpan>
-                  <motion.div className="underline" layoutId="underline" />
-                </UnderlineSpan>
-              ) : null}
+                <DetailsButton>
+                  <ProjectLink project={selectedProject}>Details</ProjectLink>
+                </DetailsButton>
+              ) : (
+                ""
+              )}
             </ProjectTab>
           ))}
         </ProjectList>
       </Nav>
       <ProjectContainer>
         {selectedProject ? (
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedProject ? selectedProject.label : "empty"}
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              {selectedProject ? (
-                <ProjectLink project={selectedProject}>
+          <ProjectLink project={selectedProject}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedProject?.label}
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                {selectedProject ? (
                   <ProjectImage
                     src={selectedProject.image}
                     alt={selectedProject.label}
                   />
-                </ProjectLink>
-              ) : null}
-            </motion.div>
-          </AnimatePresence>
+                ) : null}
+              </motion.div>
+            </AnimatePresence>
+          </ProjectLink>
         ) : null}
       </ProjectContainer>
     </CardsContainer>
