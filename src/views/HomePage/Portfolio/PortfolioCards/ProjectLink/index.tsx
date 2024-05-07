@@ -1,6 +1,16 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { openProjectDetails } from "../../../../../slices/projectDetailsSlice";
+import styled from "styled-components";
+
+const LinkButton = styled.button`
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+`;
 
 interface ProjectLinkProps {
   project: {
@@ -20,7 +30,7 @@ const ProjectLink = ({ project, children }: ProjectLinkProps) => {
     navigate(`/projects/${project.route}`);
   };
 
-  return <a onClick={handleLinkClick}>{children}</a>;
+  return <LinkButton onClick={handleLinkClick}>{children}</LinkButton>;
 };
 
 export default ProjectLink;
