@@ -8,12 +8,14 @@ export const Button = styled.button`
   padding: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
-  background-color: #f9ad66;
-  border: 1px solid #888888;
-  color: #333333;
+  background: #f9ad66;
+  color: #111111;
+  border: 0.75px solid #eeeeee;
   border-radius: 2rem;
   cursor: pointer;
   transition: 0.2s ease;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
 
   &:hover {
     filter: brightness(115%);
