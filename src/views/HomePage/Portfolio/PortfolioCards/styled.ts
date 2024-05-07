@@ -1,97 +1,119 @@
 import styled from "styled-components";
 
 export const CardsContainer = styled.section`
-  max-width: 1200px;
-  height: auto;
-  border-radius: 15px;
-  background: ${({ theme }) => theme.colors.projects.primary};
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
 `;
 
 export const Nav = styled.nav`
   background: ${({ theme }) => theme.colors.projects.primary};
-  padding: 5px 5px 0;
-  margin-bottom: 5px;
-  border-radius: 10px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom: 1px solid #eeeeee;
-  height: 50px;
+  padding: 0.75rem;
+  margin-right: 5px;
+  border-radius: 1rem;
+  border-right: 1px solid #eeeeee;
+  width: 220px;
   display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 `;
 
 export const ProjectList = styled.ul`
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
-  width: 100%;
   flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
 `;
 
 export const ProjectTab = styled.li`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  color: ${({ theme }) => theme.colors.projects.text};
-  font-weight: 500;
-  font-size: 12px;
-  border-radius: 15px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  width: 100%;
-  background: ${({ theme }) => theme.colors.projects.secondary};
   position: relative;
+  list-style: none;
+  margin: 0;
+  color: #333333;
+  font-weight: 500;
+  padding-left: 1.5rem;
+  font-size: 1.2;
+  border-radius: 0.5rem;
+  background: #f9ad66;
   cursor: pointer;
-  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  flex: 1;
   user-select: none;
+  border: 0.75px solid #999999;
+  flex-grow: 1;
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    color: #000000;
+  }
 
   &.selected {
-    background: ${({ theme }) => theme.colors.projects.selected};
+    background: #dddddd;
+    color: #333333;
+    border: 0.75px solid #ffffff;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   }
-`;
-
-export const UnderlineSpan = styled.span`
-  background: ${({ theme }) => theme.colors.header.text};
 `;
 
 export const ProjectContainer = styled.article`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 5px;
-  width: 750px;
-  user-select: none;
+  width: 800px;
   height: auto;
-  user-select: none;
-  overflow: hidden;
+  transform: translateY(4px);
 `;
 
 export const ProjectImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-radius: 1rem;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+
   transition: ease 0.75s;
   cursor: pointer;
   filter: grayscale(100%);
 
   &:hover {
     filter: grayscale(0%);
+  }
+`;
+
+export const DetailsButton = styled.button`
+  position: absolute;
+  right: 15px;
+  background: #555555;
+  border: 1px solid #dddddd;
+  border-radius: 0.5rem;
+
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 400;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  transition: 0.2s ease;
+  box-shadow: 0px 4px 8px rgba(66, 68, 90, 0.35);
+
+  &:hover {
+    filter: brightness(125%);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    filter: brightness(150%);
   }
 `;
