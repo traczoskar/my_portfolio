@@ -61,7 +61,7 @@ export const AdvantageTitle = styled.h3`
 `;
 
 export const AdvantageDescription = styled.p`
-  color: ${({ theme }) => theme.colors.advantages.textSecondary};
+  color: #444444;
   margin-top: 0.5rem;
   padding: 0;
   font-weight: 400;
