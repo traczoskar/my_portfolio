@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
@@ -157,5 +157,52 @@ export const NavRouterLink = styled(Link)`
 
   &:visited {
     color: inherit;
+  }
+`;
+
+const animatespin3d = keyframes`
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(360deg) translateY(-5px);
+  }
+  100% {
+    transform: rotateY(0deg) translateY(0px);
+  }
+
+`;
+
+export const NavIconLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  text-decoration: none;
+  margin: 0;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+    svg {
+      color: orange;
+      animation: ${animatespin3d} 0.8s ease-in-out;
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &:visited {
+    color: inherit;
+  }
+
+  svg {
+    transition: 0.3s;
+    width: 100%;
+    height: 100%;
   }
 `;
