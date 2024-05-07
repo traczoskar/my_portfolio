@@ -1,13 +1,16 @@
 import { ThemeSwitch } from "../ThemeSwitch";
 import { selectIsDarkTheme } from "../../slices/themeSlice";
 import Logo from "./SVGLogo";
+import { ReactComponent as GitHubIcon } from "../../assets/icons/git_icon.svg";
+import { ReactComponent as LinkedInIcon } from "../../assets/icons/linkedIn_icon.svg";
+
 import {
   LogoContainer,
   NavBar,
   NavHashLink,
   NavHeader,
   NavHeaderLink,
-  NavLink,
+  NavIconLink,
   NavLinks,
   NavRouterLink,
   NavWrapper,
@@ -48,24 +51,6 @@ const NavSection: React.FC = () => {
           >
             Projects
           </NavHashLink>
-          <NavLink
-            href="https://github.com/traczoskar"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Link to GitHub profile"
-            title="Link to GitHub profile"
-          >
-            GitHub
-          </NavLink>
-          <NavLink
-            href="https://www.linkedin.com/in/traczoskar/"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Link to LinkedIn profile"
-            title="Link to LinkedIn profile"
-          >
-            LinkedIn
-          </NavLink>
           <NavRouterLink
             title="Contact"
             aria-label="Link to Contact page"
@@ -73,6 +58,24 @@ const NavSection: React.FC = () => {
           >
             Contact
           </NavRouterLink>
+          <NavIconLink
+            href="https://github.com/traczoskar"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Link to GitHub profile"
+            title="Link to GitHub profile"
+          >
+            <GitHubIcon width={30} height={30} />
+          </NavIconLink>
+          <NavIconLink
+            href="https://www.linkedin.com/in/traczoskar/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Link to LinkedIn profile"
+            title="Link to LinkedIn profile"
+          >
+            <LinkedInIcon width={30} height={30} />
+          </NavIconLink>
           <ThemeSwitch />
         </NavLinks>
       </NavWrapper>
