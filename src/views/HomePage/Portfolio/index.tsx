@@ -4,10 +4,10 @@ import { PortfolioSection, PortfolioWrapper } from "./styled";
 
 const Portfolio = () => {
   return (
-    <PortfolioSection>
+    <PortfolioSection id="projects">
       <PortfolioWrapper>
-        <PortfolioCards />
         <PortfolioDescription />
+        <PortfolioCards />
       </PortfolioWrapper>
     </PortfolioSection>
   );
