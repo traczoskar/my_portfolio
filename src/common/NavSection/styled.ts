@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export const NavBar = styled.nav`
   margin: 0 auto;
@@ -52,44 +53,109 @@ export const LogoContainer = styled.div`
 export const NavLinks = styled.ul`
   display: flex;
   list-style: none;
+  gap: 0.05rem;
   padding: 0;
   margin: 0;
 `;
 
 export const NavLink = styled.a`
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 0;
   cursor: pointer;
   transition: 0.2s;
   font-weight: 500;
-  padding: 1rem 0;
+  padding: 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: #f9ad66;
+    transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    left: 0;
+  }
+
+  &:not(:hover)::before {
+    right: -100%;
+  }
 
   &:visited {
     color: inherit;
   }
+`;
 
-  &:hover {
-    color: ${({ theme }) => theme.colors.basic};
+export const NavHashLink = styled(HashLink)`
+  text-decoration: none;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+  padding: 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: #f9ad66;
+    transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    left: 0;
+  }
+
+  &:not(:hover)::before {
+    right: -100%;
+  }
+
+  &:visited {
+    color: inherit;
   }
 `;
 
 export const NavRouterLink = styled(Link)`
-  margin: 0 1rem;
+  text-decoration: none;
+  margin: 0;
   cursor: pointer;
   transition: 0.2s;
   font-weight: 500;
-  padding: 1rem 0;
-  text-decoration: none;
+  padding: 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: #f9ad66;
+    transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    left: 0;
+  }
+
+  &:not(:hover)::before {
+    right: -100%;
+  }
 
   &:visited {
     color: inherit;
-  }
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.basic};
-  }
-
-  &:active {
-    filter: brightness(130%);
   }
 `;
