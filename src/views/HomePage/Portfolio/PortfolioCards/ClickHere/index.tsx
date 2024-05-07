@@ -19,7 +19,7 @@ const ClickHere = () => {
       <AnimatedDiv>
         <ClickArrow width={22} height={22} />
       </AnimatedDiv>
-      Click here for more details!
+      Click here for more details of selected project!
     </Button>
   );
 };
