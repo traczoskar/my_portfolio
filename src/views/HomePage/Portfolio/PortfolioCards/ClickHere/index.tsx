@@ -1,6 +1,5 @@
 import { AnimatedDiv, Button } from "./styled";
 import { ReactComponent as ClickArrow } from "../../../../../assets/click.svg";
-import ProjectLink from "../ProjectLink";
 import { useDispatch, useSelector } from "react-redux";
 import { selectSelectedProject } from "../../../../../slices/selectedProjectSlice";
 import { useNavigate } from "react-router";
