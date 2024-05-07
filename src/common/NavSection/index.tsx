@@ -4,6 +4,7 @@ import Logo from "./SVGLogo";
 import {
   LogoContainer,
   NavBar,
+  NavHashLink,
   NavHeader,
   NavHeaderLink,
   NavLink,
@@ -39,6 +40,14 @@ const NavSection: React.FC = () => {
           >
             AboutMe
           </NavRouterLink>
+          <NavHashLink
+            smooth
+            to="/#projects"
+            aria-label="Link to Projects section"
+            title="Projects"
+          >
+            Projects
+          </NavHashLink>
           <NavLink
             href="https://github.com/traczoskar"
             target="_blank"
