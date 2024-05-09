@@ -5,6 +5,7 @@ import personalHomepage from "../../../assets/portfolio/portfolio_personalHomepa
 import aiWeatherApp from "../../../assets/portfolio/portfolio_aiWeatherApp.png";
 import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.png";
 import { Project } from "../../../types/types";
+import { personalHomepageScreenshots } from "./screenshotsStore";
 
 export const projects: Project[] = [
   //---Personal Homepage---
@@ -14,7 +15,8 @@ export const projects: Project[] = [
     image: personalHomepage,
     icon: "🏠",
     description:
-      "🗒 As a title suggest it's my personal homepage, a virtual CV👨🏻‍💻 You can find here information about me, showcase of my programming skills, what I want to learn, GitHub repositories and contact section.",
+      "I created a dynamic personal homepage and virtual CV that showcases my skills and projects fetched directly from GitHub. 💻 It's built with cutting-edge web technologies like React.js, Redux Toolkit, and Styled Components for a seamless user experience. ⚛️ The project features an interactive about me section, theme switcher, skillset display, learning goals, and live GitHub repositories to present my professional profile comprehensively. 🌟 I included social media links and a contact section. 🔗 This cutting-edge portfolio website allows me to showcase my technical expertise, project achievements, and professional journey in an immersive and interactive manner. It's a cool way to put myself out there and let people explore my work and background.",
+    screenshots: personalHomepageScreenshots,
     features: [
       {
         name: "About Me 🙋‍♂️",
@@ -69,30 +71,30 @@ export const projects: Project[] = [
     live: "https://traczoskar.github.io/personal_homepage/",
   },
   //---AI Weather App---
-  {
-    route: "ai-weather-app",
-    label: "AI - Weather App",
-    image: aiWeatherApp,
-    icon: "🌦️",
-    description:
-      "🌦️ AI - Weather App is a simple weather application that uses OpenWeatherMap API to fetch weather data for a given city. The app uses a pre-trained model from TensorFlow.js to predict the weather based on the current temperature.",
-    tech: [
-      "React",
-      "OpenAI",
-      "TypeScript",
-      "JavaScript ES6+",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Redux",
-      "Redux Saga",
-      "Vite",
-      "NPM",
-    ],
+  // {
+  //   route: "ai-weather-app",
+  //   label: "AI - Weather App",
+  //   image: aiWeatherApp,
+  //   icon: "🌦️",
+  //   description:
+  //     "🌦️ AI - Weather App is a simple weather application that uses OpenWeatherMap API to fetch weather data for a given city. The app uses a pre-trained model from TensorFlow.js to predict the weather based on the current temperature.",
+  //   tech: [
+  //     "React",
+  //     "OpenAI",
+  //     "TypeScript",
+  //     "JavaScript ES6+",
+  //     "HTML5",
+  //     "CSS3",
+  //     "Tailwind CSS",
+  //     "Redux",
+  //     "Redux Saga",
+  //     "Vite",
+  //     "NPM",
+  //   ],
 
-    repo: "https://github.com/traczoskar/weatherwise_ai",
-    live: "https://traczoskar.github.io/weatherwise_ai/",
-  },
+  //   repo: "https://github.com/traczoskar/weatherwise_ai",
+  //   live: "https://traczoskar.github.io/weatherwise_ai/",
+  // },
   //---Portfolio Page---
   {
     route: "portfolio-page",
