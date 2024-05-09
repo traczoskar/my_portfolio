@@ -170,7 +170,6 @@ const animatespin3d = keyframes`
   100% {
     transform: rotateY(0deg) translateY(0px);
   }
-
 `;
 
 export const NavIconLink = styled.a`
