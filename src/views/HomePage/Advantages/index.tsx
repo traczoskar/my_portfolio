@@ -6,6 +6,7 @@ import {
   AdvantagesItem,
   AdvantagesList,
   AdvantagesSection,
+  AdvantagesTitle,
   AdvantagesWrapper,
 } from "./styled";
 
@@ -13,6 +14,7 @@ const Advantages = () => {
   return (
     <>
       <AdvantagesSection>
+        <AdvantagesTitle>Why choose me?</AdvantagesTitle>
         <AdvantagesWrapper>
           <AdvantagesList>
             {advantagesList.map((advantage) => (
