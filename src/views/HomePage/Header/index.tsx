@@ -18,13 +18,13 @@ import {
 import { ReactComponent as ShapeDivider } from "./ShapeDivider/shape.svg";
 import "./ShapeDivider/style.css";
 import { TypingLine } from "./TypingLine";
-import photo from "../../../assets/photo.png";
+import photo from "../../../assets/abstactAvatar.png";
 interface HeaderProps {
   title: string;
   subtitle: string;
 }
 
-const Header = ({ title, subtitle }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
   return (
     <SectionDividerPurposeOnly>
       <Section>
