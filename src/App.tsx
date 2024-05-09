@@ -8,6 +8,7 @@ import { selectIsDarkTheme } from "./slices/themeSlice";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactPage from "./views/ContactPage";
 import ProjectDetails from "./views/HomePage/Portfolio/ProjectDetails";
+import AboutMe from "./views/AboutMe";
 
 const App = () => {
   const isDarkTheme = useSelector(selectIsDarkTheme);
@@ -19,7 +20,7 @@ const App = () => {
           <NavSection />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<div>About Me</div>} />
+            <Route path="/about" element={<AboutMe />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="*" element={<div>Not Found</div>} />
