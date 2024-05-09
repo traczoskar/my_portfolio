@@ -5,7 +5,7 @@ import {
   PortfolioDescriptionContent,
 } from "./styled";
 
-const PortfolioDescription = () => {
+const PortfolioDescription: React.FC = () => {
   return (
     <DescriptionWrapper>
       <PortfolioTitle>My recent projects</PortfolioTitle>
