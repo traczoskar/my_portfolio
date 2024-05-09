@@ -8,8 +8,9 @@ const HomePage = () => {
     <>
       <MainContainer>
         <Header title="Frontend" subtitle="Craft. Refine. Optimize." />
-        <Advantages />
+
         <Portfolio />
+        <Advantages />
       </MainContainer>
     </>
   );
