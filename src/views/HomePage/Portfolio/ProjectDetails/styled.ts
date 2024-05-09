@@ -86,17 +86,23 @@ export const TechnologyContainer = styled.div`
   border-radius: 0.75rem;
   border: 0.5px solid #aaaaaa;
   background-color: #dddddd;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   color: #222222;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    img {
+      filter: grayscale(0%);
+    }
+  }
 `;
 
 export const TechnologyIcon = styled.img`
   width: auto;
   height: 25px;
   filter: grayscale(40%);
-
-  &:hover {
-    filter: grayscale(0%);
-  }
 `;
 
 export const TechnologySubtitle = styled.h4`
@@ -147,7 +153,6 @@ export const LinkButton = styled.a`
   align-items: center;
   gap: 1rem;
   width: 50%;
-
   padding: 0.75rem 2rem;
   font-size: 1.3rem;
   font-weight: 600;
@@ -158,6 +163,8 @@ export const LinkButton = styled.a`
   border: 2px solid #bbbbbb;
   border-radius: 2rem;
   cursor: pointer;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   transition: all 0.2s;
 
   &:hover {
