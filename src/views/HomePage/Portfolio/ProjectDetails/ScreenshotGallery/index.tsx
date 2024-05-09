@@ -4,7 +4,7 @@ import ImageViewer from "../ImageViewer";
 import { Screenshot } from "../../../../../types/types";
 
 interface ScreenshotGalleryProps {
-  screenshots: Screenshot[];
+  screenshots: Screenshot[] | undefined;
 }
 
 const ScreenshotGallery = ({ screenshots }: ScreenshotGalleryProps) => {
@@ -21,7 +21,7 @@ const ScreenshotGallery = ({ screenshots }: ScreenshotGalleryProps) => {
   return (
     <>
       <GalleryContainer>
-        {screenshots.map((screenshot, index) => (
+        {screenshots?.map((screenshot, index) => (
           <Thumbnail
             key={index}
             src={screenshot.imageUrl}
