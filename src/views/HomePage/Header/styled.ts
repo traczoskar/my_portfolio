@@ -25,7 +25,7 @@ export const HeaderSectionWrapper = styled.div`
 
 export const HeaderGreeter = styled.h2`
   font-weight: 400;
-  font-size: 2.4vw;
+  font-size: 2.5rem;
   margin: 0 0 1rem 0;
   padding: 0;
   letter-spacing: 0.03rem;
@@ -40,7 +40,7 @@ export const HeaderContent = styled.h3`
   font-weight: 700;
   margin: 0;
   padding: 0;
-  font-size: 2.7vw;
+  font-size: 3rem;
 `;
 
 export const SpecialText = styled.span`
@@ -54,7 +54,7 @@ export const SpecialText = styled.span`
 
 export const SubHeaderContent = styled.h4`
   margin: 1rem 0 1rem 0;
-  font-size: 1.2vw;
+  font-size: 1.3rem;
   font-weight: 400;
   letter-spacing: 0.03rem;
 `;
