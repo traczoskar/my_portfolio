@@ -30,6 +30,7 @@ import {
 import { technologies } from "../technologies";
 import { ReactComponent as GitHubIcon } from "../../../../assets/icons/git_icon.svg";
 import { ReactComponent as LiveIcon } from "../../../../assets/icons/www.svg";
+import ScreenshotGallery from "./ScreenshotGallery";
 
 const ProjectDetails = () => {
   const { id } = useParams();
@@ -57,10 +58,20 @@ const ProjectDetails = () => {
         }
         {project?.description && (
           <Section>
-            <SectionTitle>Description</SectionTitle>
+            <SectionTitle>Description 🗒</SectionTitle>
             <ProjectDescription>{project?.description}</ProjectDescription>
           </Section>
         )}
+        {
+          //---Screenshots---
+        }
+        <Section>
+          <SectionTitle>Screenshots 📸</SectionTitle>
+          <ScreenshotGallery screenshots={project?.screenshots} />
+          {
+            // onClick={() => navigate(`/portfolio/${id}/screenshots/${index}`)}
+          }
+        </Section>
         {
           //---Features---
         }
