@@ -14,7 +14,7 @@ export const ThemeSwitch = () => {
       aria-hidden="true"
       onClick={() => dispatch(toggleTheme())}
     >
-      <IconWrapper $changeposition={isDarkTheme}>
+      <IconWrapper>
         {isDarkTheme ? (
           <Sun width={30} height={30} />
         ) : (
