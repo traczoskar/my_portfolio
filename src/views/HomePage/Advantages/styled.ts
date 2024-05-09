@@ -1,9 +1,22 @@
 import styled from "styled-components";
 
 export const AdvantagesSection = styled.section`
-  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+  padding: 0 0 10rem 0;
   background-color: ${({ theme }) => theme.colors.section.primary};
   color: ${({ theme }) => theme.colors.text};
+`;
+
+export const AdvantagesTitle = styled.h2`
+  margin: 0;
+  padding: 0 5rem 2rem 5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  border-bottom: 1px solid #ddd;
+  text-shadow: -4px 6px 8px rgba(66, 68, 90, 0.2);
 `;
 
 export const AdvantagesWrapper = styled.div`
