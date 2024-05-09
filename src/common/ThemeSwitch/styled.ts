@@ -1,4 +1,16 @@
-import styled, { css } from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animatespin3d = keyframes`
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(360deg) translateY(-5px);
+  }
+  100% {
+    transform: rotateY(0deg) translateY(0px);
+  }
+`;
 
 export const Button = styled.button`
   background: none;
@@ -6,34 +18,27 @@ export const Button = styled.button`
   align-items: center;
   color: inherit;
   border-radius: 0.25rem;
-
   cursor: pointer;
   border: none;
   padding: 0.5rem 1rem;
 
   &:hover {
-    background: #cccccc;
-    border: 1px solid #eeeeee;
+    transform: scale(1.1);
+    svg {
+      color: orange;
+      animation: ${animatespin3d} 0.8s ease-in-out;
+    }
   }
   &:active {
     transform: scale(0.9);
   }
 `;
 
-interface IconWrapperProps {
-  $changeposition?: boolean;
-}
-
-export const IconWrapper = styled.div<IconWrapperProps>`
+export const IconWrapper = styled.div`
   background: inherit;
   display: flex;
   color: ${({ theme }) => theme.colors.themeSwitch.button};
   svg {
-    ${({ $changeposition }) =>
-      $changeposition &&
-      css`
-        transform: rotateY(180deg);
-      `}
     transition: ease-in-out 0.3s;
   }
 `;
