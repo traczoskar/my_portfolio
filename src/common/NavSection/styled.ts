@@ -45,11 +45,6 @@ export const NavHeader = styled.h1`
   }
 `;
 
-export const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 export const NavLinks = styled.ul`
   display: flex;
   list-style: none;
