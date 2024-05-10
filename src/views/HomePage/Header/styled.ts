@@ -81,7 +81,7 @@ export const ImageWrapper = styled.div`
 
 export const Image = styled.img`
   border-radius: 50%;
-  width: 25vw;
+  width: 25rem;
   height: auto;
   transition: 0.5s ease;
 
