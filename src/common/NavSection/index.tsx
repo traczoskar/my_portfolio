@@ -1,11 +1,7 @@
 import { ThemeSwitch } from "../ThemeSwitch";
-import { selectIsDarkTheme } from "../../slices/themeSlice";
-import Logo from "./SVGLogo";
 import { ReactComponent as GitHubIcon } from "../../assets/icons/git_icon.svg";
 import { ReactComponent as LinkedInIcon } from "../../assets/icons/linkedIn_icon.svg";
-
 import {
-  LogoContainer,
   NavBar,
   NavHashLink,
   NavHeader,
@@ -15,23 +11,15 @@ import {
   NavRouterLink,
   NavWrapper,
 } from "./styled";
-import { useSelector } from "react-redux";
+import PageLogo from "../PageLogo";
 
 const NavSection: React.FC = () => {
-  const isDarkTheme = useSelector(selectIsDarkTheme);
-
   return (
-    <NavBar>
+    <NavBar id="header">
       <NavWrapper>
         <NavHeaderLink to="/">
           <NavHeader>
-            <LogoContainer>
-              <Logo
-                stroke={isDarkTheme ? "#DDDDDD" : "#222222"}
-                height={30}
-                width={30}
-              />
-            </LogoContainer>
+            <PageLogo height={30} width={30} />
             traczoskar.dev
           </NavHeader>
         </NavHeaderLink>
