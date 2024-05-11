@@ -8,105 +8,6 @@ import { Project } from "../../../types/types";
 import { personalHomepageScreenshots } from "./screenshotsStore";
 
 export const projects: Project[] = [
-  //---Personal Homepage---
-  {
-    route: "personal-homepage",
-    label: "Personal Homepage",
-    image: personalHomepage,
-    icon: "🏠",
-    description:
-      "I created a dynamic personal homepage and virtual CV that showcases my skills and projects fetched directly from GitHub. 💻 It's built with cutting-edge web technologies like React.js, Redux Toolkit, and Styled Components for a seamless user experience. ⚛️ The project features an interactive about me section, theme switcher, skillset display, learning goals, and live GitHub repositories to present my professional profile comprehensively. 🌟 I included social media links and a contact section. 🔗 This cutting-edge portfolio website allows me to showcase my technical expertise, project achievements, and professional journey in an immersive and interactive manner. It's a cool way to put myself out there and let people explore my work and background.",
-    screenshots: personalHomepageScreenshots,
-    features: [
-      {
-        name: "About Me 🙋‍♂️",
-        content:
-          "Interactive section featuring a profile photo and a brief introduction.",
-      },
-      {
-        name: "Theme Switch 🌗",
-        content:
-          "You can choose between using dark or light mode up to your preferences.",
-      },
-      {
-        name: "Skillset 💪",
-        content: "Detailed list of my current tech skills.",
-      },
-      {
-        name: "Learning Goals 🚀",
-        content:
-          "A forward-looking section about skills I'm actively learning.",
-      },
-      {
-        name: "GitHub Repositories 📁",
-        content:
-          "Dynamic tiles populated with real-time data from my GitHub repositories using the GitHub API.",
-      },
-      {
-        name: "Contact Section 📩",
-        content:
-          "Footer section contains my social media links and my e-mail address.",
-      },
-    ],
-    tech: [
-      "React",
-      "TypeScript",
-      "JavaScript ES6+",
-      "HTML5",
-      "CSS3",
-      "Styled Components",
-      "Redux",
-      "Redux Saga",
-      "Axios",
-      "Figma",
-      "GitHub API",
-      "NPM",
-    ],
-    whatDidILearn: [
-      "🚀 Crafted my own dynamic Personal Homepage and CV, flexing my skills in modern web development and showcasing my projects straight from GitHub.",
-      "💡 Learned how to make my site pop with interactive features like dark/light mode switch, real-time GitHub repository tiles, and a contact section for easy reach-out.",
-      "⚒️ Got hands-on with a stack of cool tools like React.js, Redux, Styled-components, and Figma, while also mastering error handling for smooth API integration.",
-    ],
-    repo: "https://github.com/traczoskar/personal_homepage",
-    live: "https://traczoskar.github.io/personal_homepage/",
-  },
-  //---AI Weather App---
-  // {
-  //   route: "ai-weather-app",
-  //   label: "AI - Weather App",
-  //   image: aiWeatherApp,
-  //   icon: "🌦️",
-  //   description:
-  //     "🌦️ AI - Weather App is a simple weather application that uses OpenWeatherMap API to fetch weather data for a given city. The app uses a pre-trained model from TensorFlow.js to predict the weather based on the current temperature.",
-  //   tech: [
-  //     "React",
-  //     "OpenAI",
-  //     "TypeScript",
-  //     "JavaScript ES6+",
-  //     "HTML5",
-  //     "CSS3",
-  //     "Tailwind CSS",
-  //     "Redux",
-  //     "Redux Saga",
-  //     "Vite",
-  //     "NPM",
-  //   ],
-
-  //   repo: "https://github.com/traczoskar/weatherwise_ai",
-  //   live: "https://traczoskar.github.io/weatherwise_ai/",
-  // },
-  //---Portfolio Page---
-  {
-    route: "portfolio-page",
-    label: "Portfolio Page",
-    image: portfolioPage,
-    icon: "📁",
-    tech: ["React", "TypeScript", "Styled Components"],
-    repo: "https://github.com/traczoskar/portfolio_traczoskar",
-    live: "https://traczoskar.dev",
-    description:
-      "📁 Portfolio Page is a showcase of my projects. It's a single-page application that allows you to view detailed information about each project, including a description, features, and technologies used.",
-  },
   //---Movies Browser---
   {
     route: "movies-browser",
@@ -197,6 +98,43 @@ export const projects: Project[] = [
     repo: "https://github.com/traczoskar/movies-browser",
     live: "https://olgacybulska.github.io/movies-browser/",
   },
+  //---AI Weather App---
+  // {
+  //   route: "ai-weather-app",
+  //   label: "AI - Weather App",
+  //   image: aiWeatherApp,
+  //   icon: "🌦️",
+  //   description:
+  //     "🌦️ AI - Weather App is a simple weather application that uses OpenWeatherMap API to fetch weather data for a given city. The app uses a pre-trained model from TensorFlow.js to predict the weather based on the current temperature.",
+  //   tech: [
+  //     "React",
+  //     "OpenAI",
+  //     "TypeScript",
+  //     "JavaScript ES6+",
+  //     "HTML5",
+  //     "CSS3",
+  //     "Tailwind CSS",
+  //     "Redux",
+  //     "Redux Saga",
+  //     "Vite",
+  //     "NPM",
+  //   ],
+
+  //   repo: "https://github.com/traczoskar/weatherwise_ai",
+  //   live: "https://traczoskar.github.io/weatherwise_ai/",
+  // },
+  //---Portfolio Page---
+  {
+    route: "portfolio-page",
+    label: "Portfolio Page",
+    image: portfolioPage,
+    icon: "📁",
+    tech: ["React", "TypeScript", "Styled Components"],
+    repo: "https://github.com/traczoskar/portfolio_traczoskar",
+    live: "https://traczoskar.dev",
+    description:
+      "📁 Portfolio Page is a showcase of my projects. It's a single-page application that allows you to view detailed information about each project, including a description, features, and technologies used.",
+  },
   //---To Do List---
   {
     route: "to-do-list",
@@ -220,5 +158,67 @@ export const projects: Project[] = [
     live: "https://traczoskar.github.io/currency_calculator_react/",
     description:
       "💵 Currency Calculator is a simple application that allows you to convert currencies using the latest exchange rates fetched from the NBP API.",
+  },
+  //---Personal Homepage---
+  {
+    route: "personal-homepage",
+    label: "Personal Homepage",
+    image: personalHomepage,
+    icon: "🏠",
+    description:
+      "I created a dynamic personal homepage and virtual CV that showcases my skills and projects fetched directly from GitHub. 💻 It's built with cutting-edge web technologies like React.js, Redux Toolkit, and Styled Components for a seamless user experience. ⚛️ The project features an interactive about me section, theme switcher, skillset display, learning goals, and live GitHub repositories to present my professional profile comprehensively. 🌟 I included social media links and a contact section. 🔗 This cutting-edge portfolio website allows me to showcase my technical expertise, project achievements, and professional journey in an immersive and interactive manner. It's a cool way to put myself out there and let people explore my work and background.",
+    screenshots: personalHomepageScreenshots,
+    features: [
+      {
+        name: "About Me 🙋‍♂️",
+        content:
+          "Interactive section featuring a profile photo and a brief introduction.",
+      },
+      {
+        name: "Theme Switch 🌗",
+        content:
+          "You can choose between using dark or light mode up to your preferences.",
+      },
+      {
+        name: "Skillset 💪",
+        content: "Detailed list of my current tech skills.",
+      },
+      {
+        name: "Learning Goals 🚀",
+        content:
+          "A forward-looking section about skills I'm actively learning.",
+      },
+      {
+        name: "GitHub Repositories 📁",
+        content:
+          "Dynamic tiles populated with real-time data from my GitHub repositories using the GitHub API.",
+      },
+      {
+        name: "Contact Section 📩",
+        content:
+          "Footer section contains my social media links and my e-mail address.",
+      },
+    ],
+    tech: [
+      "React",
+      "TypeScript",
+      "JavaScript ES6+",
+      "HTML5",
+      "CSS3",
+      "Styled Components",
+      "Redux",
+      "Redux Saga",
+      "Axios",
+      "Figma",
+      "GitHub API",
+      "NPM",
+    ],
+    whatDidILearn: [
+      "🚀 Crafted my own dynamic Personal Homepage and CV, flexing my skills in modern web development and showcasing my projects straight from GitHub.",
+      "💡 Learned how to make my site pop with interactive features like dark/light mode switch, real-time GitHub repository tiles, and a contact section for easy reach-out.",
+      "⚒️ Got hands-on with a stack of cool tools like React.js, Redux, Styled-components, and Figma, while also mastering error handling for smooth API integration.",
+    ],
+    repo: "https://github.com/traczoskar/personal_homepage",
+    live: "https://traczoskar.github.io/personal_homepage/",
   },
 ];
