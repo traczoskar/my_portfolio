@@ -109,8 +109,6 @@ export const TechnologySubtitle = styled.h4`
   margin: 0;
   font-weight: 600;
   font-size: 1rem;
-  /* background-color: #eeeeee;
-  border-radius: 1rem; */
 `;
 
 //---What Did I Learn?---
