@@ -1,6 +1,26 @@
 import avatar from "../../assets/avatar.jpg";
 
-export const ABOUT = {
+interface AboutData {
+  name: string;
+  surname: string;
+  title: string;
+  description: string;
+  avatar: string;
+  techStack: string[];
+  education: {
+    name: string;
+    organization: string;
+    date: string;
+    content: string;
+  }[];
+  email: string;
+  socials: {
+    name: string;
+    url: string;
+  }[];
+}
+
+export const ABOUT: AboutData = {
   name: "Oskar",
   surname: "Tracz",
   title: "Frontend Developer",
@@ -8,6 +28,7 @@ export const ABOUT = {
     "I am a Frontend Developer with a passion for creating web applications. I am a self-taught developer who is always eager to learn new technologies and improve my skills. I am a team player who is always ready to help and share knowledge with others. I am looking for new opportunities to grow and develop my skills.",
   avatar: avatar,
   techStack: [
+    "OpenAI",
     "React",
     "TypeScript",
     "JavaScript ES6+",
@@ -20,6 +41,9 @@ export const ABOUT = {
     "Figma",
     "GitHub",
     "NPM",
+    "Tailwind CSS",
+    "Vite",
+    "React Router",
   ],
   education: [
     {
