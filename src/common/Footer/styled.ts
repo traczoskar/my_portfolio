@@ -8,7 +8,7 @@ export const FooterWrapper = styled.footer`
   background-color: #ffffff;
   color: #000000;
   z-index: 1;
-  padding-bottom: 10rem;
+  padding-bottom: 4.5rem;
   text-align: center;
 `;
 
@@ -24,6 +24,7 @@ export const FooterContent = styled.div`
 export const HeaderLink = styled(HashLink)`
   text-decoration: none;
   display: flex;
+  align-items: center;
   gap: 1.25rem;
   font-size: 1.5rem;
   font-weight: 600;
@@ -50,17 +51,44 @@ export const HeaderLink = styled(HashLink)`
 
 export const LetsChat = styled(Link)`
   text-decoration: none;
-  background-color: #00b894;
-  color: #ffffff;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 1rem;
-  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f9ad66;
+  color: #333333;
+  padding: 1.5rem 2rem;
+  font-weight: 500;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: 0.3s ease-in-out;
 
   &:hover {
-    background-color: #00a88c;
+    background-color: #444444;
+    color: white;
+    outline: 2px solid #eeeeee;
+  }
+`;
+
+export const Socials = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+`;
+
+export const SocialLink = styled.a`
+  color: inherit;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    svg {
+      filter: brightness(130%);
+    }
   }
 `;
 
