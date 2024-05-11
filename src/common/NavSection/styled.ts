@@ -30,7 +30,7 @@ export const NavHeader = styled.h1`
   display: flex;
   gap: 1.25rem;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
   letter-spacing: 0.005rem;
   padding: 0.5rem 0;
