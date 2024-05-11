@@ -12,7 +12,7 @@ const HomePage = () => {
         <Header title="Frontend" subtitle="Craft. Refine. Optimize." />
         <Portfolio />
         <Advantages />
-        {/* <MoreAboutMe /> */}
+        <MoreAboutMe />
         <Footer />
       </MainContainer>
     </>
