@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { ABOUT } from "./aboutMeData";
+import { MainContainer } from "../../common/Main/styled";
+import NavSection from "../../common/NavSection";
 
 const AboutMeContainer = styled.div`
   display: flex;
@@ -68,31 +70,34 @@ const SocialLink = styled.a`
 
 const AboutMe: React.FC = () => {
   return (
-    <AboutMeContainer>
-      <Avatar src={ABOUT.avatar} alt="Avatar" />
-      <Name>
-        {ABOUT.name} {ABOUT.surname}
-      </Name>
-      <Title>{ABOUT.title}</Title>
-      <Description>{ABOUT.description}</Description>
-      <TechStack>
-        {ABOUT.techStack.map((tech, index) => (
-          <TechItem key={index}>{tech}</TechItem>
-        ))}
-      </TechStack>
-      <SocialLinks>
-        {ABOUT.socials.map((social, index) => (
-          <SocialLink
-            key={index}
-            href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {social.name}
-          </SocialLink>
-        ))}
-      </SocialLinks>
-    </AboutMeContainer>
+    <MainContainer>
+      <NavSection />
+      <AboutMeContainer>
+        <Avatar src={ABOUT.avatar} alt="Avatar" />
+        <Name>
+          {ABOUT.name} {ABOUT.surname}
+        </Name>
+        <Title>{ABOUT.title}</Title>
+        <Description>{ABOUT.description}</Description>
+        <TechStack>
+          {ABOUT.techStack.map((tech, index) => (
+            <TechItem key={index}>{tech}</TechItem>
+          ))}
+        </TechStack>
+        <SocialLinks>
+          {ABOUT.socials.map((social, index) => (
+            <SocialLink
+              key={index}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {social.name}
+            </SocialLink>
+          ))}
+        </SocialLinks>
+      </AboutMeContainer>
+    </MainContainer>
   );
 };
 
