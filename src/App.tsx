@@ -25,7 +25,6 @@ const App = () => {
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="*" element={<div>Not Found</div>} />
           </Routes>
-          <Footer />
         </Router>
       </>
     </ThemeProvider>
