@@ -3,9 +3,13 @@ import { ReactComponent as WavesSVG } from "../../assets/waves.svg";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 
-export const FooterWrapper = styled.footer`
+interface FooterWrapperProps {
+  backgroundColor: string;
+}
+
+export const FooterWrapper = styled.footer<FooterWrapperProps>`
   position: relative;
-  background-color: inherit;
+  background-color: ${({ backgroundColor }) => backgroundColor};
   color: #000000;
   z-index: 1;
   padding-bottom: 4.5rem;
