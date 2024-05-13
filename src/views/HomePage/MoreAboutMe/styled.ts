@@ -76,7 +76,7 @@ export const AboutMeLink = styled(Link)`
 export const TechStackContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
 `;
 
 export const TechnologyIcon = styled.img`
@@ -105,6 +105,8 @@ export const Technology = styled.div`
 
 export const TechnologySubtitle = styled.p`
   font-size: 0.6rem;
+  font-family: "Space Mono", monospace;
+  text-transform: lowercase;
   margin: 0;
   padding: 0;
   font-weight: 400;
