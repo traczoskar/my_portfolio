@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
 export const ContactPageWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
+  width: 100%;
+  flex-grow: 1;
   max-width: 1200px;
 `;
 
