@@ -18,7 +18,7 @@ import {
 import { ReactComponent as ShapeDivider } from "./ShapeDivider/shape.svg";
 import "./ShapeDivider/style.css";
 import { TypingLine } from "./TypingLine";
-import photo from "../../../assets/abstactAvatar.png";
+import photo from "../../../assets/abstractAvatar.png";
 interface HeaderProps {
   title: string;
   subtitle: string;
