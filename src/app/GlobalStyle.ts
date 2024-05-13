@@ -13,7 +13,6 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: "Inter", sans-serif;
-        height: 100vh;
         margin: 0;
         word-break: break-word;
         transition: background ease 1s ;
