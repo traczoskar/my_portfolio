@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ABOUT } from "./aboutMeData";
 import { MainContainer } from "../../common/Main/styled";
 import NavSection from "../../common/NavSection";
+import Footer from "../../common/Footer";
 
 const AboutMeContainer = styled.div`
   display: flex;
@@ -70,34 +71,37 @@ const SocialLink = styled.a`
 
 const AboutMe: React.FC = () => {
   return (
-    <MainContainer>
-      <NavSection />
-      <AboutMeContainer>
-        <Avatar src={ABOUT.avatar} alt="Avatar" />
-        <Name>
-          {ABOUT.name} {ABOUT.surname}
-        </Name>
-        <Title>{ABOUT.title}</Title>
-        <Description>{ABOUT.description}</Description>
-        <TechStack>
-          {ABOUT.techStack.map((tech, index) => (
-            <TechItem key={index}>{tech}</TechItem>
-          ))}
-        </TechStack>
-        <SocialLinks>
-          {ABOUT.socials.map((social, index) => (
-            <SocialLink
-              key={index}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {social.name}
-            </SocialLink>
-          ))}
-        </SocialLinks>
-      </AboutMeContainer>
-    </MainContainer>
+    <>
+      <MainContainer>
+        <NavSection />
+        <AboutMeContainer>
+          <Avatar src={ABOUT.avatar} alt="Avatar" />
+          <Name>
+            {ABOUT.name} {ABOUT.surname}
+          </Name>
+          <Title>{ABOUT.title}</Title>
+          <Description>{ABOUT.description}</Description>
+          <TechStack>
+            {ABOUT.techStack.map((tech, index) => (
+              <TechItem key={index}>{tech}</TechItem>
+            ))}
+          </TechStack>
+          <SocialLinks>
+            {ABOUT.socials.map((social, index) => (
+              <SocialLink
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {social.name}
+              </SocialLink>
+            ))}
+          </SocialLinks>
+        </AboutMeContainer>
+      </MainContainer>
+      <Footer backgroundColor="inherit" />
+    </>
   );
 };
 
