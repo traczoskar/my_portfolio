@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 
 export const FooterWrapper = styled.footer`
   position: relative;
-  background-color: #ffffff;
+  background-color: inherit;
   color: #000000;
   z-index: 1;
   padding-bottom: 4.5rem;
   text-align: center;
+  margin-top: auto;
 `;
 
 export const FooterContent = styled.div`
