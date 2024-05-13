@@ -4,6 +4,7 @@ import Advantages from "./Advantages";
 import Portfolio from "./Portfolio";
 import MoreAboutMe from "./MoreAboutMe";
 import NavSection from "../../common/NavSection";
+import Footer from "../../common/Footer";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
         <Advantages />
         <MoreAboutMe />
       </MainContainer>
+      <Footer backgroundColor="white" />
     </>
   );
 };
