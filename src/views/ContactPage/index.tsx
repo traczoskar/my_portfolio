@@ -10,10 +10,13 @@ import {
 import { ReactComponent as GitHubIcon } from "../../assets/icons/contact/github.svg";
 import { ReactComponent as LinkedInIcon } from "../../assets/icons/contact/linkedin.svg";
 import { ReactComponent as MailIcon } from "../../assets/icons/contact/mail.svg";
+import Footer from "../../common/Footer";
+import NavSection from "../../common/NavSection";
 
 const ContactPage = () => {
   return (
     <MainContainer>
+      <NavSection />
       <ContactPageWrapper>
         <ContactTitle>
           Drop me <SpecialText>a line</SpecialText>, I'm just{" "}
