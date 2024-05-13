@@ -13,9 +13,13 @@ import { ReactComponent as GitHubIcon } from "../../assets/icons/git_icon.svg";
 import { ReactComponent as LinkedIcon } from "../../assets/icons/linkedIn_icon.svg";
 import { ABOUT } from "../../views/AboutMe/aboutMeData";
 
-const Footer = () => {
+interface FooterProps {
+  backgroundColor: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ backgroundColor }) => {
   return (
-    <FooterWrapper>
+    <FooterWrapper backgroundColor={backgroundColor}>
       <FooterContent>
         <HeaderLink smooth to="/#header">
           <PageLogo width={25} height={25} />
