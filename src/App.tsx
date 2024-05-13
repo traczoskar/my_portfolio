@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactPage from "./views/ContactPage";
 import ProjectDetails from "./views/HomePage/Portfolio/ProjectDetails";
 import AboutMe from "./views/AboutMe";
+import Footer from "./common/Footer";
 
 const App = () => {
   const isDarkTheme = useSelector(selectIsDarkTheme);
@@ -17,7 +18,6 @@ const App = () => {
       <GlobalStyle />
       <>
         <Router>
-          <NavSection />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutMe />} />
@@ -25,6 +25,7 @@ const App = () => {
             <Route path="/projects/:id" element={<ProjectDetails />} />
             <Route path="*" element={<div>Not Found</div>} />
           </Routes>
+          <Footer />
         </Router>
       </>
     </ThemeProvider>
