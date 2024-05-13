@@ -5,6 +5,7 @@ import { HashLink } from "react-router-hash-link";
 export const NavBar = styled.nav`
   margin: 0 auto;
   max-width: 1200px;
+  width: 100%;
 `;
 
 export const NavWrapper = styled.div`
