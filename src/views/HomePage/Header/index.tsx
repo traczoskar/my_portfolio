@@ -47,7 +47,9 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
                 Welcome to my portfolio! My pursuit is to connect aesthetics
                 with functionality while creating web applications.
               </Paragraph>
-              <Button to="/contact">Contact me</Button>
+              <Button to="/contact">
+                <span>Contact me</span>
+              </Button>
             </HeaderWrapper>
             <ImageWrapper>
               <Image src={photo} alt="Oskar Tracz" />
