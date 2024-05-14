@@ -68,7 +68,7 @@ export const ABOUT: AboutData = {
         "The course covered the basics of AI and how to connect it with web applications. I learned how to connect Generative AI with application logic and automatization tools. I completed the course by solving many tasks and creating a personal AI assistant that can help me in multiple ways. I also learned how to use OpenAI API and how to decide when to use AI in my projects. We trained prompt engineering and how to use AI in a responsible way. We also skilled techniques like function calling, building dynamic context and prompts, using vector bases like Qdrant/Pinecone for multiple ways and fine-tuning of models.",
     },
   ],
-  email: "traczoskar@gmail.com",
+  email: "contact@traczoskar.dev",
   socials: [
     {
       name: "GitHub",
