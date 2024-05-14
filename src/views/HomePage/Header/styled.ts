@@ -62,7 +62,7 @@ export const SubHeaderContent = styled.h4`
 export const CurlyBraces = styled.span`
   font-weight: 500;
   color: #777777;
-  font-size: 2.7vw;
+  font-size: 3.5rem;
 `;
 
 export const Paragraph = styled.p`
