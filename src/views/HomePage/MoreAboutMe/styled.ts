@@ -69,7 +69,11 @@ export const AboutMeLink = styled(Link)`
   transition: 0.3s ease;
 
   &:hover {
-    filter: brightness(120%);
+    filter: brightness(115%);
+    span {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.05);
+    }
   }
 `;
 
