@@ -1,0 +1,14 @@
+import { motion } from "framer-motion";
+import styled from "styled-components";
+
+export const ModalContainer = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  transform: translateX(-50%);
+  color: #333333;
+  background-color: #f9ad66;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+`;
