@@ -41,7 +41,7 @@ const MoreAboutMe = () => {
             <AboutMeHeader>More about me</AboutMeHeader>
             <AboutMeText>Click the button below and check out.</AboutMeText>
             <AboutMeLink to="/about" title="About Me page">
-              About me
+              <span>About me</span>
             </AboutMeLink>
           </AboutMeContainer>
         </MoreAboutMeWrapper>
