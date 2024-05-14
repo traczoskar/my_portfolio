@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const ContactPageWrapper = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: 0 auto;
   width: 100%;
@@ -28,22 +29,53 @@ export const ContactLinks = styled.div`
   margin: 5rem 0;
 `;
 
+const animatespin3d = keyframes`
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(360deg) translateY(-5px);
+  }
+  100% {
+    transform: rotateY(0deg) translateY(0px);
+  }
+`;
+
 export const ContactLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border: 1px solid #444444;
-  border-radius: 3rem;
-  padding: 1.5rem 2.5rem;
+  border: 2px solid #444444;
+  border-radius: 3.5rem;
+  padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #444444;
+  color: inherit;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
 
   &:hover {
-    color: #777777;
+    color: inherit;
+    border: 2px solid orange;
+    svg {
+      color: orange;
+      animation: ${animatespin3d} 0.6s ease-in-out;
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+    background-color: #eeeeee;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+
+  svg {
+    transition: 0.3s;
   }
 `;
 
