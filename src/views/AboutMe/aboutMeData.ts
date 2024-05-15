@@ -1,4 +1,6 @@
 import avatar from "../../assets/avatar.jpg";
+import youcodeCertificate from "../../assets/certificates/youcode.pdf";
+import aiDevsCertificate from "../../assets/certificates/ai_devs.pdf";
 
 interface AboutData {
   name: string;
@@ -12,6 +14,7 @@ interface AboutData {
     organization: string;
     date: string;
     content: string;
+    certificate?: string;
   }[];
   email: string;
   socials: {
@@ -52,6 +55,7 @@ export const ABOUT: AboutData = {
       date: "2024",
       content:
         "The course covered the basics of HTML, CSS, JavaScript, React, and Redux. I learned how to create responsive websites and web applications. I also learned how to use Git and GitHub to manage my projects. I completed the course with a final 5-week group project that showcased my skills and trained my teamwork abilities.",
+      certificate: youcodeCertificate,
     },
     {
       name: "TypeScript",
@@ -66,6 +70,7 @@ export const ABOUT: AboutData = {
       date: "2024",
       content:
         "The course covered the basics of AI and how to connect it with web applications. I learned how to connect Generative AI with application logic and automatization tools. I completed the course by solving many tasks and creating a personal AI assistant that can help me in multiple ways. I also learned how to use OpenAI API and how to decide when to use AI in my projects. We trained prompt engineering and how to use AI in a responsible way. We also skilled techniques like function calling, building dynamic context and prompts, using vector bases like Qdrant/Pinecone for multiple ways and fine-tuning of models.",
+      certificate: aiDevsCertificate,
     },
   ],
   email: "contact@traczoskar.dev",
