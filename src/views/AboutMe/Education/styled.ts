@@ -39,3 +39,16 @@ export const EducationDate = styled.p`
   font-size: 0.9rem;
   color: #666;
 `;
+
+export const CertificateContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+`;
+
+export const Certificate = styled.img`
+  width: 200px;
+  height: auto;
+  margin-top: 1rem;
+`;
