@@ -1,13 +1,22 @@
+//---PDF declaration---
+declare module "*.pdf" {
+  const content: string;
+  export default content;
+}
+
+//---PNG declaration---
 declare module "*.png" {
   const value: any;
   export = value;
 }
 
+//---JPG declaration---
 declare module "*.jpg" {
   const value: any;
   export = value;
 }
 
+//---SVG declaration---
 declare module "*.svg" {
   import * as React from "react";
 
