@@ -1,9 +1,3 @@
-//---PDF declaration---
-declare module "*.pdf" {
-  const content: string;
-  export default content;
-}
-
 //---PNG declaration---
 declare module "*.png" {
   const value: any;
