@@ -1,6 +1,15 @@
-import { Document, Page } from "react-pdf";
 import { ABOUT } from "../aboutMeData";
-import { EducationContainer, EducationList, Title } from "./styled";
+import {
+  Certificate,
+  CertificateContainer,
+  EducationContainer,
+  EducationDate,
+  EducationDescription,
+  EducationItem,
+  EducationList,
+  EducationTitle,
+  Title,
+} from "./styled";
 
 interface EducationProps {
   educationData: typeof ABOUT.education;
@@ -12,15 +21,21 @@ const Education: React.FC<EducationProps> = ({ educationData }) => {
       <Title>Education</Title>
       <EducationList>
         {educationData.map((course) => (
-          <div key={course.name}>
-            <h3>{course.name}</h3>
-            <p>{course.content}</p>
+          <EducationItem key={course.name}>
+            <EducationTitle>{course.name}</EducationTitle>
+            <EducationDescription>{course.content}</EducationDescription>
+            <EducationDate>{course.date}</EducationDate>
             {course.certificate && (
-              <Document file={course.certificate}>
-                <Page pageNumber={1} width={150} />
-              </Document>
+              <CertificateContainer>
+                <Certificate
+                  src={course.certificate}
+                  width={200}
+                  height={200}
+                  alt={course.name}
+                />
+              </CertificateContainer>
             )}
-          </div>
+          </EducationItem>
         ))}
       </EducationList>
     </EducationContainer>
