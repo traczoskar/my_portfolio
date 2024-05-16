@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  ArrowButton,
   CloseButton,
   Image,
   ImageContainer,
   ScreenshotDescription,
   UserInstruction,
   ViewerContainer,
+  ImageInfo,
 } from "./styled";
 import { Screenshot } from "../../../../../types/types";
+import ArrowButton from "./ArrowButton";
 
 interface ImageViewerProps {
   images: Screenshot[] | undefined;
@@ -23,7 +24,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
   onClose,
   onNavigate,
 }) => {
-  const [scale, setScale] = useState<number>(0.8);
+  const [scale, setScale] = useState<number>(0.85);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -66,31 +67,32 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
       }
     };
   }, [onClose, scale, currentIndex, images!.length, onNavigate]);
-  // DOROBIĆ STRZAŁKI DO PRZESUWANIA ZDJĘCIA
+
   return (
     <ViewerContainer ref={containerRef}>
       <UserInstruction>Use mouse wheel to zoom +/-</UserInstruction>
       <ScreenshotDescription>{images![currentIndex].alt}</ScreenshotDescription>
       <ImageContainer>
         <ArrowButton
+          direction="left"
           onClick={() =>
             onNavigate((currentIndex - 1 + images!.length) % images!.length)
           }
-        >
-          ←
-        </ArrowButton>
+        />
         <Image
           src={images![currentIndex].imageUrl}
           alt={images![currentIndex].alt}
           style={{ transform: `scale(${scale})` }}
         />
         <ArrowButton
+          direction="right"
           onClick={() => onNavigate((currentIndex + 1) % images!.length)}
-        >
-          →
-        </ArrowButton>
+        />
         <CloseButton onClick={onClose}>x</CloseButton>
       </ImageContainer>
+      <ImageInfo>
+        {currentIndex + 1}/{images!.length}
+      </ImageInfo>
     </ViewerContainer>
   );
 };
