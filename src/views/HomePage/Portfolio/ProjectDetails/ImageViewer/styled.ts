@@ -30,6 +30,24 @@ export const UserInstruction = styled.p`
   padding: 1rem 2rem;
 `;
 
+export const ScreenshotDescription = styled.p`
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-word;
+  max-width: 1000px;
+  bottom: 0;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+  background: #222222;
+  color: #eeeeee;
+  border-radius: 3rem;
+  border: 1px solid #555555;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem 2rem;
+`;
+
 export const ImageContainer = styled.div`
   position: relative;
   max-width: 90%;
@@ -61,5 +79,29 @@ export const CloseButton = styled.button`
   &:hover {
     background-color: #777777;
     transform: scale(1.1);
+  }
+`;
+
+export const ArrowButton = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    color: #cccccc;
+  }
+
+  &:first-of-type {
+    left: 1rem;
+  }
+
+  &:last-of-type {
+    right: 1rem;
   }
 `;
