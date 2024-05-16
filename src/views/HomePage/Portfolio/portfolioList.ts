@@ -6,8 +6,10 @@ import aiWeatherApp from "../../../assets/portfolio/portfolio_aiWeatherApp.png";
 import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.png";
 import { Project } from "../../../types/types";
 import {
+  currencyCalculatorScreenshots,
   moviesBrowserScreenshots,
   personalHomepageScreenshots,
+  taskListScreenshots,
 } from "./screenshotsStore";
 
 export const projects: Project[] = [
@@ -144,6 +146,7 @@ export const projects: Project[] = [
     route: "to-do-list",
     label: "To Do List",
     image: taskList,
+    screenshots: taskListScreenshots,
     icon: "📝",
     tech: ["React", "TypeScript", "Styled Components"],
     repo: "https://github.com/traczoskar/to_do_list_react",
@@ -156,6 +159,7 @@ export const projects: Project[] = [
     route: "currency-calculator",
     label: "Currency Calculator",
     image: currencyConverter,
+    screenshots: currencyCalculatorScreenshots,
     icon: "💵",
     tech: ["React", "TypeScript", "Styled Components"],
     repo: "https://github.com/traczoskar/currency_calculator_react",
