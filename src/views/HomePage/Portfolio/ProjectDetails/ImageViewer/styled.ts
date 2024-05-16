@@ -40,8 +40,8 @@ export const ScreenshotDescription = styled.p`
   font-weight: 400;
   margin: 0 0 1rem 0;
   background: #222222;
-  color: #eeeeee;
-  border-radius: 3rem;
+  color: #ffffff;
+  border-radius: 0.5rem;
   border: 1px solid #555555;
   font-size: 1rem;
   text-align: center;
@@ -50,16 +50,35 @@ export const ScreenshotDescription = styled.p`
 
 export const ImageContainer = styled.div`
   position: relative;
+  width: 90%;
+  height: 90%;
   max-width: 90%;
   max-height: 90%;
   cursor: zoom-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it is above the backdrop but below instructions */
 `;
 
 export const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
+  border-radius: 1rem;
   object-fit: contain;
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
   cursor: zoom-out;
+`;
+
+export const ImageInfo = styled.div`
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
 `;
 
 export const CloseButton = styled.button`
@@ -85,23 +104,16 @@ export const CloseButton = styled.button`
 export const ArrowButton = styled.button`
   position: absolute;
   top: 50%;
+  right: 1rem;
   transform: translateY(-50%);
   font-size: 2rem;
   background-color: transparent;
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 1;
+  z-index: 10000;
 
   &:hover {
     color: #cccccc;
-  }
-
-  &:first-of-type {
-    left: 1rem;
-  }
-
-  &:last-of-type {
-    right: 1rem;
   }
 `;
