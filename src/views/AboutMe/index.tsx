@@ -9,29 +9,57 @@ import {
   Name,
   SocialLink,
   SocialLinks,
+  TechIcon,
   TechItem,
   TechStack,
-  Title,
+  TechSubtitle,
+  Tile,
+  TileDivider,
+  Profession,
+  TileTitle,
+  TileDiv,
+  GridWrapper,
 } from "./styled";
 import Education from "./Education";
+import { technologies } from "../HomePage/Portfolio/technologies";
 
 const AboutMe: React.FC = () => {
   return (
     <>
       <MainContainer backgroundColor="white">
         <NavSection />
+
         <AboutMeContainer>
-          <Avatar src={ABOUT.avatar} alt="Avatar" />
-          <Name>
-            {ABOUT.name} {ABOUT.surname}
-          </Name>
-          <Title>{ABOUT.title}</Title>
-          <Description>{ABOUT.description}</Description>
-          <TechStack>
-            {ABOUT.techStack.map((tech, index) => (
-              <TechItem key={index}>{tech}</TechItem>
-            ))}
-          </TechStack>
+          <GridWrapper>
+            <Tile>
+              <TileTitle>Who Am I? 👨🏻‍💻</TileTitle>
+              <TileDiv>
+                <Avatar src={ABOUT.avatar} alt="Avatar" />
+                <TileDivider>
+                  <Name>
+                    {ABOUT.name} {ABOUT.surname}
+                  </Name>
+                  <Profession>{ABOUT.title}</Profession>
+                  <Description>{ABOUT.description}</Description>
+                </TileDivider>
+              </TileDiv>
+            </Tile>
+            <Tile>
+              <TileTitle>My Tech Stack 🛠</TileTitle>
+              <TechStack>
+                {ABOUT.techStack.map((tech, index) => (
+                  <TechItem key={index}>
+                    <TechIcon
+                      src={technologies.find((t) => t.name === tech)?.icon}
+                      alt={tech}
+                    />
+                    <TechSubtitle>{tech}</TechSubtitle>
+                  </TechItem>
+                ))}
+              </TechStack>
+            </Tile>
+          </GridWrapper>
+
           <SocialLinks>
             {ABOUT.socials.map((social, index) => (
               <SocialLink
