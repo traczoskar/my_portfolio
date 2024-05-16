@@ -5,7 +5,10 @@ import personalHomepage from "../../../assets/portfolio/portfolio_personalHomepa
 import aiWeatherApp from "../../../assets/portfolio/portfolio_aiWeatherApp.png";
 import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.png";
 import { Project } from "../../../types/types";
-import { personalHomepageScreenshots } from "./screenshotsStore";
+import {
+  moviesBrowserScreenshots,
+  personalHomepageScreenshots,
+} from "./screenshotsStore";
 
 export const projects: Project[] = [
   //---Movies Browser---
@@ -16,6 +19,7 @@ export const projects: Project[] = [
     icon: "🎬",
     description:
       "🎥 This app will let you discover most popular movies, search actual info about them, the ratings and their cast. To use it just type in the name of movie or person and find out the details. This app is built with React.js ⚛️ and uses data provided by connection with outer API.",
+    screenshots: moviesBrowserScreenshots,
     features: [
       {
         name: "Search Functionality 🔍",
