@@ -8,14 +8,16 @@ interface ScreenshotGalleryProps {
 }
 
 const ScreenshotGallery = ({ screenshots }: ScreenshotGalleryProps) => {
-  const [selectedImage, setSelectedImage] = useState<Screenshot | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null
+  );
 
-  const handleImageClick = (image: Screenshot) => {
-    setSelectedImage(image);
+  const handleImageClick = (index: number) => {
+    setSelectedImageIndex(index);
   };
 
   const handleCloseViewer = () => {
-    setSelectedImage(null);
+    setSelectedImageIndex(null);
   };
 
   return (
@@ -26,12 +28,17 @@ const ScreenshotGallery = ({ screenshots }: ScreenshotGalleryProps) => {
             key={index}
             src={screenshot.imageUrl}
             alt={screenshot.alt}
-            onClick={() => handleImageClick(screenshot)}
+            onClick={() => handleImageClick(index)}
           />
         ))}
       </GalleryContainer>
-      {selectedImage && (
-        <ImageViewer image={selectedImage} onClose={handleCloseViewer} />
+      {selectedImageIndex !== null && (
+        <ImageViewer
+          images={screenshots}
+          currentIndex={selectedImageIndex}
+          onClose={handleCloseViewer}
+          onNavigate={(newIndex) => setSelectedImageIndex(newIndex)}
+        />
       )}
     </>
   );
