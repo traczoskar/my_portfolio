@@ -20,7 +20,7 @@ export const projects: Project[] = [
     image: moviesBrowser,
     icon: "🎬",
     description:
-      "🎥 This app will let you discover most popular movies, search actual info about them, the ratings and their cast. To use it just type in the name of movie or person and find out the details. This app is built with React.js ⚛️ and uses data provided by connection with outer API.",
+      "Our movie app is here to make your viewing experience awesome with some cool features. Use the search bar to find movies or people based on specific queries, making your search quick and easy 🔍. Check out a selection of popular movies right on our homepage for easy access. Dive into detailed info about any movie by selecting it from the list 🎬. Explore profiles of actors and crew to learn more about their work 👥. Move smoothly between sections for movies and people, making browsing a breeze. Enjoy enhanced navigation with pagination, using intuitive buttons like First, Previous, Next, and Last. Our interface gets interactive as you hover over elements, making it fun to use 🖱️. The app is responsive across all devices, from mobiles to tablets 📱. It handles loading sequences smoothly, ensuring an uninterrupted experience. Plus, it efficiently manages error notifications, keeping your interaction seamless even when issues arise 🆘. If your search yields no results, you'll see a clear page guiding you on what to do next 🚫.",
     screenshots: moviesBrowserScreenshots,
     features: [
       {
@@ -148,11 +148,84 @@ export const projects: Project[] = [
     image: taskList,
     screenshots: taskListScreenshots,
     icon: "📝",
-    tech: ["React", "TypeScript", "Styled Components"],
+    tech: [
+      "React",
+      "TypeScript",
+      "JavaScript ES6+",
+      "Redux",
+      "Redux Saga",
+      "React Router",
+      "Styled Components",
+      "HTML5",
+      "CSS3",
+      "NPM",
+    ],
     repo: "https://github.com/traczoskar/to_do_list_react",
     live: "https://traczoskar.github.io/to_do_list_react/",
     description:
-      "📝 To Do List is a simple task management application that allows you to add, remove, and mark tasks as completed.",
+      "To do list is a simple task assistant application developed using the React.js framework and TypeScript language. Whether you're going shopping or need to get things done, this app is your daily task assistant 🛒. It's designed to be simple, transparent, and minimalistic, making it easy and intuitive to use. The app responds quickly to user actions 🚀 and is versatile and universal in its application. It is also responsive on any device due to media queries 📱, ensuring a seamless experience across all platforms. The app features interactive buttons whose appearance depends on their current state, and it allows you to mark tasks as done, hide/show completed tasks, and mark all tasks as done with a single button ✅. Your task list is saved in local storage and fetched whenever you refresh the app or close the window 💽. You can download example tasks using a fetch shot from Redux-Saga, filter tasks by content using a search input, and check individual subpages for each task. The app includes two main pages built with ReactRouter: TaskList and Author 🪢.",
+    features: [
+      {
+        name: "Simple Design",
+        content: "👨🏻‍🎨 Simple, transparent, and minimalistic design",
+      },
+      {
+        name: "Ease of Use",
+        content: "👶 Easy and intuitive to use",
+      },
+      {
+        name: "Quick Response",
+        content:
+          "🚀 Quick response to every action that user takes with the buttons",
+      },
+      {
+        name: "Versatile Application",
+        content: "👔 Versatile and universal application",
+      },
+      {
+        name: "Responsive Design",
+        content: "📱 Responsive on any device due to media queries",
+      },
+      {
+        name: "Interactive Buttons",
+        content:
+          "⏯ Buttons are interactive and their appearance depends on the actual state",
+      },
+      {
+        name: "Task Management",
+        content:
+          "✅ You can mark any task as done, hide/show done tasks, and mark all done with one button",
+      },
+      {
+        name: "Local Storage",
+        content:
+          "💽 Your actual task list is saved in your local storage and fetched whenever you refresh the app or close the window",
+      },
+      {
+        name: "Example Tasks",
+        content:
+          "⬇️ You can download example tasks using fetch shot from Redux-Saga",
+      },
+      {
+        name: "Task Filtering",
+        content: "🔎 You can filter the tasks by content using a search input",
+      },
+      {
+        name: "Individual Task Pages",
+        content: "📄 You can check individual subpages for every task",
+      },
+      {
+        name: "React Router Pages",
+        content: "🪢 Two main pages built with ReactRouter: TaskList/Author",
+      },
+    ],
+    whatDidILearn: [
+      "🚀 Developing a task assistant application using React.js and TypeScript from scratch.",
+      "💡 Implementing state management with Redux and handling side effects with Redux-Saga.",
+      "⚒️ Utilizing React Hooks such as useState, useEffect, and useRef for managing component state and lifecycle.",
+      "📱 Designing a responsive user interface that works seamlessly on any device using media queries.",
+      "✅ Implementing local storage to persist tasks and ensuring data is fetched correctly upon app refresh or closure.",
+    ],
   },
   //---Currency Calculator---
   {
@@ -161,11 +234,73 @@ export const projects: Project[] = [
     image: currencyConverter,
     screenshots: currencyCalculatorScreenshots,
     icon: "💵",
-    tech: ["React", "TypeScript", "Styled Components"],
+    tech: [
+      "React",
+      "JavaScript ES6+",
+      "Styled Components",
+      "HTML5",
+      "CSS3",
+      "NPM",
+      "Axios",
+    ],
     repo: "https://github.com/traczoskar/currency_calculator_react",
     live: "https://traczoskar.github.io/currency_calculator_react/",
     description:
-      "💵 Currency Calculator is a simple application that allows you to convert currencies using the latest exchange rates fetched from the NBP API.",
+      'Currency Calculator is a demo project developed using the React.js library, designed to function as a currency converter 💱. Upon launching the app, it fetches current exchange rates from an external API 🌐. Users can input an amount in PLN (Polish złoty), select from a variety of global currencies, and click the "Calculate" button to receive the converted amount. The application also features a real-time clock in the upper right corner 🕒 and displays the date of the current exchange rates above the calculate button 📅. The app is optimized for mobile devices 📱, includes animated elements such as the logo and buttons, and handles errors gracefully by displaying a special window if any issues occur 🚫.',
+    features: [
+      {
+        name: "High Conversion Limit",
+        content: "🔄 Easily converts PLN up to an amount of 10,000,000,000",
+      },
+      {
+        name: "Global Currency Selection",
+        content:
+          "🌍 Choose from many different currencies from all over the world (downloaded from an external API)",
+      },
+      {
+        name: "Real-Time Clock",
+        content:
+          "🕒 The actual time and date are displayed in the upper right corner of the app",
+      },
+      {
+        name: "Current Exchange Rate Date",
+        content:
+          "📅 The current date of downloaded exchange rates is shown above the calculate button",
+      },
+      {
+        name: "Animated App Logo",
+        content:
+          "🎉 The app features an animated logo for a dynamic user experience",
+      },
+      {
+        name: "Interactive Button",
+        content: "🎨 The calculate button is animated and interactive",
+      },
+      {
+        name: "Animated Result Display",
+        content: "🎇 The conversion result is displayed with animations",
+      },
+      {
+        name: "Mobile Responsiveness",
+        content: "📱 The app is adapted to be responsive on mobile devices",
+      },
+      {
+        name: "Error Handling",
+        content: "❌ A special window is rendered if any error occurs",
+      },
+      {
+        name: "Loading Animation",
+        content:
+          "⏳ An animated window is displayed while data is being fetched",
+      },
+    ],
+    whatDidILearn: [
+      "🚀 Building a powerful currency converter using React.js from scratch, including setting up the development environment and deploying the app.",
+      "💡 Fetching real-time exchange rates from an external API and dynamically updating the available currency options.",
+      "⚒️ Utilizing React's useState and useEffect hooks for managing component state and performing side effects.",
+      "📱 Designing a responsive user interface that works seamlessly on mobile devices.",
+      "❌ Implementing error handling to display a special window if any issues occur during data fetching or conversion.",
+    ],
   },
   //---Personal Homepage---
   {
