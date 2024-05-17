@@ -2,6 +2,9 @@ import personalHomepage_1 from "../../../assets/portfolio/personalHomepage/perso
 import personalHomepage_2 from "../../../assets/portfolio/personalHomepage/personalHomepage_2.png";
 import personalHomepage_3 from "../../../assets/portfolio/personalHomepage/personalHomepage_3.png";
 import personalHomepage_4 from "../../../assets/portfolio/personalHomepage/personalHomepage_4.png";
+import personalHomepage_5 from "../../../assets/portfolio/personalHomepage/personalHomepage_5.png";
+import personalHomepage_6 from "../../../assets/portfolio/personalHomepage/personalHomepage_6.png";
+import personalHomepage_7 from "../../../assets/portfolio/personalHomepage/personalHomepage_7.png";
 import moviesBrowser_1 from "../../../assets/portfolio/moviesBrowser/moviesBrowser_1.png";
 import moviesBrowser_2 from "../../../assets/portfolio/moviesBrowser/moviesBrowser_2.png";
 import moviesBrowser_3 from "../../../assets/portfolio/moviesBrowser/moviesBrowser_3.png";
@@ -40,34 +43,46 @@ export const personalHomepageScreenshots: Screenshot[] = [
     alt: "Personal Homepage",
     imageUrl: personalHomepage_4,
   },
+  {
+    alt: "Personal Homepage",
+    imageUrl: personalHomepage_5,
+  },
+  {
+    alt: "Personal Homepage",
+    imageUrl: personalHomepage_6,
+  },
+  {
+    alt: "Personal Homepage",
+    imageUrl: personalHomepage_7,
+  },
 ];
 export const moviesBrowserScreenshots: Screenshot[] = [
   {
-    alt: "A view of main popular movies page. User can search for movies and see their details.",
+    alt: "Popular movies page. User can search for movies and see their details.",
     imageUrl: moviesBrowser_1,
   },
   {
-    alt: "A view of movie details - backdrop image.",
+    alt: "Movie details: backdrop image, movie title, rating and count of votes.",
     imageUrl: moviesBrowser_2,
   },
   {
-    alt: "A view of movie details: poster image, title, release year, genres, rating and overview.",
+    alt: "Movie details: poster image, title, release year, genres, rating and overview. Below are the cast and crew of the movie.",
     imageUrl: moviesBrowser_3,
   },
   {
-    alt: "A view of no results page, when user search for non-existing movie.",
+    alt: "No results page, when user search for non-existing movie or people.",
     imageUrl: moviesBrowser_4,
   },
   {
-    alt: "A view of popular people page. User can search for popular people and see their details.",
+    alt: "Popular people page. User can search for popular people and see their details.",
     imageUrl: moviesBrowser_5,
   },
   {
-    alt: "A view of people details page. User can see person's details and movies in which he/she played.",
+    alt: "People details page: name and surname, date and place of birth, short biography, and where he/she played.",
     imageUrl: moviesBrowser_6,
   },
   {
-    alt: "A view of error page. Error handling while fetching data from API or internet connection problems.",
+    alt: "Error page. Error handling while fetching data from API or internet connection is lost.",
     imageUrl: moviesBrowser_7,
   },
 ];
