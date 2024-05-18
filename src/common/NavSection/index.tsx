@@ -29,7 +29,7 @@ const NavSection: React.FC = () => {
             aria-label="Link to About Me page"
             to="/about"
           >
-            AboutMe
+            About Me
           </NavRouterLink>
           <NavHashLink
             smooth
