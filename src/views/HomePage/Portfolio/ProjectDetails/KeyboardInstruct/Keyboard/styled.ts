@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const pressAnimation = keyframes`
   0%, 100% {
+
     transform: scale(1);
     filter: brightness(1);
   }
@@ -16,6 +17,7 @@ export const KeyboardButtons = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 0.2rem;
+  color: #333333;
   align-items: center;
   justify-items: center;
 
