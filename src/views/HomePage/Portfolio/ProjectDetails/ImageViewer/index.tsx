@@ -7,9 +7,12 @@ import {
   UserInstruction,
   ViewerContainer,
   ImageInfo,
+  InstructionContainer,
 } from "./styled";
 import { Screenshot } from "../../../../../types/types";
 import ArrowButton from "./ArrowButton";
+import Keyboard from "../KeyboardInstruct/Keyboard";
+import { ReactComponent as MouseWheel } from "../../../../../assets/icons/keyboard/scroll-wheel.svg";
 
 interface ImageViewerProps {
   images: Screenshot[] | undefined;
@@ -24,7 +27,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
   onClose,
   onNavigate,
 }) => {
-  const [scale, setScale] = useState<number>(0.85);
+  const [scale, setScale] = useState<number>(0.8);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,6 +52,12 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
         onNavigate((currentIndex - 1 + images.length) % images.length);
       } else if (event.key === "ArrowRight" && images) {
         onNavigate((currentIndex + 1) % images.length);
+      } else if (event.key === "ArrowUp") {
+        setScale((prevScale) => Math.min(prevScale + 0.1, 2));
+      } else if (event.key === "ArrowDown") {
+        setScale((prevScale) => Math.max(prevScale - 0.1, 0.5));
+      } else if (event.key === "Escape") {
+        onClose();
       }
     };
 
@@ -57,6 +66,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
       containerElement.addEventListener("wheel", handleWheel);
       containerElement.addEventListener("click", handleClick);
       window.addEventListener("keydown", handleKeyDown);
+      containerElement.focus();
     }
 
     return () => {
@@ -66,11 +76,22 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
         window.removeEventListener("keydown", handleKeyDown);
       }
     };
-  }, [onClose, scale, currentIndex, images!.length, onNavigate]);
+  }, [onClose, scale, currentIndex, images, onNavigate]);
 
   return (
-    <ViewerContainer ref={containerRef}>
-      <UserInstruction>Use mouse wheel to zoom +/-</UserInstruction>
+    <ViewerContainer ref={containerRef} tabIndex={-1}>
+      <InstructionContainer>
+        <UserInstruction>
+          Use <strong>Mouse Wheel</strong> to zoom +/-
+          <br />
+          Use <strong>Arrow Up</strong> and <strong>Arrow Down</strong> to zoom
+          +/- <br /> Use <strong>Arrow Left</strong> and{" "}
+          <strong>Arrow Right</strong> to change the screenshot. <br />
+          Press <strong>Escape</strong> to close the picture viewer.
+        </UserInstruction>
+        <MouseWheel width={35} height={35} />
+        <Keyboard />
+      </InstructionContainer>
       <ScreenshotDescription>{images![currentIndex].alt}</ScreenshotDescription>
       <ImageContainer>
         <ArrowButton
