@@ -28,31 +28,31 @@ import { Screenshot } from "../../../types/types";
 
 export const personalHomepageScreenshots: Screenshot[] = [
   {
-    alt: "Personal Homepage",
+    alt: "First section on the site with author photo, name, short description and contact button. In the upper right corner user can switch between light and dark theme.",
     imageUrl: personalHomepage_1,
   },
   {
-    alt: "Personal Homepage",
+    alt: "Second section with listed skill set and technologies that author is familiar with. Below also third section with author future plans what to learn next.",
     imageUrl: personalHomepage_2,
   },
   {
-    alt: "Personal Homepage",
+    alt: "Fourth section with list of GitHub repositories fetched directly from GitHub API. User can see repository name, description, link to deployed demo and GitHub repository.",
     imageUrl: personalHomepage_3,
   },
   {
-    alt: "Personal Homepage",
+    alt: "Fifth section (footer) with authors social links, e-mail address and short invitation to cooperation or hire.",
     imageUrl: personalHomepage_4,
   },
   {
-    alt: "Personal Homepage",
+    alt: "First section with light theme on.",
     imageUrl: personalHomepage_5,
   },
   {
-    alt: "Personal Homepage",
+    alt: "Last section with light theme on.",
     imageUrl: personalHomepage_6,
   },
   {
-    alt: "Personal Homepage",
+    alt: "Section of GitHub repositories while fetching data from API. User can see loading spinner and message that data is being loaded.",
     imageUrl: personalHomepage_7,
   },
 ];
