@@ -82,14 +82,13 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
     <ViewerContainer ref={containerRef} tabIndex={-1}>
       <InstructionContainer>
         <UserInstruction>
-          Use <strong>Mouse Wheel</strong> to zoom +/-
+          Use <strong>Mouse Wheel</strong> to 🔍 zoom +/-
           <br />
           Use <strong>Arrow Up</strong> and <strong>Arrow Down</strong> to zoom
           +/- <br /> Use <strong>Arrow Left</strong> and{" "}
           <strong>Arrow Right</strong> to change the screenshot. <br />
           Press <strong>Escape</strong> to close the picture viewer.
         </UserInstruction>
-        <MouseWheel width={35} height={35} />
         <Keyboard />
       </InstructionContainer>
       <ScreenshotDescription>{images![currentIndex].alt}</ScreenshotDescription>
