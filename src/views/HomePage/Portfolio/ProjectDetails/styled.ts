@@ -57,6 +57,25 @@ export const ProjectDescription = styled.p`
   line-height: 1.5;
 `;
 
+//---Screenshots---
+
+export const ScreenshotsWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+`;
+
+export const ScreenshotsInstructions = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: #777777;
+  font-weight: 400;
+  line-height: 1.5;
+`;
+
 //---Features---
 
 export const ProjectFeatureList = styled.ul`
