@@ -20,6 +20,8 @@ import {
   ProjectFeatureList,
   ProjectFeatureName,
   ProjectHeader,
+  ScreenshotsInstructions,
+  ScreenshotsWrapper,
   Section,
   SectionDivider,
   SectionTitle,
@@ -141,7 +143,13 @@ const ProjectDetails = () => {
           //---Screenshots---
         }
         <Section>
-          <SectionTitle>Screenshots 📸</SectionTitle>
+          <ScreenshotsWrapper>
+            <SectionTitle>Screenshots 📸</SectionTitle>
+            <ScreenshotsInstructions>
+              Click on the thumbnail to view the screenshot in a larger size 🔍
+            </ScreenshotsInstructions>
+          </ScreenshotsWrapper>
+
           <ScreenshotGallery
             screenshots={project?.screenshots}
             onOpenViewer={() => setIsImageViewerOpen(true)}
