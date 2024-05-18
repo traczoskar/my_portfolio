@@ -35,7 +35,7 @@ import { technologies } from "../technologies";
 import { ReactComponent as GitHubIcon } from "../../../../assets/icons/git_icon.svg";
 import { ReactComponent as LiveIcon } from "../../../../assets/icons/www.svg";
 import ScreenshotGallery from "./ScreenshotGallery";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import KeyboardInstruct from "./KeyboardInstruct";
 
 const ProjectDetails = () => {
@@ -46,6 +46,7 @@ const ProjectDetails = () => {
   const projectIndex = projects.findIndex((p) => p.route === id);
   const project: Project | undefined = projects[projectIndex];
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isImageViewerOpen, setIsImageViewerOpen] = useState<boolean>(false);
 
   useEffect(() => {
     if (id) {
@@ -55,6 +56,8 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (isImageViewerOpen) return;
+
       if (event.key === "Escape") {
         handleClose();
       } else if (event.key === "ArrowRight") {
@@ -73,7 +76,7 @@ const ProjectDetails = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [projectIndex]);
+  }, [projectIndex, isImageViewerOpen]);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -139,10 +142,11 @@ const ProjectDetails = () => {
         }
         <Section>
           <SectionTitle>Screenshots 📸</SectionTitle>
-          <ScreenshotGallery screenshots={project?.screenshots} />
-          {
-            // onClick={() => navigate(`/portfolio/${id}/screenshots/${index}`)}
-          }
+          <ScreenshotGallery
+            screenshots={project?.screenshots}
+            onOpenViewer={() => setIsImageViewerOpen(true)}
+            onCloseViewer={() => setIsImageViewerOpen(false)}
+          />
         </Section>
         {
           //---Features---
