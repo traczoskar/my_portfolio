@@ -14,20 +14,34 @@ export const ViewerContainer = styled.div`
   flex-direction: column;
   z-index: 9999;
   cursor: zoom-out;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const InstructionContainer = styled.div`
+  position: absolute;
+  top: 0.5rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: #777777;
+  color: #eeeeee;
+  border-radius: 0.5rem;
+  border: 1px solid #888888;
+  gap: 2rem;
+  padding: 1.2rem 2.2rem;
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
 `;
 
 export const UserInstruction = styled.p`
-  position: absolute;
-  top: 0;
-  font-weight: 500;
-  margin: 1rem 0 0 0;
-  background: #111111;
-  color: #cccccc;
-  border-radius: 0.5rem;
-  border: 1px solid #888888;
-  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  color: inherit;
+  font-size: 0.8rem;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 0;
 `;
 
 export const ScreenshotDescription = styled.p`
@@ -74,7 +88,7 @@ export const ImageInfo = styled.div`
   position: absolute;
   top: 1.2rem;
   left: 1.2rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #333333;
   color: white;
   padding: 1rem 1.5rem;
   border-radius: 5px;
