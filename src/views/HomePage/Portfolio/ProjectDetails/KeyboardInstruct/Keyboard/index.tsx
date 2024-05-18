@@ -1,8 +1,5 @@
-import { ReactComponent as ArrowUp } from "../../../../../../assets/icons/keyboard/arrow-up.svg";
-import { ReactComponent as ArrowRight } from "../../../../../../assets/icons/keyboard/arrow-right.svg";
-import { ReactComponent as ArrowDown } from "../../../../../../assets/icons/keyboard/arrow-down.svg";
-import { ReactComponent as ArrowLeft } from "../../../../../../assets/icons/keyboard/arrow-left.svg";
-import { ReactComponent as Escape } from "../../../../../../assets/icons/keyboard/escape.svg";
+import { ReactComponent as ArrowKey } from "../../../../../../assets/icons/keyboard/arrow_key.svg";
+import { ReactComponent as ESC } from "../../../../../../assets/icons/keyboard/esc.svg";
 import { KeyboardButtons } from "./styled";
 
 const Keyboard = () => {
@@ -10,21 +7,21 @@ const Keyboard = () => {
     <>
       <KeyboardButtons>
         <div className="arrow up">
-          <ArrowUp />
+          <ArrowKey />
         </div>
         <div className="arrow left">
-          <ArrowLeft />
+          <ArrowKey style={{ transform: "rotate(-90deg)" }} />
         </div>
         <div className="arrow down">
-          <ArrowDown />
+          <ArrowKey style={{ transform: "rotate(180deg)" }} />
         </div>
         <div className="arrow right">
-          <ArrowRight />
+          <ArrowKey style={{ transform: "rotate(90deg)" }} />
         </div>
       </KeyboardButtons>
       <KeyboardButtons>
         <div className="arrow escape">
-          <Escape />
+          <ESC />
         </div>
       </KeyboardButtons>
     </>
