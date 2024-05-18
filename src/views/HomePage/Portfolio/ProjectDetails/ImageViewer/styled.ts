@@ -13,7 +13,6 @@ export const ViewerContainer = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 9999;
-  cursor: zoom-out;
 
   &:focus {
     outline: none;
@@ -50,6 +49,7 @@ export const ScreenshotDescription = styled.p`
   flex-wrap: wrap;
   word-break: break-word;
   max-width: 1000px;
+  line-height: 1.5;
   bottom: 0;
   font-weight: 400;
   margin: 0 0 1rem 0;
@@ -59,7 +59,7 @@ export const ScreenshotDescription = styled.p`
   border: 1px solid #555555;
   font-size: 1rem;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
 `;
 
 export const ImageContainer = styled.div`
@@ -68,11 +68,10 @@ export const ImageContainer = styled.div`
   height: 90%;
   max-width: 90%;
   max-height: 90%;
-  cursor: zoom-out;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Ensure it is above the backdrop but below instructions */
+  z-index: 9999;
 `;
 
 export const Image = styled.img`
@@ -130,4 +129,17 @@ export const ArrowButton = styled.button`
   &:hover {
     color: #cccccc;
   }
+`;
+
+export const MouseWheelContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 1.5px solid #555555;
+  border-radius: 0.2rem;
+  background-color: #ffffff;
 `;
