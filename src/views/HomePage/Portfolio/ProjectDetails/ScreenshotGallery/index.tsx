@@ -5,19 +5,27 @@ import { Screenshot } from "../../../../../types/types";
 
 interface ScreenshotGalleryProps {
   screenshots: Screenshot[] | undefined;
+  onOpenViewer: () => void;
+  onCloseViewer: () => void;
 }
 
-const ScreenshotGallery = ({ screenshots }: ScreenshotGalleryProps) => {
+const ScreenshotGallery = ({
+  screenshots,
+  onOpenViewer,
+  onCloseViewer,
+}: ScreenshotGalleryProps) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null
   );
 
   const handleImageClick = (index: number) => {
     setSelectedImageIndex(index);
+    onOpenViewer();
   };
 
   const handleCloseViewer = () => {
     setSelectedImageIndex(null);
+    onCloseViewer();
   };
 
   return (
