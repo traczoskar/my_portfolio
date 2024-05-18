@@ -5,6 +5,10 @@ import styled from "styled-components";
 export const ProjectDetailsContainer = styled.article`
   display: flex;
   flex-direction: column;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const Section = styled.section`
@@ -26,12 +30,20 @@ export const SectionDivider = styled.div`
 
 //---Header---
 
+export const HeaderSection = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2.5rem;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+`;
+
 export const ProjectHeader = styled.h2`
   margin: 0;
-  padding: 3rem 2.5rem;
+  padding: 0;
   font-size: 2.5rem;
   font-weight: 700;
-  border-bottom: 1px solid #ddd;
 `;
 
 //---Description---
@@ -168,5 +180,52 @@ export const LinkButton = styled.a`
   &:hover {
     color: #111111;
     background-color: #eeeeee;
+  }
+`;
+
+//---Navigation---
+
+export const NavigationWrapper = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`;
+
+export const NavigationButton = styled.button`
+  border: 1px solid #bbbbbb;
+  background-color: #f9ad66;
+  color: #555555;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    outline: 1px solid #333333;
+    transform: scale(1.03);
+    color: #333333;
+    filter: brightness(105%);
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+      0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
+  }
+
+  &:active {
+    filter: brightness(80%);
+    transform: scale(0.95);
+    box-shadow: none;
+  }
+
+  &:disabled:hover {
+    transform: none;
+    filter: none;
+    box-shadow: none;
+  }
+  &:disabled {
+    color: #bbbbbb;
+    background-color: #dddddd;
+    color: #555555;
+    cursor: not-allowed;
   }
 `;
