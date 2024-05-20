@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   padding: 0.75rem;
   margin-right: 5px;
   border-radius: 1rem;
-  border-right: 1px solid #eeeeee;
+  border-right: 1px solid ${({ theme }) => theme.colors.projects.border};
   width: 220px;
   display: flex;
   flex-direction: column;
@@ -35,18 +35,18 @@ export const ProjectTab = styled.li`
   position: relative;
   list-style: none;
   margin: 0;
-  color: #333333;
+  color: ${({ theme }) => theme.colors.textBasic};
   font-weight: 500;
   padding-left: 1.5rem;
   font-size: 1.2;
   border-radius: 0.5rem;
-  background: #f9ad66;
+  background: ${({ theme }) => theme.colors.projects.tabBackground};
   cursor: pointer;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   user-select: none;
-  border: 0.75px solid #999999;
+  border: 0.75px solid ${({ theme }) => theme.colors.projects.tabBorder};
   flex-grow: 1;
   transition: 0.3s ease;
 
@@ -56,8 +56,9 @@ export const ProjectTab = styled.li`
   }
 
   &.selected {
-    background: #dddddd;
-    color: #333333;
+    /* background: #dddddd; */
+    background: ${({ theme }) => theme.colors.projects.selectedBackground};
+    color: ${({ theme }) => theme.colors.projects.selectedText};
     border: 0.75px solid #ffffff;
     box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
       0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
