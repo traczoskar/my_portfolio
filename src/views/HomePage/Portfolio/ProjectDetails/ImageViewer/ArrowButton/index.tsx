@@ -10,11 +10,13 @@ const StyledArrowButton = styled.button<{ direction: "left" | "right" }>`
   font-size: 2rem;
   background-color: transparent;
   border: none;
-  color: white;
+  color: #888888;
   cursor: pointer;
   z-index: 10000;
+  transition: all 0.2s;
 
   &:hover {
+    transform: scale(1.1);
     color: rgba(255, 255, 255);
   }
 `;
