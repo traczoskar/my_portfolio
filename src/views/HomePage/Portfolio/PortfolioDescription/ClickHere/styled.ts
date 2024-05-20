@@ -7,10 +7,10 @@ export const Button = styled.button`
   gap: 1rem;
   padding: 1rem 1.5rem;
   font-size: 1rem;
-  font-weight: 500;
-  background: #f9ad66;
-  color: #111111;
-  border: 0.75px solid #eeeeee;
+  font-weight: 400;
+  background: ${({ theme }) => theme.colors.projects.clickHere.background};
+  color: ${({ theme }) => theme.colors.projects.clickHere.text};
+  border: 0.75px solid ${({ theme }) => theme.colors.projects.clickHere.border};
   border-radius: 2rem;
   cursor: pointer;
   transition: 0.2s ease;
@@ -23,6 +23,7 @@ export const Button = styled.button`
 
   &:active {
     filter: brightness(85%);
+    transform: scale(0.95);
   }
 `;
 
