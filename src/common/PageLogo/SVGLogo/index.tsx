@@ -1,21 +1,16 @@
-import styled from "styled-components";
 import { SVGProps } from "react";
+import { StyledSvg } from "../../NavSection/styled";
 
 interface LogoProps extends SVGProps<SVGSVGElement> {
   strokeColor?: string;
 }
-
-const StyledSvg = styled.svg`
-  stroke: ${(props) => props.stroke};
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-`;
 
 const Logo = ({ stroke, width, height }: LogoProps) => (
   <StyledSvg
     xmlns="http://www.w3.org/2000/svg"
     width={width}
     height={height}
+    className="logo-stroke"
     viewBox="0 0 512 512"
     stroke={stroke}
   >
@@ -24,7 +19,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
         <line
           style={{
             fill: "none",
-            strokeWidth: "28",
+            strokeWidth: "40",
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeMiterlimit: "10",
@@ -37,7 +32,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
         <path
           style={{
             fill: "none",
-            strokeWidth: "28",
+            strokeWidth: "40",
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeMiterlimit: "10",
@@ -48,7 +43,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
         <line
           style={{
             fill: "none",
-            strokeWidth: "28",
+            strokeWidth: "40",
             strokeLinecap: "round",
             strokeLinejoin: "round",
             strokeMiterlimit: "10",
@@ -63,7 +58,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
             <line
               style={{
                 fill: "none",
-                strokeWidth: "28",
+                strokeWidth: "40",
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 strokeMiterlimit: "10",
@@ -77,7 +72,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
             <polyline
               style={{
                 fill: "none",
-                strokeWidth: "28",
+                strokeWidth: "40",
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 strokeMiterlimit: "10",
@@ -88,7 +83,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
             <polyline
               style={{
                 fill: "none",
-                strokeWidth: "28",
+                strokeWidth: "40",
                 strokeLinecap: "round",
                 strokeLinejoin: "round",
                 strokeMiterlimit: "10",
@@ -102,7 +97,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
       <line
         style={{
           fill: "none",
-          strokeWidth: "28",
+          strokeWidth: "40",
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeMiterlimit: "10",
@@ -116,7 +111,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
       <line
         style={{
           fill: "none",
-          strokeWidth: "28",
+          strokeWidth: "40",
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeMiterlimit: "10",
@@ -130,7 +125,7 @@ const Logo = ({ stroke, width, height }: LogoProps) => (
       <line
         style={{
           fill: "none",
-          strokeWidth: "28",
+          strokeWidth: "40",
           strokeLinecap: "round",
           strokeLinejoin: "round",
           strokeMiterlimit: "10",
