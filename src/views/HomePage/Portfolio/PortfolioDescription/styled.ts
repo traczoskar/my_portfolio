@@ -14,7 +14,7 @@ export const PortfolioDescriptionContent = styled.p`
   margin: 0;
   padding: 3rem 0;
   font-size: 1.3rem;
-  color: #555555;
+  color: ${({ theme }) => theme.colors.projects.textSecondary};
   font-weight: 400;
   line-height: 1.5;
 `;
