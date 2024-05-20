@@ -35,14 +35,33 @@ export const NavHeader = styled.h1`
   margin: 0;
   letter-spacing: 0.005rem;
   padding: 0.5rem 0;
-  transition: 0.3s;
+  transition: all 0.3s;
   cursor: pointer;
 
   &:hover {
-    background-image: ${({ theme }) => theme.colors.header.text};
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: ${({ theme }) => theme.colors.basic};
+
+    .logo-stroke {
+      stroke: ${({ theme }) => theme.colors.basic};
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+    filter: brightness(90%);
+  }
+`;
+
+export const StyledSvg = styled.svg`
+  stroke: ${({ theme }) => theme.colors.textBasic};
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+
+  &.logo-stroke {
+    transition: 0.3s;
+    &:hover {
+      stroke: ${({ theme }) => theme.colors.basic};
+    }
   }
 `;
 
@@ -52,40 +71,6 @@ export const NavLinks = styled.ul`
   gap: 0.05rem;
   padding: 0;
   margin: 0;
-`;
-
-export const NavLink = styled.a`
-  text-decoration: none;
-  margin: 0;
-  cursor: pointer;
-  transition: 0.2s;
-  font-weight: 500;
-  padding: 1rem 1rem;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background-color: #f9ad66;
-    transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
-  }
-
-  &:hover::before {
-    left: 0;
-  }
-
-  &:not(:hover)::before {
-    right: -100%;
-  }
-
-  &:visited {
-    color: inherit;
-  }
 `;
 
 export const NavHashLink = styled(HashLink)`
@@ -105,7 +90,7 @@ export const NavHashLink = styled(HashLink)`
     left: -100%;
     width: 100%;
     height: 2px;
-    background-color: #f9ad66;
+    background-color: ${({ theme }) => theme.colors.basic};
     transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
   }
 
@@ -139,7 +124,7 @@ export const NavRouterLink = styled(Link)`
     left: -100%;
     width: 100%;
     height: 2px;
-    background-color: #f9ad66;
+    background-color: ${({ theme }) => theme.colors.basic};
     transition: left 0.3s ease-in-out, right 0.3s ease-in-out;
   }
 
@@ -175,14 +160,14 @@ export const NavIconLink = styled.a`
   padding: 0 1rem;
   text-decoration: none;
   margin: 0;
-  color: inherit;
+  color: ${({ theme }) => theme.colors.basic};
   cursor: pointer;
   transition: 0.3s;
 
   &:hover {
     transform: scale(1.1);
     svg {
-      color: orange;
+      color: inherit;
       animation: ${animatespin3d} 0.8s ease-in-out;
     }
   }
