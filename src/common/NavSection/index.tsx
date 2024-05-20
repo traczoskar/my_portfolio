@@ -19,7 +19,7 @@ const NavSection: React.FC = () => {
       <NavWrapper>
         <NavHeaderLink to="/">
           <NavHeader>
-            <PageLogo height={30} width={30} />
+            <PageLogo height={35} width={35} />
             traczoskar.dev
           </NavHeader>
         </NavHeaderLink>
