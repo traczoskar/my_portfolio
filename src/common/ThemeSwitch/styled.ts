@@ -21,11 +21,12 @@ export const Button = styled.button`
   cursor: pointer;
   border: none;
   padding: 0.5rem 1rem;
+  transition: 0.3s;
 
   &:hover {
     transform: scale(1.1);
     svg {
-      color: orange;
+      color: ${({ theme }) => theme.colors.themeSwitch.fill};
       animation: ${animatespin3d} 0.8s ease-in-out;
     }
   }
@@ -37,7 +38,8 @@ export const Button = styled.button`
 export const IconWrapper = styled.div`
   background: inherit;
   display: flex;
-  color: ${({ theme }) => theme.colors.themeSwitch.button};
+  color: inherit;
+
   svg {
     transition: ease-in-out 0.3s;
   }
