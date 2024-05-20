@@ -14,8 +14,8 @@ const HomePage = () => {
       >
         <NavSection />
         <Header title="Frontend" subtitle="Craft. Refine. Optimize." />
-        <Portfolio />
         <Advantages />
+        <Portfolio />
         <MoreAboutMe />
       </MainContainer>
       <Footer backgroundColor="white" />
