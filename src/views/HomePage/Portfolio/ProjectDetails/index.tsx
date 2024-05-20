@@ -45,7 +45,7 @@ const ProjectDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isOpen } = useSelector(selectProjectDetailsState);
-  const projectIndex = projects.findIndex((p) => p.route === id);
+  const projectIndex: number = projects.findIndex((p) => p.route === id);
   const project: Project | undefined = projects[projectIndex];
   const containerRef = useRef<HTMLDivElement>(null);
   const [isImageViewerOpen, setIsImageViewerOpen] = useState<boolean>(false);
