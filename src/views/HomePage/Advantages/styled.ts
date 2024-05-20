@@ -5,9 +5,10 @@ export const AdvantagesSection = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 5rem;
-  padding: 0 0 10rem 0;
-  background-color: ${({ theme }) => theme.colors.section.primary};
-  color: ${({ theme }) => theme.colors.text};
+  padding: 10rem 0 0 0;
+  transition: all ease 0.5s;
+  background-color: ${({ theme }) => theme.colors.section.background};
+  color: ${({ theme }) => theme.colors.textBasic};
 `;
 
 export const AdvantagesTitle = styled.h2`
@@ -74,7 +75,7 @@ export const AdvantageTitle = styled.h3`
 `;
 
 export const AdvantageDescription = styled.p`
-  color: #444444;
+  color: ${({ theme }) => theme.colors.advantages.textSecondary};
   margin-top: 0.5rem;
   padding: 0;
   font-weight: 400;
