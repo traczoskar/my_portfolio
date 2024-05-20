@@ -5,8 +5,8 @@ export const PortfolioSection = styled.section`
   padding-bottom: 10rem;
   display: flex;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.section.primary};
-  color: ${({ theme }) => theme.colors.text};
+  transition: all ease 0.5s;
+  background: ${({ theme }) => theme.colors.projects.background};
 `;
 
 export const PortfolioWrapper = styled.div`
