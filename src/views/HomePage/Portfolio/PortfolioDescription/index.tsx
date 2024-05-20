@@ -1,4 +1,4 @@
-import ClickHere from "../PortfolioCards/ClickHere";
+import ClickHere from "./ClickHere";
 import {
   DescriptionWrapper,
   PortfolioTitle,
