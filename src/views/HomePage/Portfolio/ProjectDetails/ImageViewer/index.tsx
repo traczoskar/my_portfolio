@@ -12,7 +12,6 @@ import {
 import { Screenshot } from "../../../../../types/types";
 import ArrowButton from "./ArrowButton";
 import Keyboard from "../KeyboardInstruct/Keyboard";
-import { ReactComponent as MouseWheel } from "../../../../../assets/icons/keyboard/scroll-wheel.svg";
 
 interface ImageViewerProps {
   images: Screenshot[] | undefined;
