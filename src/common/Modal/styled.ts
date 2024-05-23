@@ -6,7 +6,7 @@ export const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: ${({ theme }) => theme.colors.projectDetails.modalBackground};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContent = styled.div`
-  background-color: white;
+  background: ${({ theme }) => theme.colors.projectDetails.background};
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   max-width: 80%;
@@ -39,4 +39,10 @@ export const CloseButton = styled.button`
   &:hover {
     background-color: #bbbbbb;
   }
+`;
+
+export const ThemeSwitchModalContainer = styled.div`
+  position: absolute;
+  top: 4.5rem;
+  right: 0.25rem;
 `;
