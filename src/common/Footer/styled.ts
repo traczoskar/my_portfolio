@@ -10,7 +10,6 @@ interface FooterWrapperProps {
 export const FooterWrapper = styled.footer<FooterWrapperProps>`
   position: relative;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  color: #000000;
   z-index: 1;
   padding-bottom: 4.5rem;
   text-align: center;
