@@ -52,7 +52,7 @@ export const ProjectTab = styled.li`
 
   &:hover {
     transform: scale(1.02);
-    color: #000000;
+    filter: brightness(110%);
   }
 
   &.selected {
@@ -82,12 +82,13 @@ export const ProjectImage = styled.img`
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 
-  transition: ease 0.75s;
+  transition: filter ease 0.75s;
   cursor: pointer;
   filter: grayscale(100%);
 
   &:hover {
     filter: grayscale(0%);
+    outline: 4px solid ${({ theme }) => theme.colors.basic};
   }
 `;
 
