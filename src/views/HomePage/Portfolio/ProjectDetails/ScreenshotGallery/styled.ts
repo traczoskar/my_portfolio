@@ -18,8 +18,9 @@ export const Thumbnail = styled.img`
   transition: 0.2s;
 
   &:hover {
-    opacity: 0.9;
+    opacity: 0.8;
     transform: scale(1.05);
-    outline: orange solid 5px;
+    outline: 5px solid
+      ${({ theme }) => theme.colors.projectDetails.screenshotOutline};
   }
 `;
