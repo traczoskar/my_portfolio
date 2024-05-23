@@ -70,6 +70,9 @@ export const themeLight = {
     header: {
       text: colorNames.orangeGradient,
     },
+    footer: {
+      background: colorNames.white,
+    },
     button: {
       background: colorNames.buttonLightGradient,
       text: colorNames.platinum,
@@ -133,6 +136,9 @@ export const themeDark = {
     },
     header: {
       text: colorNames.violetGradient,
+    },
+    footer: {
+      background: colorNames.eminence,
     },
     button: {
       background: colorNames.buttonDarkGradient,
