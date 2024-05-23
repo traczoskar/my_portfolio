@@ -21,12 +21,12 @@ export const HeaderSectionWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 8vw 0;
+  margin: 8rem 0 15rem 0;
 `;
 
 export const HeaderGreeter = styled.h2`
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   margin: 0;
   padding: 0;
   letter-spacing: 0.03rem;
@@ -56,7 +56,7 @@ export const SpecialText = styled.span`
 export const SubHeaderContent = styled.h4`
   margin: 0;
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.03rem;
 `;
 
