@@ -13,7 +13,7 @@ export const KeyboardInstructText = styled.p`
   padding: 0;
   text-align: center;
   font-size: 0.7rem;
-  color: #777777;
+  color: ${({ theme }) => theme.colors.projectDetails.keyboardInstruct};
   font-weight: 400;
   line-height: 1.75;
 `;
