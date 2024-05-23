@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PortfolioSection = styled.section`
-  padding-top: 10rem;
+  padding-top: 2rem;
   padding-bottom: 10rem;
   display: flex;
   justify-content: center;
