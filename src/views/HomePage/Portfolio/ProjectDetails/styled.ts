@@ -13,7 +13,7 @@ export const ProjectDetailsContainer = styled.article`
 
 export const Section = styled.section`
   padding: 2rem 3rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: ${({ theme }) => theme.border};
 `;
 
 export const SectionTitle = styled.h3`
@@ -35,14 +35,14 @@ export const HeaderSection = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 3rem 2.5rem;
-  border-bottom: 1px solid #ddd;
+  border-bottom: ${({ theme }) => theme.border};
   margin: 0;
 `;
 
 export const ProjectHeader = styled.h2`
   margin: 0;
   padding: 0;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
 `;
 
@@ -52,7 +52,7 @@ export const ProjectDescription = styled.p`
   margin: 0;
   padding: 2rem 0 0 0;
   font-size: 1.2rem;
-  color: #555555;
+  color: ${({ theme }) => theme.colors.projectDetails.text};
   font-weight: 400;
   line-height: 1.5;
 `;
@@ -71,7 +71,7 @@ export const ScreenshotsInstructions = styled.p`
   margin: 0;
   padding: 0;
   font-size: 0.9rem;
-  color: #777777;
+  color: ${({ theme }) => theme.colors.projectDetails.text};
   font-weight: 400;
   line-height: 1.5;
 `;
@@ -86,16 +86,16 @@ export const ProjectFeatureList = styled.ul`
 
 export const ProjectFeature = styled.li`
   margin: 0;
-  padding: 0.25rem 0;
+  padding: 0.35rem 0;
   font-size: 1.2rem;
   font-weight: 400;
-  color: #555555;
+  color: ${({ theme }) => theme.colors.projectDetails.text};
   line-height: 1.5;
 `;
 
 export const ProjectFeatureName = styled.span`
   font-weight: 600;
-  color: #111111;
+  color: ${({ theme }) => theme.colors.projectDetails.featureName};
 `;
 
 //---Technologies---
@@ -104,7 +104,7 @@ export const TechnologiesWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 2rem 0;
 `;
 
@@ -116,13 +116,16 @@ export const TechnologyContainer = styled.div`
   padding: 1rem 1.2rem;
   border-radius: 0.75rem;
   border: 0.5px solid #aaaaaa;
-  background-color: #dddddd;
+  background-color: ${({ theme }) =>
+    theme.colors.projectDetails.techBackground};
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
-  color: #222222;
+  color: ${({ theme }) => theme.colors.projectDetails.techText};
   transition: 0.2s ease-in-out;
 
   &:hover {
+    background-color: ${({ theme }) =>
+      theme.colors.projectDetails.techBackgroundHover};
     transform: scale(1.05);
     img {
       filter: grayscale(0%);
@@ -149,7 +152,7 @@ export const WhatDidILearnWrapper = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding-left: 2rem;
-  border-left: 1px solid #ddd;
+  border-left: ${({ theme }) => theme.border};
 `;
 
 export const WhatDidILearnList = styled.ul`
@@ -162,7 +165,7 @@ export const WhatDidILearnItem = styled.li`
   margin: 0;
   padding: 0.75rem 0;
   font-size: 1.1rem;
-  color: #555555;
+  color: ${({ theme }) => theme.colors.projectDetails.text};
   font-weight: 400;
   line-height: 1.5;
 `;
@@ -187,8 +190,8 @@ export const LinkButton = styled.a`
   font-weight: 600;
   text-align: center;
   text-decoration: none;
-  color: #555555;
-  background-color: #dddddd;
+  color: ${({ theme }) => theme.colors.projectDetails.text};
+  background: ${({ theme }) => theme.colors.projectDetails.linkBackground};
   border: 2px solid #bbbbbb;
   border-radius: 2rem;
   cursor: pointer;
@@ -197,6 +200,8 @@ export const LinkButton = styled.a`
   transition: all 0.2s;
 
   &:hover {
+    filter: brightness(105%);
+    transform: translateY(-5px);
     color: #111111;
     background-color: #eeeeee;
   }
@@ -213,8 +218,8 @@ export const NavigationWrapper = styled.nav`
 
 export const NavigationButton = styled.button`
   border: 1px solid #bbbbbb;
-  background-color: #f9ad66;
-  color: #555555;
+  background: ${({ theme }) => theme.colors.projectDetails.navButtonBG};
+  color: ${({ theme }) => theme.colors.projectDetails.text};
   border-radius: 0.3rem;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
@@ -222,9 +227,10 @@ export const NavigationButton = styled.button`
   transition: all 0.2s;
 
   &:hover {
-    outline: 1px solid #333333;
+    outline: 2px solid
+      ${({ theme }) => theme.colors.projectDetails.navButtonAccent};
     transform: scale(1.03);
-    color: #333333;
+    color: ${({ theme }) => theme.colors.projectDetails.navButtonText};
     filter: brightness(105%);
     box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
       0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
