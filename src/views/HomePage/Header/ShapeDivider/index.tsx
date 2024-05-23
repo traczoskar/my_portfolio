@@ -21,7 +21,6 @@ const StyledShapeDivider = styled.div<ShapeDividerProps>`
     height: 95px;
 
     .shape-fill {
-      transition: fill ease 0.5s;
       fill: ${(props) => props.fill};
     }
   }
