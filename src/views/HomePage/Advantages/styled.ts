@@ -5,14 +5,14 @@ export const AdvantagesSection = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 5rem;
-  padding: 10rem 0 0 0;
+  padding: 10rem 0 15rem 0;
   transition: all ease 0.5s;
-  background-color: ${({ theme }) => theme.colors.section.background};
+  background: ${({ theme }) => theme.colors.advantages.sectionBackground};
   color: ${({ theme }) => theme.colors.textBasic};
 `;
 
 export const AdvantagesTitle = styled.h2`
-  margin: 0;
+  margin: 0 0 4rem 0;
   padding: 0 5rem 2rem 5rem;
   font-size: 2.5rem;
   font-weight: 700;
@@ -28,7 +28,7 @@ export const AdvantagesWrapper = styled.div`
 export const AdvantagesList = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 4rem;
   padding: 0;
   margin: 0;
   list-style: none;
