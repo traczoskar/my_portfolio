@@ -4,6 +4,8 @@ const colorNames = {
   darkGray: "#333333",
   emperorGray: "#555555",
   dustyGray: "#999999",
+  boulderGray: "#777777",
+  codGray: "#111111",
   lightGray: "#DDDDDD",
 
   // ---darkTheme---
@@ -52,6 +54,7 @@ const common = {
   },
   boxShadow:
     "0px 16px 58px 0px rgba(9, 10, 51, 0.03), 0px -2px 50px 0px rgba(9, 10, 51, 0.02)",
+  border: "1px solid #dddddd",
 };
 
 export const themeLight = {
@@ -96,6 +99,21 @@ export const themeLight = {
         text: colorNames.onyx,
         border: colorNames.gallery,
       },
+    },
+    projectDetails: {
+      text: colorNames.emperorGray,
+      background: colorNames.white,
+      modalBackground: "rgba(0, 0, 0, 0.1)",
+      keyboardInstruct: colorNames.boulderGray,
+      screenshotOutline: colorNames.sunshade,
+      featureName: colorNames.codGray,
+      techBackground: colorNames.lightGray,
+      techBackgroundHover: colorNames.lightGray,
+      techText: colorNames.darkGray,
+      linkBackground: colorNames.lightGray,
+      navButtonBG: colorNames.rajah,
+      navButtonAccent: colorNames.darkGray,
+      navButtonText: colorNames.darkGray,
     },
     themeSwitch: {
       fill: colorNames.violet,
@@ -145,6 +163,21 @@ export const themeDark = {
         text: colorNames.platinum,
         border: colorNames.trendyPink,
       },
+    },
+    projectDetails: {
+      text: colorNames.platinum,
+      background: colorNames.mirage,
+      modalBackground: colorNames.advantagesGradient,
+      keyboardInstruct: colorNames.lightGray,
+      screenshotOutline: colorNames.violet,
+      featureName: colorNames.white,
+      techBackground: "inherit",
+      techBackgroundHover: colorNames.trendyPink,
+      techText: colorNames.platinum,
+      linkBackground: colorNames.violetGradient,
+      navButtonBG: colorNames.deluge,
+      navButtonAccent: colorNames.violet,
+      navButtonText: colorNames.platinum,
     },
     themeSwitch: {
       fill: colorNames.sunshade,
