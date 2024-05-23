@@ -40,9 +40,7 @@ export default function PortfolioCards() {
                 <DetailsButton>
                   <ProjectLink project={selectedProject}>Details</ProjectLink>
                 </DetailsButton>
-              ) : (
-                ""
-              )}
+              ) : null}
             </ProjectTab>
           ))}
         </ProjectList>
