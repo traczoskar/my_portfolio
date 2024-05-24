@@ -7,12 +7,7 @@ export const MoreAboutMeSection = styled.section`
   align-items: center;
   gap: 5rem;
   padding: 5rem 0 10rem 0;
-  background: linear-gradient(
-    0deg,
-    rgba(85, 42, 130, 1) 0%,
-    rgba(18, 26, 38, 1) 100%
-  );
-  /* background-color: ${({ theme }) => theme.colors.section.primary}; */
+  background: ${({ theme }) => theme.colors.moreAboutMe.background};
   color: ${({ theme }) => theme.colors.text};
 `;
 
