@@ -23,7 +23,7 @@ const MoreAboutMe = () => {
         <TechStackContainer>
           {ABOUT?.techStack
             ? ABOUT.techStack.map((tech, index) => (
-                <Technology>
+                <Technology title={tech}>
                   <TechnologyIcon
                     key={index}
                     src={technologies.find((t) => t.name === tech)?.icon}
