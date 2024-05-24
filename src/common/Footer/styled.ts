@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ReactComponent as WavesSVG } from "../../assets/waves.svg";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 
@@ -96,16 +95,4 @@ export const SocialLink = styled.a`
       filter: brightness(130%);
     }
   }
-`;
-
-export const StyledWavesSVG = styled(WavesSVG)`
-  width: 100%;
-  height: auto;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  overflow: hidden;
-  line-height: 0;
 `;
