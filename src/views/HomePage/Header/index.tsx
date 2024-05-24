@@ -1,6 +1,7 @@
 import { GridSection } from "../../../common/GridSection/styled";
 import { Button } from "./Button/styled";
 import {
+  ButtonWrapper,
   CurlyBraces,
   HeaderContent,
   HeaderGreeter,
@@ -15,16 +16,22 @@ import {
   SpecialTextGreeter,
   SubHeaderContent,
 } from "./styled";
-import { ReactComponent as ShapeDivider } from "./ShapeDivider/shape.svg";
-import "./ShapeDivider/style.css";
 import { TypingLine } from "./TypingLine";
-import photo from "../../../assets/abstractAvatar.png";
+import avatarLight from "../../../assets/abstractAvatar_light.png";
+import avatarDark from "../../../assets/abstractAvatar_dark.png";
+import { useSelector } from "react-redux";
+import { selectIsDarkTheme } from "../../../slices/themeSlice";
+import ShapeDivider from "./ShapeDivider";
+import { useTheme } from "styled-components";
 interface HeaderProps {
   title: string;
   subtitle: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
+  const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
+  const theme = useTheme();
+
   return (
     <SectionDividerPurposeOnly>
       <Section>
@@ -47,19 +54,22 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
                 Welcome to my portfolio! My pursuit is to connect aesthetics
                 with functionality while creating web applications.
               </Paragraph>
-              <Button to="/contact">
-                <span>Contact me</span>
-              </Button>
+              <ButtonWrapper>
+                <Button to="/contact">
+                  <span>Contact me</span>
+                </Button>
+              </ButtonWrapper>
             </HeaderWrapper>
             <ImageWrapper>
-              <Image src={photo} alt="Oskar Tracz" />
+              <Image
+                src={isDarkTheme ? avatarDark : avatarLight}
+                alt="Oskar Tracz"
+              />
             </ImageWrapper>
           </GridSection>
         </HeaderSectionWrapper>
       </Section>
-      <div className="custom-shape-divider-bottom-1710602235">
-        <ShapeDivider />
-      </div>
+      <ShapeDivider fill={theme.colors.section.background} />
     </SectionDividerPurposeOnly>
   );
 };
