@@ -16,9 +16,11 @@ import NavSection from "../../common/NavSection";
 import Footer from "../../common/Footer";
 import { useEffect, useState } from "react";
 import ModalMessage from "./ModalMessage";
+import { useTheme } from "styled-components";
 
 const ContactPage = () => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
+  const theme = useTheme();
 
   useEffect(() => {
     if (isCopied) {
@@ -30,7 +32,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <MainContainer backgroundColor="white">
+      <MainContainer backgroundColor={theme.colors.contactPage.background}>
         <NavSection />
         <ContactPageWrapper>
           <ContactTitle>
@@ -74,7 +76,7 @@ const ContactPage = () => {
           <ModalMessage isCopied={isCopied} />
         </ContactPageWrapper>
       </MainContainer>
-      <Footer backgroundColor="white" />
+      <Footer backgroundColor={theme.colors.contactPage.footer} />
     </>
   );
 };
