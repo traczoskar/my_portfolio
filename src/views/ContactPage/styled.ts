@@ -18,7 +18,7 @@ export const ContactTitle = styled.h2`
 `;
 
 export const SpecialText = styled.span`
-  color: orange;
+  color: ${({ theme }) => theme.colors.contactPage.special};
 `;
 
 export const ContactLinks = styled.div`
@@ -46,7 +46,7 @@ export const ContactLink = styled.a`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  border: 2px solid #444444;
+  border: 2px solid ${({ theme }) => theme.colors.contactPage.linkBorder};
   border-radius: 3.5rem;
   padding: 1rem 2rem;
   font-size: 1.2rem;
@@ -58,16 +58,16 @@ export const ContactLink = styled.a`
 
   &:hover {
     color: inherit;
-    border: 2px solid orange;
+    border: 2px solid ${({ theme }) => theme.colors.contactPage.special};
     svg {
-      color: orange;
+      color: ${({ theme }) => theme.colors.contactPage.special};
       animation: ${animatespin3d} 0.6s ease-in-out;
     }
   }
 
   &:active {
     transform: scale(0.9);
-    background-color: #eeeeee;
+    background-color: #cccccc;
   }
 
   &:visited {
