@@ -9,5 +9,5 @@ export const MainContainer = styled.main<MainContainerProps>`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: ${({ backgroundColor }) => backgroundColor || "inherit"};
+  background: ${({ backgroundColor }) => backgroundColor || "inherit"};
 `;
