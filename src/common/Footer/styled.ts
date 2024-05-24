@@ -9,7 +9,7 @@ interface FooterWrapperProps {
 
 export const FooterWrapper = styled.footer<FooterWrapperProps>`
   position: relative;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background: ${({ backgroundColor }) => backgroundColor};
   z-index: 1;
   padding-bottom: 4.5rem;
   text-align: center;
@@ -58,8 +58,10 @@ export const LetsChat = styled(Link)`
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: #f9ad66;
-  color: #333333;
+  /* background-color: #f9ad66; */
+  background-color: ${({ theme }) => theme.colors.footer.button.background};
+  /* color: #333333; */
+  color: ${({ theme }) => theme.colors.footer.button.text};
   padding: 1.5rem 2rem;
   font-weight: 500;
   border-radius: 2rem;
@@ -67,12 +69,12 @@ export const LetsChat = styled(Link)`
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: 0.1s ease;
 
   &:hover {
     background-color: #444444;
     color: white;
-    outline: 2px solid #eeeeee;
+    outline: 1px solid #eeeeee;
   }
 `;
 
