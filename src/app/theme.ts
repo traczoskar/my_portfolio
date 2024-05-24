@@ -22,16 +22,16 @@ const colorNames = {
   veniceBlue: "#a17100",
   deluge: "#7f5b9d",
   trendyPink: "#8f75a3",
-  advantagesGradient: "linear-gradient(to top,  #121A26FF, #552A82FF);",
+  purpleBlackGradient: "linear-gradient(to top,  #121A26FF, #552A82FF);",
+  blackPurpleGradient:
+    "linear-gradient(0deg, rgba(85, 42, 130, 1) 0%, rgba(18, 26, 38, 1) 100%)",
   buttonDarkGradient: "linear-gradient(to right, #9d50bb, #6e48aa)",
   violetGradient: "linear-gradient(to right, #a770ff, #834d9b)", // header text {Developer}
   darkGradient:
-    "linear-gradient(90deg, rgba(18,26,38,1) 0%, rgba(47,36,55,1) 100%)", // advantages background
-
-  // ---gradients---
-
+    "linear-gradient(90deg, rgba(18,26,38,1) 0%, rgba(47,36,55,1) 100%)",
   // ---lightTheme---
   sunshade: "#FF9E29",
+  yellowOrange: "#FAB23D",
   onyx: "#2e3532ff", //text color
   gray: "#444444", //additional text color (advantages)
   leather: "#A17B5E",
@@ -72,6 +72,11 @@ export const themeLight = {
     },
     footer: {
       background: colorNames.white,
+      wavesSVG: colorNames.sunshade,
+      button: {
+        background: colorNames.sunshade,
+        text: colorNames.onyx,
+      },
     },
     button: {
       background: colorNames.buttonLightGradient,
@@ -86,6 +91,9 @@ export const themeLight = {
       textSecondary: colorNames.gray,
       sectionBackground: colorNames.white,
       background: colorNames.lightOrangeGradient,
+    },
+    moreAboutMe: {
+      background: colorNames.white,
     },
     projects: {
       primary: colorNames.lightGray,
@@ -121,6 +129,16 @@ export const themeLight = {
     themeSwitch: {
       fill: colorNames.violet,
     },
+    contactPage: {
+      background: colorNames.white,
+      footer: colorNames.white,
+      special: colorNames.yellowOrange,
+      linkBorder: colorNames.emperorGray,
+      modal: {
+        background: colorNames.rajah,
+        text: colorNames.onyx,
+      },
+    },
   },
 };
 
@@ -139,6 +157,11 @@ export const themeDark = {
     },
     footer: {
       background: colorNames.eminence,
+      wavesSVG: colorNames.mirage,
+      button: {
+        background: colorNames.deluge,
+        text: colorNames.platinum,
+      },
     },
     button: {
       background: colorNames.buttonDarkGradient,
@@ -151,8 +174,11 @@ export const themeDark = {
     advantages: {
       text: colorNames.platinum,
       textSecondary: colorNames.bonJour,
-      sectionBackground: colorNames.advantagesGradient,
+      sectionBackground: colorNames.purpleBlackGradient,
       background: colorNames.buttonDarkGradient,
+    },
+    moreAboutMe: {
+      background: colorNames.blackPurpleGradient,
     },
     projects: {
       primary: colorNames.deluge,
@@ -173,7 +199,7 @@ export const themeDark = {
     projectDetails: {
       text: colorNames.platinum,
       background: colorNames.mirage,
-      modalBackground: colorNames.advantagesGradient,
+      modalBackground: colorNames.purpleBlackGradient,
       keyboardInstruct: colorNames.lightGray,
       screenshotOutline: colorNames.violet,
       featureName: colorNames.white,
@@ -187,6 +213,16 @@ export const themeDark = {
     },
     themeSwitch: {
       fill: colorNames.sunshade,
+    },
+    contactPage: {
+      background: colorNames.mirage,
+      footer: colorNames.blackPurpleGradient,
+      special: colorNames.violet,
+      linkBorder: colorNames.platinum,
+      modal: {
+        background: colorNames.deluge,
+        text: colorNames.platinum,
+      },
     },
   },
 };
