@@ -49,7 +49,6 @@ const Footer: React.FC<FooterProps> = ({ backgroundColor }) => {
           <ChatIcon width={23} height={23} />
         </LetsChat>
       </FooterContent>
-      {/* <StyledWavesSVG /> */}
       <WavesSVG fill={theme.colors.footer.wavesSVG} />
     </FooterWrapper>
   );
