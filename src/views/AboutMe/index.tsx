@@ -28,7 +28,6 @@ const AboutMe: React.FC = () => {
     <>
       <MainContainer backgroundColor="white">
         <NavSection />
-
         <AboutMeContainer>
           <GridWrapper>
             <Tile>
@@ -59,7 +58,6 @@ const AboutMe: React.FC = () => {
               </TechStack>
             </Tile>
           </GridWrapper>
-
           <SocialLinks>
             {ABOUT.socials.map((social, index) => (
               <SocialLink
@@ -72,7 +70,7 @@ const AboutMe: React.FC = () => {
               </SocialLink>
             ))}
           </SocialLinks>
-          <Education educationData={ABOUT.education} />
+          <Education />
         </AboutMeContainer>
       </MainContainer>
       <Footer backgroundColor="white" />
