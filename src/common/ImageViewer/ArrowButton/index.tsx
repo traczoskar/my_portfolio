@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as Arrow } from "../../../../../../assets/icons/arrow.svg";
+import { ReactComponent as Arrow } from "../../../assets/icons/arrow.svg";
 
 const StyledArrowButton = styled.button<{ direction: "left" | "right" }>`
   position: absolute;
