@@ -14,7 +14,7 @@ interface AboutData {
     organization: string;
     date: string;
     content: string;
-    certificate?: string;
+    certificate?: string | undefined;
   }[];
   email: string;
   socials: {
@@ -50,24 +50,24 @@ export const ABOUT: AboutData = {
   ],
   education: [
     {
-      name: "Frontend Developer",
+      name: "Frontend Developer Course",
       organization: "YouCode.pl",
-      date: "04.2024",
+      date: "25.04.2024",
       content:
-        "The course covered the basics of HTML, CSS, JavaScript, React, and Redux. I learned how to create responsive websites and web applications. I also learned how to use Git and GitHub to manage my projects. I completed the course with a final 5-week group project that showcased my skills and trained my teamwork abilities.",
+        "The course covered topics from the basics to advanced concepts of HTML, CSS, JavaScript, React, and Redux. I learned how to create responsive websites and web applications. Additionally, I mastered using Git and GitHub to manage my projects. I completed the course with a final 5-week group project that not only showcased my skills but also honed my teamwork abilities. Throughout the course, I also gained knowledge of best practices in programming and tools for testing and debugging code. Thanks to this course, I feel confident in creating modern and functional web applications.",
       certificate: youCodeCertificate,
     },
     {
       name: "TypeScript",
       organization: "YouCode.pl",
-      date: "04.2024",
+      date: "25.04.2024",
       content:
         "The course covered the knowledge of TypeScript and how to use it with React. I learned how to create type-safe applications and how to use TypeScript to improve my code quality. It contained topics like types, interfaces, generics, and advanced TypeScript features.",
     },
     {
-      name: "AI_devs2 #Reloaded",
+      name: "Connect GPT-4 with application and automation logic",
       organization: "AI_devs",
-      date: "04.2024",
+      date: "22.04.2024",
       content:
         "The course covered the basics of AI and how to connect it with web applications. I learned how to connect Generative AI with application logic and automatization tools. I completed the course by solving many tasks and creating a personal AI assistant that can help me in multiple ways. I also learned how to use OpenAI API and how to decide when to use AI in my projects. We trained prompt engineering and how to use AI in a responsible way. We also skilled techniques like function calling, building dynamic context and prompts, using vector bases like Qdrant/Pinecone for multiple ways and fine-tuning of models.",
       certificate: aiDevsCertificate,
