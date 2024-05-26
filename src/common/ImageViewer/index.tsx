@@ -9,20 +9,22 @@ import {
   ImageInfo,
   InstructionContainer,
 } from "./styled";
-import { Screenshot } from "../../../../../types/types";
 import ArrowButton from "./ArrowButton";
-import Keyboard from "../KeyboardInstruct/Keyboard";
+import Keyboard from "../../views/HomePage/Portfolio/ProjectDetails/KeyboardInstruct/Keyboard";
+import { Screenshot } from "../../types/types";
 
 interface ImageViewerProps {
-  images: Screenshot[] | undefined;
-  currentIndex: number;
-  onNavigate: (newIndex: number) => void;
+  images?: Screenshot[];
+  image?: Screenshot;
+  currentIndex?: number;
+  onNavigate?: (newIndex: number) => void;
   onClose: () => void;
 }
 
 const ImageViewer: React.FC<ImageViewerProps> = ({
   images,
-  currentIndex,
+  image,
+  currentIndex = 0,
   onClose,
   onNavigate,
 }) => {
@@ -47,11 +49,14 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
     };
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft" && images) {
-        onNavigate((currentIndex - 1 + images.length) % images.length);
-      } else if (event.key === "ArrowRight" && images) {
-        onNavigate((currentIndex + 1) % images.length);
-      } else if (event.key === "ArrowUp") {
+      if (images) {
+        if (event.key === "ArrowLeft") {
+          onNavigate!((currentIndex - 1 + images.length) % images.length);
+        } else if (event.key === "ArrowRight") {
+          onNavigate!((currentIndex + 1) % images.length);
+        }
+      }
+      if (event.key === "ArrowUp") {
         setScale((prevScale) => Math.min(prevScale + 0.1, 2));
       } else if (event.key === "ArrowDown") {
         setScale((prevScale) => Math.max(prevScale - 0.1, 0.5));
@@ -77,6 +82,8 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
     };
   }, [onClose, scale, currentIndex, images, onNavigate]);
 
+  const currentImage = images ? images[currentIndex] : image;
+
   return (
     <ViewerContainer ref={containerRef} tabIndex={-1}>
       <InstructionContainer>
@@ -84,34 +91,45 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
           Use <strong>Mouse Wheel</strong> to 🔍 zoom +/-
           <br />
           Use <strong>Arrow Up</strong> and <strong>Arrow Down</strong> to zoom
-          +/- <br /> Use <strong>Arrow Left</strong> and{" "}
-          <strong>Arrow Right</strong> to change the screenshot. <br />
+          +/- <br />
+          {images && (
+            <>
+              Use <strong>Arrow Left</strong> and <strong>Arrow Right</strong>{" "}
+              to change the screenshot. <br />
+            </>
+          )}
           Press <strong>Escape</strong> to close the picture viewer.
         </UserInstruction>
         <Keyboard />
       </InstructionContainer>
-      <ScreenshotDescription>{images![currentIndex].alt}</ScreenshotDescription>
+      <ScreenshotDescription>{currentImage?.alt}</ScreenshotDescription>
       <ImageContainer>
-        <ArrowButton
-          direction="left"
-          onClick={() =>
-            onNavigate((currentIndex - 1 + images!.length) % images!.length)
-          }
-        />
+        {images && (
+          <ArrowButton
+            direction="left"
+            onClick={() =>
+              onNavigate!((currentIndex - 1 + images.length) % images.length)
+            }
+          />
+        )}
         <Image
-          src={images![currentIndex].imageUrl}
-          alt={images![currentIndex].alt}
+          src={currentImage?.imageUrl}
+          alt={currentImage?.alt}
           style={{ transform: `scale(${scale})` }}
         />
-        <ArrowButton
-          direction="right"
-          onClick={() => onNavigate((currentIndex + 1) % images!.length)}
-        />
+        {images && (
+          <ArrowButton
+            direction="right"
+            onClick={() => onNavigate!((currentIndex + 1) % images.length)}
+          />
+        )}
         <CloseButton onClick={onClose}>x</CloseButton>
       </ImageContainer>
-      <ImageInfo>
-        {currentIndex + 1}/{images!.length}
-      </ImageInfo>
+      {images && (
+        <ImageInfo>
+          {currentIndex + 1}/{images.length}
+        </ImageInfo>
+      )}
     </ViewerContainer>
   );
 };
