@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GalleryContainer, Thumbnail } from "./styled";
-import ImageViewer from "../ImageViewer";
+import ImageViewer from "../../../../../common/ImageViewer";
 import { Screenshot } from "../../../../../types/types";
 
 interface ScreenshotGalleryProps {
