@@ -52,19 +52,6 @@ export const NavHeader = styled.h1`
   }
 `;
 
-export const StyledSvg = styled.svg`
-  stroke: ${({ theme }) => theme.colors.textBasic};
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
-
-  &.logo-stroke {
-    transition: 0.3s;
-    &:hover {
-      stroke: ${({ theme }) => theme.colors.basic};
-    }
-  }
-`;
-
 export const NavLinks = styled.ul`
   display: flex;
   list-style: none;
