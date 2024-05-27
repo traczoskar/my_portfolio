@@ -1,18 +1,23 @@
 import styled from "styled-components";
 
+interface EducationItemProps {
+  background?: string;
+}
+
 export const EducationContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1200px;
-  padding: 2rem;
+  margin: 3rem 0 8rem 0;
   gap: 3rem;
-  background-color: white;
 `;
 
 export const Title = styled.h3`
+  align-self: flex-start;
   margin: 0;
-  font-size: 2rem;
+  font-weight: 800;
+  font-size: 3rem;
 `;
 
 export const EducationList = styled.ul`
@@ -24,7 +29,7 @@ export const EducationList = styled.ul`
   padding: 0;
 `;
 
-export const EducationItem = styled.li`
+export const EducationItem = styled.li<EducationItemProps>`
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -32,6 +37,7 @@ export const EducationItem = styled.li`
   padding: 2rem;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
+  background: ${({ background }) => background};
 `;
 
 export const CourseOverview = styled.div`
@@ -67,7 +73,7 @@ export const CourseInfo = styled.div`
 export const CourseAdditional = styled.p`
   margin: 0;
   font-size: 0.9rem;
-  color: #555;
+  color: ${({ theme }) => theme.colors.aboutMePage.education.additionalText};
 `;
 
 export const GridDivider = styled.div`
@@ -87,7 +93,7 @@ export const CertificateContainer = styled.div`
 export const CertificateInstructions = styled.p`
   margin: 1rem 0 0 0;
   font-size: 0.8rem;
-  color: #555;
+  color: ${({ theme }) => theme.colors.aboutMePage.education.additionalText};
 `;
 
 export const Certificate = styled.img`
