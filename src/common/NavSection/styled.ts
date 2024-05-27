@@ -18,6 +18,7 @@ export const NavWrapper = styled.div`
 
 export const NavHeaderLink = styled(Link)`
   text-decoration: none;
+  color: inherit;
 
   &:visited {
     color: inherit;
@@ -62,6 +63,7 @@ export const NavLinks = styled.ul`
 
 export const NavHashLink = styled(HashLink)`
   text-decoration: none;
+  color: inherit;
   margin: 0;
   cursor: pointer;
   transition: 0.2s;
@@ -96,6 +98,7 @@ export const NavHashLink = styled(HashLink)`
 
 export const NavRouterLink = styled(Link)`
   text-decoration: none;
+  color: inherit;
   margin: 0;
   cursor: pointer;
   transition: 0.2s;
@@ -147,14 +150,14 @@ export const NavIconLink = styled.a`
   padding: 0 1rem;
   text-decoration: none;
   margin: 0;
-  color: ${({ theme }) => theme.colors.basic};
+  color: inherit;
   cursor: pointer;
   transition: 0.3s;
 
   &:hover {
     transform: scale(1.1);
     svg {
-      color: inherit;
+      color: ${({ theme }) => theme.colors.basic};
       animation: ${animatespin3d} 0.8s ease-in-out;
     }
   }
