@@ -6,7 +6,12 @@ interface AboutData {
   name: string;
   surname: string;
   title: string;
-  description: string;
+  description: {
+    paragraph1: string;
+    paragraph2: string;
+    paragraph3: string;
+    paragraph4: string;
+  };
   avatar: string;
   techStack: string[];
   education: {
@@ -27,8 +32,16 @@ export const ABOUT: AboutData = {
   name: "Oskar",
   surname: "Tracz",
   title: "Frontend Developer",
-  description:
-    "I am a Frontend Developer with a passion for creating web applications. I am a self-taught developer who is always eager to learn new technologies and improve my skills. I am a team player who is always ready to help and share knowledge with others. I am looking for new opportunities to grow and develop my skills.",
+  description: {
+    paragraph1:
+      "For nearly 8 years, I've been running my own businesses: a recording studio and a graphic design company. This journey has taught me a lot about working with clients, staying disciplined, and delivering high-quality projects. I've also gained valuable experience in hiring and managing employees, which has broadened my perspective on teamwork and leadership.",
+    paragraph2:
+      "Despite the success and stability of my businesses, I recently discovered a new passion: web application development. Over the past 1.5 years, I've been diving deep into frontend development, driven by a desire to keep growing and exploring new technologies. I've completed a comprehensive Frontend Developer course, where I learned about React, JavaScript, HTML, CSS, Responsive Web Design (RWD), Redux, TypeScript, Git, GitHub, Redux-Saga, and RESTful APIs. Additionally, I've specialized in building applications integrated with Large Language Models (LLMs) like Chat GPT-4, and have explored Generative AI, vector databases, function calling, and API queries.",
+    paragraph3:
+      "While I started my journey with formal courses, I now continue to expand my programming knowledge independently. My background as an entrepreneur has given me a strong sense of responsibility, the ability to meet deadlines, and excellent client communication skills. I'm a team player, ready to share knowledge and collaborate with others.",
+    paragraph4:
+      "I'm now looking for opportunities in the IT industry to further develop my skills and contribute to exciting projects. My goal is to expand my expertise to become a FullStack Developer and bring my commercial application ideas, including SaaS models, to life. I'm excited about this new chapter and am committed to making a meaningful impact in the tech world.",
+  },
   avatar: avatar,
   techStack: [
     "OpenAI",
