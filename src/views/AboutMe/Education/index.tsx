@@ -17,6 +17,7 @@ import {
   Title,
 } from "./styled";
 import ImageViewer from "../../../common/ImageViewer";
+import { useTheme } from "styled-components";
 
 interface ImageState {
   imageUrl: string;
@@ -24,6 +25,7 @@ interface ImageState {
 }
 
 const Education: React.FC = () => {
+  const theme = useTheme();
   const initialImageState: ImageState = {
     imageUrl: "",
     alt: "",
@@ -46,10 +48,13 @@ const Education: React.FC = () => {
 
   return (
     <EducationContainer>
-      <Title>Education</Title>
+      <Title>Education 🎓</Title>
       <EducationList>
         {ABOUT.education.map((course) => (
-          <EducationItem key={course.name}>
+          <EducationItem
+            key={course.name}
+            background={theme.colors.aboutMePage.education.listItemBG}
+          >
             <GridDivider>
               <CourseOverview>
                 <EducationName>Course</EducationName>
