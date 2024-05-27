@@ -1,61 +1,64 @@
 const colorNames = {
-  white: "#ffffff",
-  coal: "#000000",
-  darkGray: "#333333",
-  emperorGray: "#555555",
-  dustyGray: "#999999",
-  boulderGray: "#777777",
+  // ---common---
   codGray: "#111111",
+  darkGray: "#333333",
+  gray: "#444444",
+  emperorGray: "#555555",
+  boulderGray: "#777777",
+  dustyGray: "#999999",
+  silverGray: "#BBBBBB",
   lightGray: "#DDDDDD",
-
+  white: "#ffffff",
   // ---darkTheme---
-  platinum: "#eaeaeaff", //text color
+  platinum: "#eaeaeaff",
   bonJour: "#E8E3E8",
-  byzantium: "#893168ff",
-  violetJtc: "#4a1942ff",
   eminence: "#552a82",
   darkPurple: "#2e1c2bff",
   mirage: "#121a26",
   dullLavender: "#b7a9e4",
   blueWood: "#797193",
   violet: "#a770ff",
-  veniceBlue: "#a17100",
   deluge: "#7f5b9d",
   trendyPink: "#8f75a3",
+  perfume: "#DBA7F6",
+  lavender: "#B07CE4",
+  amethyst: "#9966CC",
   purpleBlackGradient: "linear-gradient(to top,  #121A26FF, #552A82FF);",
   blackPurpleGradient:
     "linear-gradient(0deg, rgba(85, 42, 130, 1) 0%, rgba(18, 26, 38, 1) 100%)",
+  blackPurpleBlackGradient:
+    "linear-gradient(0deg, rgba(18,26,38,1) 0%, rgba(53,28,78,1) 50%, rgba(18,26,38,1) 100%)",
   buttonDarkGradient: "linear-gradient(to right, #9d50bb, #6e48aa)",
-  violetGradient: "linear-gradient(to right, #a770ff, #834d9b)", // header text {Developer}
-  darkGradient:
-    "linear-gradient(90deg, rgba(18,26,38,1) 0%, rgba(47,36,55,1) 100%)",
+  violetGradient: "linear-gradient(to right, #a770ff, #834d9b)",
   // ---lightTheme---
   sunshade: "#FF9E29",
   yellowOrange: "#FAB23D",
-  onyx: "#2e3532ff", //text color
-  gray: "#444444", //additional text color (advantages)
+  onyx: "#2e3532ff",
   leather: "#A17B5E",
   gallery: "#EEEEEE",
-  orange: "#d66802",
+  orange: "#FF8F1F",
   rajah: "#f9ad66",
   alabaster: "#E3E3E3",
-  timberWolf: "#d2d4c8ff",
-  teaGreen: "#d3efbdff",
+  christine: "#DD560E",
   buttonLightGradient: "linear-gradient(to right, #f12711, #f5af19)",
-  orangeGradient: "linear-gradient(to right, #c02425, #f0cb35)", // // header text {Developer}
-  lightOrangeGradient: "linear-gradient(to right, #ff512f, #f09819)", // advantages background
+  orangeGradient: "linear-gradient(to right, #c02425, #f0cb35)",
+  lightOrangeGradient: "linear-gradient(to right, #ff512f, #f09819)",
 } as const;
 
 const common = {
+  other: {
+    inherit: "inherit",
+  },
   breakpoints: {
-    mobileMax: 767,
-    tabletVerticalMax: 991,
-    tabletHorMax: 1199,
+    mobileMax: "767px",
+    tabletVerticalMax: "991px",
+    tabletHorizontalMax: "1199px",
+    laptopMax: "1400px",
   },
   boxShadow:
     "0px 16px 58px 0px rgba(9, 10, 51, 0.03), 0px -2px 50px 0px rgba(9, 10, 51, 0.02)",
   border: "1px solid #dddddd",
-};
+} as const;
 
 export const themeLight = {
   ...common,
@@ -129,6 +132,18 @@ export const themeLight = {
     themeSwitch: {
       fill: colorNames.violet,
     },
+    aboutMePage: {
+      background: colorNames.white,
+      footer: colorNames.white,
+      animations: colorNames.christine,
+      title1: colorNames.yellowOrange,
+      title2: colorNames.orange,
+      title3: colorNames.christine,
+      education: {
+        additionalText: colorNames.emperorGray,
+        listItemBG: common.other.inherit,
+      },
+    },
     contactPage: {
       background: colorNames.white,
       footer: colorNames.white,
@@ -140,7 +155,7 @@ export const themeLight = {
       },
     },
   },
-};
+} as const;
 
 export const themeDark = {
   ...common,
@@ -203,7 +218,7 @@ export const themeDark = {
       keyboardInstruct: colorNames.lightGray,
       screenshotOutline: colorNames.violet,
       featureName: colorNames.white,
-      techBackground: "inherit",
+      techBackground: common.other.inherit,
       techBackgroundHover: colorNames.trendyPink,
       techText: colorNames.platinum,
       linkBackground: colorNames.violetGradient,
@@ -213,6 +228,18 @@ export const themeDark = {
     },
     themeSwitch: {
       fill: colorNames.sunshade,
+    },
+    aboutMePage: {
+      background: colorNames.blackPurpleBlackGradient,
+      footer: colorNames.blackPurpleGradient,
+      animations: colorNames.trendyPink,
+      title1: colorNames.perfume,
+      title2: colorNames.lavender,
+      title3: colorNames.amethyst,
+      education: {
+        additionalText: colorNames.silverGray,
+        listItemBG: colorNames.mirage,
+      },
     },
     contactPage: {
       background: colorNames.mirage,
@@ -225,4 +252,4 @@ export const themeDark = {
       },
     },
   },
-};
+} as const;
