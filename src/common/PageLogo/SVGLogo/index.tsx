@@ -1,9 +1,21 @@
 import { SVGProps } from "react";
-import { StyledSvg } from "../../NavSection/styled";
+import styled from "styled-components";
 
 interface LogoProps extends SVGProps<SVGSVGElement> {
   strokeColor?: string;
 }
+const StyledSvg = styled.svg`
+  stroke: ${({ theme }) => theme.colors.textBasic};
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
+
+  &.logo-stroke {
+    transition: 0.3s;
+    &:hover {
+      stroke: ${({ theme }) => theme.colors.basic};
+    }
+  }
+`;
 
 const Logo = ({ stroke, width, height }: LogoProps) => (
   <StyledSvg
