@@ -34,21 +34,25 @@ export const HeaderLink = styled(HashLink)`
   margin: 0;
   letter-spacing: 0.005rem;
   padding: 0.5rem 0;
+
   transition: 0.3s;
   cursor: pointer;
-
-  &:hover {
-    background-image: ${({ theme }) => theme.colors.header.text};
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
 
   &:visited {
     color: inherit;
   }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.basic};
+
+    .logo-stroke {
+      stroke: ${({ theme }) => theme.colors.basic};
+    }
+  }
+
   &:active {
-    filter: brightness(130%);
+    transform: scale(0.9);
+    filter: brightness(90%);
   }
 `;
 
