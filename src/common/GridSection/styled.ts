@@ -6,8 +6,11 @@ export const GridSection = styled.div`
   gap: 3.5rem;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    gap: 1.5rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
   }
 `;
