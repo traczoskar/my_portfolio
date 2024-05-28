@@ -5,10 +5,13 @@ export const MoreAboutMeSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
   padding: 5rem 0 10rem 0;
   background: ${({ theme }) => theme.colors.moreAboutMe.background};
   color: ${({ theme }) => theme.colors.text};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 2rem 0 5rem 0;
+  }
 `;
 
 export const MoreAboutMeDivider = styled.div`
@@ -18,17 +21,30 @@ export const MoreAboutMeDivider = styled.div`
   width: 100%;
   justify-content: space-between;
   gap: 2rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    flex-direction: column;
+    gap: 5rem;
+  }
 `;
 
 export const MoreAboutMeWrapper = styled.div`
   display: flex;
   gap: 2rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const AboutMeContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    align-items: center;
+  }
 `;
 
 export const AboutMeHeader = styled.h2`
@@ -36,6 +52,12 @@ export const AboutMeHeader = styled.h2`
   padding: 0;
   font-size: 1.5rem;
   font-weight: 700;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 2rem;
+  }
 `;
 
 export const AboutMeText = styled.p`
@@ -49,6 +71,14 @@ export const Picture = styled.img`
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    width: 8rem;
+    height: 8rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    width: 45vw;
+    height: 45vw;
+  }
 `;
 
 export const AboutMeLink = styled(Link)`
@@ -74,12 +104,24 @@ export const AboutMeLink = styled(Link)`
       transform: scale(1.05);
     }
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const TechStackContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    gap: 1.2rem;
+    margin: 0 1rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 export const TechnologyIcon = styled.img`
@@ -103,6 +145,10 @@ export const Technology = styled.div`
       transition: 0.3s;
       filter: grayscale(0%);
     }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    gap: 0.8rem;
   }
 `;
 
