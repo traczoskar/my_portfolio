@@ -3,9 +3,18 @@ import { selectIsDarkTheme, toggleTheme } from "../../slices/themeSlice";
 import { Button, IconWrapper } from "./styled";
 import { ReactComponent as Sun } from "../../assets/icons/sun.svg";
 import { ReactComponent as Moon } from "../../assets/icons/moon.svg";
+import { useMediaQuery } from "react-responsive";
 
-export const ThemeSwitch = () => {
+interface ThemeSwitchProps {
+  width?: number;
+  height?: number;
+}
+
+export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ width, height }) => {
   const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
+  const isTabletVertical: boolean = useMediaQuery({
+    query: `(max-width: 991px)`,
+  });
   const dispatch = useDispatch();
 
   return (
@@ -16,9 +25,15 @@ export const ThemeSwitch = () => {
     >
       <IconWrapper>
         {isDarkTheme ? (
-          <Sun width={30} height={30} />
+          <Sun
+            width={width ? width : isTabletVertical ? 25 : 30}
+            height={height ? height : isTabletVertical ? 25 : 30}
+          />
         ) : (
-          <Moon width={30} height={30} />
+          <Moon
+            width={width ? width : isTabletVertical ? 25 : 30}
+            height={height ? height : isTabletVertical ? 25 : 30}
+          />
         )}
       </IconWrapper>
     </Button>
