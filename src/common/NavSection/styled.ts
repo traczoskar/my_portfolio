@@ -1,6 +1,9 @@
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { ReactComponent as Burger } from "../../assets/icons/burger_icon.svg";
+
+//---Wrappers---
 
 export const NavBar = styled.nav`
   margin: 0 auto;
@@ -14,7 +17,12 @@ export const NavWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 1.5rem;
+  }
 `;
+
+//---Main Logo Link---
 
 export const NavHeaderLink = styled(Link)`
   text-decoration: none;
@@ -51,7 +59,17 @@ export const NavHeader = styled.h1`
     transform: scale(0.9);
     filter: brightness(90%);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 1.3rem;
+    gap: 0.75rem;
+  }
 `;
+
+//---Nav Links List---
 
 export const NavLinks = styled.ul`
   display: flex;
@@ -59,6 +77,10 @@ export const NavLinks = styled.ul`
   gap: 0.05rem;
   padding: 0;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    display: none;
+  }
 `;
 
 export const NavHashLink = styled(HashLink)`
@@ -174,5 +196,40 @@ export const NavIconLink = styled.a`
     transition: 0.3s;
     width: 100%;
     height: 100%;
+  }
+`;
+
+//---Mobile Menu---
+
+export const BurgerMenu = styled.div`
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    display: flex;
+  }
+`;
+
+export const BurgerIcon = styled(Burger)`
+  width: 40px;
+  height: 40px;
+`;
+
+export const MobileNavLinks = styled.ul<{ isOpen: boolean }>`
+  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+  background-color: ${({ theme }) => theme.colors.basic};
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25vw;
+  z-index: 10;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    display: none;
   }
 `;
