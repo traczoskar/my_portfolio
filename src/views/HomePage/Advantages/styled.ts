@@ -9,6 +9,11 @@ export const AdvantagesSection = styled.section`
   transition: all ease 0.5s;
   background: ${({ theme }) => theme.colors.advantages.sectionBackground};
   color: ${({ theme }) => theme.colors.textBasic};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 3rem 0 5rem 0;
+    gap: 2rem;
+  }
 `;
 
 export const AdvantagesTitle = styled.h2`
@@ -18,11 +23,27 @@ export const AdvantagesTitle = styled.h2`
   font-weight: 700;
   border-bottom: 1px solid #ddd;
   text-shadow: -4px 6px 8px rgba(66, 68, 90, 0.2);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 2rem;
+    padding: 0 3rem 1rem 3rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 7vw;
+    padding: 0 2.5rem 1rem 2.5rem;
+  }
 `;
 
 export const AdvantagesWrapper = styled.div`
   margin: 0 auto;
   max-width: 1200px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 0 5rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 0 1rem;
+  }
 `;
 
 export const AdvantagesList = styled.ul`
