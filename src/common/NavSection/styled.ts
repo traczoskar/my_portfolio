@@ -74,11 +74,16 @@ export const NavHeader = styled.h1`
 export const NavLinks = styled.ul`
   display: flex;
   list-style: none;
+  align-items: center;
   gap: 0.05rem;
+  font-size: 1.1rem;
   padding: 0;
   margin: 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 0.9rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     display: none;
   }
 `;
@@ -116,6 +121,10 @@ export const NavHashLink = styled(HashLink)`
   &:visited {
     color: inherit;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 1rem 0.5rem;
+  }
 `;
 
 export const NavRouterLink = styled(Link)`
@@ -150,6 +159,10 @@ export const NavRouterLink = styled(Link)`
 
   &:visited {
     color: inherit;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 1rem 0.5rem;
   }
 `;
 
@@ -197,15 +210,20 @@ export const NavIconLink = styled.a`
     width: 100%;
     height: 100%;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 1rem 0.5rem;
+  }
 `;
 
 //---Mobile Menu---
 
 export const BurgerMenu = styled.div`
   display: none;
+  color: inherit;
   cursor: pointer;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     display: flex;
   }
 `;
@@ -213,23 +231,4 @@ export const BurgerMenu = styled.div`
 export const BurgerIcon = styled(Burger)`
   width: 40px;
   height: 40px;
-`;
-
-export const MobileNavLinks = styled.ul<{ isOpen: boolean }>`
-  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-  flex-direction: column;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 1rem;
-  background-color: ${({ theme }) => theme.colors.basic};
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 25vw;
-  z-index: 10;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
-    display: none;
-  }
 `;
