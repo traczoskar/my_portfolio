@@ -32,11 +32,24 @@ export const AdvantagesList = styled.ul`
   padding: 0;
   margin: 0;
   list-style: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const AdvantagesItem = styled.li`
   display: flex;
   padding: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
 
 export const AdvantagesIcon = styled.div`
