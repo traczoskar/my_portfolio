@@ -6,6 +6,7 @@ export const Button = styled(Link)`
   align-items: center;
   justify-content: center;
   padding: 1rem 2rem;
+  font-size: 1.1rem;
   background: ${({ theme }) => theme.colors.button.background};
   border-radius: 30px;
   text-decoration: none;
@@ -25,5 +26,17 @@ export const Button = styled(Link)`
   &:active {
     transform: scale(0.9);
     box-shadow: none;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 1rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.5rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 1rem;
+    padding: 1rem 1.75rem;
   }
 `;
