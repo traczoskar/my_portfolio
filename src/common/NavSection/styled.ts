@@ -38,6 +38,7 @@ export const NavHeaderLink = styled(Link)`
 
 export const NavHeader = styled.h1`
   display: flex;
+  align-items: center;
   gap: 1.25rem;
   font-size: 2rem;
   font-weight: 700;
