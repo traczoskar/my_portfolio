@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const PortfolioSection = styled.section`
-  padding-top: 2rem;
-  padding-bottom: 10rem;
+  padding: 2rem 0 10rem 0;
   display: flex;
   justify-content: center;
   transition: all ease 0.5s;
   background: ${({ theme }) => theme.colors.projects.background};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 2rem 0 2rem 0;
+  }
 `;
 
 export const PortfolioWrapper = styled.div`
