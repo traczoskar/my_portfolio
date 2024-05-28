@@ -45,7 +45,10 @@ const NavSection: React.FC = () => {
       <NavWrapper>
         <NavHeaderLink to="/">
           <NavHeader>
-            <PageLogo height={isMobile ? 28 : 35} width={isMobile ? 28 : 35} />
+            <PageLogo
+              height={isTabletVertical ? 32 : isMobile ? 28 : 35}
+              width={isTabletVertical ? 32 : isMobile ? 28 : 35}
+            />
             traczoskar.dev
           </NavHeader>
         </NavHeaderLink>
