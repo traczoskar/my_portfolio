@@ -52,7 +52,7 @@ const common = {
   breakpoints: {
     mobileMax: "767px",
     tabletVerticalMax: "991px",
-    tabletHorizontalMax: "1199px",
+    tabletHorMax: "1199px",
     laptopMax: "1400px",
   },
   boxShadow:
