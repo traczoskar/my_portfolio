@@ -22,6 +22,10 @@ export const FooterContent = styled.div`
   z-index: 999;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    flex-direction: column;
+  }
 `;
 
 export const HeaderLink = styled(HashLink)`
