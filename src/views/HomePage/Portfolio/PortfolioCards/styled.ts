@@ -5,6 +5,11 @@ export const CardsContainer = styled.section`
   padding: 0;
   display: flex;
   gap: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -13,13 +18,15 @@ export const Nav = styled.nav`
   margin-right: 5px;
   border-radius: 1rem;
   border-right: 1px solid ${({ theme }) => theme.colors.projects.border};
-  width: 220px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    width: 90%;
+  }
 `;
 
 export const ProjectList = styled.ul`
@@ -29,6 +36,10 @@ export const ProjectList = styled.ul`
   margin: 0;
   padding: 0;
   flex-grow: 1;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    flex-direction: row;
+  }
 `;
 
 export const ProjectTab = styled.li`
@@ -38,7 +49,7 @@ export const ProjectTab = styled.li`
   color: ${({ theme }) => theme.colors.textBasic};
   font-weight: 500;
   padding-left: 1.5rem;
-  font-size: 1.2;
+  font-size: 1.1rem;
   border-radius: 0.5rem;
   background: ${({ theme }) => theme.colors.projects.tabBackground};
   cursor: pointer;
@@ -63,6 +74,10 @@ export const ProjectTab = styled.li`
     box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
       0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const ProjectContainer = styled.article`
@@ -72,6 +87,13 @@ export const ProjectContainer = styled.article`
   width: 800px;
   height: auto;
   transform: translateY(4px);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptopMax}) {
+    width: 55vw;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    width: 90%;
+  }
 `;
 
 export const ProjectImage = styled.img`
@@ -98,7 +120,6 @@ export const DetailsButton = styled.button`
   background: #555555;
   border: 1px solid #dddddd;
   border-radius: 0.5rem;
-
   color: white;
   cursor: pointer;
   display: inline-flex;
