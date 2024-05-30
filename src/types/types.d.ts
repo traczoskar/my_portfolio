@@ -5,10 +5,19 @@ export interface ProjectDetailsState {
   currentProjectId: string | null;
 }
 
+export interface SelectedProjectState {
+  project: Project;
+}
+
 export interface ThemeState {
   isDarkTheme: boolean;
 }
 
+export interface LanguageState {
+  isLanguageEN: boolean;
+}
+
+// Components Types:
 export interface Project {
   route: string;
   label: string;
