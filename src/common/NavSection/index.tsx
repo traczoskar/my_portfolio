@@ -18,6 +18,9 @@ import {
 } from "./styled";
 import PageLogo from "../PageLogo";
 import MobileNavigation from "./MobileNavigation";
+import LanguageSwitch from "../LanguageSwitch";
+import { selectIsLanguageEN } from "../../slices/languageSlice";
+import { useSelector } from "react-redux";
 
 const NavSection: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -27,6 +30,7 @@ const NavSection: React.FC = () => {
   const isTabletVertical: boolean = useMediaQuery({
     query: `(max-width: 991px)`,
   });
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
 
   const toggleMenu = (): void => {
     setIsOpen(!isOpen);
@@ -69,33 +73,50 @@ const NavSection: React.FC = () => {
         ) : (
           <NavLinks>
             <NavRouterLink
-              title="About Me"
-              aria-label="Link to About Me page"
+              title={isLanguageEN ? "About Me" : "O mnie"}
+              aria-label={
+                isLanguageEN ? "Link to About Me page" : "Link do strony O mnie"
+              }
               to="/about"
             >
-              About Me
+              {isLanguageEN ? "About Me" : "O mnie"}
             </NavRouterLink>
             <NavHashLink
               smooth
               to="/#projects"
-              aria-label="Link to Projects section"
-              title="Projects"
+              aria-label={
+                isLanguageEN
+                  ? "Link to Projects section"
+                  : "Link do sekcji Projekty"
+              }
+              title={isLanguageEN ? "Projects" : "Projekty"}
             >
-              Projects
+              {isLanguageEN ? "Projects" : "Projekty"}
             </NavHashLink>
             <NavRouterLink
-              title="Contact"
-              aria-label="Link to Contact page"
+              title={isLanguageEN ? "Contact" : "Kontakt"}
+              aria-label={
+                isLanguageEN ? "Link to Contact page" : "Link do strony Kontakt"
+              }
               to="/contact"
             >
-              Contact
+              {isLanguageEN ? "Contact" : "Kontakt"}
             </NavRouterLink>
+            <LanguageSwitch />
             <NavIconLink
               href="https://github.com/traczoskar"
               target="_blank"
               rel="noreferrer noopener"
-              aria-label="Link to GitHub profile"
-              title="Link to GitHub profile"
+              aria-label={
+                isLanguageEN
+                  ? "Link to GitHub profile"
+                  : "Link do profilu GitHub"
+              }
+              title={
+                isLanguageEN
+                  ? "Link to GitHub profile"
+                  : "Link do profilu GitHub"
+              }
             >
               <GitHubIcon
                 width={isTabletVertical ? 25 : 30}
@@ -106,8 +127,16 @@ const NavSection: React.FC = () => {
               href="https://www.linkedin.com/in/traczoskar/"
               target="_blank"
               rel="noreferrer noopener"
-              aria-label="Link to LinkedIn profile"
-              title="Link to LinkedIn profile"
+              aria-label={
+                isLanguageEN
+                  ? "Link to LinkedIn profile"
+                  : "Link do profilu LinkedIn"
+              }
+              title={
+                isLanguageEN
+                  ? "Link to LinkedIn profile"
+                  : "Link do profilu LinkedIn"
+              }
             >
               <LinkedInIcon
                 width={isTabletVertical ? 25 : 30}
