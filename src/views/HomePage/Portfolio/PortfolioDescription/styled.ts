@@ -7,9 +7,20 @@ export const PortfolioTitle = styled.h2`
   font-weight: 700;
   border-bottom: 1px solid #ddd;
   text-shadow: -4px 6px 8px rgba(66, 68, 90, 0.2);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 2rem;
+    padding: 0 3rem 1rem 3rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 6.5vw;
+    padding: 0 2.5rem 1rem 2.5rem;
+  }
 `;
 
 export const PortfolioDescriptionContent = styled.p`
+  /* display: flex;
+  flex-wrap: wrap; */
   text-align: center;
   margin: 0;
   padding: 3rem 0;
@@ -17,6 +28,11 @@ export const PortfolioDescriptionContent = styled.p`
   color: ${({ theme }) => theme.colors.projects.textSecondary};
   font-weight: 400;
   line-height: 1.5;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
 `;
 
 export const DescriptionWrapper = styled.div`
