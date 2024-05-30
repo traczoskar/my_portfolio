@@ -4,6 +4,7 @@ import { Button, IconWrapper } from "./styled";
 import { ReactComponent as Sun } from "../../assets/icons/sun.svg";
 import { ReactComponent as Moon } from "../../assets/icons/moon.svg";
 import { useMediaQuery } from "react-responsive";
+import { selectIsLanguageEN } from "../../slices/languageSlice";
 
 interface ThemeSwitchProps {
   width?: number;
@@ -12,6 +13,7 @@ interface ThemeSwitchProps {
 
 export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ width, height }) => {
   const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const isTabletVertical: boolean = useMediaQuery({
     query: `(max-width: 991px)`,
   });
@@ -19,7 +21,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ width, height }) => {
 
   return (
     <Button
-      title="Theme Switch"
+      title={isLanguageEN ? "Switch theme" : "Zmień motyw"}
       aria-hidden="true"
       onClick={() => dispatch(toggleTheme())}
     >
