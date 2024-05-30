@@ -1,10 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { projects } from "../views/HomePage/Portfolio/portfolioList";
-import { Project } from "../types/types";
-
-interface SelectedProjectState {
-  project: Project;
-}
+import { SelectedProjectState } from "../types/types";
 
 const initialState: SelectedProjectState = {
   project: projects[0],
