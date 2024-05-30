@@ -1,6 +1,7 @@
 import { advantagesList } from "./advantagesList";
 import {
   AdvantageDescription,
+  AdvantageTextContainer,
   AdvantageTitle,
   AdvantagesIcon,
   AdvantagesItem,
@@ -22,12 +23,12 @@ const Advantages = () => {
                 <AdvantagesIcon>
                   <advantage.icon />
                 </AdvantagesIcon>
-                <div>
+                <AdvantageTextContainer>
                   <AdvantageTitle>{advantage.title}</AdvantageTitle>
                   <AdvantageDescription>
                     {advantage.description}
                   </AdvantageDescription>
-                </div>
+                </AdvantageTextContainer>
               </AdvantagesItem>
             ))}
           </AdvantagesList>
