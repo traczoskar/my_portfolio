@@ -44,3 +44,39 @@ export const advantagesList: Advantage[] = [
     description: "I love to see as the products evolve during work of many.",
   },
 ];
+
+export const advantagesListPL: Advantage[] = [
+  {
+    icon: RWDIcon,
+    title: "RWD",
+    description: "Responsywne projekty, które działają na każdym urządzeniu.",
+  },
+  {
+    icon: UXIcon,
+    title: "UX/UI",
+    description:
+      "Interfejsy przyjazne dla użytkownika, które zapewniają doskonałe doświadczenia użytkownika.",
+  },
+  {
+    icon: SemanticIcon,
+    title: "Semantyka",
+    description:
+      "Semantyczny HTML w celu poprawy SEO i utrzymania dostępności.",
+  },
+  {
+    icon: WebsiteIcon,
+    title: "Strony internetowe",
+    description: "Łatwe w użyciu i przyjemne dla oka.",
+  },
+  {
+    icon: WorkEthicsIcon,
+    title: "Etyka pracy",
+    description: "Konsekwentne zakończenie projektu na czas.",
+  },
+  {
+    icon: TeamWorkIcon,
+    title: "Praca zespołowa",
+    description:
+      "Uwielbiam patrzeć, jak produkty ewoluują podczas pracy wielu osób.",
+  },
+];
