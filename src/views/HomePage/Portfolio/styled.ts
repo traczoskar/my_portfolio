@@ -7,8 +7,8 @@ export const PortfolioSection = styled.section`
   transition: all ease 0.5s;
   background: ${({ theme }) => theme.colors.projects.background};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
-    padding: 2rem 0 2rem 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 2rem;
   }
 `;
 
