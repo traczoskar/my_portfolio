@@ -42,7 +42,7 @@ export const AdvantagesWrapper = styled.div`
     padding: 0 5rem;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 `;
 
@@ -69,7 +69,7 @@ export const AdvantagesItem = styled.li`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 `;
 
@@ -99,6 +99,24 @@ export const AdvantagesIcon = styled.div`
     height: 100%;
     transition: transform ease 0.3s;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    width: 58px;
+    height: 58px;
+    margin: 0;
+  }
+`;
+
+export const AdvantageTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    align-items: center;
+  }
 `;
 
 export const AdvantageTitle = styled.h3`
@@ -106,13 +124,21 @@ export const AdvantageTitle = styled.h3`
   font-weight: 600;
   font-size: 1.3rem;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-weight: 800;
+  }
 `;
 
 export const AdvantageDescription = styled.p`
   color: ${({ theme }) => theme.colors.advantages.textSecondary};
-  margin-top: 0.5rem;
+  margin: 0;
   padding: 0;
   font-weight: 400;
   font-size: 0.9rem;
   line-height: 1.5;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    text-align: center;
+  }
 `;
