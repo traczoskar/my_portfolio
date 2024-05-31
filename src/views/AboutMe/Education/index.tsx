@@ -18,6 +18,8 @@ import {
 } from "./styled";
 import ImageViewer from "../../../common/ImageViewer";
 import { useTheme } from "styled-components";
+import { useSelector } from "react-redux";
+import { selectIsLanguageEN } from "../../../slices/languageSlice";
 
 interface ImageState {
   imageUrl: string;
@@ -26,6 +28,7 @@ interface ImageState {
 
 const Education: React.FC = () => {
   const theme = useTheme();
+  const isLanguageEN = useSelector(selectIsLanguageEN);
   const initialImageState: ImageState = {
     imageUrl: "",
     alt: "",
@@ -48,7 +51,7 @@ const Education: React.FC = () => {
 
   return (
     <EducationContainer>
-      <Title>Education 🎓</Title>
+      <Title>{isLanguageEN ? "Education" : "Edukacja"} 🎓</Title>
       <EducationList>
         {ABOUT.education.map((course) => (
           <EducationItem
@@ -57,32 +60,53 @@ const Education: React.FC = () => {
           >
             <GridDivider>
               <CourseOverview>
-                <EducationName>Course</EducationName>
+                <EducationName>
+                  {isLanguageEN ? "Course" : "Kurs"}
+                </EducationName>
                 <CourseTitle>{course.name}</CourseTitle>
                 <CourseInfo>
                   <CourseAdditional>
-                    <strong>Date of issue:</strong> {course.date}
+                    <strong>
+                      {isLanguageEN ? "Date of issue:" : "Data ukończenia:"}
+                    </strong>{" "}
+                    {course.date}
                   </CourseAdditional>
                   <CourseAdditional>
-                    <strong>Organization:</strong> {course.organization}
+                    <strong>
+                      {isLanguageEN ? "Organization:" : "Organizator:"}
+                    </strong>{" "}
+                    {course.organization}
                   </CourseAdditional>
                 </CourseInfo>
-                <CourseDescription>{course.content}</CourseDescription>
+                <CourseDescription>
+                  {isLanguageEN ? course.content.EN : course.content.PL}
+                </CourseDescription>
               </CourseOverview>
               {course.certificate && (
                 <CertificateContainer>
                   <Certificate
                     src={course.certificate}
-                    alt={`Certificate of completion: ${course.name}`}
+                    alt={`${
+                      isLanguageEN
+                        ? "Certificate of completion:"
+                        : "Certyfikat ukończenia:"
+                    } ${course.name}`}
                     onClick={() =>
                       openImageViewer(
                         course.certificate!,
-                        `Certificate of completion: ${course.name}`
+                        `${
+                          isLanguageEN
+                            ? "Certificate of completion:"
+                            : "Certyfikat ukończenia:"
+                        } ${course.name}`
                       )
                     }
                   />
                   <CertificateInstructions>
-                    Click on the certificate to view it in full size 🔍
+                    {isLanguageEN
+                      ? "Click on the certificate to view it in full size"
+                      : "Kliknij na certyfikat aby wyświetlić pełny rozmiar"}{" "}
+                    🔍
                   </CertificateInstructions>
                 </CertificateContainer>
               )}
