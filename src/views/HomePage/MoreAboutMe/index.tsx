@@ -15,8 +15,11 @@ import {
 import picture from "../../../assets/avatar.jpg";
 import { ABOUT } from "../../AboutMe/aboutMeData";
 import { technologies } from "../Portfolio/technologies";
+import { useSelector } from "react-redux";
+import { selectIsLanguageEN } from "../../../slices/languageSlice";
 
 const MoreAboutMe = () => {
+  const isLanguageEN = useSelector(selectIsLanguageEN);
   return (
     <MoreAboutMeSection>
       <MoreAboutMeDivider>
@@ -38,10 +41,16 @@ const MoreAboutMe = () => {
         <MoreAboutMeWrapper>
           <Picture src={picture} alt="Oskar Tracz" />
           <AboutMeContainer>
-            <AboutMeHeader>More about me</AboutMeHeader>
-            <AboutMeText>Click the button below and check out.</AboutMeText>
+            <AboutMeHeader>
+              {isLanguageEN ? "More about me" : "Więcej o mnie"}
+            </AboutMeHeader>
+            <AboutMeText>
+              {isLanguageEN
+                ? "Click the button below and check out."
+                : "Kliknij przycisk poniżej i sprawdź."}
+            </AboutMeText>
             <AboutMeLink to="/about" title="About Me page">
-              <span>About me</span>
+              <span>{isLanguageEN ? "About me" : "O mnie"}</span>
             </AboutMeLink>
           </AboutMeContainer>
         </MoreAboutMeWrapper>
