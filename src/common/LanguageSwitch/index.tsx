@@ -13,7 +13,8 @@ const LanguageSwitch = () => {
       }
       onClick={() => dispatch(toggleLanguage())}
     >
-      {isLanguageEN ? "PL" : "EN"}
+      <span className={isLanguageEN ? "active" : ""}>EN&nbsp;</span> |{" "}
+      <span className={!isLanguageEN ? "active" : ""}>&nbsp;PL</span>
     </Button>
   );
 };
