@@ -19,7 +19,9 @@ const Advantages = () => {
   return (
     <>
       <AdvantagesSection>
-        <AdvantagesTitle>Why choose me?</AdvantagesTitle>
+        <AdvantagesTitle>
+          {isLanguageEN ? "Why choose me?" : "Dlaczego warto mnie wybrać?"}
+        </AdvantagesTitle>
         <AdvantagesWrapper>
           <AdvantagesList>
             {(isLanguageEN ? advantagesList : advantagesListPL).map(
