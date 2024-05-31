@@ -23,6 +23,7 @@ import { useSelector } from "react-redux";
 import { selectIsDarkTheme } from "../../../slices/themeSlice";
 import ShapeDivider from "./ShapeDivider";
 import { useTheme } from "styled-components";
+import { selectIsLanguageEN } from "../../../slices/languageSlice";
 interface HeaderProps {
   title: string;
   subtitle: string;
@@ -30,6 +31,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
   const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const theme = useTheme();
 
   return (
@@ -39,7 +41,8 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
           <GridSection>
             <HeaderWrapper>
               <HeaderGreeter>
-                Hello, I'm <SpecialTextGreeter>Oskar Tracz</SpecialTextGreeter>
+                {isLanguageEN ? "Hello, I'm " : "Cześć! Nazywam się "}
+                <SpecialTextGreeter>Oskar Tracz</SpecialTextGreeter>
               </HeaderGreeter>
               <HeaderContent>
                 {title}{" "}
