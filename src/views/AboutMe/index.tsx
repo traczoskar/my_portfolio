@@ -27,10 +27,13 @@ import { useTheme } from "styled-components";
 import AnimatedIcons from "./AnimatedIcons";
 import { useSelector } from "react-redux";
 import { selectIsDarkTheme } from "../../slices/themeSlice";
+import { selectIsLanguageEN } from "../../slices/languageSlice";
 
 const AboutMe: React.FC = () => {
-  const isDarkTheme = useSelector(selectIsDarkTheme);
+  const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const theme = useTheme();
+
   return (
     <>
       <MainContainer backgroundColor={theme.colors.aboutMePage.background}>
@@ -42,43 +45,55 @@ const AboutMe: React.FC = () => {
               <TileDiv>
                 <Avatar src={ABOUT.avatar} alt="Avatar" />
                 <TileDivider>
-                  <TileTitle>Who Am I? 👨🏻‍💻</TileTitle>
+                  <TileTitle>
+                    {isLanguageEN ? "Who Am I?" : "Kim jestem?"} 👨🏻‍💻
+                  </TileTitle>
                   <Name>
                     {ABOUT.name} {ABOUT.surname}
                   </Name>
                   <Profession>{ABOUT.title}</Profession>
                   <DescriptionFirst>
-                    {ABOUT.description.paragraph1}
+                    {isLanguageEN
+                      ? ABOUT.description.EN.paragraph1
+                      : ABOUT.description.PL.paragraph1}
                   </DescriptionFirst>
                 </TileDivider>
               </TileDiv>
               <ParagraphContainer>
                 <DescriptionTitle color={theme.colors.aboutMePage.title1}>
-                  #passion ❤️‍🔥
+                  {isLanguageEN ? "#passion" : "#pasja"} ❤️‍🔥
                 </DescriptionTitle>
                 <DescriptionAdditional>
-                  {ABOUT.description.paragraph2}
+                  {isLanguageEN
+                    ? ABOUT.description.EN.paragraph2
+                    : ABOUT.description.PL.paragraph2}
                 </DescriptionAdditional>
               </ParagraphContainer>
               <ParagraphContainer>
                 <DescriptionTitle color={theme.colors.aboutMePage.title2}>
-                  #collaboration 🤝
+                  {isLanguageEN ? "#collaboration" : "#współpraca"} 🤝
                 </DescriptionTitle>
                 <DescriptionAdditional>
-                  {ABOUT.description.paragraph3}
+                  {isLanguageEN
+                    ? ABOUT.description.EN.paragraph3
+                    : ABOUT.description.PL.paragraph3}
                 </DescriptionAdditional>
               </ParagraphContainer>
               <ParagraphContainer>
                 <DescriptionTitle color={theme.colors.aboutMePage.title3}>
-                  #commitment 🚀
+                  {isLanguageEN ? "#commitment" : "#zaangażowanie"} 🚀
                 </DescriptionTitle>
                 <DescriptionAdditional>
-                  {ABOUT.description.paragraph4}
+                  {isLanguageEN
+                    ? ABOUT.description.EN.paragraph4
+                    : ABOUT.description.PL.paragraph4}
                 </DescriptionAdditional>
               </ParagraphContainer>
             </Tile>
             <Tile>
-              <TileTitle>My Tech Stack 🛠</TileTitle>
+              <TileTitle>
+                {isLanguageEN ? "My Tech Stack" : "Technologie"} 🛠
+              </TileTitle>
               <TechStack>
                 {ABOUT.techStack.map((tech, index) => (
                   <TechItem key={index}>
