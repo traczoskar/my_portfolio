@@ -16,9 +16,11 @@ import {
   setSelectedProject,
 } from "../../../../slices/selectedProjectSlice";
 import { Project } from "../../../../types/types";
+import { selectIsLanguageEN } from "../../../../slices/languageSlice";
 
 export default function PortfolioCards() {
   const selectedProject: Project = useSelector(selectSelectedProject);
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const dispatch = useDispatch();
 
   const selectProject = (project: Project) => {
@@ -38,7 +40,9 @@ export default function PortfolioCards() {
               {project?.icon} {project?.label}
               {project === selectedProject ? (
                 <DetailsButton>
-                  <ProjectLink project={selectedProject}>Details</ProjectLink>
+                  <ProjectLink project={selectedProject}>
+                    {isLanguageEN ? "Details" : "Szczegóły"}
+                  </ProjectLink>
                 </DetailsButton>
               ) : null}
             </ProjectTab>
