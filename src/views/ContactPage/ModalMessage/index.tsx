@@ -1,11 +1,14 @@
 import { AnimatePresence } from "framer-motion";
 import { ModalContainer } from "./styled";
+import { useSelector } from "react-redux";
+import { selectIsLanguageEN } from "../../../slices/languageSlice";
 
 interface ModalMessageProps {
   isCopied: boolean;
 }
 
 const ModalMessage: React.FC<ModalMessageProps> = ({ isCopied }) => {
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const modalVariants = {
     hidden: {
       y: "-30px",
@@ -38,7 +41,7 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ isCopied }) => {
           animate="visible"
           exit="exit"
         >
-          Copied to clipboard ✓
+          {isLanguageEN ? "Copied to clipboard ✓" : "Skopiowano do schowka ✓"}
         </ModalContainer>
       )}
     </AnimatePresence>
