@@ -27,9 +27,14 @@ import { selectIsLanguageEN } from "../../../slices/languageSlice";
 interface HeaderProps {
   title: string;
   subtitle: string;
+  name: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({
+  title,
+  subtitle,
+  name,
+}: HeaderProps) => {
   const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const theme = useTheme();
@@ -42,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
             <HeaderWrapper>
               <HeaderGreeter>
                 {isLanguageEN ? "Hello, I'm " : "Cześć! Nazywam się "}
-                <SpecialTextGreeter>Oskar Tracz</SpecialTextGreeter>
+                <SpecialTextGreeter>{name}</SpecialTextGreeter>
               </HeaderGreeter>
               <HeaderContent>
                 {title}{" "}
@@ -54,12 +59,13 @@ const Header: React.FC<HeaderProps> = ({ title, subtitle }: HeaderProps) => {
               </HeaderContent>
               <SubHeaderContent>{subtitle}</SubHeaderContent>
               <Paragraph>
-                Welcome to my portfolio! My pursuit is to connect aesthetics
-                with functionality while creating web applications.
+                {isLanguageEN
+                  ? "Welcome to my portfolio! My pursuit is to connect aesthetics with functionality while creating web applications."
+                  : "Witaj, oto moje portfolio! Moim celem jest połączenie estetyki z funkcjonalnością podczas tworzenia aplikacji internetowych."}
               </Paragraph>
               <ButtonWrapper>
                 <Button to="/contact">
-                  <span>Contact me</span>
+                  <span>{isLanguageEN ? "Contact me" : "Kontakt"}</span>
                 </Button>
               </ButtonWrapper>
             </HeaderWrapper>
