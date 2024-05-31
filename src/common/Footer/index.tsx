@@ -13,18 +13,25 @@ import { ReactComponent as LinkedIcon } from "../../assets/icons/linkedIn_icon.s
 import { ABOUT } from "../../views/AboutMe/aboutMeData";
 import WavesSVG from "./WavesSVG";
 import { useTheme } from "styled-components";
+import { useSelector } from "react-redux";
+import { selectIsLanguageEN } from "../../slices/languageSlice";
 
 interface FooterProps {
   backgroundColor: string;
 }
 
 const Footer: React.FC<FooterProps> = ({ backgroundColor }) => {
+  const isLanguageEN = useSelector(selectIsLanguageEN);
   const theme = useTheme();
 
   return (
     <FooterWrapper backgroundColor={backgroundColor}>
       <FooterContent>
-        <HeaderLink title="Home Page" smooth to="/#header">
+        <HeaderLink
+          title={isLanguageEN ? "Home Page" : "Strona główna"}
+          smooth
+          to="/#header"
+        >
           <PageLogo width={25} height={25} />
           traczoskar.dev
         </HeaderLink>
@@ -44,8 +51,11 @@ const Footer: React.FC<FooterProps> = ({ backgroundColor }) => {
             </SocialLink>
           ))}
         </Socials>
-        <LetsChat to="/contact" title="Contact Page">
-          Let's chat!
+        <LetsChat
+          to="/contact"
+          title={isLanguageEN ? "Contact Page" : "Kontakt"}
+        >
+          {isLanguageEN ? "Let's chat" : "Porozmawiajmy"}
           <ChatIcon width={23} height={23} />
         </LetsChat>
       </FooterContent>
