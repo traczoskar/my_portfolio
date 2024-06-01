@@ -9,9 +9,14 @@ import { selectIsLanguageEN } from "../../slices/languageSlice";
 interface ThemeSwitchProps {
   width?: number;
   height?: number;
+  padding?: string;
 }
 
-export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ width, height }) => {
+export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
+  width,
+  height,
+  padding,
+}) => {
   const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const isTabletVertical: boolean = useMediaQuery({
@@ -24,6 +29,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({ width, height }) => {
       title={isLanguageEN ? "Switch theme" : "Zmień motyw"}
       aria-hidden="true"
       onClick={() => dispatch(toggleTheme())}
+      padding={padding}
     >
       <IconWrapper>
         {isDarkTheme ? (
