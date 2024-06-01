@@ -2,15 +2,19 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-export const MobileNavLinks = styled.ul<{ isOpen: boolean }>`
+interface MobileNavLinkProps {
+  isOpen: boolean;
+}
+
+export const MobileNavLinks = styled.ul<MobileNavLinkProps>`
   display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   list-style: none;
-  padding: 2.5rem;
-  font-weight: 400;
-  font-size: 1.5rem;
-  gap: 2rem;
+  padding: 10rem 4rem 0 4rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+  gap: 2.5rem;
   margin: 0;
   background-color: ${({ theme }) => theme.colors.app.background};
   position: fixed;
@@ -22,11 +26,49 @@ export const MobileNavLinks = styled.ul<{ isOpen: boolean }>`
 `;
 
 export const CloseButton = styled.button`
-  align-self: flex-end;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
   background: none;
   border: none;
   cursor: pointer;
   color: inherit;
+`;
+
+export const MobileNavLogo = styled(Link)`
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.basic};
+
+    .logo-stroke {
+      stroke: ${({ theme }) => theme.colors.basic};
+    }
+  }
+
+  &:active {
+    transform: scale(0.9);
+    filter: brightness(90%);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 1.3rem;
+    gap: 0.75rem;
+  }
 `;
 
 export const MobileRouterLink = styled(Link)`
@@ -35,14 +77,17 @@ export const MobileRouterLink = styled(Link)`
   margin: 0;
   cursor: pointer;
   transition: 0.2s;
-  padding: 1rem 0;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.basic};
-  }
 
   &:visited {
     color: inherit;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.basic};
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 `;
 
@@ -52,14 +97,17 @@ export const MobileHashLink = styled(HashLink)`
   margin: 0;
   cursor: pointer;
   transition: 0.2s;
-  padding: 1rem 0;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.colors.basic};
-  }
 
   &:visited {
     color: inherit;
+  }
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.basic};
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 `;
 
@@ -110,7 +158,7 @@ export const MobileIconLink = styled.a`
 
 export const IconsWrapper = styled.div`
   position: absolute;
-  bottom: 3rem;
+  bottom: 4rem;
   left: 4rem;
   display: flex;
   align-items: center;
