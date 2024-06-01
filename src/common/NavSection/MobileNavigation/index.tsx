@@ -1,3 +1,4 @@
+import LanguageSwitch from "../../LanguageSwitch";
 import { ThemeSwitch } from "../../ThemeSwitch";
 import {
   CloseButton,
@@ -47,6 +48,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
         >
           Contact
         </MobileRouterLink>
+        <LanguageSwitch onClick={onClick} />
         <MobileIconLink
           href="https://github.com/traczoskar"
           target="_blank"
