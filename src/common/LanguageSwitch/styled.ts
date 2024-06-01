@@ -16,13 +16,13 @@ export const Button = styled.button`
   }
 
   span {
-    transition: all 0.2s;
+    transition: font-size 0.2s;
     font-weight: 400;
     font-size: 1rem;
   }
 
   .active {
-    transition: all 0.2s;
+    transition: font-size 0.2s;
     font-weight: 800;
     font-size: 1.1rem;
   }
