@@ -1,15 +1,13 @@
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import { ReactComponent as GitHub } from "../../../assets/icons/git_icon.svg";
-import { ReactComponent as LinkedIn } from "../../../assets/icons/linkedIn_icon.svg";
 
 export const MobileNavLinks = styled.ul<{ isOpen: boolean }>`
   display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
   flex-direction: column;
   align-items: center;
   list-style: none;
-  padding: 3rem;
+  padding: 2.5rem;
   font-weight: 400;
   font-size: 1.5rem;
   gap: 2rem;
@@ -27,9 +25,8 @@ export const CloseButton = styled.button`
   align-self: flex-end;
   background: none;
   border: none;
-  font-size: 2rem;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.text};
+  color: inherit;
 `;
 
 export const MobileRouterLink = styled(Link)`
@@ -78,21 +75,10 @@ const animatespin3d = keyframes`
   }
 `;
 
-export const GitHubIcon = styled(GitHub)`
-  width: 40px;
-  height: 40px;
-`;
-
-export const LinkedInIcon = styled(LinkedIn)`
-  width: 40px;
-  height: 40px;
-`;
-
 export const MobileIconLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 1rem;
   text-decoration: none;
   margin: 0;
   color: inherit;
@@ -120,4 +106,13 @@ export const MobileIconLink = styled.a`
     width: 100%;
     height: 100%;
   }
+`;
+
+export const IconsWrapper = styled.div`
+  position: absolute;
+  bottom: 3rem;
+  left: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 `;
