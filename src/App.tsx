@@ -5,6 +5,7 @@ import { themeDark, themeLight } from "./app/theme";
 import { useSelector } from "react-redux";
 import { selectIsDarkTheme } from "./slices/themeSlice";
 import AnimatedRoutes from "./app/AnimatedRoutes/AnimatedRoutes";
+import ScrollToTopButton from "./common/ScrollToTopButton.tsx";
 
 const App = () => {
   const isDarkTheme = useSelector(selectIsDarkTheme);
@@ -12,6 +13,7 @@ const App = () => {
   return (
     <ThemeProvider theme={isDarkTheme ? themeDark : themeLight}>
       <GlobalStyle />
+      <ScrollToTopButton />
       <Router>
         <AnimatedRoutes />
       </Router>
