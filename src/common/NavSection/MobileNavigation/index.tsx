@@ -2,13 +2,15 @@ import LanguageSwitch from "../../LanguageSwitch";
 import { ThemeSwitch } from "../../ThemeSwitch";
 import {
   CloseButton,
-  GitHubIcon,
-  LinkedInIcon,
+  IconsWrapper,
   MobileHashLink,
   MobileIconLink,
   MobileNavLinks,
   MobileRouterLink,
 } from "./styled";
+import { ReactComponent as CloseIcon } from "../../../assets/icons/close.svg";
+import { ReactComponent as GitHubIcon } from "../../../assets/icons/git_icon.svg";
+import { ReactComponent as LinkedInIcon } from "../../../assets/icons/linkedIn_icon.svg";
 
 interface MobileNavigationProps {
   isOpen: boolean;
@@ -22,7 +24,9 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   return (
     <>
       <MobileNavLinks isOpen={isOpen}>
-        <CloseButton onClick={onClick}>X</CloseButton>
+        <CloseButton onClick={onClick}>
+          <CloseIcon width={35} height={35} />
+        </CloseButton>
         <MobileRouterLink
           title="About Me"
           aria-label="Link to About Me page"
@@ -49,27 +53,29 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
           Contact
         </MobileRouterLink>
         <LanguageSwitch onClick={onClick} />
-        <MobileIconLink
-          href="https://github.com/traczoskar"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="Link to GitHub profile"
-          title="Link to GitHub profile"
-          onClick={onClick}
-        >
-          <GitHubIcon />
-        </MobileIconLink>
-        <MobileIconLink
-          href="https://www.linkedin.com/in/traczoskar/"
-          target="_blank"
-          rel="noreferrer noopener"
-          aria-label="Link to LinkedIn profile"
-          title="Link to LinkedIn profile"
-          onClick={onClick}
-        >
-          <LinkedInIcon />
-        </MobileIconLink>
-        <ThemeSwitch width={40} height={40} />
+        <IconsWrapper>
+          <MobileIconLink
+            href="https://github.com/traczoskar"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Link to GitHub profile"
+            title="Link to GitHub profile"
+            onClick={onClick}
+          >
+            <GitHubIcon width={35} height={35} />
+          </MobileIconLink>
+          <MobileIconLink
+            href="https://www.linkedin.com/in/traczoskar/"
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Link to LinkedIn profile"
+            title="Link to LinkedIn profile"
+            onClick={onClick}
+          >
+            <LinkedInIcon width={35} height={35} />
+          </MobileIconLink>
+          <ThemeSwitch width={35} height={35} padding={"0"} />
+        </IconsWrapper>
       </MobileNavLinks>
     </>
   );
