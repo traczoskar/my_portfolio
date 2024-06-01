@@ -12,15 +12,19 @@ const animatespin3d = keyframes`
   }
 `;
 
-export const Button = styled.button`
+interface ButtonProps {
+  padding?: string;
+}
+
+export const Button = styled.button<ButtonProps>`
   background: none;
   display: flex;
   align-items: center;
   color: inherit;
   border-radius: 0.25rem;
   cursor: pointer;
+  padding: ${({ padding }) => padding || "0.5rem 1rem"};
   border: none;
-  padding: 0.5rem 1rem;
   transition: 0.3s;
 
   &:hover {
