@@ -31,6 +31,7 @@ import { useSelector } from "react-redux";
 import { selectIsDarkTheme } from "../../slices/themeSlice";
 import { selectIsLanguageEN } from "../../slices/languageSlice";
 import { useMediaQuery } from "react-responsive";
+import { motion } from "framer-motion";
 
 const AboutMe: React.FC = () => {
   const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
@@ -40,6 +41,11 @@ const AboutMe: React.FC = () => {
   });
   const theme = useTheme();
 
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <>
       <MainContainer backgroundColor={theme.colors.aboutMePage.background}>
@@ -48,7 +54,11 @@ const AboutMe: React.FC = () => {
         <AboutMeContainer>
           <Wrapper>
             <Tile>
-              <TileDiv>
+              <TileDiv
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeInVariants}
+              >
                 <Avatar src={ABOUT.avatar} alt="Avatar" />
                 <TileDivider>
                   <TileTitle>
@@ -72,13 +82,23 @@ const AboutMe: React.FC = () => {
                 </TileDivider>
               </TileDiv>
               {!isMobile ? null : (
-                <DescriptionFirst>
-                  {isLanguageEN
-                    ? ABOUT.description.EN.paragraph1
-                    : ABOUT.description.PL.paragraph1}
-                </DescriptionFirst>
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={fadeInVariants}
+                >
+                  <DescriptionFirst>
+                    {isLanguageEN
+                      ? ABOUT.description.EN.paragraph1
+                      : ABOUT.description.PL.paragraph1}
+                  </DescriptionFirst>
+                </motion.div>
               )}
-              <ParagraphContainer>
+              <ParagraphContainer
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeInVariants}
+              >
                 <DescriptionTitle color={theme.colors.aboutMePage.title1}>
                   {isLanguageEN ? "#passion" : "#pasja"} ❤️‍🔥
                 </DescriptionTitle>
@@ -88,7 +108,11 @@ const AboutMe: React.FC = () => {
                     : ABOUT.description.PL.paragraph2}
                 </DescriptionAdditional>
               </ParagraphContainer>
-              <ParagraphContainer>
+              <ParagraphContainer
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeInVariants}
+              >
                 <DescriptionTitle color={theme.colors.aboutMePage.title2}>
                   {isLanguageEN ? "#collaboration" : "#współpraca"} 🤝
                 </DescriptionTitle>
@@ -98,7 +122,11 @@ const AboutMe: React.FC = () => {
                     : ABOUT.description.PL.paragraph3}
                 </DescriptionAdditional>
               </ParagraphContainer>
-              <ParagraphContainer>
+              <ParagraphContainer
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeInVariants}
+              >
                 <DescriptionTitle color={theme.colors.aboutMePage.title3}>
                   {isLanguageEN ? "#commitment" : "#zaangażowanie"} 🚀
                 </DescriptionTitle>
@@ -115,7 +143,12 @@ const AboutMe: React.FC = () => {
               </TechTitle>
               <TechStack>
                 {ABOUT.techStack.map((tech, index) => (
-                  <TechItem key={index}>
+                  <TechItem
+                    initial="hidden"
+                    whileInView="visible"
+                    variants={fadeInVariants}
+                    key={index}
+                  >
                     <TechIcon
                       src={technologies.find((t) => t.name === tech)?.icon}
                       alt={tech}
