@@ -13,11 +13,10 @@ export const EducationContainer = styled.div`
   margin: 3rem 0 8rem 0;
   gap: 3rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
-    padding: 0 3rem;
+    padding: 0 5vw;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     margin: 2rem 0 3rem 0;
-    padding: 0 5vw;
   }
 `;
 
@@ -110,7 +109,7 @@ export const GridDivider = styled.div`
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
     grid-template-columns: 1fr;
   }
 `;
@@ -148,7 +147,7 @@ export const Certificate = styled.img`
     outline: 3px solid ${({ theme }) => theme.colors.basic};
     transform: scale(1.05);
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
     height: 45vw;
   }
 `;
