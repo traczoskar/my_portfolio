@@ -70,6 +70,10 @@ export const themeLight = {
     app: {
       background: colorNames.alabaster,
     },
+    toTopButton: {
+      background: colorNames.white,
+      arrow: colorNames.onyx,
+    },
     header: {
       text: colorNames.orangeGradient,
     },
@@ -166,6 +170,10 @@ export const themeDark = {
     textReversed: colorNames.onyx,
     app: {
       background: colorNames.mirage,
+    },
+    toTopButton: {
+      background: colorNames.mirage,
+      arrow: colorNames.platinum,
     },
     header: {
       text: colorNames.violetGradient,
