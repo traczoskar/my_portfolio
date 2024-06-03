@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface EducationItemProps {
   background?: string;
@@ -41,7 +42,7 @@ export const EducationList = styled.ul`
   padding: 0;
 `;
 
-export const EducationItem = styled.li<EducationItemProps>`
+export const EducationItem = styled(motion.li)<EducationItemProps>`
   display: flex;
   gap: 1rem;
   flex-direction: column;
