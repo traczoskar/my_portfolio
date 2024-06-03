@@ -17,6 +17,13 @@ export const Wrapper = styled.div`
   max-width: 1200px;
   width: 100%;
   justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 0 3rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 0 5vw;
+  }
 `;
 
 export const Tile = styled.section`
@@ -24,11 +31,21 @@ export const Tile = styled.section`
   flex-direction: column;
   gap: 3rem;
   margin: 8rem 0 0 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    margin: 4rem 0 0 0;
+    gap: 1rem;
+  }
 `;
 
 export const TileDiv = styled.div`
   display: flex;
   gap: 4rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const TileDivider = styled.div`
@@ -36,12 +53,21 @@ export const TileDivider = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   margin: 0 0 3rem 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    align-items: center;
+    margin: 0;
+    gap: 0.25rem;
+  }
 `;
 
 export const TileTitle = styled.h3`
   font-size: 3rem;
   font-weight: 800;
   margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-weight: 600;
+    font-size: 6vw;
+  }
 `;
 
 export const Avatar = styled.img`
@@ -51,19 +77,46 @@ export const Avatar = styled.img`
   z-index: 100;
   object-fit: cover;
   border: 2px solid #ccc;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    width: 50vw;
+    height: 50vw;
+  }
 `;
 
 export const Name = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
   margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 8vw;
+    font-weight: 800;
+  }
 `;
 
 export const Profession = styled.h4`
   font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.basic};
+  background-image: ${({ theme }) => theme.colors.header.text};
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin: 0;
-  transition: color 0.3s ease;
+  transition: 0.3s ease;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 7vw;
+  }
+`;
+
+export const CurlyBraces = styled.span`
+  font-weight: 500;
+  color: #777777;
+  font-size: 1.75rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 3.6vw;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 8vw;
+  }
 `;
 
 export const ParagraphContainer = styled.div`
@@ -78,6 +131,9 @@ export const DescriptionTitle = styled.h3<DescriptionTitleProps>`
   font-weight: 700;
   margin: 0;
   transition: color 0.3s ease;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 7vw;
+  }
 `;
 
 export const DescriptionFirst = styled.p`
@@ -85,6 +141,10 @@ export const DescriptionFirst = styled.p`
   line-height: 1.8;
   text-align: justify;
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 3.5vw;
+  }
 `;
 
 export const DescriptionAdditional = styled.p`
@@ -92,6 +152,19 @@ export const DescriptionAdditional = styled.p`
   line-height: 1.75;
   text-align: justify;
   margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 3.5vw;
+  }
+`;
+
+export const TechTitle = styled.h3`
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    align-self: center;
+    font-size: 8vw;
+  }
 `;
 
 export const TechStack = styled.ul`
@@ -102,6 +175,12 @@ export const TechStack = styled.ul`
   flex-wrap: wrap;
   justify-content: center;
   gap: 4rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3rem;
+    column-gap: 1rem;
+  }
 `;
 
 export const TechItem = styled.li`
@@ -114,6 +193,9 @@ export const TechItem = styled.li`
 
   &:hover {
     transform: scale(1.05);
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+      transform: scale(1.2);
+    }
     img {
       transition: 0.3s;
       filter: grayscale(0%);
@@ -125,6 +207,10 @@ export const TechIcon = styled.img`
   width: auto;
   height: 3rem;
   filter: grayscale(100%);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    height: 8vw;
+  }
 `;
 
 export const TechSubtitle = styled.p`
@@ -135,6 +221,9 @@ export const TechSubtitle = styled.p`
   padding: 0;
   font-weight: 400;
   color: #888888;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 2.5vw;
+  }
 `;
 
 export const SocialLinks = styled.div`
