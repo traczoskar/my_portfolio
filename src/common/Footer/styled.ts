@@ -13,6 +13,10 @@ export const FooterWrapper = styled.footer<FooterWrapperProps>`
   padding-bottom: 4.5rem;
   text-align: center;
   margin-top: auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 3rem 0 2rem 0;
+  }
 `;
 
 export const FooterContent = styled.div`
@@ -25,6 +29,7 @@ export const FooterContent = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -61,14 +66,18 @@ export const HeaderLink = styled(HashLink)`
   }
 `;
 
+export const MobileLinksWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+`;
+
 export const LetsChat = styled(Link)`
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  /* background-color: #f9ad66; */
   background-color: ${({ theme }) => theme.colors.footer.button.background};
-  /* color: #333333; */
   color: ${({ theme }) => theme.colors.footer.button.text};
   padding: 1.5rem 2rem;
   font-weight: 500;
@@ -83,6 +92,13 @@ export const LetsChat = styled(Link)`
     background-color: #444444;
     color: white;
     outline: 1px solid #eeeeee;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-weight: 700;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
   }
 `;
 
