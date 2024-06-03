@@ -44,23 +44,59 @@ const NavSection: React.FC = () => {
     }
   }, [isOpen]);
 
+  const linkVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.25,
+        duration: 0.5,
+      },
+    }),
+  };
+
+  const logoVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        duration: 1.0,
+      },
+    },
+  };
+
   return (
     <NavBar id="header">
       <NavWrapper>
         <NavHeaderLink to="/">
-          <NavHeader>
-            <PageLogo
-              height={isTabletVertical ? 32 : isMobile ? 28 : 35}
-              width={isTabletVertical ? 32 : isMobile ? 28 : 35}
-            />
-            traczoskar.dev
-          </NavHeader>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={logoVariants}
+          >
+            <NavHeader>
+              <PageLogo
+                height={isTabletVertical ? 32 : isMobile ? 28 : 35}
+                width={isTabletVertical ? 32 : isMobile ? 28 : 35}
+              />
+              traczoskar.dev
+            </NavHeader>
+          </motion.div>
         </NavHeaderLink>
         {isMobile ? (
           <div>
-            <BurgerMenu onClick={toggleMenu}>
-              <BurgerIcon />
-            </BurgerMenu>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={logoVariants}
+            >
+              <BurgerMenu onClick={toggleMenu}>
+                <BurgerIcon />
+              </BurgerMenu>
+            </motion.div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: isOpen ? 1 : 0 }}
@@ -79,7 +115,14 @@ const NavSection: React.FC = () => {
               }
               to="/about"
             >
-              {isLanguageEN ? "About Me" : "O mnie"}
+              <motion.div
+                custom={0}
+                initial="hidden"
+                animate="visible"
+                variants={linkVariants}
+              >
+                {isLanguageEN ? "About Me" : "O mnie"}
+              </motion.div>
             </NavRouterLink>
             <NavHashLink
               smooth
@@ -91,7 +134,14 @@ const NavSection: React.FC = () => {
               }
               title={isLanguageEN ? "Projects" : "Projekty"}
             >
-              {isLanguageEN ? "Projects" : "Projekty"}
+              <motion.div
+                custom={1}
+                initial="hidden"
+                animate="visible"
+                variants={linkVariants}
+              >
+                {isLanguageEN ? "Projects" : "Projekty"}
+              </motion.div>
             </NavHashLink>
             <NavRouterLink
               title={isLanguageEN ? "Contact" : "Kontakt"}
@@ -100,50 +150,85 @@ const NavSection: React.FC = () => {
               }
               to="/contact"
             >
-              {isLanguageEN ? "Contact" : "Kontakt"}
+              <motion.div
+                custom={2}
+                initial="hidden"
+                animate="visible"
+                variants={linkVariants}
+              >
+                {isLanguageEN ? "Contact" : "Kontakt"}
+              </motion.div>
             </NavRouterLink>
-            <LanguageSwitch />
-            <NavIconLink
-              href="https://github.com/traczoskar"
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={
-                isLanguageEN
-                  ? "Link to GitHub profile"
-                  : "Link do profilu GitHub"
-              }
-              title={
-                isLanguageEN
-                  ? "Link to GitHub profile"
-                  : "Link do profilu GitHub"
-              }
+            <motion.div
+              custom={3}
+              initial="hidden"
+              animate="visible"
+              variants={linkVariants}
             >
-              <GitHubIcon
-                width={isTabletVertical ? 25 : 30}
-                height={isTabletVertical ? 25 : 30}
-              />
-            </NavIconLink>
-            <NavIconLink
-              href="https://www.linkedin.com/in/traczoskar/"
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={
-                isLanguageEN
-                  ? "Link to LinkedIn profile"
-                  : "Link do profilu LinkedIn"
-              }
-              title={
-                isLanguageEN
-                  ? "Link to LinkedIn profile"
-                  : "Link do profilu LinkedIn"
-              }
+              <LanguageSwitch />
+            </motion.div>
+            <motion.div
+              custom={4}
+              initial="hidden"
+              animate="visible"
+              variants={linkVariants}
             >
-              <LinkedInIcon
-                width={isTabletVertical ? 25 : 30}
-                height={isTabletVertical ? 25 : 30}
-              />
-            </NavIconLink>
-            <ThemeSwitch />
+              <NavIconLink
+                href="https://github.com/traczoskar"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={
+                  isLanguageEN
+                    ? "Link to GitHub profile"
+                    : "Link do profilu GitHub"
+                }
+                title={
+                  isLanguageEN
+                    ? "Link to GitHub profile"
+                    : "Link do profilu GitHub"
+                }
+              >
+                <GitHubIcon
+                  width={isTabletVertical ? 25 : 30}
+                  height={isTabletVertical ? 25 : 30}
+                />
+              </NavIconLink>
+            </motion.div>
+            <motion.div
+              custom={5}
+              initial="hidden"
+              animate="visible"
+              variants={linkVariants}
+            >
+              <NavIconLink
+                href="https://www.linkedin.com/in/traczoskar/"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={
+                  isLanguageEN
+                    ? "Link to LinkedIn profile"
+                    : "Link do profilu LinkedIn"
+                }
+                title={
+                  isLanguageEN
+                    ? "Link to LinkedIn profile"
+                    : "Link do profilu LinkedIn"
+                }
+              >
+                <LinkedInIcon
+                  width={isTabletVertical ? 25 : 30}
+                  height={isTabletVertical ? 25 : 30}
+                />
+              </NavIconLink>
+            </motion.div>
+            <motion.div
+              custom={6}
+              initial="hidden"
+              animate="visible"
+              variants={linkVariants}
+            >
+              <ThemeSwitch />
+            </motion.div>
           </NavLinks>
         )}
       </NavWrapper>
