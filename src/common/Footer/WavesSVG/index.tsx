@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface WavesSVGProps {
   fill: string;
+  height?: number;
 }
 
 const StyledWavesSVG = styled.div<WavesSVGProps>`
@@ -17,21 +18,24 @@ const StyledWavesSVG = styled.div<WavesSVGProps>`
 
   svg {
     width: 100%;
-    height: auto;
+    height: ${(props) => props.height};
 
     .shape-fill {
       fill: ${(props) => props.fill};
     }
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+  }
 `;
 
-const WavesSVG: React.FC<WavesSVGProps> = ({ fill }) => (
+const WavesSVG: React.FC<WavesSVGProps> = ({ fill, height }) => (
   <StyledWavesSVG fill={fill}>
     <svg
       viewBox="0 0 960 120"
-      preserveAspectRatio="xMidYMid meet"
+      preserveAspectRatio="none"
       width="100%"
-      height="auto"
+      height={height ? height : "auto"}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       version="1.1"
