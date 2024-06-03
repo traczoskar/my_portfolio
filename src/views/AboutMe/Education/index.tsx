@@ -49,12 +49,20 @@ const Education: React.FC = () => {
     setIsViewerOpen(false);
   };
 
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <EducationContainer>
       <Title>{isLanguageEN ? "Education" : "Edukacja"} 🎓</Title>
       <EducationList>
         {ABOUT.education.map((course) => (
           <EducationItem
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeInVariants}
             key={course.name}
             background={theme.colors.aboutMePage.education.listItemBG}
           >
