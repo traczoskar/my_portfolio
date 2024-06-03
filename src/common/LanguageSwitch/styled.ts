@@ -20,12 +20,23 @@ export const Button = styled.button`
     transition: font-size 0.2s;
     font-weight: 400;
     font-size: 1rem;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+      font-size: 0.9rem;
+    }
   }
 
   .active {
     transition: font-size 0.2s;
     font-weight: 800;
     font-size: 1.1rem;
+    @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 1rem 0.75rem;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
