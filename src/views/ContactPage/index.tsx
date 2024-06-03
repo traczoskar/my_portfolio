@@ -19,11 +19,18 @@ import ModalMessage from "./ModalMessage";
 import { useTheme } from "styled-components";
 import { useSelector } from "react-redux";
 import { selectIsLanguageEN } from "../../slices/languageSlice";
+import { useMediaQuery } from "react-responsive";
 
 const ContactPage = () => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const theme = useTheme();
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
+  const isSmallMobile: boolean = useMediaQuery({
+    query: `(max-width: 430px)`,
+  });
 
   useEffect(() => {
     if (isCopied) {
@@ -33,16 +40,48 @@ const ContactPage = () => {
     }
   }, [isCopied]);
 
+  const headerFadeVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 1.0,
+        duration: 1.5,
+      },
+    },
+  };
+
+  const buttonVariants = {
+    hidden: { scale: 0.7, opacity: 0 },
+    visible: (i: number) => ({
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: 1.5 + i * 0.1,
+        duration: 0.5,
+        opacity: {
+          delay: 1.5 + i * 0.4, // Dodatkowe opóźnienie dla opacity
+          duration: 1.5,
+        },
+      },
+    }),
+  };
+
   return (
     <>
       <MainContainer backgroundColor={theme.colors.contactPage.background}>
         <NavSection />
         <ContactPageWrapper>
-          <ContactTitle>
+          <ContactTitle
+            initial="hidden"
+            animate="visible"
+            variants={headerFadeVariants}
+          >
             {isLanguageEN ? (
               <>
-                Drop me <SpecialText>a line</SpecialText>, I'm just{" "}
-                <SpecialText>a click</SpecialText> away!
+                Drop me <SpecialText>a line</SpecialText>, I'm just&nbsp;
+                <SpecialText>a&nbsp;click</SpecialText>&nbsp;away!
               </>
             ) : (
               <>
@@ -53,6 +92,10 @@ const ContactPage = () => {
           </ContactTitle>
           <ContactLinks>
             <ContactLink
+              custom={0}
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
               href={`mailto:${ABOUT.email}`}
               title={
                 isLanguageEN
@@ -60,23 +103,40 @@ const ContactPage = () => {
                   : "E-mail do contact@traczoskar.dev"
               }
             >
-              <MailIcon width={30} height={30} />
+              <MailIcon
+                width={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                height={isSmallMobile ? 25 : isMobile ? 28 : 30}
+              />
               E-mail
             </ContactLink>
             <ContactLink
+              custom={1}
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
               href={ABOUT.socials[0].url}
               target="_blank"
               title={isLanguageEN ? "GitHub profile" : "Profil na GitHubie"}
             >
-              <GitHubIcon width={30} height={30} />
+              <GitHubIcon
+                width={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                height={isSmallMobile ? 25 : isMobile ? 28 : 30}
+              />
               GitHub
             </ContactLink>
             <ContactLink
+              custom={2}
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
               href={ABOUT.socials[1].url}
               target="_blank"
               title={isLanguageEN ? "LinkedIn profile" : "Profil na LinkedIn"}
             >
-              <LinkedInIcon width={30} height={30} />
+              <LinkedInIcon
+                width={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                height={isSmallMobile ? 25 : isMobile ? 28 : 30}
+              />
               LinkedIn
             </ContactLink>
             <CopyToClipboard
@@ -84,11 +144,18 @@ const ContactPage = () => {
               onCopy={() => setIsCopied(true)}
             >
               <ContactLink
+                custom={3}
+                initial="hidden"
+                animate="visible"
+                variants={buttonVariants}
                 title={
                   isLanguageEN ? "Copy e-mail address" : "Skopiuj adres e-mail"
                 }
               >
-                <CopyIcon width={30} height={30} />
+                <CopyIcon
+                  width={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                  height={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                />
                 contact@traczoskar.dev
               </ContactLink>
             </CopyToClipboard>
