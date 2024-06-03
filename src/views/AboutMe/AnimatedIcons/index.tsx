@@ -1,19 +1,24 @@
 import { useTheme } from "styled-components";
 import { StyledGear } from "./styled";
+import { useMediaQuery } from "react-responsive";
 
 interface AnimatedIconsProps {
   isDarkTheme: boolean;
 }
 
 const AnimatedIcons: React.FC<AnimatedIconsProps> = ({ isDarkTheme }) => {
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
   const theme = useTheme();
+
   return (
     <>
       <StyledGear
-        width={200}
-        height={200}
-        top="11rem"
-        left="15rem"
+        width={isMobile ? 80 : 200}
+        height={isMobile ? 80 : 200}
+        top={isMobile ? "6rem" : "11rem"}
+        left={isMobile ? "4rem" : "15rem"}
         duration="12s"
         color={
           isDarkTheme
@@ -22,12 +27,12 @@ const AnimatedIcons: React.FC<AnimatedIconsProps> = ({ isDarkTheme }) => {
         }
       />
       <StyledGear
-        width={120}
-        height={120}
-        top="19.5rem"
-        left="9.8rem"
+        width={isMobile ? 50 : 120}
+        height={isMobile ? 50 : 120}
+        top={isMobile ? "8.9rem" : "19.5rem"}
+        left={isMobile ? "1.5rem" : "9.8rem"}
         duration="12s"
-        delay="1.3s"
+        delay="0.3s"
         color={
           isDarkTheme
             ? theme.colors.aboutMePage.animations
