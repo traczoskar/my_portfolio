@@ -12,9 +12,9 @@ const ScrollButton = styled.div<ScrollButtonProps>`
   height: 50px;
   bottom: 40px;
   right: 40px;
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid white;
+  background-color: ${({ theme }) => theme.colors.toTopButton.background};
+  color: ${({ theme }) => theme.colors.toTopButton.arrow};
+  border: 2px solid ${({ theme }) => theme.colors.toTopButton.arrow};
   border-radius: 50%;
   display: flex;
   justify-content: center;
