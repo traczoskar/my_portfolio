@@ -50,6 +50,7 @@ const common = {
     inherit: "inherit",
   },
   breakpoints: {
+    smallMobileMax: "430px",
     mobileMax: "767px",
     tabletVerticalMax: "991px",
     tabletHorMax: "1199px",
