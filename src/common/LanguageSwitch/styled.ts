@@ -8,7 +8,7 @@ export const Button = styled.button`
   color: inherit;
   font-size: 1.2rem;
   font-weight: 500;
-  padding: 0;
+  padding: 1rem;
   cursor: pointer;
   transition: font-weight 0.3s, color 0.2s;
 
@@ -26,5 +26,9 @@ export const Button = styled.button`
     transition: font-size 0.2s;
     font-weight: 800;
     font-size: 1.1rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 1rem 0.5rem;
   }
 `;
