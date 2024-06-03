@@ -19,9 +19,6 @@ export const Wrapper = styled.div`
   justify-content: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
-    padding: 0 3rem;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     padding: 0 5vw;
   }
 `;
@@ -31,6 +28,10 @@ export const Tile = styled.section`
   flex-direction: column;
   gap: 3rem;
   margin: 8rem 0 0 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    margin: 6rem 0 0 0;
+    gap: 2rem;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     margin: 4rem 0 0 0;
@@ -53,9 +54,12 @@ export const TileDivider = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   margin: 0 0 3rem 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    margin: 0;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     align-items: center;
-    margin: 0;
     gap: 0.25rem;
   }
 `;
@@ -77,6 +81,10 @@ export const Avatar = styled.img`
   z-index: 100;
   object-fit: cover;
   border: 2px solid #ccc;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    width: 30vw;
+    height: 30vw;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     width: 50vw;
     height: 50vw;
