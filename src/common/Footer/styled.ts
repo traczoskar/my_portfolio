@@ -27,6 +27,10 @@ export const FooterContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 0 5vw;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     flex-direction: column;
     align-items: center;
