@@ -7,6 +7,9 @@ interface AnimatedIconsProps {
 }
 
 const AnimatedIcons: React.FC<AnimatedIconsProps> = ({ isDarkTheme }) => {
+  const isTablet: boolean = useMediaQuery({
+    query: `(max-width: 1199px)`,
+  });
   const isMobile: boolean = useMediaQuery({
     query: `(max-width: 767px)`,
   });
@@ -15,10 +18,10 @@ const AnimatedIcons: React.FC<AnimatedIconsProps> = ({ isDarkTheme }) => {
   return (
     <>
       <StyledGear
-        width={isMobile ? 80 : 200}
-        height={isMobile ? 80 : 200}
-        top={isMobile ? "6rem" : "11rem"}
-        left={isMobile ? "4rem" : "15rem"}
+        width={isMobile ? 80 : isTablet ? 110 : 200}
+        height={isMobile ? 80 : isTablet ? 110 : 200}
+        top={isMobile ? "8rem" : isTablet ? "15vw" : "11rem"}
+        left={isMobile ? "7rem" : isTablet ? "80vw" : "15rem"}
         duration="12s"
         color={
           isDarkTheme
@@ -27,10 +30,10 @@ const AnimatedIcons: React.FC<AnimatedIconsProps> = ({ isDarkTheme }) => {
         }
       />
       <StyledGear
-        width={isMobile ? 50 : 120}
-        height={isMobile ? 50 : 120}
-        top={isMobile ? "8.9rem" : "19.5rem"}
-        left={isMobile ? "1.5rem" : "9.8rem"}
+        width={isMobile ? 50 : isTablet ? 70 : 120}
+        height={isMobile ? 50 : isTablet ? 70 : 120}
+        top={isMobile ? "12rem" : isTablet ? "21.5vw" : "19.5rem"}
+        left={isMobile ? "5rem" : isTablet ? "74vw" : "9.8rem"}
         duration="12s"
         delay="0.3s"
         color={
