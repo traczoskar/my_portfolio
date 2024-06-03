@@ -18,7 +18,7 @@ export const NavWrapper = styled.div`
   align-items: center;
   padding: 2.5rem 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
-    padding: 1.5rem;
+    padding: 1.5rem 5vw;
   }
 `;
 
@@ -122,6 +122,9 @@ export const NavHashLink = styled(HashLink)`
   &:visited {
     color: inherit;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 1rem 0.75rem;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
     padding: 1rem 0.5rem;
@@ -160,6 +163,10 @@ export const NavRouterLink = styled(Link)`
 
   &:visited {
     color: inherit;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 1rem 0.75rem;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
@@ -210,6 +217,10 @@ export const NavIconLink = styled.a`
     transition: 0.3s;
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 1rem 0.75rem;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
