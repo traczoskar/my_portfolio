@@ -10,8 +10,8 @@ const ScrollButton = styled.div<ScrollButtonProps>`
   position: fixed;
   width: 50px;
   height: 50px;
-  bottom: 40px;
-  right: 40px;
+  bottom: 1.5rem;
+  right: 1.5rem;
   background-color: ${({ theme }) => theme.colors.toTopButton.background};
   color: ${({ theme }) => theme.colors.toTopButton.arrow};
   border: 2px solid ${({ theme }) => theme.colors.toTopButton.arrow};
@@ -20,9 +20,13 @@ const ScrollButton = styled.div<ScrollButtonProps>`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: all 0.3s;
   opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
   z-index: 1000;
+
+  &:active {
+    transform: scale(0.7);
+  }
 
   @media (min-width: 1200px) {
     display: none;
