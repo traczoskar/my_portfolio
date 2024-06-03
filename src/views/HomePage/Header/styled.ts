@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const SectionDividerPurposeOnly = styled.div`
   position: relative;
 `;
 
-export const Section = styled.div`
+export const Section = styled(motion.div)`
   margin: 0 auto;
   max-width: 1200px;
 
