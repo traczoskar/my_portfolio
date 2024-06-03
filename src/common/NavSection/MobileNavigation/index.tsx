@@ -15,6 +15,7 @@ import { ReactComponent as LinkedInIcon } from "../../../assets/icons/linkedIn_i
 import { useSelector } from "react-redux";
 import { selectIsLanguageEN } from "../../../slices/languageSlice";
 import PageLogo from "../../PageLogo";
+import { motion } from "framer-motion";
 
 interface MobileNavigationProps {
   isOpen: boolean;
@@ -26,64 +27,128 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
   onClick,
 }) => {
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
+
+  const navVariants = {
+    hidden: { x: "-100%", opacity: 0 },
+    visible: (i: number) => ({
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.25,
+      },
+    }),
+  };
+
+  const iconVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { delay: 1.5 } },
+  };
+
   return (
     <>
       <MobileNavLinks isOpen={isOpen}>
-        <CloseButton onClick={onClick}>
-          <CloseIcon width={25} height={25} />
-        </CloseButton>
+        <motion.div
+          initial="hidden"
+          animate={isOpen ? "visible" : "hidden"}
+          variants={iconVariants}
+        >
+          <CloseButton onClick={onClick}>
+            <CloseIcon width={25} height={25} />
+          </CloseButton>
+        </motion.div>
         <MobileNavLogo onClick={onClick} to="/">
-          <PageLogo height={26} width={26} />
+          <motion.div
+            custom={0}
+            initial="hidden"
+            animate={isOpen ? "visible" : "hidden"}
+            variants={navVariants}
+          >
+            <PageLogo height={26} width={26} />
+          </motion.div>
         </MobileNavLogo>
-        <MobileRouterLink
-          title="About Me"
-          aria-label="Link to About Me page"
-          to="/about"
-          onClick={onClick}
+        <motion.div
+          custom={1}
+          initial="hidden"
+          animate={isOpen ? "visible" : "hidden"}
+          variants={navVariants}
         >
-          {isLanguageEN ? "About Me" : "O mnie"}
-        </MobileRouterLink>
-        <MobileHashLink
-          smooth
-          to="/#projects"
-          aria-label="Link to Projects section"
-          title="Projects"
-          onClick={onClick}
-        >
-          {isLanguageEN ? "Projects" : "Projekty"}
-        </MobileHashLink>
-        <MobileRouterLink
-          title="Contact"
-          aria-label="Link to Contact page"
-          to="/contact"
-          onClick={onClick}
-        >
-          {isLanguageEN ? "Contact" : "Kontakt"}
-        </MobileRouterLink>
-        <LanguageSwitch />
-        <IconsWrapper>
-          <MobileIconLink
-            href="https://github.com/traczoskar"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Link to GitHub profile"
-            title="Link to GitHub profile"
+          <MobileRouterLink
+            title="About Me"
+            aria-label="Link to About Me page"
+            to="/about"
             onClick={onClick}
           >
-            <GitHubIcon width={30} height={30} />
-          </MobileIconLink>
-          <MobileIconLink
-            href="https://www.linkedin.com/in/traczoskar/"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="Link to LinkedIn profile"
-            title="Link to LinkedIn profile"
+            {isLanguageEN ? "About Me" : "O mnie"}
+          </MobileRouterLink>
+        </motion.div>
+        <motion.div
+          custom={2}
+          initial="hidden"
+          animate={isOpen ? "visible" : "hidden"}
+          variants={navVariants}
+        >
+          <MobileHashLink
+            smooth
+            to="/#projects"
+            aria-label="Link to Projects section"
+            title="Projects"
             onClick={onClick}
           >
-            <LinkedInIcon width={30} height={30} />
-          </MobileIconLink>
-          <ThemeSwitch width={30} height={30} padding={"0"} />
-        </IconsWrapper>
+            {isLanguageEN ? "Projects" : "Projekty"}
+          </MobileHashLink>
+        </motion.div>
+        <motion.div
+          custom={3}
+          initial="hidden"
+          animate={isOpen ? "visible" : "hidden"}
+          variants={navVariants}
+        >
+          <MobileRouterLink
+            title="Contact"
+            aria-label="Link to Contact page"
+            to="/contact"
+            onClick={onClick}
+          >
+            {isLanguageEN ? "Contact" : "Kontakt"}
+          </MobileRouterLink>
+        </motion.div>
+        <motion.div
+          custom={4}
+          initial="hidden"
+          animate={isOpen ? "visible" : "hidden"}
+          variants={navVariants}
+        >
+          <LanguageSwitch />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          animate={isOpen ? "visible" : "hidden"}
+          variants={iconVariants}
+        >
+          <IconsWrapper>
+            <MobileIconLink
+              href="https://github.com/traczoskar"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Link to GitHub profile"
+              title="Link to GitHub profile"
+              onClick={onClick}
+            >
+              <GitHubIcon width={30} height={30} />
+            </MobileIconLink>
+            <MobileIconLink
+              href="https://www.linkedin.com/in/traczoskar/"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Link to LinkedIn profile"
+              title="Link to LinkedIn profile"
+              onClick={onClick}
+            >
+              <LinkedInIcon width={30} height={30} />
+            </MobileIconLink>
+            <ThemeSwitch width={30} height={30} padding={"0"} />
+          </IconsWrapper>
+        </motion.div>
       </MobileNavLinks>
     </>
   );
