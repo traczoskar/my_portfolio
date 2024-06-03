@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 interface DescriptionTitleProps {
   color?: string;
@@ -39,7 +40,7 @@ export const Tile = styled.section`
   }
 `;
 
-export const TileDiv = styled.div`
+export const TileDiv = styled(motion.div)`
   display: flex;
   gap: 4rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
@@ -127,7 +128,7 @@ export const CurlyBraces = styled.span`
   }
 `;
 
-export const ParagraphContainer = styled.div`
+export const ParagraphContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -191,7 +192,7 @@ export const TechStack = styled.ul`
   }
 `;
 
-export const TechItem = styled.li`
+export const TechItem = styled(motion.li)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
