@@ -20,6 +20,8 @@ import {
   DescriptionAdditional,
   ParagraphContainer,
   DescriptionTitle,
+  TechTitle,
+  CurlyBraces,
 } from "./styled";
 import Education from "./Education";
 import { technologies } from "../HomePage/Portfolio/technologies";
@@ -28,10 +30,14 @@ import AnimatedIcons from "./AnimatedIcons";
 import { useSelector } from "react-redux";
 import { selectIsDarkTheme } from "../../slices/themeSlice";
 import { selectIsLanguageEN } from "../../slices/languageSlice";
+import { useMediaQuery } from "react-responsive";
 
 const AboutMe: React.FC = () => {
   const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
   const theme = useTheme();
 
   return (
@@ -51,14 +57,27 @@ const AboutMe: React.FC = () => {
                   <Name>
                     {ABOUT.name} {ABOUT.surname}
                   </Name>
-                  <Profession>{ABOUT.title}</Profession>
-                  <DescriptionFirst>
-                    {isLanguageEN
-                      ? ABOUT.description.EN.paragraph1
-                      : ABOUT.description.PL.paragraph1}
-                  </DescriptionFirst>
+                  <Profession>
+                    <CurlyBraces>{"{ "}</CurlyBraces>
+                    {ABOUT.title}
+                    <CurlyBraces>{" }"}</CurlyBraces>
+                  </Profession>
+                  {isMobile ? null : (
+                    <DescriptionFirst>
+                      {isLanguageEN
+                        ? ABOUT.description.EN.paragraph1
+                        : ABOUT.description.PL.paragraph1}
+                    </DescriptionFirst>
+                  )}
                 </TileDivider>
               </TileDiv>
+              {!isMobile ? null : (
+                <DescriptionFirst>
+                  {isLanguageEN
+                    ? ABOUT.description.EN.paragraph1
+                    : ABOUT.description.PL.paragraph1}
+                </DescriptionFirst>
+              )}
               <ParagraphContainer>
                 <DescriptionTitle color={theme.colors.aboutMePage.title1}>
                   {isLanguageEN ? "#passion" : "#pasja"} ❤️‍🔥
@@ -91,9 +110,9 @@ const AboutMe: React.FC = () => {
               </ParagraphContainer>
             </Tile>
             <Tile>
-              <TileTitle>
+              <TechTitle>
                 {isLanguageEN ? "My Tech Stack" : "Technologie"} 🛠
-              </TileTitle>
+              </TechTitle>
               <TechStack>
                 {ABOUT.techStack.map((tech, index) => (
                   <TechItem key={index}>
