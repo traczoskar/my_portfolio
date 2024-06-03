@@ -96,7 +96,7 @@ export const NavHashLink = styled(HashLink)`
   cursor: pointer;
   transition: 0.2s;
   font-weight: 500;
-  padding: 1rem 1rem;
+  padding: 1rem;
   position: relative;
   overflow: hidden;
 
@@ -135,7 +135,7 @@ export const NavRouterLink = styled(Link)`
   cursor: pointer;
   transition: 0.2s;
   font-weight: 500;
-  padding: 1rem 1rem;
+  padding: 1rem;
   position: relative;
   overflow: hidden;
 
