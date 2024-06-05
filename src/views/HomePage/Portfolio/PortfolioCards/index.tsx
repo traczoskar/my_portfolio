@@ -41,7 +41,6 @@ export default function PortfolioCards() {
 
   return (
     <CardsContainer>
-      <Loader />
       <Nav>
         <ProjectList>
           {projects?.map((project) => (
@@ -62,7 +61,6 @@ export default function PortfolioCards() {
           ))}
         </ProjectList>
       </Nav>
-
       <ProjectContainer>
         {selectedProject ? (
           <ProjectLink project={selectedProject}>
