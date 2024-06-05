@@ -3,20 +3,20 @@ import styled from "styled-components";
 
 const LoadingDot = styled(motion.span)`
   display: block;
-  width: 2rem;
-  height: 2rem;
-  background-color: black;
+  width: 2vw;
+  height: 2vw;
+  background-color: ${({ theme }) => theme.colors.textBasic};
   border-radius: 50%;
 `;
 
 const LoadingContainer = styled(motion.div)`
-  width: 10rem;
-  height: 5rem;
+  width: 6rem;
+  height: 4rem;
   display: flex;
   justify-content: space-around;
 `;
 
-const ContainerVariants = {
+const containerVariants = {
   initial: {
     transition: {
       staggerChildren: 0.2,
@@ -29,32 +29,39 @@ const ContainerVariants = {
   },
 };
 
-const DotVariants = {
+const dotVariants = {
   initial: {
     y: "0%",
   },
   animate: {
-    y: "100%",
+    y: ["0%", "100%", "0%"],
   },
 };
 
-const DotTransition = {
-  duration: 0.5,
-  yoyo: Infinity,
+const dotTransition = {
+  duration: 1,
+  repeat: Infinity,
   ease: "easeInOut",
 };
 
 const Loader: React.FC = () => {
   return (
-    <LoadingContainer
-      variants={ContainerVariants}
-      initial="initial"
-      animate="animate"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
     >
-      <LoadingDot variants={DotVariants} transition={DotTransition} />
-      <LoadingDot variants={DotVariants} transition={DotTransition} />
-      <LoadingDot variants={DotVariants} transition={DotTransition} />
-    </LoadingContainer>
+      <LoadingContainer
+        variants={containerVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <LoadingDot variants={dotVariants} transition={dotTransition} />
+        <LoadingDot variants={dotVariants} transition={dotTransition} />
+        <LoadingDot variants={dotVariants} transition={dotTransition} />
+      </LoadingContainer>
+    </motion.div>
   );
 };
 
