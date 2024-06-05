@@ -17,18 +17,31 @@ import {
 } from "../../../../slices/selectedProjectSlice";
 import { Project } from "../../../../types/types";
 import { selectIsLanguageEN } from "../../../../slices/languageSlice";
+import { useEffect, useState } from "react";
+import Loader from "../../../../common/Loader";
 
 export default function PortfolioCards() {
   const selectedProject: Project = useSelector(selectSelectedProject);
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const dispatch = useDispatch();
+  const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
 
   const selectProject = (project: Project) => {
     dispatch(setSelectedProject(project));
+    setIsImageLoaded(false);
   };
+
+  useEffect(() => {
+    if (selectedProject) {
+      const img = new Image();
+      img.src = selectedProject.image;
+      img.onload = () => setIsImageLoaded(true);
+    }
+  }, [selectedProject]);
 
   return (
     <CardsContainer>
+      <Loader />
       <Nav>
         <ProjectList>
           {projects?.map((project) => (
@@ -49,25 +62,28 @@ export default function PortfolioCards() {
           ))}
         </ProjectList>
       </Nav>
+
       <ProjectContainer>
         {selectedProject ? (
           <ProjectLink project={selectedProject}>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selectedProject?.label}
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                {selectedProject ? (
+            {!isImageLoaded ? (
+              <Loader />
+            ) : (
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedProject?.label}
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
                   <ProjectImage
                     src={selectedProject.image}
                     alt={selectedProject.label}
                   />
-                ) : null}
-              </motion.div>
-            </AnimatePresence>
+                </motion.div>
+              </AnimatePresence>
+            )}
           </ProjectLink>
         ) : null}
       </ProjectContainer>
