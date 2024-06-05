@@ -3,15 +3,16 @@ import styled from "styled-components";
 
 const LoadingDot = styled(motion.span)`
   display: block;
-  width: 2vw;
-  height: 2vw;
+  width: 1vw;
+  height: 1vw;
+  transition: background-color 0.3s;
   background-color: ${({ theme }) => theme.colors.textBasic};
   border-radius: 50%;
 `;
 
 const LoadingContainer = styled(motion.div)`
-  width: 6rem;
-  height: 4rem;
+  width: 6vw;
+  height: auto;
   display: flex;
   justify-content: space-around;
 `;
