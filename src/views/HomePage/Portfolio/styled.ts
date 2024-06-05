@@ -6,10 +6,6 @@ export const PortfolioSection = styled.section`
   justify-content: center;
   transition: all ease 0.5s;
   background: ${({ theme }) => theme.colors.projects.background};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
-    padding: 2rem;
-  }
 `;
 
 export const PortfolioWrapper = styled.div`
@@ -18,4 +14,8 @@ export const PortfolioWrapper = styled.div`
   grid-template-columns: 1fr;
   align-items: center;
   gap: 4rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 0 5vw;
+  }
 `;
