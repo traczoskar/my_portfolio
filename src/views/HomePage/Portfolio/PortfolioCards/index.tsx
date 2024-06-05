@@ -7,6 +7,7 @@ import {
   ProjectContainer,
   ProjectImage,
   ProjectList,
+  ProjectPlaceholder,
   ProjectTab,
 } from "./styled";
 import ProjectLink from "./ProjectLink";
@@ -65,25 +66,28 @@ export default function PortfolioCards() {
         {selectedProject ? (
           <ProjectLink project={selectedProject}>
             {!isImageLoaded ? (
-              <Loader />
+              <ProjectPlaceholder>
+                <Loader />
+              </ProjectPlaceholder>
             ) : (
               <AnimatePresence mode="wait">
-                <motion.div
+                <ProjectImage
                   key={selectedProject?.label}
                   initial={{ y: 10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: -10, opacity: 0 }}
                   transition={{ duration: 0.2 }}
-                >
-                  <ProjectImage
-                    src={selectedProject.image}
-                    alt={selectedProject.label}
-                  />
-                </motion.div>
+                  src={selectedProject.image}
+                  alt={selectedProject.label}
+                />
               </AnimatePresence>
             )}
           </ProjectLink>
-        ) : null}
+        ) : (
+          <ProjectPlaceholder>
+            <Loader />
+          </ProjectPlaceholder>
+        )}
       </ProjectContainer>
     </CardsContainer>
   );
