@@ -46,6 +46,10 @@ export const ProjectList = styled.ul`
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
     flex-direction: row;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const ProjectTab = styled.li`
@@ -86,6 +90,11 @@ export const ProjectTab = styled.li`
     padding: 0.75rem;
     gap: 0.25rem;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 1.5rem;
+    font-size: 2.3vw;
+  }
 `;
 
 export const DetailsButton = styled.button`
@@ -118,29 +127,34 @@ export const DetailsButton = styled.button`
 //---Project View---
 
 export const ProjectPlaceholder = styled.div`
-  width: 800px;
-  height: 530px;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
   background-color: #aaaaaa;
   align-items: center;
-  transform: translateY(4px);
-  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
-export const ProjectContainer = styled.article`
+export const ProjectContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 800px;
-  height: 530px;
-  transform: translateY(4px);
+  width: 50vw;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
 
   @media (max-width: ${({ theme }) => theme.breakpoints.laptopMax}) {
-    width: 55vw;
+    width: 58vw;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
     width: 100%;
@@ -150,17 +164,19 @@ export const ProjectContainer = styled.article`
 export const ProjectImage = styled(motion.img)`
   width: 100%;
   height: 100%;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 1rem;
-  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
-    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
-
-  transition: filter ease 0.75s;
   cursor: pointer;
+  transition: all ease 0.3s;
+
   filter: grayscale(100%);
 
   &:hover {
     filter: grayscale(0%);
+    outline-offset: -4px;
     outline: 4px solid ${({ theme }) => theme.colors.basic};
   }
 `;
