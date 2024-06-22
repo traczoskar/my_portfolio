@@ -4,6 +4,8 @@ import { openProjectDetails } from "../../../../../slices/projectDetailsSlice";
 import styled from "styled-components";
 
 const LinkButton = styled.button`
+  width: 100%;
+  height: 100%;
   border: none;
   background-color: inherit;
   color: inherit;
