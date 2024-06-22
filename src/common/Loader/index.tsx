@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const LoadingDot = styled(motion.span)`
   display: block;
-  width: 1vw;
-  height: 1vw;
+  width: 1.2vw;
+  height: 1.2vw;
   transition: background-color 0.3s;
   background-color: ${({ theme }) => theme.colors.textBasic};
   border-radius: 50%;
