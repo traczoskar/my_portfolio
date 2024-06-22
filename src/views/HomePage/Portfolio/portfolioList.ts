@@ -3,7 +3,7 @@ import taskList from "../../../assets/portfolio/portfolio_taskList.png";
 import currencyConverter from "../../../assets/portfolio/portfolio_currencyConverter.png";
 import personalHomepage from "../../../assets/portfolio/portfolio_personalHomepage.png";
 import aiWeatherApp from "../../../assets/portfolio/portfolio_aiWeatherApp.png";
-import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.png";
+import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.jpg";
 import { Project } from "../../../types/types";
 import {
   currencyCalculatorScreenshots,
