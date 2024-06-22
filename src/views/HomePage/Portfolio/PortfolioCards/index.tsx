@@ -20,10 +20,17 @@ import { Project } from "../../../../types/types";
 import { selectIsLanguageEN } from "../../../../slices/languageSlice";
 import { useEffect, useState } from "react";
 import Loader from "../../../../common/Loader";
+import { useMediaQuery } from "react-responsive";
 
 export default function PortfolioCards() {
   const selectedProject: Project = useSelector(selectSelectedProject);
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
+  const isSmallMobile: boolean = useMediaQuery({
+    query: `(max-width: 430px)`,
+  });
   const dispatch = useDispatch();
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
 
@@ -54,7 +61,7 @@ export default function PortfolioCards() {
               {project === selectedProject ? (
                 <DetailsButton>
                   <ProjectLink project={selectedProject}>
-                    {isLanguageEN ? "Details" : "Szczegóły"}
+                    {isMobile ? "?" : isLanguageEN ? "Details" : "Szczegóły"}
                   </ProjectLink>
                 </DetailsButton>
               ) : null}
@@ -73,10 +80,10 @@ export default function PortfolioCards() {
               <AnimatePresence mode="wait">
                 <ProjectImage
                   key={selectedProject?.label}
-                  initial={{ y: 10, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -10, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                   src={selectedProject.image}
                   alt={selectedProject.label}
                 />
