@@ -12,6 +12,9 @@ export const MoreAboutMeSection = styled.section`
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
     padding: 2rem 0 5rem 0;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 0 0 3rem 0;
+  }
 `;
 
 export const MoreAboutMeDivider = styled.div`
@@ -58,6 +61,9 @@ export const AboutMeHeader = styled.h2`
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
     font-size: 2rem;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const AboutMeText = styled.p`
@@ -65,6 +71,10 @@ export const AboutMeText = styled.p`
   padding: 0;
   font-size: 1rem;
   font-weight: 400;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    font-size: 3.5vw;
+  }
 `;
 
 export const Picture = styled.img`
@@ -108,6 +118,10 @@ export const AboutMeLink = styled(Link)`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 1.1rem;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
 `;
 
 export const TechStackContainer = styled.div`
@@ -121,6 +135,9 @@ export const TechStackContainer = styled.div`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    gap: 2vw;
   }
 `;
 
@@ -137,6 +154,7 @@ export const Technology = styled.div`
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  text-align: center;
   transition: 0.2s ease-in-out;
 
   &:hover {
