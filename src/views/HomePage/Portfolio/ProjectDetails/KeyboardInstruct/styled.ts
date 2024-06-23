@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const KeyboardInstructContainer = styled.div`
+  position: absolute;
+  top: 1rem;
+  right: 50%;
+  transform: translateX(50%);
   display: flex;
   justify-content: center;
   gap: 2rem;
