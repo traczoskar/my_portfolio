@@ -6,10 +6,17 @@ import { useNavigate } from "react-router";
 import { openProjectDetails } from "../../../../../slices/projectDetailsSlice";
 import { selectIsLanguageEN } from "../../../../../slices/languageSlice";
 import { Project } from "../../../../../types/types";
+import { useMediaQuery } from "react-responsive";
 
 const ClickHere = () => {
   const selectedProject: Project = useSelector(selectSelectedProject);
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
+  const isSmallMobile: boolean = useMediaQuery({
+    query: `(max-width: 430px)`,
+  });
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -20,7 +27,10 @@ const ClickHere = () => {
   return (
     <Button onClick={handleLinkClick}>
       <AnimatedDiv>
-        <ClickArrow width={22} height={22} />
+        <ClickArrow
+          width={isSmallMobile ? 15 : isMobile ? 18 : 22}
+          height={isSmallMobile ? 15 : isMobile ? 18 : 22}
+        />
       </AnimatedDiv>
       {isLanguageEN
         ? "Click here for more details of selected project!"
