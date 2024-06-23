@@ -1,8 +1,9 @@
 import { projects } from "../portfolioList";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import {
   CardsContainer,
   DetailsButton,
+  DetailsButtonMobile,
   Nav,
   ProjectContainer,
   ProjectImage,
@@ -28,8 +29,8 @@ export default function PortfolioCards() {
   const isMobile: boolean = useMediaQuery({
     query: `(max-width: 767px)`,
   });
-  const isSmallMobile: boolean = useMediaQuery({
-    query: `(max-width: 430px)`,
+  const isTablet: boolean = useMediaQuery({
+    query: `(max-width: 991px)`,
   });
   const dispatch = useDispatch();
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
@@ -59,11 +60,17 @@ export default function PortfolioCards() {
             >
               {project?.icon} {project?.label}
               {project === selectedProject ? (
-                <DetailsButton>
-                  <ProjectLink project={selectedProject}>
-                    {isMobile ? "?" : isLanguageEN ? "Details" : "Szczegóły"}
-                  </ProjectLink>
-                </DetailsButton>
+                isTablet ? (
+                  <DetailsButtonMobile>
+                    <ProjectLink project={selectedProject}>?</ProjectLink>
+                  </DetailsButtonMobile>
+                ) : (
+                  <DetailsButton>
+                    <ProjectLink project={selectedProject}>
+                      {isLanguageEN ? "Details" : "Szczegóły"}
+                    </ProjectLink>
+                  </DetailsButton>
+                )
               ) : null}
             </ProjectTab>
           ))}
