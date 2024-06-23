@@ -39,6 +39,7 @@ import { ReactComponent as LiveIcon } from "../../../../assets/icons/www.svg";
 import ScreenshotGallery from "./ScreenshotGallery";
 import { useEffect, useRef, useState } from "react";
 import KeyboardInstruct from "./KeyboardInstruct";
+import { useMediaQuery } from "react-responsive";
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -49,6 +50,12 @@ const ProjectDetails = () => {
   const project: Project | undefined = projects[projectIndex];
   const containerRef = useRef<HTMLDivElement>(null);
   const [isImageViewerOpen, setIsImageViewerOpen] = useState<boolean>(false);
+  const isTablet: boolean = useMediaQuery({
+    query: `(max-width: 1199px)`,
+  });
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
 
   useEffect(() => {
     if (id) {
@@ -105,7 +112,11 @@ const ProjectDetails = () => {
 
   return (
     <Modal isOpen={isOpen} onClose={handleClose}>
-      <ProjectDetailsContainer ref={containerRef} tabIndex={-1}>
+      <ProjectDetailsContainer
+        aria-label="Project Details"
+        ref={containerRef}
+        tabIndex={-1}
+      >
         {
           //---Header---
         }
@@ -113,19 +124,19 @@ const ProjectDetails = () => {
           <ProjectHeader>
             {project?.icon} {project?.label}
           </ProjectHeader>
-          <KeyboardInstruct />
+          {!isTablet && <KeyboardInstruct />}
           <NavigationWrapper>
             <NavigationButton
               onClick={handlePreviousProject}
               disabled={projectIndex <= 0}
             >
-              Previous Project
+              {isMobile ? "<" : "Previous Project"}
             </NavigationButton>
             <NavigationButton
               onClick={handleNextProject}
               disabled={projectIndex >= projects.length - 1}
             >
-              Next Project
+              {isMobile ? ">" : "Next Project"}
             </NavigationButton>
           </NavigationWrapper>
         </HeaderSection>
@@ -182,9 +193,8 @@ const ProjectDetails = () => {
               {project?.tech ? (
                 <TechnologiesWrapper>
                   {project?.tech.map((tech) => (
-                    <TechnologyContainer>
+                    <TechnologyContainer key={tech}>
                       <TechnologyIcon
-                        key={tech}
                         src={technologies.find((t) => t.name === tech)?.icon}
                         alt={tech}
                       />
