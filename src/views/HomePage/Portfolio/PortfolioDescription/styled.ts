@@ -19,8 +19,6 @@ export const PortfolioTitle = styled.h2`
 `;
 
 export const PortfolioDescriptionContent = styled.p`
-  /* display: flex;
-  flex-wrap: wrap; */
   text-align: center;
   margin: 0;
   padding: 3rem 0;
@@ -29,9 +27,17 @@ export const PortfolioDescriptionContent = styled.p`
   font-weight: 400;
   line-height: 1.5;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    line-height: 1.8;
+    padding: 2rem 0;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 1.1rem;
-    line-height: 1.8;
+    padding: 1.5rem 0;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    font-size: 1rem;
+    padding: 1rem 0;
   }
 `;
 
