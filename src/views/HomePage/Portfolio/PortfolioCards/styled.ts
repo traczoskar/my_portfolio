@@ -44,11 +44,15 @@ export const ProjectList = styled.ul`
   flex-grow: 1;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
   }
 `;
 
@@ -84,16 +88,21 @@ export const ProjectTab = styled.li`
       0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075);
   }
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 1.4vw;
+    padding: 1.25rem 1rem;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
-    text-align: center;
-    font-size: 1.3vw;
-    padding: 0.75rem;
-    gap: 0.25rem;
+    font-size: 1.5vw;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     padding: 1.5rem;
     font-size: 2.3vw;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    padding: 1rem 0.75rem;
+    font-size: 3vw;
   }
 `;
 
@@ -111,6 +120,35 @@ export const DetailsButton = styled.button`
   font-weight: 400;
   justify-content: center;
   padding: 0.5rem 1rem;
+  transition: 0.2s ease;
+  box-shadow: 0px 4px 8px rgba(66, 68, 90, 0.35);
+
+  &:hover {
+    filter: brightness(125%);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    filter: brightness(150%);
+  }
+`;
+
+export const DetailsButtonMobile = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 15px;
+  width: 2rem;
+  height: 2rem;
+  background: #555555;
+  border: 1px solid #dddddd;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0;
   transition: 0.2s ease;
   box-shadow: 0px 4px 8px rgba(66, 68, 90, 0.35);
 
