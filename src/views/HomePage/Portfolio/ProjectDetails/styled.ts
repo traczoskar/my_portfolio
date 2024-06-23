@@ -14,12 +14,21 @@ export const ProjectDetailsContainer = styled.article`
 export const Section = styled.section`
   padding: 2rem 3rem;
   border-bottom: ${({ theme }) => theme.border};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 1.5rem 0.5rem;
+    margin: 0 3vw;
+  }
 `;
 
 export const SectionTitle = styled.h3`
   margin: 0;
   font-size: 1.6rem;
   font-weight: 600;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const SectionDivider = styled.div`
@@ -37,6 +46,16 @@ export const HeaderSection = styled.header`
   padding: 3rem 2.5rem;
   border-bottom: ${({ theme }) => theme.border};
   margin: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    position: relative;
+    padding: 5rem 0.5rem 2rem 0.5rem;
+    margin: 0 3vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 5rem 0.5rem 1.5rem 0.5rem;
+  }
 `;
 
 export const ProjectHeader = styled.h2`
@@ -44,6 +63,13 @@ export const ProjectHeader = styled.h2`
   padding: 0;
   font-size: 2.2rem;
   font-weight: 700;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 1.8rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    font-size: 7vw;
+  }
 `;
 
 //---Description---
@@ -55,6 +81,12 @@ export const ProjectDescription = styled.p`
   color: ${({ theme }) => theme.colors.projectDetails.text};
   font-weight: 400;
   line-height: 1.5;
+  text-align: justify;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 1rem 0 0 0;
+    font-size: 1rem;
+  }
 `;
 
 //---Screenshots---
@@ -210,10 +242,18 @@ export const LinkButton = styled.a`
 //---Navigation---
 
 export const NavigationWrapper = styled.nav`
+  position: absolute;
+  top: 2.1rem;
+  right: 5.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    top: 1.2rem;
+    right: 7.5rem;
+  }
 `;
 
 export const NavigationButton = styled.button`
@@ -252,5 +292,10 @@ export const NavigationButton = styled.button`
     background-color: #dddddd;
     color: #555555;
     cursor: not-allowed;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptopMax}) {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.75rem;
   }
 `;
