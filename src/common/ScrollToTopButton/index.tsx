@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ReactComponent as ScrollUpIcon } from "../../assets/icons/scrollUp.svg";
 
 interface ScrollButtonProps {
-  isVisible: boolean;
+  $isVisible: boolean;
 }
 
 const ScrollButton = styled.div<ScrollButtonProps>`
@@ -21,7 +21,7 @@ const ScrollButton = styled.div<ScrollButtonProps>`
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
-  opacity: ${({ isVisible }) => (isVisible ? "1" : "0")};
+  opacity: ${({ $isVisible }) => ($isVisible ? "1" : "0")};
   z-index: 1000;
 
   &:active {
@@ -59,7 +59,7 @@ const ScrollToTopButton = () => {
   }, []);
 
   return (
-    <ScrollButton onClick={scrollToTop} isVisible={isVisible}>
+    <ScrollButton onClick={scrollToTop} $isVisible={isVisible}>
       <ScrollUpIcon width={30} height={30} />
     </ScrollButton>
   );
