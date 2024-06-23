@@ -30,6 +30,7 @@ export const AdvantagesTitle = styled.h2`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 7vw;
+    margin: 0 0 2rem 0;
     padding: 0 2.5rem 1rem 2.5rem;
   }
 `;
