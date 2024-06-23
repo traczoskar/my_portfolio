@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import { ThemeSwitch } from "../ThemeSwitch";
 import {
   CloseButton,
@@ -13,15 +14,27 @@ interface ModalProps {
 }
 
 const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+  const isTablet: boolean = useMediaQuery({
+    query: `(max-width: 1199px)`,
+  });
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
+
   if (!isOpen) return null;
 
   return (
     <ModalOverlay>
-      <ModalContent>
-        <ThemeSwitchModalContainer>
+      <ModalContent aria-expanded="true">
+        <ThemeSwitchModalContainer
+          $top={isTablet && "0.8rem"}
+          $right={isTablet && "3.7rem"}
+        >
           <ThemeSwitch />
         </ThemeSwitchModalContainer>
-        <CloseButton onClick={onClose}>X</CloseButton>
+        <CloseButton aria-label="Close Project Details" onClick={onClose}>
+          X
+        </CloseButton>
         {children}
       </ModalContent>
     </ModalOverlay>
