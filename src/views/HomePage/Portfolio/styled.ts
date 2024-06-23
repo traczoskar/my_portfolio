@@ -17,5 +17,9 @@ export const PortfolioWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
     padding: 0 5vw;
+    gap: 2.5rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    gap: 1.5rem;
   }
 `;
