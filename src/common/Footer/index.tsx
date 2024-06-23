@@ -35,8 +35,9 @@ const Footer: React.FC<FooterProps> = ({ backgroundColor }) => {
         {isMobile ? (
           <MobileLinksWrapper>
             <Socials>
-              {ABOUT.socials.map((social) => (
+              {ABOUT.socials.map((social, index) => (
                 <SocialLink
+                  key={index}
                   href={social.url}
                   target="_blank"
                   rel="noreferrer noopener"
@@ -69,8 +70,9 @@ const Footer: React.FC<FooterProps> = ({ backgroundColor }) => {
               traczoskar.dev
             </HeaderLink>
             <Socials>
-              {ABOUT.socials.map((social) => (
+              {ABOUT.socials.map((social, index) => (
                 <SocialLink
+                  key={index}
                   href={social.url}
                   target="_blank"
                   rel="noreferrer noopener"
