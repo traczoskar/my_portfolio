@@ -25,6 +25,14 @@ export const Button = styled.button`
     filter: brightness(85%);
     transform: scale(0.95);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 0.8rem;
+    padding: 0.75rem 1rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    font-size: 3vw;
+  }
 `;
 
 const arrowAnimation = keyframes`
