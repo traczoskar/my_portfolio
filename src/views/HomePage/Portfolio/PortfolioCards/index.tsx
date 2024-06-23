@@ -26,9 +26,6 @@ import { useMediaQuery } from "react-responsive";
 export default function PortfolioCards() {
   const selectedProject: Project = useSelector(selectSelectedProject);
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
-  const isMobile: boolean = useMediaQuery({
-    query: `(max-width: 767px)`,
-  });
   const isTablet: boolean = useMediaQuery({
     query: `(max-width: 991px)`,
   });
