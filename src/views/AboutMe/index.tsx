@@ -32,8 +32,10 @@ import { selectIsDarkTheme } from "../../slices/themeSlice";
 import { selectIsLanguageEN } from "../../slices/languageSlice";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 const AboutMe: React.FC = () => {
+  useScrollToTop();
   const isDarkTheme: boolean = useSelector(selectIsDarkTheme);
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const isMobile: boolean = useMediaQuery({
