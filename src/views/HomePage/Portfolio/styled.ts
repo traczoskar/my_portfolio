@@ -6,6 +6,12 @@ export const PortfolioSection = styled.section`
   justify-content: center;
   transition: all ease 0.5s;
   background: ${({ theme }) => theme.colors.projects.background};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    padding: 1rem 0 5rem 0;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+  }
 `;
 
 export const PortfolioWrapper = styled.div`
