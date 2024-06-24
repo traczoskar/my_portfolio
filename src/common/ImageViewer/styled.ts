@@ -1,12 +1,16 @@
 import styled from "styled-components";
+interface ViewerContainerProps {
+  $isTablet?: boolean;
+}
 
-export const ViewerContainer = styled.div`
+export const ViewerContainer = styled.div<ViewerContainerProps>`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${({ $isTablet }) =>
+    $isTablet ? "rgba(0, 0, 0, 0.85)" : "rgba(0, 0, 0, 0.5)"};
   backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
@@ -57,30 +61,59 @@ export const ScreenshotDescription = styled.p`
   color: #ffffff;
   border-radius: 0.5rem;
   border: 1px solid #555555;
-  font-size: 1rem;
+  font-size: 0.7rem;
   text-align: center;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    margin: 0 3vw 1rem 3vw;
+  }
 `;
 
-export const ImageContainer = styled.div`
+interface ImageContainerProps {
+  $isTablet?: boolean;
+}
+
+export const ImageContainer = styled.div<ImageContainerProps>`
   position: relative;
-  width: 90%;
-  height: 90%;
-  max-width: 90%;
-  max-height: 90%;
+  width: ${({ $isTablet }) => ($isTablet ? "100%" : " 90%")};
+  height: ${({ $isTablet }) => ($isTablet ? "100%" : " 90%")};
+  max-width: ${({ $isTablet }) => ($isTablet ? "unset" : " 90%")};
+  max-height: ${({ $isTablet }) => ($isTablet ? "unset" : " 90%")};
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    top: 0;
+    right: 0;
+    transform: translateX(50%) translateY(25%);
+    width: 100%;
+  }
 `;
 
-export const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+interface ImageProps {
+  $isTablet?: boolean;
+}
+
+export const Image = styled.img<ImageProps>`
+  width: ${({ $isTablet }) => ($isTablet ? "100%" : "unset")};
+  height: ${({ $isTablet }) => ($isTablet ? "100%" : "unset")};
+  max-width: ${({ $isTablet }) => ($isTablet ? "unset" : "100%")};
+  max-height: ${({ $isTablet }) => ($isTablet ? "unset" : "100%")};
   border-radius: 1rem;
-  object-fit: contain;
+  object-fit: content;
   box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
   cursor: zoom-out;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    max-height: 60%;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    max-height: 80%;
+  }
 `;
 
 export const ImageInfo = styled.div`
