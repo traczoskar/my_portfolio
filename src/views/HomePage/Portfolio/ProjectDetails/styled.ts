@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface SectionProps {
+  $borderBottom?: string;
+}
+
 //---Container---
 
 export const ProjectDetailsContainer = styled.article`
@@ -11,9 +15,9 @@ export const ProjectDetailsContainer = styled.article`
   }
 `;
 
-export const Section = styled.section`
+export const Section = styled.section<SectionProps>`
   padding: 2rem 3rem;
-  border-bottom: ${({ theme }) => theme.border};
+  border-bottom: ${({ $borderBottom, theme }) => $borderBottom || theme.border};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
     padding: 1.5rem 0.5rem;
@@ -35,6 +39,9 @@ export const SectionDivider = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 //---Header---
@@ -97,6 +104,11 @@ export const ScreenshotsWrapper = styled.div`
   align-items: center;
   margin: 0;
   padding: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    gap: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 `;
 
 export const ScreenshotsInstructions = styled.p`
@@ -106,6 +118,9 @@ export const ScreenshotsInstructions = styled.p`
   color: ${({ theme }) => theme.colors.projectDetails.text};
   font-weight: 400;
   line-height: 1.5;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 0.75rem;
+  }
 `;
 
 //---Features---
@@ -114,6 +129,9 @@ export const ProjectFeatureList = styled.ul`
   padding: 2rem 0 0 2rem;
   margin: 0;
   list-style-type: disc;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 1rem 0 0 1rem;
+  }
 `;
 
 export const ProjectFeature = styled.li`
@@ -123,6 +141,12 @@ export const ProjectFeature = styled.li`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.projectDetails.text};
   line-height: 1.5;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 1rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    font-size: 0.85rem;
+  }
 `;
 
 export const ProjectFeatureName = styled.span`
@@ -138,6 +162,9 @@ export const TechnologiesWrapper = styled.div`
   flex-wrap: wrap;
   gap: 1.5rem;
   padding: 2rem 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    gap: 1rem;
+  }
 `;
 
 export const TechnologyContainer = styled.div`
@@ -163,18 +190,33 @@ export const TechnologyContainer = styled.div`
       filter: grayscale(0%);
     }
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 0.9rem 1rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 0.75rem 1rem;
+  }
 `;
 
 export const TechnologyIcon = styled.img`
   width: auto;
   height: 25px;
   filter: grayscale(40%);
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    height: 20px;
+  }
 `;
 
 export const TechnologySubtitle = styled.h4`
   margin: 0;
   font-weight: 600;
   font-size: 1rem;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 0.9rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 0.85rem;
+  }
 `;
 
 //---What Did I Learn?---
@@ -185,12 +227,19 @@ export const WhatDidILearnWrapper = styled.div`
   gap: 1rem;
   padding-left: 2rem;
   border-left: ${({ theme }) => theme.border};
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    border-left: none;
+    padding: 1.5rem 0 0 0;
+  }
 `;
 
 export const WhatDidILearnList = styled.ul`
   padding: 0.5rem 0 0 1.5rem;
   margin: 0;
   list-style-type: disc;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    padding: 1rem 0 0 1rem;
+  }
 `;
 
 export const WhatDidILearnItem = styled.li`
@@ -200,6 +249,12 @@ export const WhatDidILearnItem = styled.li`
   color: ${({ theme }) => theme.colors.projectDetails.text};
   font-weight: 400;
   line-height: 1.5;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 1rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    font-size: 0.85rem;
+  }
 `;
 
 //---Button---
@@ -209,6 +264,12 @@ export const ButtonsWrapper = styled.div`
   justify-content: center;
   gap: 2rem;
   padding: 2rem 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+  }
 `;
 
 export const LinkButton = styled.a`
@@ -236,6 +297,16 @@ export const LinkButton = styled.a`
     transform: translateY(-5px);
     color: #111111;
     background-color: #eeeeee;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    width: 80%;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
 `;
 
