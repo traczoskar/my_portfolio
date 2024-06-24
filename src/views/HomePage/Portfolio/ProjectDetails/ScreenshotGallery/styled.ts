@@ -5,6 +5,13 @@ export const GalleryContainer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   padding: 2rem 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.smallMobileMax}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const Thumbnail = styled.img`
