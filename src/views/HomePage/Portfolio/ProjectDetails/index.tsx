@@ -23,23 +23,15 @@ import {
   ScreenshotsInstructions,
   ScreenshotsWrapper,
   Section,
-  SectionDivider,
   SectionTitle,
-  TechnologiesWrapper,
-  TechnologyContainer,
-  TechnologyIcon,
-  TechnologySubtitle,
-  WhatDidILearnItem,
-  WhatDidILearnList,
-  WhatDidILearnWrapper,
 } from "./styled";
-import { technologies } from "../technologies";
 import { ReactComponent as GitHubIcon } from "../../../../assets/icons/git_icon.svg";
 import { ReactComponent as LiveIcon } from "../../../../assets/icons/www.svg";
 import ScreenshotGallery from "./ScreenshotGallery";
 import { useEffect, useRef, useState } from "react";
 import KeyboardInstruct from "./KeyboardInstruct";
 import { useMediaQuery } from "react-responsive";
+import AdditionalData from "./AdditionalData";
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -50,7 +42,7 @@ const ProjectDetails = () => {
   const project: Project | undefined = projects[projectIndex];
   const containerRef = useRef<HTMLDivElement>(null);
   const [isImageViewerOpen, setIsImageViewerOpen] = useState<boolean>(false);
-  const isTablet: boolean = useMediaQuery({
+  const isTabletHorizontal: boolean = useMediaQuery({
     query: `(max-width: 1199px)`,
   });
   const isMobile: boolean = useMediaQuery({
@@ -124,7 +116,7 @@ const ProjectDetails = () => {
           <ProjectHeader>
             {project?.icon} {project?.label}
           </ProjectHeader>
-          {!isTablet && <KeyboardInstruct />}
+          {!isTabletHorizontal && <KeyboardInstruct />}
           <NavigationWrapper>
             <NavigationButton
               onClick={handlePreviousProject}
@@ -183,49 +175,14 @@ const ProjectDetails = () => {
             </ProjectFeatureList>
           </Section>
         )}
-        <Section>
-          <SectionDivider>
-            {
-              //---Technologies Used---
-            }
-            <div>
-              <SectionTitle>Technologies Used 🛠 </SectionTitle>
-              {project?.tech ? (
-                <TechnologiesWrapper>
-                  {project?.tech.map((tech) => (
-                    <TechnologyContainer key={tech}>
-                      <TechnologyIcon
-                        src={technologies.find((t) => t.name === tech)?.icon}
-                        alt={tech}
-                      />
-                      <TechnologySubtitle>{tech}</TechnologySubtitle>
-                    </TechnologyContainer>
-                  ))}
-                </TechnologiesWrapper>
-              ) : (
-                <p>Sorry 😭 - technologies not available for this project</p>
-              )}
-            </div>
-            {
-              //---What Did I Learn?---
-            }
-            <WhatDidILearnWrapper>
-              <SectionTitle>What Did I Learn? 📚</SectionTitle>
-              {project?.whatDidILearn ? (
-                <WhatDidILearnList>
-                  {project?.whatDidILearn?.map((listItem, index) => (
-                    <WhatDidILearnItem key={index}>
-                      {listItem}
-                    </WhatDidILearnItem>
-                  ))}
-                </WhatDidILearnList>
-              ) : (
-                <p>Sorry 😭 - learning points not available for this project</p>
-              )}
-            </WhatDidILearnWrapper>
-          </SectionDivider>
-        </Section>
-        <Section>
+        {
+          //---Technologies & WhatDidILearn---
+        }
+        <AdditionalData project={project} />
+        {
+          //---Buttons---
+        }
+        <Section $borderBottom="none">
           <ButtonsWrapper>
             <LinkButton href={project?.repo} target="_blank">
               <GitHubIcon width={30} height={30} />
