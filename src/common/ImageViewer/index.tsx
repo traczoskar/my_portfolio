@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   CloseButton,
   Image,
@@ -12,6 +12,11 @@ import {
 import ArrowButton from "./ArrowButton";
 import Keyboard from "../../views/HomePage/Portfolio/ProjectDetails/KeyboardInstruct/Keyboard";
 import { Screenshot } from "../../types/types";
+import { useMediaQuery } from "react-responsive";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { useSwipeable } from "react-swipeable";
+import "./styles.css";
+import SwipeInstruction from "./SwipeInstruction";
 
 interface ImageViewerProps {
   images?: Screenshot[];
@@ -30,6 +35,12 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
 }) => {
   const [scale, setScale] = useState<number>(0.8);
   const containerRef = useRef<HTMLDivElement>(null);
+  const isTablet: boolean = useMediaQuery({
+    query: `(max-width: 1199px)`,
+  });
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 767px)`,
+  });
 
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
@@ -82,55 +93,103 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
     };
   }, [onClose, scale, currentIndex, images, onNavigate]);
 
+  const handleSwipe = useCallback(
+    (direction: string) => {
+      if (images) {
+        if (direction === "LEFT") {
+          onNavigate!((currentIndex + 1) % images.length);
+        } else if (direction === "RIGHT") {
+          onNavigate!((currentIndex - 1 + images.length) % images.length);
+        }
+      }
+    },
+    [currentIndex, images, onNavigate]
+  );
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleSwipe("LEFT"),
+    onSwipedRight: () => handleSwipe("RIGHT"),
+  });
+
   const currentImage = images ? images[currentIndex] : image;
 
   return (
-    <ViewerContainer ref={containerRef} tabIndex={-1}>
-      <InstructionContainer>
-        <UserInstruction>
-          Use <strong>Mouse Wheel</strong> to 🔍 zoom +/-
-          <br />
-          Use <strong>Arrow Up</strong> and <strong>Arrow Down</strong> to zoom
-          +/- <br />
+    <>
+      {!isTablet ? (
+        <ViewerContainer ref={containerRef} tabIndex={-1}>
+          <InstructionContainer>
+            <UserInstruction>
+              Use <strong>Mouse Wheel</strong> to 🔍 zoom +/-
+              <br />
+              Use <strong>Arrow Up</strong> and <strong>Arrow Down</strong> to
+              zoom +/- <br />
+              {images && (
+                <>
+                  Use <strong>Arrow Left</strong> and{" "}
+                  <strong>Arrow Right</strong> to change the screenshot. <br />
+                </>
+              )}
+              Press <strong>Escape</strong> to close the picture viewer.
+            </UserInstruction>
+            <Keyboard />
+          </InstructionContainer>
+          <ScreenshotDescription>{currentImage?.alt}</ScreenshotDescription>
+          <ImageContainer>
+            {images && (
+              <ArrowButton
+                direction="left"
+                onClick={() =>
+                  onNavigate!(
+                    (currentIndex - 1 + images.length) % images.length
+                  )
+                }
+              />
+            )}
+            <Image
+              src={currentImage?.imageUrl}
+              alt={currentImage?.alt}
+              style={{ transform: `scale(${scale})` }}
+            />
+            {images && (
+              <ArrowButton
+                direction="right"
+                onClick={() => onNavigate!((currentIndex + 1) % images.length)}
+              />
+            )}
+          </ImageContainer>
+          <CloseButton onClick={onClose}>x</CloseButton>
           {images && (
-            <>
-              Use <strong>Arrow Left</strong> and <strong>Arrow Right</strong>{" "}
-              to change the screenshot. <br />
-            </>
+            <ImageInfo>
+              {currentIndex + 1}/{images.length}
+            </ImageInfo>
           )}
-          Press <strong>Escape</strong> to close the picture viewer.
-        </UserInstruction>
-        <Keyboard />
-      </InstructionContainer>
-      <ScreenshotDescription>{currentImage?.alt}</ScreenshotDescription>
-      <ImageContainer>
-        {images && (
-          <ArrowButton
-            direction="left"
-            onClick={() =>
-              onNavigate!((currentIndex - 1 + images.length) % images.length)
-            }
-          />
-        )}
-        <Image
-          src={currentImage?.imageUrl}
-          alt={currentImage?.alt}
-          style={{ transform: `scale(${scale})` }}
-        />
-        {images && (
-          <ArrowButton
-            direction="right"
-            onClick={() => onNavigate!((currentIndex + 1) % images.length)}
-          />
-        )}
-        <CloseButton onClick={onClose}>x</CloseButton>
-      </ImageContainer>
-      {images && (
-        <ImageInfo>
-          {currentIndex + 1}/{images.length}
-        </ImageInfo>
+        </ViewerContainer>
+      ) : (
+        <ViewerContainer $isTablet={true} tabIndex={-1} {...swipeHandlers}>
+          <ScreenshotDescription>{currentImage?.alt}</ScreenshotDescription>
+          <SwipeInstruction />
+          <TransformWrapper
+            initialScale={isMobile ? 1 : 0.75}
+            minScale={0.5}
+            maxScale={2.5}
+            wheel={{ step: 0.1 }}
+            doubleClick={{ disabled: true }}
+          >
+            <TransformComponent>
+              <ImageContainer $isTablet={true}>
+                <Image src={currentImage?.imageUrl} alt={currentImage?.alt} />
+              </ImageContainer>
+            </TransformComponent>
+          </TransformWrapper>
+          <CloseButton onClick={onClose}>x</CloseButton>
+          {images && (
+            <ImageInfo>
+              {currentIndex + 1}/{images.length}
+            </ImageInfo>
+          )}
+        </ViewerContainer>
       )}
-    </ViewerContainer>
+    </>
   );
 };
 
