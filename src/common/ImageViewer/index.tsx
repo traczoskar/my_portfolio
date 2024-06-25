@@ -15,7 +15,6 @@ import { Screenshot } from "../../types/types";
 import { useMediaQuery } from "react-responsive";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useSwipeable } from "react-swipeable";
-import "./styles.css";
 import SwipeInstruction from "./SwipeInstruction";
 
 interface ImageViewerProps {
