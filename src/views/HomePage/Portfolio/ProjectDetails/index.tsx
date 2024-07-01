@@ -185,11 +185,17 @@ const ProjectDetails = () => {
         <Section $borderBottom="none">
           <ButtonsWrapper>
             <LinkButton href={project?.repo} target="_blank">
-              <GitHubIcon width={30} height={30} />
+              <GitHubIcon
+                width={isMobile ? 25 : 30}
+                height={isMobile ? 25 : 30}
+              />
               GitHub Repository
             </LinkButton>
             <LinkButton href={project?.live} target="_blank">
-              <LiveIcon width={30} height={30} />
+              <LiveIcon
+                width={isMobile ? 25 : 30}
+                height={isMobile ? 25 : 30}
+              />
               Live Demo
             </LinkButton>
           </ButtonsWrapper>
