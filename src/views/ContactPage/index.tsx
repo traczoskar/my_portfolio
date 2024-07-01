@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 import ModalMessage from "./ModalMessage";
 import { useTheme } from "styled-components";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import { selectIsLanguageEN } from "../../slices/languageSlice";
 import { useMediaQuery } from "react-responsive";
 
@@ -91,74 +92,88 @@ const ContactPage = () => {
             )}
           </ContactTitle>
           <ContactLinks>
-            <ContactLink
+            <motion.div
               custom={0}
               initial="hidden"
               animate="visible"
               variants={buttonVariants}
-              href={`mailto:${ABOUT.email}`}
-              title={
-                isLanguageEN
-                  ? "E-mail to contact@traczoskar.dev"
-                  : "E-mail do contact@traczoskar.dev"
-              }
             >
-              <MailIcon
-                width={isSmallMobile ? 25 : isMobile ? 28 : 30}
-                height={isSmallMobile ? 25 : isMobile ? 28 : 30}
-              />
-              E-mail
-            </ContactLink>
-            <ContactLink
+              <ContactLink
+                href={`mailto:${ABOUT.email}`}
+                title={
+                  isLanguageEN
+                    ? "E-mail to contact@traczoskar.dev"
+                    : "E-mail do contact@traczoskar.dev"
+                }
+              >
+                <MailIcon
+                  width={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                  height={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                />
+                E-mail
+              </ContactLink>
+            </motion.div>
+            <motion.div
               custom={1}
               initial="hidden"
               animate="visible"
               variants={buttonVariants}
-              href={ABOUT.socials[0].url}
-              target="_blank"
-              title={isLanguageEN ? "GitHub profile" : "Profil na GitHubie"}
             >
-              <GitHubIcon
-                width={isSmallMobile ? 25 : isMobile ? 28 : 30}
-                height={isSmallMobile ? 25 : isMobile ? 28 : 30}
-              />
-              GitHub
-            </ContactLink>
-            <ContactLink
+              <ContactLink
+                href={ABOUT.socials[0].url}
+                target="_blank"
+                title={isLanguageEN ? "GitHub profile" : "Profil na GitHubie"}
+              >
+                <GitHubIcon
+                  width={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                  height={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                />
+                GitHub
+              </ContactLink>
+            </motion.div>
+            <motion.div
               custom={2}
               initial="hidden"
               animate="visible"
               variants={buttonVariants}
-              href={ABOUT.socials[1].url}
-              target="_blank"
-              title={isLanguageEN ? "LinkedIn profile" : "Profil na LinkedIn"}
-            >
-              <LinkedInIcon
-                width={isSmallMobile ? 25 : isMobile ? 28 : 30}
-                height={isSmallMobile ? 25 : isMobile ? 28 : 30}
-              />
-              LinkedIn
-            </ContactLink>
-            <CopyToClipboard
-              text={ABOUT.email}
-              onCopy={() => setIsCopied(true)}
             >
               <ContactLink
-                custom={3}
-                initial="hidden"
-                animate="visible"
-                variants={buttonVariants}
-                title={
-                  isLanguageEN ? "Copy e-mail address" : "Skopiuj adres e-mail"
-                }
+                href={ABOUT.socials[1].url}
+                target="_blank"
+                title={isLanguageEN ? "LinkedIn profile" : "Profil na LinkedIn"}
               >
-                <CopyIcon
+                <LinkedInIcon
                   width={isSmallMobile ? 25 : isMobile ? 28 : 30}
                   height={isSmallMobile ? 25 : isMobile ? 28 : 30}
                 />
-                contact@traczoskar.dev
+                LinkedIn
               </ContactLink>
-            </CopyToClipboard>
+            </motion.div>
+            <motion.div
+              custom={3}
+              initial="hidden"
+              animate="visible"
+              variants={buttonVariants}
+            >
+              <CopyToClipboard
+                text={ABOUT.email}
+                onCopy={() => setIsCopied(true)}
+              >
+                <ContactLink
+                  title={
+                    isLanguageEN
+                      ? "Copy e-mail address"
+                      : "Skopiuj adres e-mail"
+                  }
+                >
+                  <CopyIcon
+                    width={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                    height={isSmallMobile ? 25 : isMobile ? 28 : 30}
+                  />
+                  contact@traczoskar.dev
+                </ContactLink>
+              </CopyToClipboard>
+            </motion.div>
           </ContactLinks>
           <ModalMessage isCopied={isCopied} />
         </ContactPageWrapper>
