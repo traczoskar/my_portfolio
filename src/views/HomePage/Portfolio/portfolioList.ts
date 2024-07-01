@@ -1,8 +1,8 @@
-import moviesBrowser from "../../../assets/portfolio/portfolio_moviesBrowser.png";
-import taskList from "../../../assets/portfolio/portfolio_taskList.png";
-import currencyConverter from "../../../assets/portfolio/portfolio_currencyConverter.png";
-import personalHomepage from "../../../assets/portfolio/portfolio_personalHomepage.png";
-import aiWeatherApp from "../../../assets/portfolio/portfolio_aiWeatherApp.png";
+import moviesBrowser from "../../../assets/portfolio/portfolio_moviesBrowser.jpg";
+import taskList from "../../../assets/portfolio/portfolio_taskList.jpg";
+import currencyConverter from "../../../assets/portfolio/portfolio_currencyConverter.jpg";
+import personalHomepage from "../../../assets/portfolio/portfolio_personalHomepage.jpg";
+import aiWeatherApp from "../../../assets/portfolio/portfolio_aiWeatherApp.jpg";
 import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.jpg";
 import { Project } from "../../../types/types";
 import {
@@ -13,6 +13,31 @@ import {
 } from "./screenshotsStore";
 
 export const projects: Project[] = [
+  // ---AI Weather App---
+  {
+    route: "ai-weather-app",
+    label: "AI - Weather App",
+    image: aiWeatherApp,
+    icon: "🌦️",
+    description:
+      "🌦️ AI - Weather App is a simple weather application that uses OpenWeatherMap API to fetch weather data for a given city. The app uses a pre-trained model from TensorFlow.js to predict the weather based on the current temperature.",
+    tech: [
+      "React",
+      "OpenAI",
+      "TypeScript",
+      "JavaScript ES6+",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Redux",
+      "Redux Saga",
+      "Vite",
+      "NPM",
+    ],
+
+    repo: "https://github.com/traczoskar/weatherwise_ai",
+    live: "https://traczoskar.github.io/weatherwise_ai/",
+  },
   //---Movies Browser---
   {
     route: "movies-browser",
@@ -104,31 +129,6 @@ export const projects: Project[] = [
     repo: "https://github.com/traczoskar/movies-browser",
     live: "https://olgacybulska.github.io/movies-browser/",
   },
-  //---AI Weather App---
-  // {
-  //   route: "ai-weather-app",
-  //   label: "AI - Weather App",
-  //   image: aiWeatherApp,
-  //   icon: "🌦️",
-  //   description:
-  //     "🌦️ AI - Weather App is a simple weather application that uses OpenWeatherMap API to fetch weather data for a given city. The app uses a pre-trained model from TensorFlow.js to predict the weather based on the current temperature.",
-  //   tech: [
-  //     "React",
-  //     "OpenAI",
-  //     "TypeScript",
-  //     "JavaScript ES6+",
-  //     "HTML5",
-  //     "CSS3",
-  //     "Tailwind CSS",
-  //     "Redux",
-  //     "Redux Saga",
-  //     "Vite",
-  //     "NPM",
-  //   ],
-
-  //   repo: "https://github.com/traczoskar/weatherwise_ai",
-  //   live: "https://traczoskar.github.io/weatherwise_ai/",
-  // },
   //---Portfolio Page---
   {
     route: "portfolio-page",
