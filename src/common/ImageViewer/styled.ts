@@ -69,6 +69,9 @@ export const ScreenshotDescription = styled.p`
     font-size: 1rem;
     margin: 0 3vw 1rem 3vw;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 0.8rem;
+  }
 `;
 
 interface ImageContainerProps {
@@ -85,13 +88,6 @@ export const ImageContainer = styled.div<ImageContainerProps>`
   justify-content: center;
   align-items: center;
   z-index: 9999;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
-    top: 0;
-    right: 0;
-    transform: translateX(50%) translateY(25%);
-    width: 100%;
-  }
 `;
 
 interface ImageProps {
@@ -125,6 +121,10 @@ export const ImageInfo = styled.div`
   padding: 1rem 1.5rem;
   border-radius: 5px;
   font-size: 1rem;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const CloseButton = styled.button`
