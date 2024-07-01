@@ -60,7 +60,7 @@ const animatespin3d = keyframes`
   }
 `;
 
-export const ContactLink = styled(motion.a)`
+export const ContactLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
