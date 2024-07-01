@@ -9,7 +9,7 @@ export const CardsContainer = styled.section`
   display: flex;
   gap: 1rem;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
     flex-direction: column;
     align-items: center;
   }
@@ -29,7 +29,7 @@ export const Nav = styled.nav`
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
     width: 100%;
     margin: 0;
   }
@@ -43,7 +43,7 @@ export const ProjectList = styled.ul`
   padding: 0;
   flex-grow: 1;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -187,14 +187,24 @@ export const ProjectContainer = styled.div`
   aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
+  border-radius: 1rem;
   box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
     0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
     0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  transition: all ease 0.3s;
+
+  filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0%);
+    outline-offset: 0;
+    outline: 4px solid ${({ theme }) => theme.colors.basic};
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.laptopMax}) {
     width: 58vw;
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
     width: 100%;
   }
 `;
@@ -208,13 +218,4 @@ export const ProjectImage = styled(motion.img)`
   left: 0;
   border-radius: 1rem;
   cursor: pointer;
-  transition: all ease 0.3s;
-
-  filter: grayscale(100%);
-
-  &:hover {
-    filter: grayscale(0%);
-    outline-offset: -4px;
-    outline: 4px solid ${({ theme }) => theme.colors.basic};
-  }
 `;
