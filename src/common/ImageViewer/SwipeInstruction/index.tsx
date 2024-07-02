@@ -23,7 +23,7 @@ const SwipeContainer = styled.div`
   position: absolute;
   width: 100%;
   gap: 0.5rem;
-  top: 1rem;
+  top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
@@ -37,11 +37,22 @@ const SwipeContainer = styled.div`
   }
 `;
 
+const BackgroundWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+`;
+
 const IconsWrapper = styled.div`
   display: flex;
   padding: 0;
   gap: 3rem;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     padding: 1rem 0;
   }
 `;
@@ -52,7 +63,7 @@ const StyledSwipeIcon = styled(SwipeIcon)`
   width: 25px;
   height: 25px;
   animation: ${swipeAnimation} 2s infinite;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     width: 35px;
     height: 35px;
   }
@@ -65,7 +76,7 @@ const StyledZoomInIcon = styled(ZoomInIcon)`
   height: 25px;
   animation: ${zoomInAnimation} 2s infinite;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     width: 35px;
     height: 35px;
   }
@@ -79,20 +90,30 @@ const SwipeText = styled.p`
   color: #dddddd;
   font-size: 0.6rem;
   text-align: center;
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 0.8rem;
   }
 `;
 
-const SwipeInstruction: React.FC = () => {
+interface SwipeInstructionProps {
+  isCertificates?: boolean;
+}
+
+const SwipeInstruction: React.FC<SwipeInstructionProps> = ({
+  isCertificates,
+}) => {
   return (
     <SwipeContainer>
-      <IconsWrapper>
-        <StyledSwipeIcon />
-        <StyledZoomInIcon />
-      </IconsWrapper>
-      <SwipeText>Swipe left or right to change picture</SwipeText>
-      <SwipeText>Use 2 fingers to resize the picture</SwipeText>
+      <BackgroundWrapper>
+        <IconsWrapper>
+          {isCertificates ? null : <StyledSwipeIcon />}
+          <StyledZoomInIcon />
+        </IconsWrapper>
+        {isCertificates ? null : (
+          <SwipeText>Swipe left or right to change picture</SwipeText>
+        )}
+        <SwipeText>Use 2 fingers to resize the picture</SwipeText>
+      </BackgroundWrapper>
     </SwipeContainer>
   );
 };
