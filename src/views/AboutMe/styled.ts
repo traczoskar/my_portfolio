@@ -215,14 +215,21 @@ export const TechItem = styled(motion.li)`
   justify-content: center;
   transition: 0.2s ease-in-out;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    transition: none;
+  }
+
   &:hover {
     transform: scale(1.05);
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-      transform: scale(1.2);
+    @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+      transform: none;
     }
     img {
       transition: 0.3s;
       filter: grayscale(0%);
+      @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+        transition: none;
+      }
     }
   }
 `;
