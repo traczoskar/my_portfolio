@@ -69,6 +69,9 @@ export const TileTitle = styled.h3`
   font-size: 3rem;
   font-weight: 800;
   margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 2.5rem;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-weight: 600;
     font-size: 6vw;
@@ -96,6 +99,9 @@ export const Name = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
   margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 2rem;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 8vw;
     font-weight: 800;
@@ -103,6 +109,9 @@ export const Name = styled.h2`
 `;
 
 export const Profession = styled.h4`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.5rem;
   background-image: ${({ theme }) => theme.colors.header.text};
   -webkit-background-clip: text;
@@ -140,6 +149,9 @@ export const DescriptionTitle = styled.h3<DescriptionTitleProps>`
   font-weight: 700;
   margin: 0;
   transition: color 0.3s ease;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 2rem;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 7vw;
   }
@@ -170,6 +182,9 @@ export const TechTitle = styled.h3`
   font-size: 3rem;
   font-weight: 800;
   margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 2.3rem;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     align-self: center;
     font-size: 8vw;
