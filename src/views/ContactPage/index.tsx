@@ -71,7 +71,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <MainContainer backgroundColor={theme.colors.contactPage.background}>
+      <MainContainer $backgroundColor={theme.colors.contactPage.background}>
         <NavSection />
         <ContactPageWrapper>
           <ContactTitle
@@ -178,7 +178,7 @@ const ContactPage = () => {
           <ModalMessage isCopied={isCopied} />
         </ContactPageWrapper>
       </MainContainer>
-      <Footer backgroundColor={theme.colors.contactPage.footer} />
+      <Footer $backgroundColor={theme.colors.contactPage.footer} />
     </>
   );
 };
