@@ -106,7 +106,7 @@ export const ProjectTab = styled.li`
   }
 `;
 
-export const DetailsButton = styled.button`
+export const Details = styled.div`
   position: absolute;
   right: 15px;
   background: #555555;
@@ -133,7 +133,7 @@ export const DetailsButton = styled.button`
   }
 `;
 
-export const DetailsButtonMobile = styled.button`
+export const DetailsMobile = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +183,7 @@ export const ProjectContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50vw;
+  width: 857px;
   aspect-ratio: 16 / 9;
   position: relative;
   overflow: hidden;
@@ -201,6 +201,9 @@ export const ProjectContainer = styled.div`
     outline: 4px solid ${({ theme }) => theme.colors.basic};
   }
 
+  @media (max-width: 1750px) {
+    width: 50vw;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.laptopMax}) {
     width: 58vw;
   }
