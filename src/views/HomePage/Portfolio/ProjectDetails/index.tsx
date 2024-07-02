@@ -103,7 +103,11 @@ const ProjectDetails = () => {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={handleClose}>
+    <Modal
+      isOpen={isOpen}
+      isImageViewerOpen={isImageViewerOpen}
+      onClose={handleClose}
+    >
       <ProjectDetailsContainer
         aria-label="Project Details"
         ref={containerRef}
