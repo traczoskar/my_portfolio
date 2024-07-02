@@ -27,6 +27,10 @@ export const Title = styled.h3`
   font-weight: 800;
   font-size: 3rem;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    font-size: 2.3rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     align-self: center;
     font-size: 8vw;
