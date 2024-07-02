@@ -112,6 +112,7 @@ export const CourseAdditional = styled.p`
 export const GridDivider = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr;
+  place-items: center;
   gap: 2rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
@@ -154,5 +155,19 @@ export const Certificate = styled.img`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
     height: 45vw;
+  }
+`;
+
+export const TechLogo = styled.img`
+  width: auto;
+  height: 150px;
+  border-radius: 2rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
+    height: 30vw;
   }
 `;
