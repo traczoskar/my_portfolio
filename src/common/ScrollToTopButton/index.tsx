@@ -16,24 +16,24 @@ const ScrollButton = styled.div<ScrollButtonProps>`
   color: ${({ theme }) => theme.colors.toTopButton.arrow};
   border: 2px solid ${({ theme }) => theme.colors.toTopButton.arrow};
   border-radius: 50%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all 0.3s;
   opacity: ${({ $isVisible }) => ($isVisible ? "1" : "0")};
-  z-index: 1000;
+  z-index: 9999;
 
   &:active {
     transform: scale(0.7);
   }
 
-  @media (min-width: 1200px) {
-    display: none;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    display: flex;
   }
 `;
 
-const ScrollToTopButton = () => {
+const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const toggleVisibility = (): void => {
