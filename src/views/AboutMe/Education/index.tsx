@@ -124,6 +124,7 @@ const Education: React.FC = () => {
       </EducationList>
       {isViewerOpen && currentImage && (
         <ImageViewer
+          isCertificates={true}
           image={{
             imageUrl: currentImage.imageUrl,
             alt: currentImage.alt,
