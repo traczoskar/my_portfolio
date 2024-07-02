@@ -3,12 +3,12 @@ import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 
 interface FooterWrapperProps {
-  backgroundColor: string;
+  $backgroundColor: string;
 }
 
 export const FooterWrapper = styled.footer<FooterWrapperProps>`
   position: relative;
-  background: ${({ backgroundColor }) => backgroundColor};
+  background: ${({ $backgroundColor }) => $backgroundColor};
   z-index: 1;
   padding-bottom: 4.5rem;
   text-align: center;
