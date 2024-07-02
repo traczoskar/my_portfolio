@@ -106,7 +106,7 @@ export const ProjectTab = styled.li`
   }
 `;
 
-export const Details = styled.div`
+export const Details = styled(motion.button)`
   position: absolute;
   right: 15px;
   background: #555555;
@@ -133,7 +133,7 @@ export const Details = styled.div`
   }
 `;
 
-export const DetailsMobile = styled.div`
+export const DetailsMobile = styled(motion.button)`
   display: flex;
   align-items: center;
   justify-content: center;
