@@ -5,7 +5,11 @@ interface ThemeSwitchModalContainerProps {
   $right?: string | false;
 }
 
-export const ModalOverlay = styled.div`
+interface ModalOverlayProps {
+  $isImageViewerOpen?: boolean;
+}
+
+export const ModalOverlay = styled.div<ModalOverlayProps>`
   position: fixed;
   top: 0;
   left: 0;
@@ -15,8 +19,13 @@ export const ModalOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 800;
   backdrop-filter: blur(5px);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    position: ${({ $isImageViewerOpen }) =>
+      $isImageViewerOpen ? "fixed" : "relative"};
+  }
 `;
 
 export const ModalContent = styled.section`
