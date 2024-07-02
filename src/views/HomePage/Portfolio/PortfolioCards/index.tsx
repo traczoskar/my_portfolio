@@ -22,6 +22,8 @@ import { selectIsLanguageEN } from "../../../../slices/languageSlice";
 import { useEffect, useState } from "react";
 import Loader from "../../../../common/Loader";
 import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router";
+import { openProjectDetails } from "../../../../slices/projectDetailsSlice";
 
 export default function PortfolioCards() {
   const selectedProject: Project = useSelector(selectSelectedProject);
@@ -30,7 +32,15 @@ export default function PortfolioCards() {
     query: `(max-width: 991px)`,
   });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
+
+  const handleOpenProject = (project: Project) => {
+    console.log(`Navigating to /projects/${project.route}`);
+    navigate(`/projects/${project.route}`);
+    dispatch(openProjectDetails(project.route));
+    console.log(`Opened project details for ${project.route}`);
+  };
 
   const selectProject = (project: Project) => {
     dispatch(setSelectedProject(project));
@@ -53,19 +63,31 @@ export default function PortfolioCards() {
             <ProjectTab
               key={project.label}
               className={project === selectedProject ? "selected" : ""}
-              onClick={() => selectProject(project)}
+              onClick={
+                selectedProject === project
+                  ? undefined
+                  : () => selectProject(project)
+              }
             >
               {project?.icon} {project?.label}
-              {project === selectedProject ? (
+              {selectedProject && project === selectedProject ? (
                 isTablet ? (
-                  <DetailsMobile>
-                    <ProjectLink project={selectedProject}>?</ProjectLink>
+                  <DetailsMobile
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    onClick={() => handleOpenProject(selectedProject)}
+                  >
+                    ?
                   </DetailsMobile>
                 ) : (
-                  <Details>
-                    <ProjectLink project={selectedProject}>
-                      {isLanguageEN ? "Details" : "Szczegóły"}
-                    </ProjectLink>
+                  <Details
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                    onClick={() => handleOpenProject(selectedProject)}
+                  >
+                    {isLanguageEN ? "Details" : "Szczegóły"}
                   </Details>
                 )
               ) : null}
