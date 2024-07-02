@@ -14,6 +14,7 @@ import {
   EducationList,
   EducationName,
   GridDivider,
+  TechLogo,
   Title,
 } from "./styled";
 import ImageViewer from "../../../common/ImageViewer";
@@ -117,6 +118,13 @@ const Education: React.FC = () => {
                     🔍
                   </CertificateInstructions>
                 </CertificateContainer>
+              )}
+              {course.techLogo && (
+                <TechLogo
+                  src={course.techLogo}
+                  alt={course.name}
+                  title={course.name}
+                />
               )}
             </GridDivider>
           </EducationItem>
