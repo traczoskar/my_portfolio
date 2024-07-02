@@ -101,7 +101,7 @@ const ProjectDetails = () => {
     if (id) {
       dispatch(openProjectDetails(id));
     }
-  }, [id, dispatch]);
+  }, [id]);
 
   useEffect(() => {
     if (containerRef.current) {
