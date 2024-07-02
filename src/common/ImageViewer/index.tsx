@@ -16,8 +16,10 @@ import { useMediaQuery } from "react-responsive";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useSwipeable } from "react-swipeable";
 import SwipeInstruction from "./SwipeInstruction";
+import { AnimatePresence } from "framer-motion";
 
 interface ImageViewerProps {
+  isCertificates?: boolean;
   images?: Screenshot[];
   image?: Screenshot;
   currentIndex?: number;
@@ -30,10 +32,12 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
   image,
   currentIndex = 0,
   onClose,
+  isCertificates,
   onNavigate,
 }) => {
   const [scale, setScale] = useState<number>(0.8);
   const containerRef = useRef<HTMLDivElement>(null);
+  const transformWrapperRef = useRef<any>(null);
   const isTablet: boolean = useMediaQuery({
     query: `(max-width: 1199px)`,
   });
@@ -105,12 +109,18 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
     [currentIndex, images, onNavigate]
   );
 
+  const currentImage = images ? images[currentIndex] : image;
+
+  useEffect(() => {
+    if (transformWrapperRef.current) {
+      transformWrapperRef.current.centerView();
+    }
+  }, [currentImage]);
+
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => handleSwipe("LEFT"),
     onSwipedRight: () => handleSwipe("RIGHT"),
   });
-
-  const currentImage = images ? images[currentIndex] : image;
 
   return (
     <>
@@ -166,17 +176,36 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
       ) : (
         <ViewerContainer $isTablet={true} tabIndex={-1} {...swipeHandlers}>
           <ScreenshotDescription>{currentImage?.alt}</ScreenshotDescription>
-          <SwipeInstruction />
+          <SwipeInstruction isCertificates={isCertificates} />
           <TransformWrapper
-            initialScale={isMobile ? 1 : 0.75}
-            minScale={0.5}
+            initialScale={
+              isCertificates
+                ? isMobile
+                  ? 0.5
+                  : window.innerHeight * 0.0005
+                : isMobile
+                ? 0.8
+                : 0.5
+            }
+            minScale={0.15}
             maxScale={2.5}
             wheel={{ step: 0.1 }}
+            ref={transformWrapperRef}
             doubleClick={{ disabled: true }}
           >
             <TransformComponent>
               <ImageContainer $isTablet={true}>
-                <Image src={currentImage?.imageUrl} alt={currentImage?.alt} />
+                <AnimatePresence mode="wait">
+                  <Image
+                    key={currentImage?.imageUrl}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    src={currentImage?.imageUrl}
+                    alt={currentImage?.alt}
+                  />
+                </AnimatePresence>
               </ImageContainer>
             </TransformComponent>
           </TransformWrapper>
