@@ -37,7 +37,6 @@ const MoreAboutMe = () => {
               ))
             : null}
         </TechStackContainer>
-
         <MoreAboutMeWrapper>
           <Picture src={picture} alt="Oskar Tracz" />
           <AboutMeContainer>
