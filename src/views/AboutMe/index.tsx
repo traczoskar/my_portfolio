@@ -70,9 +70,9 @@ const AboutMe: React.FC = () => {
                     {ABOUT.name} {ABOUT.surname}
                   </Name>
                   <Profession>
-                    <CurlyBraces>{"{ "}</CurlyBraces>
+                    <CurlyBraces>{"{"}</CurlyBraces>
                     {ABOUT.title}
-                    <CurlyBraces>{" }"}</CurlyBraces>
+                    <CurlyBraces>{"}"}</CurlyBraces>
                   </Profession>
                   {isMobile ? null : (
                     <DescriptionFirst>
