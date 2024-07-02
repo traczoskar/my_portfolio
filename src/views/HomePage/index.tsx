@@ -14,7 +14,7 @@ const HomePage = () => {
   const theme = useTheme();
   return (
     <>
-      <MainContainer backgroundColor={theme.colors.app.background}>
+      <MainContainer $backgroundColor={theme.colors.app.background}>
         <NavSection />
         <Header
           title="Frontend"
@@ -29,7 +29,7 @@ const HomePage = () => {
         <Portfolio />
         <MoreAboutMe />
       </MainContainer>
-      <Footer backgroundColor={theme.colors.footer.background} />
+      <Footer $backgroundColor={theme.colors.footer.background} />
     </>
   );
 };
