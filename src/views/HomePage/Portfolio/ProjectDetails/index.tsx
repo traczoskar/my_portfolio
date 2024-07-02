@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Modal from "../../../../common/Modal";
 import {
   closeProjectDetails,
@@ -28,7 +29,7 @@ import {
 import { ReactComponent as GitHubIcon } from "../../../../assets/icons/git_icon.svg";
 import { ReactComponent as LiveIcon } from "../../../../assets/icons/www.svg";
 import ScreenshotGallery from "./ScreenshotGallery";
-import { useEffect, useRef, useState } from "react";
+
 import KeyboardInstruct from "./KeyboardInstruct";
 import { useMediaQuery } from "react-responsive";
 import AdditionalData from "./AdditionalData";
@@ -49,11 +50,22 @@ const ProjectDetails = () => {
     query: `(max-width: 767px)`,
   });
 
-  useEffect(() => {
-    if (id) {
-      dispatch(openProjectDetails(id));
+  const handleClose = useCallback(() => {
+    dispatch(closeProjectDetails());
+    navigate("/#projects");
+  }, [dispatch, navigate]);
+
+  const handleNextProject = useCallback(() => {
+    if (projectIndex < projects.length - 1) {
+      navigate(`/projects/${projects[projectIndex + 1].route}`);
     }
-  }, [id, dispatch]);
+  }, [navigate, projectIndex]);
+
+  const handlePreviousProject = useCallback(() => {
+    if (projectIndex > 0) {
+      navigate(`/projects/${projects[projectIndex - 1].route}`);
+    }
+  }, [navigate, projectIndex]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -77,30 +89,25 @@ const ProjectDetails = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [projectIndex, isImageViewerOpen]);
+  }, [
+    isImageViewerOpen,
+    handlePreviousProject,
+    handleClose,
+    handleNextProject,
+  ]);
+
+  useEffect(() => {
+    console.log("Rendering ProjectDetails component");
+    if (id) {
+      dispatch(openProjectDetails(id));
+    }
+  }, [id, dispatch]);
 
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.focus();
     }
   }, [isOpen]);
-
-  const handleClose = () => {
-    dispatch(closeProjectDetails());
-    navigate("/#projects");
-  };
-
-  const handleNextProject = () => {
-    if (projectIndex < projects.length - 1) {
-      navigate(`/projects/${projects[projectIndex + 1].route}`);
-    }
-  };
-
-  const handlePreviousProject = () => {
-    if (projectIndex > 0) {
-      navigate(`/projects/${projects[projectIndex - 1].route}`);
-    }
-  };
 
   return (
     <Modal
