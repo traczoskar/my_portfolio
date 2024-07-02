@@ -8,10 +8,13 @@ import Footer from "../../common/Footer";
 import { useTheme } from "styled-components";
 import { useSelector } from "react-redux";
 import { selectIsLanguageEN } from "../../slices/languageSlice";
+import useScrollToElement from "../../hooks/useScrollToElement";
 
 const HomePage = () => {
+  useScrollToElement("projects");
   const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const theme = useTheme();
+
   return (
     <>
       <MainContainer $backgroundColor={theme.colors.app.background}>
