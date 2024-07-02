@@ -14,6 +14,10 @@ import npm from "../../../assets/technologies/npm.png";
 import openai from "../../../assets/technologies/openai.png";
 import tailwind from "../../../assets/technologies/tailwind.png";
 import vite from "../../../assets/technologies/vite.png";
+import create_react_app from "../../../assets/technologies/create_react_app.png";
+import make from "../../../assets/technologies/make.png";
+import tanstack_query from "../../../assets/technologies/tanstack_query.png";
+import framer_motion from "../../../assets/technologies/framer_motion.png";
 import { Technology } from "../../../types/types";
 
 export const technologies: Technology[] = [
@@ -84,5 +88,21 @@ export const technologies: Technology[] = [
   {
     name: "Vite",
     icon: vite,
+  },
+  {
+    name: "Create React App",
+    icon: create_react_app,
+  },
+  {
+    name: "Make.com",
+    icon: make,
+  },
+  {
+    name: "TanStack Query",
+    icon: tanstack_query,
+  },
+  {
+    name: "Framer Motion",
+    icon: framer_motion,
   },
 ];
