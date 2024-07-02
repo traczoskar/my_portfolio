@@ -27,8 +27,8 @@ const ProjectLink = ({ project, children }: ProjectLinkProps) => {
   const navigate = useNavigate();
 
   const handleLinkClick = () => {
-    dispatch(openProjectDetails(project.route));
     navigate(`/projects/${project.route}`);
+    dispatch(openProjectDetails(project.route));
   };
 
   return <LinkButton onClick={handleLinkClick}>{children}</LinkButton>;
