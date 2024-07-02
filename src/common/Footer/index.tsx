@@ -19,10 +19,10 @@ import { selectIsLanguageEN } from "../../slices/languageSlice";
 import { useMediaQuery } from "react-responsive";
 
 interface FooterProps {
-  backgroundColor: string;
+  $backgroundColor: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ backgroundColor }) => {
+const Footer: React.FC<FooterProps> = ({ $backgroundColor }) => {
   const isLanguageEN = useSelector(selectIsLanguageEN);
   const isMobile: boolean = useMediaQuery({
     query: `(max-width: 767px)`,
@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ backgroundColor }) => {
   const theme = useTheme();
 
   return (
-    <FooterWrapper backgroundColor={backgroundColor}>
+    <FooterWrapper $backgroundColor={$backgroundColor}>
       <FooterContent>
         {isMobile ? (
           <MobileLinksWrapper>
