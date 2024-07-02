@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 interface ViewerContainerProps {
   $isTablet?: boolean;
 }
@@ -94,7 +95,7 @@ interface ImageProps {
   $isTablet?: boolean;
 }
 
-export const Image = styled.img<ImageProps>`
+export const Image = styled(motion.img)<ImageProps>`
   width: ${({ $isTablet }) => ($isTablet ? "100%" : "unset")};
   height: ${({ $isTablet }) => ($isTablet ? "100%" : "unset")};
   max-width: ${({ $isTablet }) => ($isTablet ? "unset" : "100%")};
