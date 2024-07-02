@@ -85,6 +85,10 @@ export const ABOUT: AboutData = {
     "Tailwind CSS",
     "Vite",
     "React Router",
+    "Make.com",
+    "Framer Motion",
+    "TanStack Query",
+    "Create React App",
   ],
   education: [
     {
