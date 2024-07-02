@@ -9,22 +9,24 @@ import {
 
 interface ModalProps {
   isOpen: boolean;
+  isImageViewerOpen?: boolean;
   onClose: () => void;
   children: React.ReactNode;
 }
 
-const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+const Modal = ({
+  isOpen,
+  onClose,
+  children,
+  isImageViewerOpen,
+}: ModalProps) => {
   const isTablet: boolean = useMediaQuery({
     query: `(max-width: 1199px)`,
   });
-  const isMobile: boolean = useMediaQuery({
-    query: `(max-width: 767px)`,
-  });
-
   if (!isOpen) return null;
 
   return (
-    <ModalOverlay>
+    <ModalOverlay $isImageViewerOpen={isImageViewerOpen}>
       <ModalContent aria-expanded="true">
         <ThemeSwitchModalContainer
           $top={isTablet && "0.8rem"}
