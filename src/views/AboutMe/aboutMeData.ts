@@ -1,6 +1,7 @@
 import avatar from "../../assets/avatar.jpg";
 import youCodeCertificate from "../../assets/certificates/youcode.jpg";
 import aiDevsCertificate from "../../assets/certificates/ai_devs.jpg";
+import typeScriptLogo from "../../assets/technologies/type_script.png";
 
 interface AboutData {
   name: string;
@@ -31,6 +32,7 @@ interface AboutData {
       PL: string;
     };
     certificate?: string | undefined;
+    techLogo?: string;
   }[];
   email: string;
   socials: {
@@ -103,6 +105,7 @@ export const ABOUT: AboutData = {
         EN: "The course covered the knowledge of TypeScript and how to use it with React. I learned how to create type-safe applications and how to use TypeScript to improve my code quality. It contained topics like types, interfaces, generics, and advanced TypeScript features.",
         PL: "Kurs obejmował wiedzę na temat TypeScript i jak go używać z Reactem. Nauczyłem się, jak tworzyć aplikacje bezpieczne typów i jak używać TypeScriptu do poprawy jakości mojego kodu. Zawierał tematy takie jak typy, interfejsy, generyki i zaawansowane funkcje TypeScriptu.",
       },
+      techLogo: typeScriptLogo,
     },
     {
       name: "Connect GPT-4 with application and automation logic",
