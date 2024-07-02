@@ -2,8 +2,8 @@ import { projects } from "../portfolioList";
 import { AnimatePresence } from "framer-motion";
 import {
   CardsContainer,
-  DetailsButton,
-  DetailsButtonMobile,
+  Details,
+  DetailsMobile,
   Nav,
   ProjectContainer,
   ProjectImage,
@@ -58,15 +58,15 @@ export default function PortfolioCards() {
               {project?.icon} {project?.label}
               {project === selectedProject ? (
                 isTablet ? (
-                  <DetailsButtonMobile>
+                  <DetailsMobile>
                     <ProjectLink project={selectedProject}>?</ProjectLink>
-                  </DetailsButtonMobile>
+                  </DetailsMobile>
                 ) : (
-                  <DetailsButton>
+                  <Details>
                     <ProjectLink project={selectedProject}>
                       {isLanguageEN ? "Details" : "Szczegóły"}
                     </ProjectLink>
-                  </DetailsButton>
+                  </Details>
                 )
               ) : null}
             </ProjectTab>
