@@ -50,7 +50,7 @@ const AboutMe: React.FC = () => {
 
   return (
     <>
-      <MainContainer backgroundColor={theme.colors.aboutMePage.background}>
+      <MainContainer $backgroundColor={theme.colors.aboutMePage.background}>
         <NavSection />
         <AnimatedIcons isDarkTheme={isDarkTheme} />
         <AboutMeContainer>
@@ -164,7 +164,7 @@ const AboutMe: React.FC = () => {
           <Education />
         </AboutMeContainer>
       </MainContainer>
-      <Footer backgroundColor={theme.colors.aboutMePage.footer} />
+      <Footer $backgroundColor={theme.colors.aboutMePage.footer} />
     </>
   );
 };
