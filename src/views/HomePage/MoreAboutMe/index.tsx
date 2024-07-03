@@ -17,9 +17,11 @@ import { ABOUT } from "../../AboutMe/aboutMeData";
 import { technologies } from "../Portfolio/technologies";
 import { useSelector } from "react-redux";
 import { selectIsLanguageEN } from "../../../slices/languageSlice";
+import useOpenAILogo from "../../../hooks/useOpenAILogo";
 
 const MoreAboutMe = () => {
   const isLanguageEN = useSelector(selectIsLanguageEN);
+  const openAILogo = useOpenAILogo();
   return (
     <MoreAboutMeSection>
       <MoreAboutMeDivider>
@@ -28,7 +30,10 @@ const MoreAboutMe = () => {
             ? ABOUT.techStack.map((tech, index) => (
                 <Technology key={index} title={tech}>
                   <TechnologyIcon
-                    src={technologies.find((t) => t.name === tech)?.icon}
+                    src={
+                      technologies.find((t) => t.name === tech)?.icon ||
+                      openAILogo
+                    }
                     alt={tech}
                   />
                   <TechnologySubtitle>{tech}</TechnologySubtitle>
