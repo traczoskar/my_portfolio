@@ -33,6 +33,7 @@ import ScreenshotGallery from "./ScreenshotGallery";
 import KeyboardInstruct from "./KeyboardInstruct";
 import { useMediaQuery } from "react-responsive";
 import AdditionalData from "./AdditionalData";
+import useScrollToTop from "../../../../hooks/useScrollToTop";
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -108,6 +109,8 @@ const ProjectDetails = () => {
       containerRef.current.focus();
     }
   }, [isOpen]);
+
+  useScrollToTop();
 
   return (
     <Modal
