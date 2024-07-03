@@ -62,12 +62,12 @@ export const ScreenshotDescription = styled.p`
   color: #ffffff;
   border-radius: 0.5rem;
   border: 1px solid #555555;
-  font-size: 0.7rem;
+  font-size: 1rem;
   text-align: center;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
     margin: 0 3vw 1rem 3vw;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
