@@ -6,6 +6,7 @@ import {
   DetailsMobile,
   Nav,
   ProjectContainer,
+  ProjectIcon,
   ProjectImage,
   ProjectList,
   ProjectPlaceholder,
@@ -69,7 +70,7 @@ export default function PortfolioCards() {
                   : () => selectProject(project)
               }
             >
-              {project?.icon} {project?.label}
+              <ProjectIcon>{project?.icon}</ProjectIcon> {project?.label}
               {selectedProject && project === selectedProject ? (
                 isTablet ? (
                   <DetailsMobile
