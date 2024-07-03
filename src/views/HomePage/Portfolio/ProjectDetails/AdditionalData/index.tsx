@@ -13,6 +13,7 @@ import {
   WhatDidILearnList,
   WhatDidILearnWrapper,
 } from "../styled";
+import useOpenAILogo from "../../../../../hooks/useOpenAILogo";
 
 interface AdditionalDataProps {
   project: Project | undefined;
@@ -22,6 +23,7 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
   const isTabletVertical: boolean = useMediaQuery({
     query: `(max-width: 991px)`,
   });
+  const openAILogo = useOpenAILogo();
 
   switch (isTabletVertical) {
     case false:
@@ -38,7 +40,10 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
                   {project?.tech.map((tech) => (
                     <TechnologyContainer key={tech}>
                       <TechnologyIcon
-                        src={technologies.find((t) => t.name === tech)?.icon}
+                        src={
+                          technologies.find((t) => t.name === tech)?.icon ||
+                          openAILogo
+                        }
                         alt={tech}
                       />
                       <TechnologySubtitle>{tech}</TechnologySubtitle>
@@ -83,7 +88,10 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
                 {project?.tech.map((tech) => (
                   <TechnologyContainer key={tech}>
                     <TechnologyIcon
-                      src={technologies.find((t) => t.name === tech)?.icon}
+                      src={
+                        technologies.find((t) => t.name === tech)?.icon ||
+                        openAILogo
+                      }
                       alt={tech}
                     />
                     <TechnologySubtitle>{tech}</TechnologySubtitle>
