@@ -11,7 +11,6 @@ import figma from "../../../assets/technologies/figma.png";
 import axios from "../../../assets/technologies/axios.png";
 import github from "../../../assets/technologies/github.png";
 import npm from "../../../assets/technologies/npm.png";
-import openai from "../../../assets/technologies/openai.png";
 import tailwind from "../../../assets/technologies/tailwind.png";
 import vite from "../../../assets/technologies/vite.png";
 import create_react_app from "../../../assets/technologies/create_react_app.png";
@@ -79,7 +78,7 @@ export const technologies: Technology[] = [
   },
   {
     name: "OpenAI",
-    icon: openai,
+    icon: null,
   },
   {
     name: "Tailwind CSS",
