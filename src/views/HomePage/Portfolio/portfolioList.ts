@@ -6,6 +6,7 @@ import aiWeatherApp from "../../../assets/portfolio/portfolio_aiWeatherApp.jpg";
 import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.jpg";
 import { Project } from "../../../types/types";
 import {
+  aiWeatherAppScreenshots,
   currencyCalculatorScreenshots,
   moviesBrowserScreenshots,
   personalHomepageScreenshots,
@@ -20,7 +21,54 @@ export const projects: Project[] = [
     image: aiWeatherApp,
     icon: "🌦️",
     description:
-      "🌦️ AI - Weather App is a simple weather application that uses OpenWeatherMap API to fetch weather data for a given city. The app uses a pre-trained model from TensorFlow.js to predict the weather based on the current temperature.",
+      "🌦️ AI - Weather App is a cutting-edge application that uses OpenWeatherMap API to fetch weather data for a entered city name or your geolocation. It integrates with ChatGPT to offer personalized activity suggestions and attire recommendations, ensuring you're always prepared for the weather 🤖. With a user-friendly interface and dynamic updates, the app ensures a seamless experience across all devices 📱. Additionally, WeatherWise.ai includes features like air quality monitoring and a detailed 5-day forecast, making it an essential tool for planning your day 🌫️.",
+    screenshots: aiWeatherAppScreenshots,
+    features: [
+      {
+        name: "📍 Weather Data",
+        content:
+          "Get real-time weather data based on your geolocation, ensuring you're always aware of what's outside",
+      },
+      {
+        name: "🤖 ChatGPT Integration",
+        content:
+          "Receive tailored activity suggestions and dressing advice etc. from ChatGPT, customized to the current weather conditions",
+      },
+      {
+        name: "🌍 Global Reach",
+        content:
+          "Whether you're in your hometown or traveling abroad, WeatherWise.ai delivers accurate weather forecasts wherever you are",
+      },
+      {
+        name: "🌐 Responsive Design",
+        content:
+          "Enjoy a seamless experience on any device, thanks to a responsive interface powered by Tailwindcss and Vite",
+      },
+      {
+        name: "🔄 Dynamic Updates",
+        content:
+          "Weather data is constantly refreshed to provide the most current information, powered by TanStack Query (React Query) for efficient data management",
+      },
+      {
+        name: "📱 User-Friendly Interface",
+        content:
+          "Navigate easily through a clean, modern UI that makes weather checking intuitive and quick",
+      },
+      {
+        name: "🌫️ Air Quality Index",
+        content:
+          "Monitor air quality and the presence of harmful pollutants in the air",
+      },
+      {
+        name: "📅 5-Day Forecast",
+        content: "Plan ahead with a detailed 5-day weather forecast",
+      },
+      {
+        name: "🌗 Theme Switch",
+        content:
+          "Choose between dark or light mode of UI. By default the app will switch to the preferences set up by your system or your browsers settings",
+      },
+    ],
     tech: [
       "React",
       "OpenAI",
@@ -30,13 +78,45 @@ export const projects: Project[] = [
       "CSS3",
       "Tailwind CSS",
       "Redux",
-      "Redux Saga",
+      "TanStack Query",
+      "Make.com",
+      "Framer Motion",
       "Vite",
       "NPM",
     ],
-
-    repo: "https://github.com/traczoskar/weatherwise_ai",
-    live: "https://traczoskar.github.io/weatherwise_ai/",
+    whatDidILearn: [
+      "🪝 During this project, I learned how to effectively use Make.com to create and manage webhooks, ensuring seamless integration with external services.",
+      "🔧 Explored a variety of technologies, including React, TailwindCSS, and Vite, while integrating ChatGPT and OpenWeather API to create a comprehensive weather application.",
+      "📊 Enhanced my skills in configuring responses from ChatGPT, ensuring that the AI provides relevant and personalized suggestions based on real-time weather data.",
+      "🌐 Utilized advanced tools like TanStack Query for dynamic data fetching and management, ensuring the app provides real-time, accurate weather information and a smooth user experience.",
+    ],
+    repo: "https://github.com/traczoskar/ai_weather_app",
+    live: "https://traczoskar.github.io/ai_weather_app",
+  },
+  //---Portfolio Page---
+  {
+    route: "portfolio-page",
+    label: "Portfolio Page",
+    image: portfolioPage,
+    icon: "🎑",
+    tech: [
+      "React",
+      "TypeScript",
+      "JavaScript ES6+",
+      "React Router",
+      "Redux",
+      "Redux Saga",
+      "Styled Components",
+      "Create React App",
+      "HTML5",
+      "CSS3",
+      "NPM",
+      "Framer Motion",
+    ],
+    repo: "https://github.com/traczoskar/portfolio_traczoskar",
+    live: "https://traczoskar.dev",
+    description:
+      "📁 Portfolio Page is a showcase of my projects. It's a single-page application that allows you to view detailed information about each project, including a description, features, and technologies used.",
   },
   //---Movies Browser---
   {
@@ -117,6 +197,8 @@ export const projects: Project[] = [
       "Styled Components",
       "Redux",
       "Redux Saga",
+      "React Router",
+      "Create React App",
       "Figma",
       "NPM",
     ],
@@ -129,41 +211,15 @@ export const projects: Project[] = [
     repo: "https://github.com/traczoskar/movies-browser",
     live: "https://olgacybulska.github.io/movies-browser/",
   },
-  //---Portfolio Page---
-  {
-    route: "portfolio-page",
-    label: "Portfolio Page",
-    image: portfolioPage,
-    icon: "📁",
-    tech: ["React", "TypeScript", "Styled Components"],
-    repo: "https://github.com/traczoskar/portfolio_traczoskar",
-    live: "https://traczoskar.dev",
-    description:
-      "📁 Portfolio Page is a showcase of my projects. It's a single-page application that allows you to view detailed information about each project, including a description, features, and technologies used.",
-  },
   //---To Do List---
   {
     route: "to-do-list",
     label: "To Do List",
     image: taskList,
-    screenshots: taskListScreenshots,
     icon: "📝",
-    tech: [
-      "React",
-      "TypeScript",
-      "JavaScript ES6+",
-      "Redux",
-      "Redux Saga",
-      "React Router",
-      "Styled Components",
-      "HTML5",
-      "CSS3",
-      "NPM",
-    ],
-    repo: "https://github.com/traczoskar/to_do_list_react",
-    live: "https://traczoskar.github.io/to_do_list_react/",
     description:
       "To do list is a simple task assistant application developed using the React.js framework and TypeScript language. Whether you're going shopping or need to get things done, this app is your daily task assistant 🛒. It's designed to be simple, transparent, and minimalistic, making it easy and intuitive to use. The app responds quickly to user actions 🚀 and is versatile and universal in its application. It is also responsive on any device due to media queries 📱, ensuring a seamless experience across all platforms. The app features interactive buttons whose appearance depends on their current state, and it allows you to mark tasks as done, hide/show completed tasks, and mark all tasks as done with a single button ✅. Your task list is saved in local storage and fetched whenever you refresh the app or close the window 💽. You can download example tasks using a fetch shot from Redux-Saga, filter tasks by content using a search input, and check individual subpages for each task. The app includes two main pages built with ReactRouter: TaskList and Author 🪢.",
+    screenshots: taskListScreenshots,
     features: [
       {
         name: "Simple Design",
@@ -219,34 +275,38 @@ export const projects: Project[] = [
         content: "🪢 Two main pages built with ReactRouter: TaskList/Author",
       },
     ],
+    tech: [
+      "React",
+      "TypeScript",
+      "JavaScript ES6+",
+      "Redux",
+      "Redux Saga",
+      "React Router",
+      "Styled Components",
+      "Create React App",
+      "HTML5",
+      "CSS3",
+      "NPM",
+    ],
     whatDidILearn: [
-      "🚀 Developing a task assistant application using React.js and TypeScript from scratch.",
+      "🔥 Developing a task assistant application using React.js and TypeScript from scratch.",
       "💡 Implementing state management with Redux and handling side effects with Redux-Saga.",
       "⚒️ Utilizing React Hooks such as useState, useEffect, and useRef for managing component state and lifecycle.",
       "📱 Designing a responsive user interface that works seamlessly on any device using media queries.",
       "✅ Implementing local storage to persist tasks and ensuring data is fetched correctly upon app refresh or closure.",
     ],
+    repo: "https://github.com/traczoskar/to_do_list_react",
+    live: "https://traczoskar.github.io/to_do_list_react/",
   },
   //---Currency Calculator---
   {
     route: "currency-calculator",
     label: "Currency Calculator",
     image: currencyConverter,
-    screenshots: currencyCalculatorScreenshots,
     icon: "💵",
-    tech: [
-      "React",
-      "JavaScript ES6+",
-      "Styled Components",
-      "HTML5",
-      "CSS3",
-      "NPM",
-      "Axios",
-    ],
-    repo: "https://github.com/traczoskar/currency_calculator_react",
-    live: "https://traczoskar.github.io/currency_calculator_react/",
     description:
       'Currency Calculator is a demo project developed using the React.js library, designed to function as a currency converter 💱. Upon launching the app, it fetches current exchange rates from an external API 🌐. Users can input an amount in PLN (Polish złoty), select from a variety of global currencies, and click the "Calculate" button to receive the converted amount. The application also features a real-time clock in the upper right corner 🕒 and displays the date of the current exchange rates above the calculate button 📅. The app is optimized for mobile devices 📱, includes animated elements such as the logo and buttons, and handles errors gracefully by displaying a special window if any issues occur 🚫.',
+    screenshots: currencyCalculatorScreenshots,
     features: [
       {
         name: "High Conversion Limit",
@@ -294,13 +354,25 @@ export const projects: Project[] = [
           "⏳ An animated window is displayed while data is being fetched",
       },
     ],
+    tech: [
+      "React",
+      "JavaScript ES6+",
+      "Styled Components",
+      "Create React App",
+      "HTML5",
+      "CSS3",
+      "NPM",
+      "Axios",
+    ],
     whatDidILearn: [
-      "🚀 Building a powerful currency converter using React.js from scratch, including setting up the development environment and deploying the app.",
-      "💡 Fetching real-time exchange rates from an external API and dynamically updating the available currency options.",
+      "💸 Building a powerful currency converter using React.js from scratch, including setting up the development environment and deploying the app.",
+      "🪝 Fetching real-time exchange rates from an external API and dynamically updating the available currency options.",
       "⚒️ Utilizing React's useState and useEffect hooks for managing component state and performing side effects.",
-      "📱 Designing a responsive user interface that works seamlessly on mobile devices.",
+      "🤳 Designing a responsive user interface that works seamlessly on mobile devices.",
       "❌ Implementing error handling to display a special window if any issues occur during data fetching or conversion.",
     ],
+    repo: "https://github.com/traczoskar/currency_calculator_react",
+    live: "https://traczoskar.github.io/currency_calculator_react/",
   },
   //---Personal Homepage---
   {
@@ -357,9 +429,9 @@ export const projects: Project[] = [
       "NPM",
     ],
     whatDidILearn: [
-      "🚀 Crafted my own dynamic Personal Homepage and CV, flexing my skills in modern web development and showcasing my projects straight from GitHub.",
-      "💡 Learned how to make my site pop with interactive features like dark/light mode switch, real-time GitHub repository tiles, and a contact section for easy reach-out.",
-      "⚒️ Got hands-on with a stack of cool tools like React.js, Redux, Styled-components, and Figma, while also mastering error handling for smooth API integration.",
+      "👨🏻‍💻 Crafted my own dynamic Personal Homepage and CV, flexing my skills in modern web development and showcasing my projects straight from GitHub.",
+      "🌗 Learned how to make my site pop with interactive features like dark/light mode switch, real-time GitHub repository tiles, and a contact section for easy reach-out.",
+      "🙌 Got hands-on with a stack of cool tools like React.js, Redux, Styled-components, and Figma, while also mastering error handling for smooth API integration.",
     ],
     repo: "https://github.com/traczoskar/personal_homepage",
     live: "https://traczoskar.github.io/personal_homepage/",
