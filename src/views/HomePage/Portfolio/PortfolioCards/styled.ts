@@ -74,6 +74,7 @@ export const ProjectTab = styled.li`
   border: 0.75px solid ${({ theme }) => theme.colors.projects.tabBorder};
   flex-grow: 1;
   transition: 0.3s ease;
+  gap: 0.75rem;
 
   &:hover {
     transform: scale(1.02);
@@ -104,6 +105,11 @@ export const ProjectTab = styled.li`
     padding: 1rem 0.75rem;
     font-size: 3vw;
   }
+`;
+
+export const ProjectIcon = styled.span`
+  font-size: 1.3rem;
+  filter: drop-shadow(1px 3px 4px rgba(25, 25, 25, 0.35));
 `;
 
 export const Details = styled(motion.button)`
