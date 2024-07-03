@@ -1,3 +1,14 @@
+import aiWeatherApp_1 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_1.png";
+import aiWeatherApp_2 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_2.png";
+import aiWeatherApp_3 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_3.png";
+import aiWeatherApp_4 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_4.png";
+import aiWeatherApp_5 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_5.png";
+import aiWeatherApp_6 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_6.png";
+import aiWeatherApp_7 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_7.png";
+import aiWeatherApp_8 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_8.png";
+import aiWeatherApp_9 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_9.png";
+import aiWeatherApp_10 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_10.png";
+import aiWeatherApp_11 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_11.png";
 import personalHomepage_1 from "../../../assets/portfolio/personalHomepage/personalHomepage_1.png";
 import personalHomepage_2 from "../../../assets/portfolio/personalHomepage/personalHomepage_2.png";
 import personalHomepage_3 from "../../../assets/portfolio/personalHomepage/personalHomepage_3.png";
@@ -26,6 +37,52 @@ import currencyCalculator_5 from "../../../assets/portfolio/currencyCalculator/c
 
 import { Screenshot } from "../../../types/types";
 
+export const aiWeatherAppScreenshots: Screenshot[] = [
+  {
+    alt: "Main page of the app. User can see the main input form where the city name should be entered.",
+    imageUrl: aiWeatherApp_1,
+  },
+  {
+    alt: "A view of select options after the user starts typing the city name. User can choose the city from the list of suggestions or click the geo-location button to get the weather of the current location.",
+    imageUrl: aiWeatherApp_2,
+  },
+  {
+    alt: "Weather details of the current location. User can see temperature, weather description, wind speed, humidity, pressure, sunrise/sunset time, air quality etc.",
+    imageUrl: aiWeatherApp_3,
+  },
+  {
+    alt: "Forecast data fetched for currently selected location for incoming 5 days.",
+    imageUrl: aiWeatherApp_4,
+  },
+  {
+    alt: "Loading container with spinner after clicking the Ask AI button. User can see that the data is being fetched.",
+    imageUrl: aiWeatherApp_5,
+  },
+  {
+    alt: "AI suggestions for the user. User can see the suggestions for the current location. Suggestions are based on the current weather and example activities.",
+    imageUrl: aiWeatherApp_6,
+  },
+  {
+    alt: "AI suggestions the places to visit, attire and food to eat. AI suggests also music to liste and movies to watch, all based on the current weather for the location.",
+    imageUrl: aiWeatherApp_7,
+  },
+  {
+    alt: "Modal window with app details and a few phrases from developer to the user.",
+    imageUrl: aiWeatherApp_8,
+  },
+  {
+    alt: "Main app window with fetched weather data in light colors theme.",
+    imageUrl: aiWeatherApp_9,
+  },
+  {
+    alt: "Air quality and forecast data in light theme.",
+    imageUrl: aiWeatherApp_10,
+  },
+  {
+    alt: "Error handling screen. User can see error message when there is a problem with fetching data from API.",
+    imageUrl: aiWeatherApp_11,
+  },
+];
 export const personalHomepageScreenshots: Screenshot[] = [
   {
     alt: "First section on the site with author photo, name, short description and contact button. In the upper right corner user can switch between light and dark theme.",
