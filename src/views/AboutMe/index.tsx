@@ -33,6 +33,7 @@ import { selectIsLanguageEN } from "../../slices/languageSlice";
 import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 import useScrollToTop from "../../hooks/useScrollToTop";
+import useOpenAILogo from "../../hooks/useOpenAILogo";
 
 const AboutMe: React.FC = () => {
   useScrollToTop();
@@ -47,6 +48,7 @@ const AboutMe: React.FC = () => {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.5 } },
   };
+  const openAILogo = useOpenAILogo();
 
   return (
     <>
@@ -152,7 +154,10 @@ const AboutMe: React.FC = () => {
                     key={index}
                   >
                     <TechIcon
-                      src={technologies.find((t) => t.name === tech)?.icon}
+                      src={
+                        technologies.find((t) => t.name === tech)?.icon ||
+                        openAILogo
+                      }
                       alt={tech}
                     />
                     <TechSubtitle>{tech}</TechSubtitle>
