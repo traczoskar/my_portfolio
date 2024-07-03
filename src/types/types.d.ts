@@ -39,7 +39,7 @@ interface Feature {
 
 export interface Technology {
   name: string;
-  icon: string;
+  icon?: string;
 }
 
 export type Screenshot = {
