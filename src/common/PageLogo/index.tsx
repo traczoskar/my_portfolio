@@ -1,5 +1,5 @@
 import { LogoContainer } from "./styled";
-import Logo from "./SVGLogo";
+import LogoSVG from "./SVGLogo";
 
 interface PageLogoProps {
   width: number;
@@ -9,7 +9,7 @@ interface PageLogoProps {
 const PageLogo = ({ width, height }: PageLogoProps) => {
   return (
     <LogoContainer>
-      <Logo height={height} width={width} />
+      <LogoSVG height={height} width={width} />
     </LogoContainer>
   );
 };
