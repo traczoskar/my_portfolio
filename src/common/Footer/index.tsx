@@ -66,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ $backgroundColor }) => {
               smooth
               to="/#header"
             >
-              <PageLogo width={25} height={25} />
+              <PageLogo width={37} height={37} />
               traczoskar.dev
             </HeaderLink>
             <Socials>
