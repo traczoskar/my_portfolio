@@ -1,154 +1,56 @@
-import { SVGProps } from "react";
+import { SVGProps, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-interface LogoProps extends SVGProps<SVGSVGElement> {
-  strokeColor?: string;
-}
 const StyledSvg = styled.svg`
-  stroke: ${({ theme }) => theme.colors.textBasic};
+  fill: ${({ theme }) => theme.colors.textBasic};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
 
-  &.logo-stroke {
+  &.logo-fill {
     transition: 0.3s;
     &:hover {
-      stroke: ${({ theme }) => theme.colors.basic};
+      fill: ${({ theme }) => theme.colors.basic};
     }
   }
 `;
 
-const Logo = ({ stroke, width, height }: LogoProps) => (
-  <StyledSvg
-    xmlns="http://www.w3.org/2000/svg"
-    width={width}
-    height={height}
-    className="logo-stroke"
-    viewBox="0 0 512 512"
-    stroke={stroke}
-  >
-    <g>
-      <g id="Browser_1_">
-        <line
-          style={{
-            fill: "none",
-            strokeWidth: "40",
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-            strokeMiterlimit: "10",
-          }}
-          x1="11"
-          y1="149.257"
-          x2="501"
-          y2="149.257"
-        />
+const LogoSVG = ({ fill, width, height }: SVGProps<SVGSVGElement>) => {
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [viewBox, setViewBox] = useState("0 0 384 384");
+
+  useEffect(() => {
+    if (svgRef.current) {
+      const bbox = svgRef.current.getBBox();
+      setViewBox(`${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
+    }
+  }, []);
+  return (
+    <StyledSvg
+      ref={svgRef}
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      className="logo-fill"
+      viewBox={viewBox}
+      fill={fill}
+    >
+      <defs>
+        <clipPath id="680d06c421">
+          <path
+            d="M 115.199219 113.152344 L 268.949219 113.152344 L 268.949219 227.152344 L 115.199219 227.152344 Z M 115.199219 113.152344 "
+            clipRule="nonzero"
+          />
+        </clipPath>
+      </defs>
+      <g clipPath="url(#680d06c421)">
         <path
-          style={{
-            fill: "none",
-            strokeWidth: "40",
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-            strokeMiterlimit: "10",
-          }}
-          d="&#10;&#9;&#9;&#9;M470.502,484.734c16.844,0,30.498-13.654,30.498-30.498V57.764c0-16.844-13.654-30.498-30.498-30.498H41.498&#10;&#9;&#9;&#9;C24.654,27.266,11,40.92,11,57.764v396.473c0,16.844,13.654,30.498,30.498,30.498H470.502z"
+          d="M 183.953125 227.152344 C 183.953125 203.472656 172.105469 182.5 153.832031 170.324219 C 172.105469 157.804688 183.953125 137.171875 183.953125 113.492188 L 159.921875 113.492188 C 159.921875 138.1875 139.957031 158.144531 115.25 158.144531 L 115.25 182.5 C 139.957031 182.5 159.921875 202.460938 159.921875 227.152344 Z M 229.980469 170.324219 C 211.703125 182.839844 199.859375 203.472656 199.859375 227.152344 L 223.886719 227.152344 C 223.886719 202.460938 243.855469 182.5 268.5625 182.5 L 268.5625 158.144531 C 243.855469 158.144531 223.886719 138.1875 223.886719 113.492188 L 199.859375 113.492188 C 199.859375 137.171875 211.703125 158.144531 229.980469 170.324219 Z M 229.980469 170.324219 "
+          fillOpacity="1"
+          fillRule="evenodd"
         />
-
-        <line
-          style={{
-            fill: "none",
-            strokeWidth: "40",
-            strokeLinecap: "round",
-            strokeLinejoin: "round",
-            strokeMiterlimit: "10",
-          }}
-          x1="254.983"
-          y1="88.261"
-          x2="440.004"
-          y2="88.261"
-        />
-        <g>
-          <g>
-            <line
-              style={{
-                fill: "none",
-                strokeWidth: "40",
-                strokeLinecap: "round",
-                strokeLinejoin: "round",
-                strokeMiterlimit: "10",
-              }}
-              x1="286.887"
-              y1="255.593"
-              x2="226.811"
-              y2="376.924"
-            />
-
-            <polyline
-              style={{
-                fill: "none",
-                strokeWidth: "40",
-                strokeLinecap: "round",
-                strokeLinejoin: "round",
-                strokeMiterlimit: "10",
-              }}
-              points="&#10;&#9;&#9;&#9;&#9;&#9;163.913,255.593 103.223,316.284 163.913,376.975 &#9;&#9;&#9;&#9;"
-            />
-
-            <polyline
-              style={{
-                fill: "none",
-                strokeWidth: "40",
-                strokeLinecap: "round",
-                strokeLinejoin: "round",
-                strokeMiterlimit: "10",
-              }}
-              points="&#10;&#9;&#9;&#9;&#9;&#9;348.086,376.975 408.777,316.284 348.086,255.593 &#9;&#9;&#9;&#9;"
-            />
-          </g>
-        </g>
       </g>
+    </StyledSvg>
+  );
+};
 
-      <line
-        style={{
-          fill: "none",
-          strokeWidth: "40",
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          strokeMiterlimit: "10",
-        }}
-        x1="195.004"
-        y1="89.278"
-        x2="195.004"
-        y2="89.278"
-      />
-
-      <line
-        style={{
-          fill: "none",
-          strokeWidth: "40",
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          strokeMiterlimit: "10",
-        }}
-        x1="132.992"
-        y1="89.278"
-        x2="132.992"
-        y2="89.278"
-      />
-
-      <line
-        style={{
-          fill: "none",
-          strokeWidth: "40",
-          strokeLinecap: "round",
-          strokeLinejoin: "round",
-          strokeMiterlimit: "10",
-        }}
-        x1="70.979"
-        y1="89.278"
-        x2="70.979"
-        y2="89.278"
-      />
-    </g>
-  </StyledSvg>
-);
-
-export default Logo;
+export default LogoSVG;
