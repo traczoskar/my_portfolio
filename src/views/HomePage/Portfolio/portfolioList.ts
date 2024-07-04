@@ -109,7 +109,6 @@ export const projects: Project[] = [
       "JavaScript ES6+",
       "React Router",
       "Redux",
-      "Redux Saga",
       "Styled Components",
       "Create React App",
       "HTML5",
@@ -117,7 +116,7 @@ export const projects: Project[] = [
       "NPM",
       "Framer Motion",
     ],
-    repo: "https://github.com/traczoskar/portfolio_traczoskar",
+    repo: "https://github.com/traczoskar/my_portfolio",
     live: "https://traczoskar.dev",
   },
   //---Movies Browser---
