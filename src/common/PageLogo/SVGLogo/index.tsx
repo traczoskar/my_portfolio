@@ -19,11 +19,20 @@ const LogoSVG = ({ fill, width, height }: SVGProps<SVGSVGElement>) => {
   const [viewBox, setViewBox] = useState("0 0 384 384");
 
   useEffect(() => {
-    if (svgRef.current) {
-      const bbox = svgRef.current.getBBox();
-      setViewBox(`${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
-    }
+    const updateViewBox = () => {
+      if (svgRef.current) {
+        const bbox = svgRef.current.getBBox();
+        if (bbox.width > 0 && bbox.height > 0) {
+          setViewBox(`${bbox.x} ${bbox.y} ${bbox.width} ${bbox.height}`);
+        } else {
+          setTimeout(updateViewBox, 100);
+        }
+      }
+    };
+
+    updateViewBox();
   }, []);
+
   return (
     <StyledSvg
       ref={svgRef}
