@@ -3,12 +3,13 @@ import taskList from "../../../assets/portfolio/portfolio_taskList.jpg";
 import currencyConverter from "../../../assets/portfolio/portfolio_currencyConverter.jpg";
 import personalHomepage from "../../../assets/portfolio/portfolio_personalHomepage.jpg";
 import aiWeatherApp from "../../../assets/portfolio/portfolio_aiWeatherApp.jpg";
-import portfolioPage from "../../../assets/portfolio/portfolio_portfolioPage.jpg";
+import myPortfolio from "../../../assets/portfolio/portfolio_myPortfolio.jpg";
 import { Project } from "../../../types/types";
 import {
   aiWeatherAppScreenshots,
   currencyCalculatorScreenshots,
   moviesBrowserScreenshots,
+  myPortfolioScreenshots,
   personalHomepageScreenshots,
   taskListScreenshots,
 } from "./screenshotsStore";
@@ -95,10 +96,13 @@ export const projects: Project[] = [
   },
   //---Portfolio Page---
   {
-    route: "portfolio-page",
-    label: "Portfolio Page",
-    image: portfolioPage,
+    route: "my-portfolio",
+    label: "My Portfolio",
+    image: myPortfolio,
     icon: "🎑",
+    description:
+      "📁 My Portfolio is a showcase of my projects. It's a single-page application that allows you to view detailed information about each project, including a description, features, and technologies used.",
+    screenshots: myPortfolioScreenshots,
     tech: [
       "React",
       "TypeScript",
@@ -115,8 +119,6 @@ export const projects: Project[] = [
     ],
     repo: "https://github.com/traczoskar/portfolio_traczoskar",
     live: "https://traczoskar.dev",
-    description:
-      "📁 Portfolio Page is a showcase of my projects. It's a single-page application that allows you to view detailed information about each project, including a description, features, and technologies used.",
   },
   //---Movies Browser---
   {
