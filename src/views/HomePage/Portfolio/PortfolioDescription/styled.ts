@@ -4,6 +4,7 @@ export const PortfolioTitle = styled.h2`
   margin: 0;
   padding: 0 5rem 2rem 5rem;
   font-size: 2.5rem;
+  text-align: center;
   font-weight: 700;
   border-bottom: 1px solid #ddd;
   text-shadow: -4px 6px 8px rgba(66, 68, 90, 0.2);
