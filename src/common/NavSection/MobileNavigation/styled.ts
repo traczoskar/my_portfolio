@@ -52,22 +52,14 @@ export const MobileNavLogo = styled(Link)`
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
 
-    .logo-stroke {
-      stroke: ${({ theme }) => theme.colors.basic};
+    .logo-fill {
+      fill: ${({ theme }) => theme.colors.basic};
     }
   }
 
   &:active {
     transform: scale(0.9);
     filter: brightness(90%);
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
-    font-size: 1.5rem;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    font-size: 1.3rem;
-    gap: 0.75rem;
   }
 `;
 
