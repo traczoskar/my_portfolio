@@ -62,7 +62,7 @@ const ContactPage = () => {
         delay: 1.5 + i * 0.1,
         duration: 0.5,
         opacity: {
-          delay: 1.5 + i * 0.4, // Dodatkowe opóźnienie dla opacity
+          delay: 1.5 + i * 0.4,
           duration: 1.5,
         },
       },
@@ -86,8 +86,8 @@ const ContactPage = () => {
               </>
             ) : (
               <>
-                Zostaw mi <SpecialText>wiadomość</SpecialText>, to tylko kilka{" "}
-                <SpecialText>kliknięć!</SpecialText>
+                Napisz <SpecialText>do mnie</SpecialText>, jestem tylko o{" "}
+                <SpecialText>kliknięcie</SpecialText> stąd!
               </>
             )}
           </ContactTitle>
