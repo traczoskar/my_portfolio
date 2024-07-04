@@ -21,6 +21,7 @@ export const AdvantagesTitle = styled.h2`
   padding: 0 5rem 2rem 5rem;
   font-size: 2.5rem;
   font-weight: 700;
+  text-align: center;
   border-bottom: 1px solid #ddd;
   text-shadow: -4px 6px 8px rgba(66, 68, 90, 0.2);
 
@@ -30,8 +31,8 @@ export const AdvantagesTitle = styled.h2`
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 7vw;
-    margin: 0 0 2rem 0;
-    padding: 0 2.5rem 1rem 2.5rem;
+    margin: 0 2.5rem 2rem 2.5rem;
+    padding: 0 0 1rem 0;
   }
 `;
 
