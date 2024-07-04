@@ -34,7 +34,7 @@ const ClickHere = () => {
       </AnimatedDiv>
       {isLanguageEN
         ? "Click here for more details of selected project!"
-        : "Kliknij tutaj, aby dowiedzieć się więcej o wybranym projekcie!"}
+        : "Kliknij tutaj, po więcej szczegółów!"}
     </Button>
   );
 };
