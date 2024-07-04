@@ -1,6 +1,6 @@
 # 🎑 My Portfolio
 
-Welcome to **MyPortfolio**, the most advanced project I have worked on to date. This project has been a significant learning experience, particularly in building animations and routing using React Router. Additionally, I have implemented features such as theme switching and language selection between Polish and English. A considerable amount of effort went into creating a responsive design. Users can explore a range of my projects, view their details and screenshots, find my contact information, links to LinkedIn and GitHub, read my short biography, see my IT skills, and view the certificates I have obtained, including those related to integrating applications with Generative AI and LLM models.
+Welcome to **MyPortfolio**, the most advanced project I have worked on to date. This project has been a significant learning experience 🚀, particularly in building animations and routing using React Router. Additionally, I have implemented features such as theme switching 🌓 and language selection between Polish and English 🇵🇱🇬🇧. A considerable amount of effort went into creating a responsive design 📱. Users can explore a range of my projects, view their details and screenshots , find my contact information, links to LinkedIn and GitHub 🔗, read my short biography, see my IT skills, and view the certificates I have obtained, including those related to integrating applications with Generative AI and LLM models 🤖.
 
 ## 👨🏻‍💻 Check out Demo
 
