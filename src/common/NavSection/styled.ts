@@ -45,14 +45,16 @@ export const NavHeader = styled.h1`
   margin: 0;
   letter-spacing: 0.005rem;
   padding: 0.5rem 0;
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.15));
   transition: all 0.3s;
+
   cursor: pointer;
 
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
 
-    .logo-stroke {
-      stroke: ${({ theme }) => theme.colors.basic};
+    .logo-fill {
+      fill: ${({ theme }) => theme.colors.basic};
     }
   }
 
