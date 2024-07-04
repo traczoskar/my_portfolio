@@ -43,9 +43,13 @@ export const HeaderWrapper = styled.article`
   }
 `;
 
-export const HeaderGreeter = styled.h2`
+interface HeaderGreeterProps {
+  isLanguageEN?: boolean;
+}
+
+export const HeaderGreeter = styled.h2<HeaderGreeterProps>`
   font-weight: 400;
-  font-size: 2.3rem;
+  font-size: ${({ isLanguageEN }) => (isLanguageEN ? "2.3rem" : "2rem")};
   margin: 0;
   padding: 0;
   letter-spacing: 0.03rem;
