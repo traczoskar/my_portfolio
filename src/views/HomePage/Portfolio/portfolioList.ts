@@ -101,8 +101,43 @@ export const projects: Project[] = [
     image: myPortfolio,
     icon: "🎑",
     description:
-      "📁 My Portfolio is a showcase of my projects. It's a single-page application that allows you to view detailed information about each project, including a description, features, and technologies used.",
+      "Welcome to MyPortfolio, the most advanced project I have worked on to date. This project has been a significant learning experience 🚀, particularly in building animations and routing using React Router. Additionally, I have implemented features such as theme switching 🌓 and language selection between Polish and English 🇵🇱🇬🇧. A considerable amount of effort went into creating a responsive design 📱. Users can explore a range of my projects, view their details and screenshots , find my contact information, links to LinkedIn and GitHub 🔗, read my short biography, see my IT skills, and view the certificates I have obtained, including those related to integrating applications with Generative AI and LLM models 🤖.",
     screenshots: myPortfolioScreenshots,
+    features: [
+      {
+        name: "Project Showcase 📂",
+        content:
+          "Explore a range of my most comprehensive projects, view their details, and screenshots",
+      },
+      {
+        name: "Responsive Design 📱",
+        content:
+          "Enjoy a seamless experience on any device, thanks to a responsive interface",
+      },
+      {
+        name: "Theme Switching 🌗",
+        content: "Choose between dark and light themes to suit your preference",
+      },
+      {
+        name: "Biography and Tech Stack 👤",
+        content:
+          "Learn about my background, IT skills, and the technologies I use",
+      },
+      {
+        name: "Certificates 🏆",
+        content:
+          "Check out my certificates, including those related to Generative AI and LLM models",
+      },
+      {
+        name: "Contact Page with Social Links 📞",
+        content:
+          "Find my contact information and links to my LinkedIn and GitHub profiles",
+      },
+      {
+        name: "Language Selection 🌍",
+        content: "Switch between Polish and English versions of the portfolio",
+      },
+    ],
     tech: [
       "React",
       "TypeScript",
@@ -116,6 +151,16 @@ export const projects: Project[] = [
       "NPM",
       "Framer Motion",
     ],
+    whatDidILearn: [
+      "🚀 Developing a comprehensive portfolio website using React.js and TypeScript, showcasing advanced project management and coding skills.",
+      "🎨 Implementing advanced animations and transitions using Framer Motion, enhancing user experience and visual appeal.",
+      "🌐 Mastering React Router for seamless navigation and routing within a single-page application.",
+      "🌓 Creating a theme switching functionality, allowing users to toggle between light and dark modes.",
+      "🇵🇱🇬🇧 Implementing multi-language support, enabling users to switch between Polish and English versions of the portfolio.",
+      "📱 Designing and implementing a fully responsive layout that adapts to various screen sizes and devices.",
+      "🖼️ Showcasing projects effectively by creating detailed project pages with screenshots and descriptions.",
+    ],
+
     repo: "https://github.com/traczoskar/my_portfolio",
     live: "https://traczoskar.dev",
   },
