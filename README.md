@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# 🎑 My Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **MyPortfolio**, the most advanced project I have worked on to date. This project has been a significant learning experience, particularly in building animations and routing using React Router. Additionally, I have implemented features such as theme switching and language selection between Polish and English. A considerable amount of effort went into creating a responsive design. Users can explore a range of my projects, view their details and screenshots, find my contact information, links to LinkedIn and GitHub, read my short biography, see my IT skills, and view the certificates I have obtained, including those related to integrating applications with Generative AI and LLM models.
 
-## Available Scripts
+## 👨🏻‍💻 Check out Demo
 
-In the project directory, you can run:
+[**Click Here**](https://traczoskar.dev) 👈
 
-### `npm start`
+## 🛠 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![React](https://img.shields.io/badge/React-222222.svg?style=for-the-badge&logo=react&logoColor=61dafb)
+![TypeScript](https://img.shields.io/badge/TypeScript-222222.svg?style=for-the-badge&logo=typescript&logoColor=3178C6)
+![JavaScript ES6+](https://img.shields.io/badge/JavaScript_ES6+-222222.svg?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![HTML5](https://img.shields.io/badge/HTML5-222222.svg?style=for-the-badge&logo=html5&logoColor=E34F26)
+![CSS3](https://img.shields.io/badge/CSS3-222222.svg?style=for-the-badge&logo=css3&logoColor=1572B6)
+![Styled Components](https://img.shields.io/badge/Styled_Components-222222.svg?style=for-the-badge&logo=styled-components&logoColor=#E056EB)
+![Redux](https://img.shields.io/badge/Redux-222222.svg?style=for-the-badge&logo=redux&logoColor=764ABC)
+![React Router](https://img.shields.io/badge/React_Router-222222.svg?style=for-the-badge&logo=react-router&logoColor=EF2E40)
+![NPM](https://img.shields.io/badge/NPM-222222.svg?style=for-the-badge&logo=npm&logoColor=EF2E40)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-222222.svg?style=for-the-badge&logo=framer&logoColor=AAAAAA)
+![Create React App](https://img.shields.io/badge/Create_React_App-222222.svg?style=for-the-badge&logo=create-react-app&logoColor=61dafb)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✅ Features
 
-### `npm test`
+📂 **Project Showcase**: Explore a range of my most comprehensive projects, view their details, and screenshots.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+📱 **Responsive Design**: Enjoy a seamless experience on any device, thanks to a responsive interface.
 
-### `npm run build`
+🌗 **Theme Switching**: Choose between dark and light themes to suit your preference.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+👤 **Biography and Tech Stack**: Learn about my background, IT skills, and the technologies I use.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📞 **Contact Page with Social Links**: Find my contact information and links to my LinkedIn and GitHub profiles.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🌍 **Language Selection**: Switch between Polish and English versions of the portfolio.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📬 Feedback
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I'd love to hear your thoughts and suggestions! This README should provide a comprehensive overview of your MyPortfolio project, highlighting its features, tech stack, and how users can interact with it.
