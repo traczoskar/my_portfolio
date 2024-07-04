@@ -20,7 +20,7 @@ const Advantages = () => {
     <>
       <AdvantagesSection>
         <AdvantagesTitle>
-          {isLanguageEN ? "Why choose me?" : "Dlaczego warto mnie wybrać?"}
+          {isLanguageEN ? "Why choose me?" : "Dlaczego warto wybrać mnie?"}
         </AdvantagesTitle>
         <AdvantagesWrapper>
           <AdvantagesList>
