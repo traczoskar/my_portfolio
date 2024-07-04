@@ -63,7 +63,7 @@ const MobileNavigation: React.FC<MobileNavigationProps> = ({
             animate={isOpen ? "visible" : "hidden"}
             variants={navVariants}
           >
-            <PageLogo height={26} width={26} />
+            <PageLogo height={45} width={45} />
           </motion.div>
         </MobileNavLogo>
         <motion.div
