@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({
               <Paragraph>
                 {isLanguageEN
                   ? "Welcome to my portfolio! My pursuit is to connect aesthetics with functionality while creating web applications."
-                  : "Witaj, oto moje portfolio! Moim celem jest połączenie estetyki z funkcjonalnością podczas tworzenia aplikacji internetowych."}
+                  : "Witaj na moim portfolio! Moim celem jest połączenie estetyki z funkcjonalnością podczas tworzenia aplikacji internetowych."}
               </Paragraph>
               <ButtonWrapper>
                 <Button to="/contact">
