@@ -9,6 +9,16 @@ import aiWeatherApp_8 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_
 import aiWeatherApp_9 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_9.png";
 import aiWeatherApp_10 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_10.png";
 import aiWeatherApp_11 from "../../../assets/portfolio/aiWeatherApp/aiWeatherApp_11.png";
+import myPortfolio_1 from "../../../assets/portfolio/myPortfolio/myPortfolio_1.png";
+import myPortfolio_2 from "../../../assets/portfolio/myPortfolio/myPortfolio_2.png";
+import myPortfolio_3 from "../../../assets/portfolio/myPortfolio/myPortfolio_3.png";
+import myPortfolio_4 from "../../../assets/portfolio/myPortfolio/myPortfolio_4.png";
+import myPortfolio_5 from "../../../assets/portfolio/myPortfolio/myPortfolio_5.png";
+import myPortfolio_6 from "../../../assets/portfolio/myPortfolio/myPortfolio_6.png";
+import myPortfolio_7 from "../../../assets/portfolio/myPortfolio/myPortfolio_7.png";
+import myPortfolio_8 from "../../../assets/portfolio/myPortfolio/myPortfolio_8.png";
+import myPortfolio_9 from "../../../assets/portfolio/myPortfolio/myPortfolio_9.png";
+import myPortfolio_10 from "../../../assets/portfolio/myPortfolio/myPortfolio_10.png";
 import personalHomepage_1 from "../../../assets/portfolio/personalHomepage/personalHomepage_1.png";
 import personalHomepage_2 from "../../../assets/portfolio/personalHomepage/personalHomepage_2.png";
 import personalHomepage_3 from "../../../assets/portfolio/personalHomepage/personalHomepage_3.png";
@@ -81,6 +91,48 @@ export const aiWeatherAppScreenshots: Screenshot[] = [
   {
     alt: "Error handling screen. User can see error message when there is a problem with fetching data from API.",
     imageUrl: aiWeatherApp_11,
+  },
+];
+export const myPortfolioScreenshots: Screenshot[] = [
+  {
+    alt: "Home Page with navigation bar, main header section with animated title, my abstract avatar and social links in navbar.",
+    imageUrl: myPortfolio_1,
+  },
+  {
+    alt: "Advantages section with listed icons with benefits of working with me.",
+    imageUrl: myPortfolio_2,
+  },
+  {
+    alt: "My projects section. User can choose between my recent projects and open the details of selected one by clicking on dedicated button, project image or details button.",
+    imageUrl: myPortfolio_3,
+  },
+  {
+    alt: "More about me section with link to AboutMe page, and listed tech stack. Below you can see also a footer component with social links and link to contact page.",
+    imageUrl: myPortfolio_4,
+  },
+  {
+    alt: "Project Details page with project description, technologies used, link to GitHub repository and deployed demo. User can see also screenshots of the project. Above there is a navigation bar with instructions on how to use keyboard keys to navigate between projects.",
+    imageUrl: myPortfolio_5,
+  },
+  {
+    alt: "About Me page with short biography and photo of me. Below there is also tech stack that I am familiar with and edcuation section which is visible on the next screenshot.",
+    imageUrl: myPortfolio_6,
+  },
+  {
+    alt: "Education section where user can check my obtained certificates and courses that I have completed.",
+    imageUrl: myPortfolio_7,
+  },
+  {
+    alt: "Contact page with social links buttons and interactive Copy to clipboard e-mail button. All buttons are animated and have hover effects.",
+    imageUrl: myPortfolio_8,
+  },
+  {
+    alt: "Home Page in light mode.",
+    imageUrl: myPortfolio_9,
+  },
+  {
+    alt: "Contact page in light mode.",
+    imageUrl: myPortfolio_10,
   },
 ];
 export const personalHomepageScreenshots: Screenshot[] = [
