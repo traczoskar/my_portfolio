@@ -42,13 +42,13 @@ export const HeaderLink = styled(HashLink)`
   color: inherit;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
   letter-spacing: 0.005rem;
   padding: 0.5rem 0;
-
+  filter: drop-shadow(1px 4px 4px rgba(0, 0, 0, 0.15));
   transition: 0.3s;
   cursor: pointer;
 
@@ -59,8 +59,8 @@ export const HeaderLink = styled(HashLink)`
   &:hover {
     color: ${({ theme }) => theme.colors.basic};
 
-    .logo-stroke {
-      stroke: ${({ theme }) => theme.colors.basic};
+    .logo-fill {
+      fill: ${({ theme }) => theme.colors.basic};
     }
   }
 
