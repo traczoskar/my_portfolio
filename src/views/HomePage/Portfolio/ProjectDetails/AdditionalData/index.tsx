@@ -14,6 +14,8 @@ import {
   WhatDidILearnWrapper,
 } from "../styled";
 import useOpenAILogo from "../../../../../hooks/useOpenAILogo";
+import { selectIsLanguageEN } from "../../../../../slices/languageSlice";
+import { useSelector } from "react-redux";
 
 interface AdditionalDataProps {
   project: Project | undefined;
@@ -23,6 +25,7 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
   const isTabletVertical: boolean = useMediaQuery({
     query: `(max-width: 991px)`,
   });
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const openAILogo = useOpenAILogo();
 
   switch (isTabletVertical) {
@@ -61,7 +64,10 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
               <SectionTitle>What Did I Learn? 📚</SectionTitle>
               {project?.whatDidILearn ? (
                 <WhatDidILearnList>
-                  {project?.whatDidILearn?.map((listItem, index) => (
+                  {(isLanguageEN
+                    ? project.whatDidILearn.en
+                    : project.whatDidILearn.pl
+                  ).map((listItem, index) => (
                     <WhatDidILearnItem key={index}>
                       {listItem}
                     </WhatDidILearnItem>
@@ -109,7 +115,10 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
             <SectionTitle>What Did I Learn? 📚</SectionTitle>
             {project?.whatDidILearn ? (
               <WhatDidILearnList>
-                {project?.whatDidILearn?.map((listItem, index) => (
+                {(isLanguageEN
+                  ? project.whatDidILearn.en
+                  : project.whatDidILearn.pl
+                ).map((listItem, index) => (
                   <WhatDidILearnItem key={index}>{listItem}</WhatDidILearnItem>
                 ))}
               </WhatDidILearnList>
