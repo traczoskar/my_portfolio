@@ -20,14 +20,26 @@ export interface LanguageState {
 // Components Types:
 export interface Project {
   route: string;
-  label: string;
+  label: {
+    en: string;
+    pl: string;
+  };
   image: string;
   icon: string;
-  description: string;
+  description: {
+    en: string;
+    pl: string;
+  };
   screenshots?: Screenshot[];
-  features?: Feature[];
+  features?: {
+    en: Feature[];
+    pl: Feature[];
+  };
   tech: string[];
-  whatDidILearn?: string[];
+  whatDidILearn?: {
+    en: string[];
+    pl: string[];
+  };
   repo: string;
   live: string;
 }
