@@ -34,6 +34,7 @@ import KeyboardInstruct from "./KeyboardInstruct";
 import { useMediaQuery } from "react-responsive";
 import AdditionalData from "./AdditionalData";
 import useScrollToTop from "../../../../hooks/useScrollToTop";
+import { selectIsLanguageEN } from "../../../../slices/languageSlice";
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -50,6 +51,7 @@ const ProjectDetails = () => {
   const isMobile: boolean = useMediaQuery({
     query: `(max-width: 767px)`,
   });
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
 
   const handleClose = useCallback(() => {
     dispatch(closeProjectDetails());
@@ -128,7 +130,8 @@ const ProjectDetails = () => {
         }
         <HeaderSection>
           <ProjectHeader>
-            {project?.icon} {project?.label}
+            {project?.icon}{" "}
+            {isLanguageEN ? project?.label.en : project?.label.pl}
           </ProjectHeader>
           {!isTabletHorizontal && <KeyboardInstruct />}
           <NavigationWrapper>
@@ -153,7 +156,9 @@ const ProjectDetails = () => {
         {project?.description && (
           <Section>
             <SectionTitle>Description 🗒</SectionTitle>
-            <ProjectDescription>{project?.description}</ProjectDescription>
+            <ProjectDescription>
+              {isLanguageEN ? project.description.en : project.description.pl}
+            </ProjectDescription>
           </Section>
         )}
         {
@@ -180,12 +185,14 @@ const ProjectDetails = () => {
           <Section>
             <SectionTitle>Features ✅</SectionTitle>
             <ProjectFeatureList>
-              {project.features.map((feature, index) => (
-                <ProjectFeature key={index}>
-                  <ProjectFeatureName>{feature.name}</ProjectFeatureName>
-                  {`: ${feature.content}`}
-                </ProjectFeature>
-              ))}
+              {(isLanguageEN ? project?.features.en : project?.features.pl).map(
+                (feature, index) => (
+                  <ProjectFeature key={index}>
+                    <ProjectFeatureName>{feature.name}</ProjectFeatureName>
+                    {`: ${feature.content}`}
+                  </ProjectFeature>
+                )
+              )}
             </ProjectFeatureList>
           </Section>
         )}
