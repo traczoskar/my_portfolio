@@ -4,8 +4,9 @@ import {
   CloseButton,
   ModalContent,
   ModalOverlay,
-  ThemeSwitchModalContainer,
+  SwitchesContainer,
 } from "./styled";
+import LanguageSwitch from "../LanguageSwitch";
 
 interface ModalProps {
   isOpen: boolean;
@@ -28,12 +29,13 @@ const Modal = ({
   return (
     <ModalOverlay $isImageViewerOpen={isImageViewerOpen}>
       <ModalContent aria-expanded="true">
-        <ThemeSwitchModalContainer
+        <SwitchesContainer
           $top={isTablet && "0.8rem"}
           $right={isTablet && "3.7rem"}
         >
           <ThemeSwitch />
-        </ThemeSwitchModalContainer>
+          <LanguageSwitch isOnModal={true} />
+        </SwitchesContainer>
         <CloseButton aria-label="Close Project Details" onClick={onClose}>
           X
         </CloseButton>
