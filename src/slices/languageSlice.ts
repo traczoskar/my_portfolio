@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { LanguageState } from "../types/types";
+import { getLanguageStateFromLocalStorage } from "../utils/languageLocalStorage";
 
 const initialState: LanguageState = {
-  isLanguageEN: true,
+  isLanguageEN: getLanguageStateFromLocalStorage(),
 };
 
 const languageSlice = createSlice({
