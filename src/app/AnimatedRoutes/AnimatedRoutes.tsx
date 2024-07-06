@@ -4,6 +4,7 @@ import HomePage from "../../views/HomePage";
 import AboutMe from "../../views/AboutMe";
 import ContactPage from "../../views/ContactPage";
 import ProjectDetails from "../../views/HomePage/Portfolio/ProjectDetails";
+import NoResultsPage from "../../views/404";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -97,7 +98,7 @@ const AnimatedRoutes = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div>Not Found</div>
+              <NoResultsPage />
             </motion.div>
           }
         />
