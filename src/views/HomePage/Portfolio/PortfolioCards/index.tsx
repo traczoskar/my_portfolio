@@ -62,7 +62,9 @@ export default function PortfolioCards() {
         <ProjectList>
           {projects?.map((project) => (
             <ProjectTab
-              key={project.label}
+              key={
+                projects && (isLanguageEN ? project.label.en : project.label.pl)
+              }
               className={project === selectedProject ? "selected" : ""}
               onClick={
                 selectedProject === project
@@ -70,7 +72,8 @@ export default function PortfolioCards() {
                   : () => selectProject(project)
               }
             >
-              <ProjectIcon>{project?.icon}</ProjectIcon> {project?.label}
+              <ProjectIcon>{project?.icon}</ProjectIcon>{" "}
+              {isLanguageEN ? project.label.en : project.label.pl}
               {selectedProject && project === selectedProject ? (
                 isTablet ? (
                   <DetailsMobile
@@ -106,13 +109,23 @@ export default function PortfolioCards() {
             ) : (
               <AnimatePresence mode="wait">
                 <ProjectImage
-                  key={selectedProject?.label}
+                  key={
+                    selectedProject &&
+                    (isLanguageEN
+                      ? selectedProject.label.en
+                      : selectedProject.label.pl)
+                  }
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.3 }}
                   src={selectedProject.image}
-                  alt={selectedProject.label}
+                  alt={
+                    selectedProject &&
+                    (isLanguageEN
+                      ? selectedProject.label.en
+                      : selectedProject.label.pl)
+                  }
                 />
               </AnimatePresence>
             )}
