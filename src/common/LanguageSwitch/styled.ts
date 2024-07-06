@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+interface ButtonProps {
+  $isOnModal?: boolean;
+}
+
+export const Button = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   background: none;
@@ -8,7 +12,7 @@ export const Button = styled.button`
   color: inherit;
   font-size: 1.2rem;
   font-weight: 500;
-  padding: 1rem;
+  padding: ${({ $isOnModal }) => ($isOnModal ? "0.5rem 1rem" : "1rem")};
   cursor: pointer;
   transition: font-weight 0.3s, color 0.2s;
 
