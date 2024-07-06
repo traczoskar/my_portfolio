@@ -34,6 +34,7 @@ import { useMediaQuery } from "react-responsive";
 import { motion } from "framer-motion";
 import useScrollToTop from "../../hooks/useScrollToTop";
 import useOpenAILogo from "../../hooks/useOpenAILogo";
+import { Helmet } from "react-helmet-async";
 
 const AboutMe: React.FC = () => {
   useScrollToTop();
@@ -53,6 +54,13 @@ const AboutMe: React.FC = () => {
   return (
     <>
       <MainContainer $backgroundColor={theme.colors.aboutMePage.background}>
+        <Helmet>
+          <title>
+            {isLanguageEN
+              ? "traczoskar.dev - About Me"
+              : "traczoskar.dev - O mnie"}
+          </title>
+        </Helmet>
         <NavSection />
         <AnimatedIcons isDarkTheme={isDarkTheme} />
         <AboutMeContainer>
