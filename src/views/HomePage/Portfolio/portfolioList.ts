@@ -25,8 +25,8 @@ export const projects: Project[] = [
     image: aiWeatherApp,
     icon: "🌦️",
     description: {
-      en: "🌦️ AI - Weather App is a cutting-edge application that uses OpenWeatherMap API to fetch weather data for a entered city name or your geolocation. It integrates with ChatGPT to offer personalized activity suggestions and attire recommendations, ensuring you're always prepared for the weather 🤖. With a user-friendly interface and dynamic updates, the app ensures a seamless experience across all devices 📱. Additionally, WeatherWise.ai includes features like air quality monitoring and a detailed 5-day forecast, making it an essential tool for planning your day 🌫️.",
-      pl: "🌦️ AI - Weather App to nowoczesna aplikacja, która wykorzystuje API OpenWeatherMap do pobierania danych pogodowych dla wprowadzonej nazwy miasta lub Twojej geolokalizacji. Integruje się z ChatGPT, aby oferować spersonalizowane sugestie dotyczące aktywności i rekomendacje dotyczące ubioru, zapewniając, że zawsze będziesz przygotowany na pogodę 🤖. Dzięki przyjaznemu interfejsowi użytkownika i dynamicznym aktualizacjom, aplikacja zapewnia bezproblemowe doświadczenie na wszystkich urządzeniach 📱. Dodatkowo, WeatherWise.ai zawiera funkcje takie jak monitorowanie jakości powietrza i szczegółową prognozę na 5 dni, co czyni ją niezbędnym narzędziem do planowania dnia 🌫️.",
+      en: "🌦️ AI - Weather App is a cutting-edge application that uses OpenWeatherMap API to fetch weather data for a entered city name or your geolocation. It integrates with ChatGPT to offer personalized activity suggestions and attire recommendations, ensuring you're always prepared for the weather 🤖. With a user-friendly interface and dynamic updates, the app ensures a seamless experience across all devices 📱. Additionally, WeatherWise.ai includes features like air quality monitoring and a 5-day forecast, making it an essential tool for planning your day 🌫️.",
+      pl: "🌦️ AI - Weather App to nowoczesna aplikacja, która wykorzystuje API OpenWeatherMap do pobierania danych pogodowych dla wprowadzonej nazwy miasta lub Twojej geolokalizacji. Integruje się z ChatGPT, aby oferować spersonalizowane sugestie dotyczące aktywności i rekomendacje dotyczące ubioru, zapewniając, że zawsze będziesz przygotowany na pogodę 🤖. Dzięki przyjaznemu interfejsowi użytkownika i dynamicznym aktualizacjom, aplikacja zapewnia przyjemne doświadczenia na wszystkich urządzeniach 📱. Dodatkowo, WeatherWise.ai zawiera funkcje takie jak monitorowanie jakości powietrza i prognozę na kolejne 5 dni, co czyni ją niezbędnym narzędziem do planowania dnia 🌫️.",
     },
     screenshots: aiWeatherAppScreenshots,
     features: {
@@ -68,7 +68,7 @@ export const projects: Project[] = [
         },
         {
           name: "📅 5-Day Forecast",
-          content: "Plan ahead with a detailed 5-day weather forecast",
+          content: "Plan ahead with a 5-day weather forecast",
         },
         {
           name: "🌗 Theme Switch",
@@ -80,7 +80,7 @@ export const projects: Project[] = [
         {
           name: "📍 Dane pogodowe",
           content:
-            "Uzyskaj aktualne dane pogodowe na podstawie swojej geolokalizacji, zapewniając, że zawsze wiesz, co dzieje się na zewnątrz",
+            "Uzyskaj aktualne dane pogodowe na podstawie swojej geolokalizacji i bądź pewny że zawsze wiesz, co dzieje się na zewnątrz",
         },
         {
           name: "🤖 Integracja z ChatGPT",
@@ -95,7 +95,7 @@ export const projects: Project[] = [
         {
           name: "🌐 Responsywny design",
           content:
-            "Ciesz się bezproblemowym doświadczeniem na dowolnym urządzeniu dzięki responsywnemu interfejsowi napędzanemu przez Tailwindcss i Vite",
+            "Ciesz się bezproblemowym doświadczeniem na dowolnym urządzeniu dzięki responsywnemu interfejsowi napędzanemu przez Tailwindcss.",
         },
         {
           name: "🔄 Dynamiczne aktualizacje",
@@ -114,13 +114,12 @@ export const projects: Project[] = [
         },
         {
           name: "📅 Prognoza na 5 dni",
-          content:
-            "Planuj z wyprzedzeniem dzięki szczegółowej prognozie pogody na 5 dni",
+          content: "Planuj z wyprzedzeniem dzięki prognozie pogody na 5 dni",
         },
         {
           name: "🌗 Zmiana motywu",
           content:
-            "Wybierz między trybem ciemnym a jasnym interfejsu. Domyślnie aplikacja dostosuje się do preferencji ustawionych przez system lub przeglądarkę",
+            "Wybierz między trybem ciemnym a jasnym interfejsu. Domyślnie aplikacja dostosuje się do preferencji ustawionych przez system lub przeglądarkę internetową lub ustawi tryb ciemny.",
         },
       ],
     },
@@ -141,15 +140,15 @@ export const projects: Project[] = [
     ],
     whatDidILearn: {
       en: [
-        "🪝 During this project, I learned how to effectively use Make.com to create and manage webhooks, ensuring seamless integration with external services.",
+        "🪝 During this project, I learned how to effectively use Make.com to create and manage webhooks, ensuring seamless integration with external services such as OpenAI API.",
         "🔧 Explored a variety of technologies, including React, TailwindCSS, and Vite, while integrating ChatGPT and OpenWeather API to create a comprehensive weather application.",
-        "📊 Enhanced my skills in configuring responses from ChatGPT, ensuring that the AI provides relevant and personalized suggestions based on real-time weather data.",
+        "📊 Enhanced my skills in configuring responses from ChatGPT, ensuring that the AI provides relevant and personalized suggestions based on real-time weather data using properly prepared prompt.",
         "🌐 Utilized advanced tools like TanStack Query for dynamic data fetching and management, ensuring the app provides real-time, accurate weather information and a smooth user experience.",
       ],
       pl: [
-        "🪝 Podczas tego projektu nauczyłem się efektywnie korzystać z Make.com do tworzenia i zarządzania webhookami, zapewniając bezproblemową integrację z zewnętrznymi usługami.",
+        "🪝 Podczas tego projektu nauczyłem się efektywnie korzystać z Make.com do tworzenia i zarządzania webhookami, zapewniając bezproblemową integrację z zewnętrznymi usługami takimi jak OpenAI API.",
         "🔧 Zgłębiłem różnorodne technologie, w tym React, TailwindCSS i Vite, integrując ChatGPT oraz OpenWeather API, aby stworzyć kompleksową aplikację pogodową.",
-        "📊 Udoskonaliłem swoje umiejętności w konfigurowaniu odpowiedzi od ChatGPT, zapewniając, że AI dostarcza odpowiednie i spersonalizowane sugestie na podstawie aktualnych danych pogodowych.",
+        "📊 Udoskonaliłem swoje umiejętności w konfigurowaniu odpowiedzi od ChatGPT, zapewniając, że AI dostarcza odpowiednie i spersonalizowane sugestie na podstawie aktualnych danych pogodowych i odpowiednio przygotowanego prompta.",
         "🌐 Wykorzystałem zaawansowane narzędzia, takie jak TanStack Query, do dynamicznego pobierania i zarządzania danymi, zapewniając, że aplikacja dostarcza aktualne, dokładne informacje pogodowe i płynne doświadczenie użytkownika.",
       ],
     },
@@ -167,7 +166,7 @@ export const projects: Project[] = [
     icon: "🎑",
     description: {
       en: "Welcome to MyPortfolio, the most advanced project I have worked on to date. This project has been a significant learning experience 🚀, particularly in building animations and routing using React Router. Additionally, I have implemented features such as theme switching 🌓 and language selection between Polish and English 🇵🇱🇬🇧. A considerable amount of effort went into creating a responsive design 📱. Users can explore a range of my projects, view their details and screenshots , find my contact information, links to LinkedIn and GitHub 🔗, read my short biography, see my IT skills, and view the certificates I have obtained, including those related to integrating applications with Generative AI and LLM models 🤖.",
-      pl: "Witaj w MyPortfolio, najbardziej zaawansowanym projekcie, nad którym do tej pory pracowałem. Ten projekt był znaczącym doświadczeniem edukacyjnym 🚀, zwłaszcza w zakresie tworzenia animacji i routingu za pomocą React Router. Ponadto zaimplementowałem funkcje takie jak zmiana motywu 🌓 i wybór języka między polskim i angielskim 🇵🇱🇬🇧. Dużo wysiłku włożyłem w stworzenie responsywnego designu 📱. Użytkownicy mogą zapoznać się z moimi projektami, zobaczyć ich szczegóły i zrzuty ekranu, znaleźć moje dane kontaktowe, linki do LinkedIn i GitHub 🔗, przeczytać moją krótką biografię, zobaczyć moje umiejętności IT oraz przeglądnąć certyfikaty, które uzyskałem, w tym te związane z integracją aplikacji z Generative AI i modelami LLM 🤖.",
+      pl: "Witaj w Moim Portfolio, najbardziej zaawansowanym projekcie, nad którym do tej pory pracowałem. Ten projekt był znaczącym doświadczeniem edukacyjnym 🚀, zwłaszcza w zakresie tworzenia animacji i routingu za pomocą React Router. Ponadto zaimplementowałem funkcje takie jak zmiana motywu 🌓 i wybór języka między polskim i angielskim 🇵🇱🇬🇧. Dużo wysiłku włożyłem w stworzenie responsywnego designu 📱. Użytkownicy mogą zapoznać się z moimi projektami, zobaczyć ich szczegóły i zrzuty ekranu, znaleźć moje dane kontaktowe, linki do LinkedIn i GitHub 🔗, przeczytać moją krótką biografię, zobaczyć moje umiejętności IT oraz przejrzeć certyfikaty, które uzyskałem, w tym te związane z integracją aplikacji z Generative AI i modelami LLM 🤖.",
     },
     screenshots: myPortfolioScreenshots,
     features: {
@@ -205,7 +204,7 @@ export const projects: Project[] = [
         {
           name: "Language Selection 🌍",
           content:
-            "Switch between Polish and English versions of the portfolio",
+            "Switch between Polish and English versions of the portfolio. Language selection is saved in local storage and will be remembered on your next visit.",
         },
       ],
       pl: [
@@ -227,7 +226,7 @@ export const projects: Project[] = [
         {
           name: "Biografia i umiejętności IT 👤",
           content:
-            "Dowiedz się o moim tle, umiejętnościach IT i technologiach, których używam",
+            "Dowiedz się o mojej historii, umiejętnościach IT i technologiach, których używam",
         },
         {
           name: "Certyfikaty 🏆",
@@ -241,7 +240,8 @@ export const projects: Project[] = [
         },
         {
           name: "Wybór języka 🌍",
-          content: "Przełącz się między polską i angielską wersją portfolio",
+          content:
+            "Przełącz się między polską i angielską wersją portfolio. Wybór języka jest zapisywany w pamięci przeglądarki i będzie zapamiętany do Twojej kolejnej wizyty.",
         },
       ],
     },
@@ -292,8 +292,8 @@ export const projects: Project[] = [
     image: moviesBrowser,
     icon: "🎬",
     description: {
-      en: "Our movie app is here to make your viewing experience awesome with some cool features. Use the search bar to find movies or people based on specific queries, making your search quick and easy 🔍. Check out a selection of popular movies right on our homepage for easy access. Dive into detailed info about any movie by selecting it from the list 🎬. Explore profiles of actors and crew to learn more about their work 👥. Move smoothly between sections for movies and people, making browsing a breeze. Enjoy enhanced navigation with pagination, using intuitive buttons like First, Previous, Next, and Last. Our interface gets interactive as you hover over elements, making it fun to use 🖱️. The app is responsive across all devices, from mobiles to tablets 📱. It handles loading sequences smoothly, ensuring an uninterrupted experience. Plus, it efficiently manages error notifications, keeping your interaction seamless even when issues arise 🆘. If your search yields no results, you'll see a clear page guiding you on what to do next 🚫.",
-      pl: "Nasza aplikacja filmowa jest tu, aby uczynić Twoje doświadczenie z oglądaniem niesamowitym dzięki kilku fajnym funkcjom. Użyj paska wyszukiwania, aby znaleźć filmy lub osoby na podstawie konkretnych zapytań, co ułatwi i przyspieszy Twoje wyszukiwanie 🔍. Sprawdź wybór popularnych filmów bezpośrednio na naszej stronie głównej, aby mieć do nich łatwy dostęp. Zagłęb się w szczegółowe informacje o dowolnym filmie, wybierając go z listy 🎬. Zapoznaj się z profilami aktorów i ekipy, aby dowiedzieć się więcej o ich pracy 👥. Płynnie przechodź między sekcjami filmów i osób, co ułatwi przeglądanie. Ciesz się ulepszoną nawigacją z paginacją, korzystając z intuicyjnych przycisków, takich jak Pierwszy, Poprzedni, Następny i Ostatni. Nasz interfejs staje się interaktywny, gdy najedziesz na elementy, co sprawia, że korzystanie z niego jest przyjemne 🖱️. Aplikacja jest responsywna na wszystkich urządzeniach, od telefonów komórkowych po tablety 📱. Sprawnie obsługuje sekwencje ładowania, zapewniając nieprzerwane doświadczenie. Ponadto skutecznie zarządza powiadomieniami o błędach, zapewniając płynną interakcję nawet w przypadku wystąpienia problemów 🆘. Jeśli Twoje wyszukiwanie nie przyniesie rezultatów, zobaczysz czytelną stronę, która przewodniczy Ci, co zrobić dalej 🚫.",
+      en: "Our movie app is here to make your viewing experience awesome with some cool features. Use the search bar to find movies or people based on specific queries, making your search quick and easy 🔍. Check out a selection of popular movies right on our homepage for easy access. Dive into detailed info about any movie by selecting it from the list 🎬. Explore profiles of actors and crew to learn more about their work 👥. Move smoothly between sections for movies and people, making browsing a breeze. Enjoy enhanced navigation with pagination, using intuitive buttons like First, Previous, Next, and Last. Our interface gets interactive as you hover over elements, making it fun to use 🖱️. The app is responsive across all devices, from mobiles to tablets 📱. It handles loading sequences smoothly, ensuring an uninterrupted experience. Plus, it efficiently manages error notifications, keeping your interaction seamless even when issues arise 🆘. If your search yields no results, you'll see a clear information page 🚫.",
+      pl: "Nasza aplikacja filmowa została stworzona, aby uczynić Twoje doświadczenie oglądania jeszcze lepszym dzięki wielu przydatnym funkcjom. Skorzystaj z paska wyszukiwania, aby szybko i łatwo znaleźć filmy lub osoby na podstawie konkretnych zapytań 🔍. Na stronie głównej znajdziesz wybór popularnych filmów, do których masz łatwy dostęp. Wybierając film z listy, możesz zagłębić się w szczegółowe informacje na jego temat 🎬. Poznaj profile aktorów i ekipy, aby dowiedzieć się więcej o ich pracy 👥. Płynnie przechodź między sekcjami filmów i osób, co sprawia, że przeglądanie jest przyjemne. Ciesz się ulepszoną nawigacją dzięki paginacji, korzystając z intuicyjnych przycisków takich jak Pierwsza, Poprzednia, Następna i Ostatnia. Nasz interfejs staje się interaktywny, gdy najeżdżasz na elementy, co sprawia, że korzystanie z aplikacji jest ciekawe 🖱️. Aplikacja jest responsywna na wszystkich urządzeniach, od telefonów komórkowych po tablety 📱. Płynnie obsługuje sekwencje ładowania, zapewniając nieprzerwane doświadczenie. Dodatkowo, efektywnie zarządza powiadomieniami o błędach, utrzymując płynność interakcji nawet w przypadku problemów 🆘. Jeśli Twoje wyszukiwanie nie przyniesie wyników, zobaczysz przejrzystą stronę z odpowiednią informacją 🚫.",
     },
     screenshots: moviesBrowserScreenshots,
     features: {
@@ -361,39 +361,59 @@ export const projects: Project[] = [
       ],
       pl: [
         {
-          name: "Funkcjonalność wyszukiwania 🔍",
-          content:
-            "Użyj paska wyszukiwania, aby znaleźć filmy lub osoby na podstawie konkretnych parametrów zapytania, co sprawi, że Twoje poszukiwania będą skierowane i efektywne.",
-        },
-        {
           name: "Lista popularnych filmów 🌟",
           content:
-            "Zagłęb się w starannie wybraną selekcję hitowych filmów, które wyróżnione są na naszej głównej stronie głównej, aby zapewnić łatwy dostęp.",
+            "Zanurz się w starannie wybranym zestawie hitów filmowych, które są wyeksponowane na naszej głównej stronie, aby ułatwić dostęp.",
         },
         {
           name: "Szczegóły filmu 🎬",
           content:
-            "Dowiedz się więcej o filmach, wybierając dowolny tytuł z list popularnych, aby zobaczyć ich szczegółowe informacje.",
+            "Uzyskaj dogłębne informacje o filmach, wybierając dowolny tytuł z listy popularnych filmów, aby zobaczyć jego szczegółowe dane.",
         },
         {
           name: "Lista osób 👥",
           content:
-            "Odkryj listę aktorów lub ekipy i zagłęb się w indywidualne profile, aby dowiedzieć się więcej o ich filmografii i szczegółach.",
+            "Odkryj listę aktorów i członków ekipy filmowej oraz zagłęb się w ich profile, aby dowiedzieć się więcej o ich filmografii i szczegółach kariery.",
         },
         {
           name: "Szczegóły osób 🎭",
           content:
-            "Zagłęb się w dedykowane strony dla aktorów i ekipy, gdzie możesz poznać obszerne informacje o ich karierze i wkładzie w film.",
+            "Przejdź do dedykowanych stron aktorów i członków ekipy, gdzie możesz odkryć szczegółowe informacje o ich karierach i wkładzie w filmy.",
         },
         {
           name: "Nawigacja 🚶",
           content:
-            "Płynnie przechodź między różnymi sekcjami poświęconymi filmom i osobom, umożliwiając strukturalne i kompleksowe doświadczenie przeglądania.",
+            "Płynnie przechodź między różnymi sekcjami poświęconymi filmom i osobom, co umożliwia uporządkowane i kompleksowe przeglądanie.",
         },
         {
           name: "Paginacja 📄",
           content:
-            "Doświadcz ulepszonej nawigacji z paginacją. Nasza aplikacja zawiera parametry URL specyficzne dla strony i oferuje intuicyjne przyciski nawigacyjne - Pierwszy, Poprzedni, Następny i Ostatni - aby ułatwić przemieszczanie się po listach filmów i osób.",
+            "Ciesz się ulepszoną nawigacją dzięki paginacji. Nasza aplikacja wykorzystuje specyficzne dla stron parametry URL i oferuje intuicyjne przyciski nawigacyjne — Pierwsza, Poprzednia, Następna i Ostatnia — aby ułatwić poruszanie się po listach filmów i osób.",
+        },
+        {
+          name: "Ulepszony interfejs użytkownika - stylizacja najechania 🖱️",
+          content:
+            "Nasz interfejs ożywa, gdy najeżdżasz na elementy takie jak filmy, aktorzy czy przyciski, zapewniając dynamiczną i angażującą interakcję użytkownika.",
+        },
+        {
+          name: "Responsywność 📱",
+          content:
+            "Ciesz się spójnym i płynnym doświadczeniem na różnych urządzeniach, zapewniając, że aplikacja dostosowuje się elegancko od telefonów komórkowych po tablety.",
+        },
+        {
+          name: "Strona ładowania ⏳",
+          content:
+            "Nasza aplikacja sprawnie zarządza sekwencjami ładowania, zapewniając płynne i nieprzerwane przeglądanie.",
+        },
+        {
+          name: "Strona błędu 🆘",
+          content:
+            "Aplikacja efektywnie obsługuje powiadomienia o błędach, utrzymując płynność interakcji użytkownika nawet w przypadku nieoczekiwanych problemów.",
+        },
+        {
+          name: "Strona braku wyników 🚫",
+          content:
+            "Gdy wyszukiwanie nie przyniesie wyników, zobaczysz przejrzystą i instruktażową stronę, która skutecznie poprowadzi Cię podczas poszukiwań filmów lub osób.",
         },
       ],
     },
@@ -438,7 +458,7 @@ export const projects: Project[] = [
     icon: "📝",
     description: {
       en: "To do list is a simple task assistant application developed using the React.js framework and TypeScript language. Whether you're going shopping or need to get things done, this app is your daily task assistant 🛒. It's designed to be simple, transparent, and minimalistic, making it easy and intuitive to use. The app responds quickly to user actions 🚀 and is versatile and universal in its application. It is also responsive on any device due to media queries 📱, ensuring a seamless experience across all platforms. The app features interactive buttons whose appearance depends on their current state, and it allows you to mark tasks as done, hide/show completed tasks, and mark all tasks as done with a single button ✅. Your task list is saved in local storage and fetched whenever you refresh the app or close the window 💽. You can download example tasks using a fetch shot from Redux-Saga, filter tasks by content using a search input, and check individual subpages for each task. The app includes two main pages built with ReactRouter: TaskList and Author 🪢.",
-      pl: "Lista zadań to prosta aplikacja asystenta do zadań opracowana przy użyciu biblioteki React.js i języka TypeScript. Niezależnie od tego, czy idziesz na zakupy, czy musisz coś zrobić, ta aplikacja jest Twoim codziennym asystentem do zadań 🛒. Zaprojektowana jest tak, aby była prosta, przejrzysta i minimalistyczna, co sprawia, że jest łatwa i intuicyjna w użyciu. Aplikacja szybko reaguje na działania użytkownika 🚀 i jest wszechstronna i uniwersalna w zastosowaniu. Jest również responsywna na każdym urządzeniu dzięki zapytaniom medialnym 📱, zapewniając płynne doświadczenie na wszystkich platformach. Aplikacja zawiera interaktywne przyciski, których wygląd zależy od ich aktualnego stanu, i pozwala oznaczać zadania jako wykonane, ukrywać/pokazywać zakończone zadania oraz oznaczać wszystkie zadania jako wykonane jednym przyciskiem ✅. Twoja lista zadań jest zapisywana w lokalnym magazynie i pobierana za każdym razem, gdy odświeżasz aplikację lub zamykasz okno 💽. Możesz pobrać przykładowe zadania, korzystając z fetch shot z Redux-Saga, filtrować zadania według treści za pomocą pola wyszukiwania oraz sprawdzać poszczególne podstrony dla każdego zadania. Aplikacja zawiera dwie główne strony zbudowane za pomocą ReactRouter: TaskList i Author 🪢.",
+      pl: "Lista zadań to prosta aplikacja do zadań opracowana przy użyciu biblioteki React.js i języka TypeScript. Niezależnie od tego, czy idziesz na zakupy, czy musisz coś zrobić, ta aplikacja jest Twoim codziennym asystentem do zadań 🛒. Zaprojektowana jest tak, aby była prosta, przejrzysta i minimalistyczna, co sprawia, że jest łatwa i intuicyjna w użyciu. Aplikacja szybko reaguje na działania użytkownika 🚀 i jest wszechstronna i uniwersalna w zastosowaniu. Jest również responsywna na każdym urządzeniu dzięki media queries 📱, zapewniając płynne doświadczenie na wszystkich platformach. Aplikacja zawiera interaktywne przyciski, których wygląd zależy od ich aktualnego stanu, i pozwala oznaczać zadania jako wykonane, ukrywać/pokazywać zakończone zadania oraz oznaczać wszystkie zadania jako wykonane jednym przyciskiem ✅. Twoja lista zadań jest zapisywana w pamięci przeglądarki i pobierana za każdym razem, gdy odświeżasz aplikację lub zamykasz okno 💽. Możesz pobrać przykładowe zadania, korzystając z fetch shot z Redux-Saga, filtrować zadania według treści za pomocą pola wyszukiwania oraz sprawdzać poszczególne podstrony dla każdego zadania. Aplikacja zawiera dwie główne strony zbudowane za pomocą ReactRouter: TaskList i Author 🪢.",
     },
     screenshots: taskListScreenshots,
     features: {
@@ -519,7 +539,7 @@ export const projects: Project[] = [
         {
           name: "Responsywny design",
           content:
-            "📱 Responsywny na każdym urządzeniu dzięki zapytaniom medialnym",
+            "📱 Responsywna aplikacja na każdym urządzeniu dzięki media queries",
         },
         {
           name: "Interaktywne przyciski",
@@ -583,8 +603,8 @@ export const projects: Project[] = [
         "🔥 Opracowanie aplikacji asystenta do zadań przy użyciu React.js i TypeScript od podstaw.",
         "💡 Implementacja zarządzania stanem za pomocą Redux i obsługi efektów ubocznych za pomocą Redux-Saga.",
         "⚒️ Wykorzystanie hooków React, takich jak useState, useEffect i useRef do zarządzania stanem i cyklem życia komponentu.",
-        "📱 Projektowanie responsywnego interfejsu użytkownika, który działa bezproblemowo na każdym urządzeniu za pomocą zapytań medialnych.",
-        "✅ Implementacja lokalnego magazynu w celu zachowania zadań i zapewnienia poprawnego pobierania danych po odświeżeniu lub zamknięciu aplikacji.",
+        "📱 Projektowanie responsywnego interfejsu użytkownika, który działa bezproblemowo na każdym urządzeniu za pomocą media queries.",
+        "✅ Implementacja lokalnego magazynu (pamięci przeglądarki) w celu zapisania listy zadań i zapewnienia poprawnego pobierania danych po odświeżeniu lub zamknięciu aplikacji.",
       ],
     },
     repo: "https://github.com/traczoskar/to_do_list_react",
@@ -600,8 +620,8 @@ export const projects: Project[] = [
     image: currencyConverter,
     icon: "💵",
     description: {
-      en: 'Currency Calculator is a demo project developed using the React.js library, designed to function as a currency converter 💱. Upon launching the app, it fetches current exchange rates from an external API 🌐. Users can input an amount in PLN (Polish złoty), select from a variety of global currencies, and click the "Calculate" button to receive the converted amount. The application also features a real-time clock in the upper right corner 🕒 and displays the date of the current exchange rates above the calculate button 📅. The app is optimized for mobile devices 📱, includes animated elements such as the logo and buttons, and handles errors gracefully by displaying a special window if any issues occur 🚫.',
-      pl: 'Kalkulator walut to projekt demonstracyjny opracowany przy użyciu biblioteki React.js, zaprojektowany do funkcjonowania jako kalkulator walut 💱. Po uruchomieniu aplikacja pobiera aktualne kursy wymiany z zewnętrznego API 🌐. Użytkownicy mogą wprowadzić kwotę w PLN (polskie złote), wybrać z różnych walut na całym świecie i kliknąć przycisk "Oblicz", aby otrzymać przeliczoną kwotę. Aplikacja wyświetla również zegar w czasie rzeczywistym w prawym górnym rogu 🕒 i datę aktualnych kursów wymiany powyżej przycisku obliczania 📅. Aplikacja jest zoptymalizowana dla urządzeń mobilnych 📱, zawiera animowane elementy, takie jak logo i przyciski, oraz elegancko obsługuje błędy, wyświetlając specjalne okno, jeśli wystąpią jakiekolwiek problemy 🚫.',
+      en: 'Currency Calculator is a project developed using the React.js library, designed to function as a currency converter 💱. Upon launching the app, it fetches current exchange rates from an external API 🌐. Users can input an amount in PLN (Polish złoty), select from a variety of global currencies, and click the "Calculate" button to receive the converted amount. The application also features a real-time clock in the upper right corner 🕒 and displays the date of the current exchange rates above the calculate button 📅. The app is optimized for mobile devices 📱, includes animated elements such as the logo and buttons, and handles errors gracefully by displaying a special window if any issues occur 🚫.',
+      pl: 'Kalkulator walut to projekt opracowany przy użyciu biblioteki React.js, zaprojektowany do funkcjonowania jako konwerter walut 💱. Po uruchomieniu aplikacja pobiera aktualne kursy wymiany z zewnętrznego API 🌐. Użytkownicy mogą wprowadzić kwotę w PLN (polski złoty), wybrać z różnych walut na całym świecie i kliknąć przycisk "Oblicz", aby otrzymać przeliczoną kwotę. Aplikacja wyświetla również zegar w czasie rzeczywistym w prawym górnym rogu 🕒 i datę aktualnych kursów wymiany powyżej przycisku obliczania 📅. Aplikacja jest zoptymalizowana dla urządzeń mobilnych 📱, zawiera animowane elementy, takie jak logo i przyciski, oraz elegancko obsługuje błędy, wyświetlając specjalne okno, jeśli wystąpią jakiekolwiek problemy 🚫.',
     },
     screenshots: currencyCalculatorScreenshots,
     features: {
@@ -658,7 +678,7 @@ export const projects: Project[] = [
           content: "🔄 Łatwo przelicza PLN na kwotę do 10 000 000 000",
         },
         {
-          name: "Wybór waluty globalnej",
+          name: "Wybór walut z całego świata",
           content:
             "🌍 Wybierz spośród wielu różnych walut z całego świata (pobranych z zewnętrznego API)",
         },
@@ -687,8 +707,7 @@ export const projects: Project[] = [
         },
         {
           name: "Responsywność mobilna",
-          content:
-            "📱 Aplikacja jest dostosowana do responsywności na urządzeniach mobilnych",
+          content: "📱 Aplikacja jest dostosowana do urządzeń mobilnych",
         },
         {
           name: "Obsługa błędów",
@@ -713,16 +732,16 @@ export const projects: Project[] = [
     ],
     whatDidILearn: {
       en: [
-        "💸 Building a powerful currency converter using React.js from scratch, including setting up the development environment and deploying the app.",
+        "💸 Building a currency converter using React.js from scratch, including setting up the development environment and deploying the app.",
         "🪝 Fetching real-time exchange rates from an external API and dynamically updating the available currency options.",
         "⚒️ Utilizing React's useState and useEffect hooks for managing component state and performing side effects.",
         "🤳 Designing a responsive user interface that works seamlessly on mobile devices.",
         "❌ Implementing error handling to display a special window if any issues occur during data fetching or conversion.",
       ],
       pl: [
-        "💸 Budowanie potężnego kalkulatora walut przy użyciu React.js od podstaw, w tym konfiguracja środowiska deweloperskiego i wdrożenie aplikacji.",
+        "💸 Budowanie kalkulatora walut przy użyciu React.js od podstaw, w tym konfiguracja środowiska deweloperskiego i wdrożenie aplikacji.",
         "🪝 Pobieranie kursów wymiany w czasie rzeczywistym z zewnętrznego API i dynamiczna aktualizacja dostępnych opcji walutowych.",
-        "⚒️ Wykorzystanie hooków useState i useEffect w React do zarządzania stanem komponentu i wykonywania efektów ubocznych.",
+        "⚒️ Wykorzystanie hooków useState i useEffect w React do zarządzania stanem komponentu i obsługi efektów ubocznych.",
         "🤳 Projektowanie responsywnego interfejsu użytkownika, który działa bezproblemowo na urządzeniach mobilnych.",
         "❌ Implementacja obsługi błędów w celu wyświetlenia specjalnego okna w przypadku wystąpienia problemów podczas pobierania danych lub konwersji.",
       ],
@@ -740,8 +759,8 @@ export const projects: Project[] = [
     image: personalHomepage,
     icon: "🏠",
     description: {
-      en: "I created a dynamic personal homepage and virtual CV that showcases my skills and projects fetched directly from GitHub. 💻 It's built with cutting-edge web technologies like React.js, Redux Toolkit, and Styled Components for a seamless user experience. ⚛️ The project features an interactive about me section, theme switcher, skillset display, learning goals, and live GitHub repositories to present my professional profile comprehensively. 🌟 I included social media links and a contact section. 🔗 This cutting-edge portfolio website allows me to showcase my technical expertise, project achievements, and professional journey in an immersive and interactive manner. It's a cool way to put myself out there and let people explore my work and background.",
-      pl: "Stworzyłem dynamiczną stronę domową i wirtualne CV, które prezentuje moje umiejętności i projekty pobrane bezpośrednio z GitHuba. 💻 Została zbudowana z wykorzystaniem najnowocześniejszych technologii internetowych, takich jak React.js, Redux Toolkit i Styled Components, zapewniając płynne doświadczenie użytkownika. ⚛️ Projekt zawiera interaktywną sekcję o mnie, przełącznik motywów, wyświetlanie zestawu umiejętności, cele naukowe oraz żywe repozytoria GitHuba, aby kompleksowo przedstawić mój profesjonalny profil. 🌟 Dołączyłem linki do mediów społecznościowych i sekcję kontaktową. 🔗 Ta nowoczesna strona portfolio pozwala mi zaprezentować moje umiejętności techniczne, osiągnięcia projektowe i profesjonalną podróż w sposób wciągający i interaktywny. To świetny sposób, aby się wyeksponować i pozwolić ludziom odkrywać moją pracę i tło.",
+      en: "I created a dynamic personal homepage and virtual resume that showcases my skills and projects fetched directly from GitHub. 💻 It's built with cutting-edge web technologies like React.js, Redux Toolkit, and Styled Components for a seamless user experience. ⚛️ The project features an interactive about me section, theme switcher, skillset display, learning goals, and live GitHub repositories to present my professional profile comprehensively. 🌟 I included social media links and a contact section. 🔗 This cutting-edge portfolio website allows me to showcase my technical expertise, project achievements, and professional journey in an immersive and interactive manner.",
+      pl: "Stworzyłem dynamiczną stronę domową i wirtualne CV, które prezentuje moje umiejętności i projekty pobrane bezpośrednio z GitHuba. 💻 Została zbudowana z wykorzystaniem najnowocześniejszych technologii internetowych, takich jak React.js, Redux Toolkit i Styled Components, zapewniając płynne doświadczenie użytkownika. ⚛️ Projekt zawiera interaktywną sekcję o mnie, przełącznik motywów, wyświetlanie zestawu umiejętności, cele rozwojowe oraz linki do demo i repozytoria GitHuba, aby kompleksowo przedstawić mój profil. 🌟 Dołączyłem linki do mediów społecznościowych i sekcję kontaktową. 🔗 Ta nowoczesna strona portfolio pozwala mi zaprezentować moje umiejętności techniczne, osiągnięcia projektowe i profesjonalną podróż w sposób wciągający i interaktywny.",
     },
     screenshots: personalHomepageScreenshots,
     features: {
@@ -792,14 +811,14 @@ export const projects: Project[] = [
             "Szczegółowa lista moich obecnych umiejętności technicznych.",
         },
         {
-          name: "Cele naukowe 🚀",
+          name: "Cele rozwojowe 🚀",
           content:
-            "Przyszłościowa sekcja dotycząca umiejętności, które aktywnie się uczę.",
+            "Przyszłościowa sekcja dotycząca umiejętności, których aktywnie się uczę.",
         },
         {
           name: "Repozytoria GitHuba 📁",
           content:
-            "Dynamiczne kafelki z danymi w czasie rzeczywistym z moich repozytoriów GitHuba, korzystając z GitHub API.",
+            "Dynamiczne kafelki z danymi w czasie rzeczywistym z moich repozytoriów GitHuba, korzystające z GitHub API.",
         },
         {
           name: "Sekcja kontaktowa 📩",
@@ -824,14 +843,14 @@ export const projects: Project[] = [
     ],
     whatDidILearn: {
       en: [
-        "👨🏻‍💻 Crafted my own dynamic Personal Homepage and CV, flexing my skills in modern web development and showcasing my projects straight from GitHub.",
+        "👨🏻‍💻 Crafted my own dynamic Personal Homepage and virtual version of my resume, flexing my skills in modern web development and showcasing my projects straight from GitHub.",
         "🌗 Learned how to make my site pop with interactive features like dark/light mode switch, real-time GitHub repository tiles, and a contact section for easy reach-out.",
         "🙌 Got hands-on with a stack of cool tools like React.js, Redux, Styled-components, and Figma, while also mastering error handling for smooth API integration.",
       ],
       pl: [
-        "👨🏻‍💻 Stworzyłem własną dynamiczną stronę domową i CV, prezentując swoje umiejętności w nowoczesnym tworzeniu stron internetowych i prezentując moje projekty prosto z GitHuba.",
+        "👨🏻‍💻 Stworzyłem własną dynamiczną stronę domową i wirtualne CV, prezentując swoje umiejętności w nowoczesnym tworzeniu stron internetowych i moje projekty prosto z GitHuba.",
         "🌗 Nauczyłem się, jak sprawić, aby moja strona wyróżniała się interaktywnymi funkcjami, takimi jak przełącznik trybu ciemnego/jasnego, dynamiczne kafelki repozytoriów GitHuba w czasie rzeczywistym oraz sekcja kontaktowa dla łatwego kontaktu.",
-        "🙌 Pracowałem z zestawem fajnych narzędzi, takich jak React.js, Redux, Styled-components i Figma, a także opanowałem obsługę błędów dla płynnej integracji z API.",
+        "🙌 Pracowałem z zestawem nowoczesnych narzędzi, takich jak React.js, Redux, Styled-components i Figma, a także opanowałem obsługę błędów dla płynnej integracji z API.",
       ],
     },
     repo: "https://github.com/traczoskar/personal_homepage",
