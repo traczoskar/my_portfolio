@@ -37,7 +37,10 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
               //---Technologies Used---
             }
             <div>
-              <SectionTitle>Technologies Used 🛠 </SectionTitle>
+              <SectionTitle>
+                {isLanguageEN ? "Technologies Used" : "Zastosowane technologie"}{" "}
+                🛠
+              </SectionTitle>
               {project?.tech ? (
                 <TechnologiesWrapper>
                   {project?.tech.map((tech) => (
@@ -61,7 +64,9 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
               //---What Did I Learn?---
             }
             <WhatDidILearnWrapper>
-              <SectionTitle>What Did I Learn? 📚</SectionTitle>
+              <SectionTitle>
+                {isLanguageEN ? "What Did I Learn?" : "Czego się nauczyłem?"} 📚
+              </SectionTitle>
               {project?.whatDidILearn ? (
                 <WhatDidILearnList>
                   {(isLanguageEN
@@ -88,7 +93,9 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
               //---Technologies Used---
             }
 
-            <SectionTitle>Technologies Used 🛠 </SectionTitle>
+            <SectionTitle>
+              {isLanguageEN ? "Technologies Used" : "Zastosowane technologie"} 🛠
+            </SectionTitle>
             {project?.tech ? (
               <TechnologiesWrapper>
                 {project?.tech.map((tech) => (
@@ -112,7 +119,9 @@ const AdditionalData: React.FC<AdditionalDataProps> = ({ project }) => {
             //---What Did I Learn?---
           }
           <Section>
-            <SectionTitle>What Did I Learn? 📚</SectionTitle>
+            <SectionTitle>
+              {isLanguageEN ? "What Did I Learn?" : "Czego się nauczyłem?"} 📚
+            </SectionTitle>
             {project?.whatDidILearn ? (
               <WhatDidILearnList>
                 {(isLanguageEN
