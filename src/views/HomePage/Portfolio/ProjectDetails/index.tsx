@@ -35,6 +35,7 @@ import { useMediaQuery } from "react-responsive";
 import AdditionalData from "./AdditionalData";
 import useScrollToTop from "../../../../hooks/useScrollToTop";
 import { selectIsLanguageEN } from "../../../../slices/languageSlice";
+import { Helmet } from "react-helmet-async";
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -120,6 +121,13 @@ const ProjectDetails = () => {
       isImageViewerOpen={isImageViewerOpen}
       onClose={handleClose}
     >
+      <Helmet>
+        <title>
+          {isLanguageEN
+            ? `traczoskar.dev - ${project?.label.en}`
+            : `traczoskar.dev - ${project?.label.pl}`}
+        </title>
+      </Helmet>
       <ProjectDetailsContainer
         aria-label="Project Details"
         ref={containerRef}
