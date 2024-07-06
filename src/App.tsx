@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./app/GlobalStyle";
 import { themeDark, themeLight } from "./app/theme";
