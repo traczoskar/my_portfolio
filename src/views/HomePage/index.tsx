@@ -9,6 +9,7 @@ import { useTheme } from "styled-components";
 import { useSelector } from "react-redux";
 import { selectIsLanguageEN } from "../../slices/languageSlice";
 import useScrollToElement from "../../hooks/useScrollToElement";
+import { Helmet } from "react-helmet-async";
 
 const HomePage = () => {
   useScrollToElement("projects");
@@ -18,6 +19,13 @@ const HomePage = () => {
   return (
     <>
       <MainContainer $backgroundColor={theme.colors.app.background}>
+        <Helmet>
+          <title>
+            {isLanguageEN
+              ? "traczoskar.dev - Homepage"
+              : "traczoskar.dev - Strona Główna"}
+          </title>
+        </Helmet>
         <NavSection />
         <Header
           title="Frontend"
