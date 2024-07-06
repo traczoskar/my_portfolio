@@ -101,11 +101,10 @@ const ProjectDetails = () => {
   ]);
 
   useEffect(() => {
-    console.log("Rendering ProjectDetails component");
     if (id) {
       dispatch(openProjectDetails(id));
     }
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     if (containerRef.current) {
