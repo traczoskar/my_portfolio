@@ -21,6 +21,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { selectIsLanguageEN } from "../../slices/languageSlice";
 import { useMediaQuery } from "react-responsive";
+import { Helmet } from "react-helmet-async";
 
 const ContactPage = () => {
   const [isCopied, setIsCopied] = useState<boolean>(false);
@@ -72,6 +73,13 @@ const ContactPage = () => {
   return (
     <>
       <MainContainer $backgroundColor={theme.colors.contactPage.background}>
+        <Helmet>
+          <title>
+            {isLanguageEN
+              ? "traczoskar.dev - Contact"
+              : "traczoskar.dev - Kontakt"}
+          </title>
+        </Helmet>
         <NavSection />
         <ContactPageWrapper>
           <ContactTitle
