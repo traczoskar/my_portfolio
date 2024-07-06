@@ -15,7 +15,10 @@ const LinkButton = styled.button`
 
 interface ProjectLinkProps {
   project: {
-    label: string;
+    label: {
+      en: string;
+      pl: string;
+    };
     image: string;
     route: string;
   };
