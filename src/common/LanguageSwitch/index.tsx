@@ -4,14 +4,19 @@ import { selectIsLanguageEN, toggleLanguage } from "../../slices/languageSlice";
 
 interface LanguageSwitchProps {
   onClick?: () => void;
+  isOnModal?: boolean;
 }
 
-const LanguageSwitch: React.FC<LanguageSwitchProps> = ({ onClick }) => {
+const LanguageSwitch: React.FC<LanguageSwitchProps> = ({
+  onClick,
+  isOnModal,
+}) => {
   const isLanguageEN = useSelector(selectIsLanguageEN);
   const dispatch = useDispatch();
 
   return (
     <Button
+      $isOnModal={isOnModal}
       title={
         isLanguageEN ? "Change language to Polish" : "Zmień język na angielski"
       }
@@ -22,8 +27,14 @@ const LanguageSwitch: React.FC<LanguageSwitchProps> = ({ onClick }) => {
         }
       }}
     >
-      <span className={isLanguageEN ? "active" : ""}>EN&nbsp;</span> |{" "}
-      <span className={!isLanguageEN ? "active" : ""}>&nbsp;PL</span>
+      {isOnModal ? (
+        <span className="active">{isLanguageEN ? "PL" : "EN"}</span>
+      ) : (
+        <>
+          <span className={isLanguageEN ? "active" : ""}>EN&nbsp;</span> |{" "}
+          <span className={!isLanguageEN ? "active" : ""}>&nbsp;PL</span>
+        </>
+      )}
     </Button>
   );
 };
