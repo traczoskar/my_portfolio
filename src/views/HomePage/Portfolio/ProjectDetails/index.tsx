@@ -138,14 +138,26 @@ const ProjectDetails = () => {
             <NavigationButton
               onClick={handlePreviousProject}
               disabled={projectIndex <= 0}
+              aria-label={
+                isLanguageEN ? "Previous Project" : "Poprzedni Projekt"
+              }
             >
-              {isMobile ? "<" : "Previous Project"}
+              {isMobile
+                ? "<"
+                : isLanguageEN
+                ? "Previous Project"
+                : "Poprzedni Projekt"}
             </NavigationButton>
             <NavigationButton
               onClick={handleNextProject}
               disabled={projectIndex >= projects.length - 1}
+              aria-label={isLanguageEN ? "Next Project" : "Następny Projekt"}
             >
-              {isMobile ? ">" : "Next Project"}
+              {isMobile
+                ? ">"
+                : isLanguageEN
+                ? "Next Project"
+                : "Następny Projekt"}
             </NavigationButton>
           </NavigationWrapper>
         </HeaderSection>
@@ -155,7 +167,9 @@ const ProjectDetails = () => {
         }
         {project?.description && (
           <Section>
-            <SectionTitle>Description 🗒</SectionTitle>
+            <SectionTitle>
+              {isLanguageEN ? "Description" : "Opis"} 🗒
+            </SectionTitle>
             <ProjectDescription>
               {isLanguageEN ? project.description.en : project.description.pl}
             </ProjectDescription>
@@ -166,9 +180,14 @@ const ProjectDetails = () => {
         }
         <Section>
           <ScreenshotsWrapper>
-            <SectionTitle>Screenshots 📸</SectionTitle>
+            <SectionTitle>
+              {isLanguageEN ? "Screenshots" : "Zrzuty ekranu"} 📸
+            </SectionTitle>
             <ScreenshotsInstructions>
-              Click on the thumbnail to view the screenshot in a larger size 🔍
+              {isLanguageEN
+                ? "Click on the thumbnail to view the screenshot in a larger size"
+                : "Kliknij na miniaturkę aby powiększyć obraz"}{" "}
+              🔍
             </ScreenshotsInstructions>
           </ScreenshotsWrapper>
 
@@ -183,7 +202,9 @@ const ProjectDetails = () => {
         }
         {project?.features && (
           <Section>
-            <SectionTitle>Features ✅</SectionTitle>
+            <SectionTitle>
+              {isLanguageEN ? "Features" : "Właściwości"} ✅
+            </SectionTitle>
             <ProjectFeatureList>
               {(isLanguageEN ? project?.features.en : project?.features.pl).map(
                 (feature, index) => (
@@ -205,19 +226,29 @@ const ProjectDetails = () => {
         }
         <Section $borderBottom="none">
           <ButtonsWrapper>
-            <LinkButton href={project?.repo} target="_blank">
+            <LinkButton
+              href={project?.repo}
+              aria-label={
+                isLanguageEN ? "GitHub Respository" : "Repozotyrium GitHub"
+              }
+              target="_blank"
+            >
               <GitHubIcon
                 width={isMobile ? 25 : 30}
                 height={isMobile ? 25 : 30}
               />
-              GitHub Repository
+              {isLanguageEN ? "GitHub Repository" : "Repozytorium GitHub"}
             </LinkButton>
-            <LinkButton href={project?.live} target="_blank">
+            <LinkButton
+              href={project?.live}
+              aria-label={isLanguageEN ? "Live Demo" : "Wersja demo"}
+              target="_blank"
+            >
               <LiveIcon
                 width={isMobile ? 25 : 30}
                 height={isMobile ? 25 : 30}
               />
-              Live Demo
+              {isLanguageEN ? "Live Demo" : "Wersja demo"}
             </LinkButton>
           </ButtonsWrapper>
         </Section>
