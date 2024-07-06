@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-interface ThemeSwitchModalContainerProps {
+interface SwitchesContainerProps {
   $top?: string | false;
   $right?: string | false;
 }
@@ -67,8 +67,11 @@ export const CloseButton = styled.button`
   }
 `;
 
-export const ThemeSwitchModalContainer = styled.div<ThemeSwitchModalContainerProps>`
+export const SwitchesContainer = styled.div<SwitchesContainerProps>`
   z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: ${({ $top }) => $top || "5rem"};
   right: ${({ $right }) => $right || "1.25rem"};
