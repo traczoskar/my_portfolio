@@ -37,10 +37,8 @@ export default function PortfolioCards() {
   const [isImageLoaded, setIsImageLoaded] = useState<boolean>(false);
 
   const handleOpenProject = (project: Project) => {
-    console.log(`Navigating to /projects/${project.route}`);
     navigate(`/projects/${project.route}`);
     dispatch(openProjectDetails(project.route));
-    console.log(`Opened project details for ${project.route}`);
   };
 
   const selectProject = (project: Project) => {
