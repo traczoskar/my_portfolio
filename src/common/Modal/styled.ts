@@ -75,4 +75,8 @@ export const SwitchesContainer = styled.div<SwitchesContainerProps>`
   position: absolute;
   top: ${({ $top }) => $top || "5rem"};
   right: ${({ $right }) => $right || "1.25rem"};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
+    flex-direction: row;
+  }
 `;
