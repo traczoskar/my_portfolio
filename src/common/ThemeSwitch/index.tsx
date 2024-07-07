@@ -29,7 +29,7 @@ export const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
       title={isLanguageEN ? "Switch theme" : "Zmień motyw"}
       aria-hidden="true"
       onClick={() => dispatch(toggleTheme())}
-      padding={padding}
+      $padding={padding}
     >
       <IconWrapper>
         {isDarkTheme ? (
