@@ -31,7 +31,13 @@ interface AboutData {
       EN: string;
       PL: string;
     };
-    certificate?: string | undefined;
+    certificate?: {
+      url: string | undefined;
+      alt: {
+        en: string;
+        pl: string;
+      };
+    };
     techLogo?: string;
   }[];
   email: string;
@@ -99,7 +105,13 @@ export const ABOUT: AboutData = {
         EN: "The course covered topics from the basics to advanced concepts of HTML, CSS, JavaScript, React, and Redux. I learned how to create responsive websites and web applications. Additionally, I mastered using Git and GitHub to manage my projects. I completed the course with a final 5-week group project that not only showcased my skills but also honed my teamwork abilities. Throughout the course, I also gained knowledge of best practices in programming and tools for testing and debugging code. Thanks to this course, I feel confident in creating modern and functional web applications.",
         PL: "Kurs obejmował tematy od podstaw do zaawansowanych koncepcji HTML, CSS, JavaScript, React i Redux. Nauczyłem się, jak tworzyć responsywne strony internetowe i aplikacje internetowe. Dodatkowo opanowałem korzystanie z Gita i GitHuba do zarządzania moimi projektami. Ukończyłem kurs  5-tygodniowym projektem grupowym, który nie tylko pokazał moje umiejętności, ale także doskonalił moje zdolności zespołowe. Przez cały kurs zdobyłem również wiedzę na temat najlepszych praktyk programistycznych i narzędzi do testowania i debugowania kodu. Dzięki temu kursowi czuję się pewnie w tworzeniu nowoczesnych i funkcjonalnych aplikacji internetowych.",
       },
-      certificate: youCodeCertificate,
+      certificate: {
+        url: youCodeCertificate,
+        alt: {
+          en: "Certificate of completion: Frontend Developer Course",
+          pl: "Certyfikat ukończenia: Frontend Developer Course",
+        },
+      },
     },
     {
       name: "TypeScript",
@@ -119,7 +131,13 @@ export const ABOUT: AboutData = {
         EN: "The course covered the basics of AI and how to connect it with web applications. I learned how to connect Generative AI with application logic and automatization tools. I completed the course by solving many tasks and creating a personal AI assistant that can help me in multiple ways. I also learned how to use OpenAI API and how to decide when to use AI in my projects. We trained prompt engineering and how to use AI in a responsible way. We also skilled techniques like function calling, building dynamic context and prompts, using vector bases like Qdrant/Pinecone for multiple ways and fine-tuning of models.",
         PL: "Kurs obejmował podstawy sztucznej inteligencji i sposób jej łączenia z aplikacjami internetowymi. Nauczyłem się, jak połączyć Generative AI z logiką aplikacji i narzędziami do automatyzacji. Ukończyłem kurs, rozwiązując wiele zadań i tworząc osobistego asystenta AI, który pomaga mi na codzień na wiele sposobów. Nauczyłem się również, jak korzystać z OpenAI API oraz decydować jakiego modelu LLM do jakiego zastosowania warto użyć. Ćwiczyliśmy inżynierię promptów oraz odpowiedzialne korzystanie z AI. Opanowaliśmy także techniki takie jak function calling, budowanie dynamicznego kontekstu i promptów, używanie baz wektorowych jak Qdrant/Pinecone na różne sposoby oraz fine-tuning modeli.",
       },
-      certificate: aiDevsCertificate,
+      certificate: {
+        url: aiDevsCertificate,
+        alt: {
+          en: "Certificate of completion: Connect GPT-4 with application and automation logic",
+          pl: "Certyfikat ukończenia: Connect GPT-4 with application and automation logic",
+        },
+      },
     },
   ],
   email: "contact@traczoskar.dev",
