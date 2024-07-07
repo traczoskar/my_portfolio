@@ -148,10 +148,15 @@ export const CloseButton = styled.button`
   }
 `;
 
-export const ArrowButton = styled.button`
+interface ArrowButtonProps {
+  $direction: "left" | "right";
+}
+
+export const ArrowButton = styled.button<ArrowButtonProps>`
   position: absolute;
   top: 50%;
-  right: 1rem;
+  ${({ $direction }) =>
+    $direction === "left" ? "left: 1rem;" : "right: 1rem;"}
   transform: translateY(-50%);
   font-size: 2rem;
   background-color: transparent;
@@ -159,9 +164,16 @@ export const ArrowButton = styled.button`
   color: white;
   cursor: pointer;
   z-index: 10000;
+  transition: all 0.2s;
+  filter: drop-shadow(0 0.15rem 0.5rem rgba(0, 0, 0, 0.4));
 
   &:hover {
-    color: #cccccc;
+    color: #bbbbbb;
+    filter: drop-shadow(0 0.15rem 0.5rem rgba(0, 0, 0, 0.8));
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;
 
