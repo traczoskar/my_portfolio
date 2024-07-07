@@ -55,6 +55,9 @@ export interface Technology {
 }
 
 export type Screenshot = {
-  alt: string;
+  alt: {
+    en: string;
+    pl: string;
+  };
   imageUrl: string;
 };
