@@ -2,6 +2,8 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import { ReactComponent as SwipeIcon } from "../../../assets/icons/swiping.svg";
 import { ReactComponent as ZoomInIcon } from "../../../assets/icons/zoom-in.svg";
+import { useSelector } from "react-redux";
+import { selectIsLanguageEN } from "../../../slices/languageSlice";
 
 const swipeAnimation = keyframes`
   0% { transform: translateX(0); }
@@ -102,6 +104,7 @@ interface SwipeInstructionProps {
 const SwipeInstruction: React.FC<SwipeInstructionProps> = ({
   isCertificates,
 }) => {
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   return (
     <SwipeContainer>
       <BackgroundWrapper>
@@ -110,9 +113,17 @@ const SwipeInstruction: React.FC<SwipeInstructionProps> = ({
           <StyledZoomInIcon />
         </IconsWrapper>
         {isCertificates ? null : (
-          <SwipeText>Swipe left or right to change picture</SwipeText>
+          <SwipeText>
+            {isLanguageEN
+              ? "Swipe left or right to change picture"
+              : "Przesuń w lewo lub w prawo aby zmienić zdjęcie"}
+          </SwipeText>
         )}
-        <SwipeText>Use 2 fingers to resize the picture</SwipeText>
+        <SwipeText>
+          {isLanguageEN
+            ? "Use 2 fingers to resize the picture"
+            : "Użyj 2 palców aby zmienić rozmiar zdjęcia"}
+        </SwipeText>
       </BackgroundWrapper>
     </SwipeContainer>
   );
