@@ -36,6 +36,7 @@ import AdditionalData from "./AdditionalData";
 import useScrollToTop from "../../../../hooks/useScrollToTop";
 import { selectIsLanguageEN } from "../../../../slices/languageSlice";
 import { Helmet } from "react-helmet-async";
+import NoResultsPage from "../../../404";
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>();
@@ -113,6 +114,10 @@ const ProjectDetails = () => {
   }, [isOpen]);
 
   useScrollToTop();
+
+  if (!project) {
+    return <NoResultsPage />;
+  }
 
   return (
     <Modal
