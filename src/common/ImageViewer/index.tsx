@@ -19,6 +19,8 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { useSwipeable } from "react-swipeable";
 import SwipeInstruction from "./SwipeInstruction";
 import { AnimatePresence } from "framer-motion";
+import { useSelector } from "react-redux";
+import { selectIsLanguageEN } from "../../slices/languageSlice";
 
 interface ImageViewerProps {
   isCertificates?: boolean;
@@ -40,6 +42,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
   const [scale, setScale] = useState<number>(0.8);
   const containerRef = useRef<HTMLDivElement>(null);
   const transformWrapperRef = useRef<any>(null);
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
   const isTablet: boolean = useMediaQuery({
     query: `(max-width: 1199px)`,
   });
@@ -144,7 +147,11 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
             </UserInstruction>
             <Keyboard />
           </InstructionContainer>
-          <ScreenshotDescription>{currentImage?.alt}</ScreenshotDescription>
+          <ScreenshotDescription>
+            {currentImage && isLanguageEN
+              ? currentImage?.alt.en
+              : currentImage?.alt.pl}
+          </ScreenshotDescription>
           <ImageContainer>
             {images && (
               <ArrowButton
@@ -160,7 +167,11 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
             )}
             <Image
               src={currentImage?.imageUrl}
-              alt={currentImage?.alt}
+              alt={
+                currentImage && isLanguageEN
+                  ? currentImage?.alt.en
+                  : currentImage?.alt.pl
+              }
               style={{ transform: `scale(${scale})` }}
             />
             {images && (
@@ -181,7 +192,11 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
         </ViewerContainer>
       ) : (
         <ViewerContainer $isTablet={true} tabIndex={-1} {...swipeHandlers}>
-          <ScreenshotDescription>{currentImage?.alt}</ScreenshotDescription>
+          <ScreenshotDescription>
+            {currentImage && isLanguageEN
+              ? currentImage?.alt.en
+              : currentImage?.alt.pl}
+          </ScreenshotDescription>
           <SwipeInstruction isCertificates={isCertificates} />
           <TransformWrapper
             initialScale={
@@ -209,7 +224,11 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                     src={currentImage?.imageUrl}
-                    alt={currentImage?.alt}
+                    alt={
+                      currentImage && isLanguageEN
+                        ? currentImage?.alt.en
+                        : currentImage?.alt.pl
+                    }
                   />
                 </AnimatePresence>
               </ImageContainer>
