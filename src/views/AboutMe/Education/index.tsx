@@ -21,27 +21,26 @@ import ImageViewer from "../../../common/ImageViewer";
 import { useTheme } from "styled-components";
 import { useSelector } from "react-redux";
 import { selectIsLanguageEN } from "../../../slices/languageSlice";
-
-interface ImageState {
-  imageUrl: string;
-  alt: string;
-}
+import { Screenshot } from "../../../types/types";
 
 const Education: React.FC = () => {
   const theme = useTheme();
   const isLanguageEN = useSelector(selectIsLanguageEN);
-  const initialImageState: ImageState = {
+  const initialImageState: Screenshot = {
     imageUrl: "",
-    alt: "",
+    alt: {
+      en: "",
+      pl: "",
+    },
   };
 
   const [isViewerOpen, setIsViewerOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState<ImageState | null>(
+  const [currentImage, setCurrentImage] = useState<Screenshot | null>(
     initialImageState
   );
 
   const openImageViewer = (imageUrl: string, alt: string) => {
-    setCurrentImage({ imageUrl: imageUrl, alt: alt });
+    setCurrentImage({ imageUrl: imageUrl, alt: { en: alt, pl: alt } });
     setIsViewerOpen(true);
   };
 
@@ -94,7 +93,7 @@ const Education: React.FC = () => {
               {course.certificate && (
                 <CertificateContainer>
                   <Certificate
-                    src={course.certificate}
+                    src={course.certificate.url}
                     alt={`${
                       isLanguageEN
                         ? "Certificate of completion:"
@@ -102,12 +101,8 @@ const Education: React.FC = () => {
                     } ${course.name}`}
                     onClick={() =>
                       openImageViewer(
-                        course.certificate!,
-                        `${
-                          isLanguageEN
-                            ? "Certificate of completion:"
-                            : "Certyfikat ukończenia:"
-                        } ${course.name}`
+                        course.certificate!.url!,
+                        course.certificate!.alt![isLanguageEN ? "en" : "pl"]
                       )
                     }
                   />
