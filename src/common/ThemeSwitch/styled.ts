@@ -13,7 +13,7 @@ const animatespin3d = keyframes`
 `;
 
 interface ButtonProps {
-  padding?: string;
+  $padding?: string;
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -23,7 +23,7 @@ export const Button = styled.button<ButtonProps>`
   color: inherit;
   border-radius: 0.25rem;
   cursor: pointer;
-  padding: ${({ padding }) => padding || "0.5rem 1rem"};
+  padding: ${({ $padding }) => $padding || "0.5rem 1rem"};
   border: none;
   transition: 0.3s;
 
