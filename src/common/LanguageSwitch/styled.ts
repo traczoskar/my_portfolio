@@ -40,10 +40,10 @@ export const Button = styled.button<ButtonProps>`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
-    padding: 1rem 0.75rem;
+    padding: ${({ $isOnModal }) => ($isOnModal ? "0.5rem" : "1rem 0.75rem")};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletVerticalMax}) {
-    padding: 1rem 0.5rem;
+    padding: ${({ $isOnModal }) => ($isOnModal ? "0.5rem" : "1rem 0.5rem")};
   }
 `;
