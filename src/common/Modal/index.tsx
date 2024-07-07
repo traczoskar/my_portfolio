@@ -21,8 +21,14 @@ const Modal = ({
   children,
   isImageViewerOpen,
 }: ModalProps) => {
-  const isTablet: boolean = useMediaQuery({
+  const isTabletHorizontal: boolean = useMediaQuery({
     query: `(max-width: 1199px)`,
+  });
+  const isTabletVertical: boolean = useMediaQuery({
+    query: `(max-width: 991px)`,
+  });
+  const isMobile: boolean = useMediaQuery({
+    query: `(max-width: 768px)`,
   });
   if (!isOpen) return null;
 
@@ -30,10 +36,10 @@ const Modal = ({
     <ModalOverlay $isImageViewerOpen={isImageViewerOpen}>
       <ModalContent aria-expanded="true">
         <SwitchesContainer
-          $top={isTablet && "0.8rem"}
-          $right={isTablet && "3.7rem"}
+          $top={isTabletVertical ? "0.95rem" : isTabletHorizontal && "0.8rem"}
+          $right={isMobile ? "4rem" : isTabletHorizontal && "4.5rem"}
         >
-          <ThemeSwitch />
+          <ThemeSwitch padding="0.5rem" />
           <LanguageSwitch isOnModal={true} />
         </SwitchesContainer>
         <CloseButton aria-label="Close Project Details" onClick={onClose}>
