@@ -8,8 +8,10 @@ import {
   ViewerContainer,
   ImageInfo,
   InstructionContainer,
+  ArrowButton,
 } from "./styled";
-import ArrowButton from "./ArrowButton";
+import { ReactComponent as NextArrow } from "../../assets/icons/next.svg";
+import { ReactComponent as PreviousArrow } from "../../assets/icons/previous.svg";
 import Keyboard from "../../views/HomePage/Portfolio/ProjectDetails/KeyboardInstruct/Keyboard";
 import { Screenshot } from "../../types/types";
 import { useMediaQuery } from "react-responsive";
@@ -146,13 +148,15 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
           <ImageContainer>
             {images && (
               <ArrowButton
-                direction="left"
+                $direction="left"
                 onClick={() =>
                   onNavigate!(
                     (currentIndex - 1 + images.length) % images.length
                   )
                 }
-              />
+              >
+                <PreviousArrow width={50} height={50} />
+              </ArrowButton>
             )}
             <Image
               src={currentImage?.imageUrl}
@@ -161,9 +165,11 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
             />
             {images && (
               <ArrowButton
-                direction="right"
+                $direction="right"
                 onClick={() => onNavigate!((currentIndex + 1) % images.length)}
-              />
+              >
+                <NextArrow width={50} height={50} />
+              </ArrowButton>
             )}
           </ImageContainer>
           <CloseButton onClick={onClose}>x</CloseButton>
