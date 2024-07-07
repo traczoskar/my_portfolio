@@ -3,6 +3,8 @@ import { GalleryContainer, Placeholder, Thumbnail } from "./styled";
 import ImageViewer from "../../../../../common/ImageViewer";
 import { Screenshot } from "../../../../../types/types";
 import Loader from "../../../../../common/Loader";
+import { useSelector } from "react-redux";
+import { selectIsLanguageEN } from "../../../../../slices/languageSlice";
 
 interface ScreenshotGalleryProps {
   screenshots: Screenshot[] | undefined;
@@ -19,6 +21,7 @@ const ScreenshotGallery = ({
     null
   );
   const [loadedImages, setLoadedImages] = useState<boolean[]>([]);
+  const isLanguageEN: boolean = useSelector(selectIsLanguageEN);
 
   useEffect(() => {
     if (screenshots) {
@@ -57,7 +60,7 @@ const ScreenshotGallery = ({
             <Thumbnail
               key={index}
               src={screenshot.imageUrl}
-              alt={screenshot.alt}
+              alt={screenshot.alt[isLanguageEN ? "en" : "pl"]}
               onClick={() => handleImageClick(index)}
               onLoad={() => handleImageLoad(index)}
               style={{ display: loadedImages[index] ? "block" : "none" }}
