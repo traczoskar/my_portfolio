@@ -323,7 +323,7 @@ export const NavigationWrapper = styled.nav`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tabletHorMax}) {
     top: 1.2rem;
-    right: 7.5rem;
+    right: 8.5rem;
   }
 `;
 
