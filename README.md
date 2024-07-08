@@ -2,9 +2,15 @@
 
 Welcome to **MyPortfolio**, the most advanced project I have worked on to date. This project has been a significant learning experience 🚀, particularly in building animations and routing using React Router. Additionally, I have implemented features such as theme switching 🌓 and language selection between Polish and English 🇵🇱🇬🇧. A considerable amount of effort went into creating a responsive design 📱. Users can explore a range of my projects, view their details and screenshots , find my contact information, links to LinkedIn and GitHub 🔗, read my short biography, see my IT skills, and view the certificates I have obtained, including those related to integrating applications with Generative AI and LLM models 🤖.
 
+![Title](/.github/myPortfolio_github.png)
+
 ## 👨🏻‍💻 Check out Demo
 
 [**Click Here**](https://traczoskar.dev) 👈
+
+### Home Page and theme switch feature:
+
+![Home Page](/.github/myPortfolio_github_1.gif)
 
 ## 🛠 Tech Stack
 
@@ -34,6 +40,13 @@ Welcome to **MyPortfolio**, the most advanced project I have worked on to date. 
 
 🌍 **Language Selection**: Switch between Polish and English versions of the portfolio.
 
+### About Me page and language switch feature:
+
+![About Me](/.github/myPortfolio_github_2.gif)
+
+### Project Details page:
+
+![Project Details](/.github/myPortfolio_github_3.gif)
 
 ## 📬 Feedback
 
