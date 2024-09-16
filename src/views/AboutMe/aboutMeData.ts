@@ -2,6 +2,8 @@ import avatar from "../../assets/avatar.jpg";
 import youCodeCertificate from "../../assets/certificates/youcode.jpg";
 import aiDevsCertificate from "../../assets/certificates/ai_devs.jpg";
 import typeScriptLogo from "../../assets/technologies/type_script.png";
+import nodeJSCertificate from "../../assets/certificates/nodejs.jpeg";
+import mongoDBCertificate from "../../assets/certificates/mongoDB.png";
 
 interface AboutData {
   name: string;
@@ -76,14 +78,21 @@ export const ABOUT: AboutData = {
   avatar: avatar,
   techStack: [
     "OpenAI",
+    "Next.js",
     "React",
     "TypeScript",
     "JavaScript ES6+",
+    "Node.js",
+    "Hono.js",
+    "Express.js",
+    "MongoDB",
     "HTML5",
     "CSS3",
     "Styled Components",
     "Redux",
     "Redux Saga",
+    "Cypress",
+    "Jest",
     "Axios",
     "Figma",
     "GitHub",
@@ -136,6 +145,38 @@ export const ABOUT: AboutData = {
         alt: {
           en: "Certificate of completion: Connect GPT-4 with application and automation logic",
           pl: "Certyfikat ukończenia: Connect GPT-4 with application and automation logic",
+        },
+      },
+    },
+    {
+      name: "Modern Node.js",
+      organization: "eduweb.pl",
+      date: "08.2024",
+      content: {
+        EN: "The course covered modern Node.js development techniques and best practices. I learned how to create efficient and scalable server-side applications using Node.js. Additionally, the course included instruction on implementing the Hono.js framework, which enhanced my ability to build fast and lightweight web applications. This comprehensive training has equipped me with valuable skills in backend development using cutting-edge technologies.",
+        PL: "Kurs obejmował nowoczesne techniki i najlepsze praktyki rozwoju Node.js. Nauczyłem się, jak tworzyć wydajne i skalowalne aplikacje serwerowe przy użyciu Node.js. Dodatkowo, kurs zawierał instruktaż implementacji frameworka Hono.js, co zwiększyło moje umiejętności w budowaniu szybkich i lekkich aplikacji internetowych. To kompleksowe szkolenie wyposażyło mnie w cenne umiejętności w zakresie rozwoju backendu przy użyciu najnowocześniejszych technologii.",
+      },
+      certificate: {
+        url: nodeJSCertificate,
+        alt: {
+          en: "Certificate of completion: Modern Node.js",
+          pl: "Certyfikat ukończenia: Nowoczesny Node.js",
+        },
+      },
+    },
+    {
+      name: "MongoDB Node.js Developer Path",
+      organization: "MongoDB University",
+      date: "08.2024",
+      content: {
+        EN: "I completed the MongoDB Node.js Developer Path, an official course from MongoDB University. This comprehensive program covered essential skills for developing applications with MongoDB and Node.js. The curriculum included database design, CRUD operations, aggregation framework, indexing, and performance optimization. I also learned about data modeling best practices, security considerations, and how to build scalable applications using MongoDB Atlas. This course has significantly enhanced my proficiency in working with NoSQL databases and server-side JavaScript.",
+        PL: "Ukończyłem ścieżkę MongoDB Node.js Developer, oficjalny kurs od MongoDB University. Ten kompleksowy program obejmował kluczowe umiejętności potrzebne do tworzenia aplikacji z wykorzystaniem MongoDB i Node.js. Program nauczania obejmował projektowanie baz danych, operacje CRUD, framework agregacji, indeksowanie i optymalizację wydajności. Nauczyłem się również najlepszych praktyk modelowania danych, aspektów bezpieczeństwa oraz jak budować skalowalne aplikacje przy użyciu MongoDB Atlas. Ten kurs znacząco zwiększył moje umiejętności w pracy z bazami danych NoSQL i serwerowym JavaScriptem.",
+      },
+      certificate: {
+        url: mongoDBCertificate,
+        alt: {
+          en: "Certificate of completion: MongoDB Node.js Developer Path",
+          pl: "Certyfikat ukończenia: MongoDB Node.js Developer Path",
         },
       },
     },
