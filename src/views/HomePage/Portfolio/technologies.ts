@@ -15,6 +15,13 @@ import tailwind from "../../../assets/technologies/tailwind.png";
 import vite from "../../../assets/technologies/vite.png";
 import create_react_app from "../../../assets/technologies/create_react_app.png";
 import make from "../../../assets/technologies/make.png";
+import mongoDB from "../../../assets/technologies/mongoDB.png";
+import nodeJS from "../../../assets/technologies/nodejs.png";
+import nextJS from "../../../assets/technologies/nextjs.png";
+import cypress from "../../../assets/technologies/cypress.png";
+import jest from "../../../assets/technologies/jest.png";
+import hono from "../../../assets/technologies/honojs.png";
+import express from "../../../assets/technologies/expressjs.png";
 import tanstack_query from "../../../assets/technologies/tanstack_query.png";
 import framer_motion from "../../../assets/technologies/framer_motion.png";
 import { Technology } from "../../../types/types";
@@ -103,5 +110,33 @@ export const technologies: Technology[] = [
   {
     name: "Framer Motion",
     icon: framer_motion,
+  },
+  {
+    name: "MongoDB",
+    icon: mongoDB,
+  },
+  {
+    name: "Node.js",
+    icon: nodeJS,
+  },
+  {
+    name: "Next.js",
+    icon: nextJS,
+  },
+  {
+    name: "Cypress",
+    icon: cypress,
+  },
+  {
+    name: "Jest",
+    icon: jest,
+  },
+  {
+    name: "Hono.js",
+    icon: hono,
+  },
+  {
+    name: "Express.js",
+    icon: express,
   },
 ];
