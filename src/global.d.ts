@@ -10,6 +10,12 @@ declare module "*.jpg" {
   export = value;
 }
 
+//---JPEG declaration---
+declare module "*.jpeg" {
+  const value: any;
+  export = value;
+}
+
 //---SVG declaration---
 declare module "*.svg" {
   import * as React from "react";
