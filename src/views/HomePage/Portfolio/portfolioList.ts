@@ -75,6 +75,11 @@ export const projects: Project[] = [
           content:
             "Choose between dark or light mode of UI. By default the app will switch to the preferences set up by your system or your browsers settings",
         },
+        {
+          name: "✅ E2E Testing",
+          content:
+            "The app is tested e2e using Cypress to ensure a smooth user experience and reliable functionality across all devices.",
+        },
       ],
       pl: [
         {
@@ -121,6 +126,11 @@ export const projects: Project[] = [
           content:
             "Wybierz między trybem ciemnym a jasnym interfejsu. Domyślnie aplikacja dostosuje się do preferencji ustawionych przez system lub przeglądarkę internetową lub ustawi tryb ciemny.",
         },
+        {
+          name: "🧪 Testy E2E",
+          content:
+            "Aplikacja jest testowana E2E za pomocą Cypress, aby zapewnić płynne doświadczenie użytkownika i niezawodną funkcjonalność na wszystkich urządzeniach.",
+        },
       ],
     },
     tech: [
@@ -137,6 +147,7 @@ export const projects: Project[] = [
       "Framer Motion",
       "Vite",
       "NPM",
+      "Cypress",
     ],
     whatDidILearn: {
       en: [
@@ -144,12 +155,14 @@ export const projects: Project[] = [
         "🔧 Explored a variety of technologies, including React, TailwindCSS, and Vite, while integrating ChatGPT and OpenWeather API to create a comprehensive weather application.",
         "📊 Enhanced my skills in configuring responses from ChatGPT, ensuring that the AI provides relevant and personalized suggestions based on real-time weather data using properly prepared prompt.",
         "🌐 Utilized advanced tools like TanStack Query for dynamic data fetching and management, ensuring the app provides real-time, accurate weather information and a smooth user experience.",
+        "🧪 During this project, I learned how to effectively use Cypress for E2E testing, ensuring a smooth user experience and reliable functionality across all devices.",
       ],
       pl: [
         "🪝 Podczas tego projektu nauczyłem się efektywnie korzystać z Make.com do tworzenia i zarządzania webhookami, zapewniając bezproblemową integrację z zewnętrznymi usługami takimi jak OpenAI API.",
         "🔧 Zgłębiłem różnorodne technologie, w tym React, TailwindCSS i Vite, integrując ChatGPT oraz OpenWeather API, aby stworzyć kompleksową aplikację pogodową.",
         "📊 Udoskonaliłem swoje umiejętności w konfigurowaniu odpowiedzi od ChatGPT, zapewniając, że AI dostarcza odpowiednie i spersonalizowane sugestie na podstawie aktualnych danych pogodowych i odpowiednio przygotowanego prompta.",
         "🌐 Wykorzystałem zaawansowane narzędzia, takie jak TanStack Query, do dynamicznego pobierania i zarządzania danymi, zapewniając, że aplikacja dostarcza aktualne, dokładne informacje pogodowe i płynne doświadczenie użytkownika.",
+        "🧪 Podczas tego projektu nauczyłem się efektywnie korzystać z Cypress do testów E2E, zapewniając płynne doświadczenie użytkownika i niezawodną funkcjonalność na wszystkich urządzeniach.",
       ],
     },
     repo: "https://github.com/traczoskar/ai_weather_app",
@@ -671,6 +684,11 @@ export const projects: Project[] = [
           content:
             "⏳ An animated window is displayed while data is being fetched",
         },
+        {
+          name: "Jest Testing",
+          content:
+            "🧪 The app is tested with Jest to ensure a smooth user experience and reliable functionality across all devices.",
+        },
       ],
       pl: [
         {
@@ -718,6 +736,11 @@ export const projects: Project[] = [
           content:
             "⏳ Wyświetlane jest animowane okno podczas pobierania danych",
         },
+        {
+          name: "Jest Testing",
+          content:
+            "🧪 The app is tested with Jest to ensure a smooth user experience and reliable functionality across all devices.",
+        },
       ],
     },
     tech: [
@@ -729,6 +752,7 @@ export const projects: Project[] = [
       "CSS3",
       "NPM",
       "Axios",
+      "Jest",
     ],
     whatDidILearn: {
       en: [
@@ -737,6 +761,7 @@ export const projects: Project[] = [
         "⚒️ Utilizing React's useState and useEffect hooks for managing component state and performing side effects.",
         "🤳 Designing a responsive user interface that works seamlessly on mobile devices.",
         "❌ Implementing error handling to display a special window if any issues occur during data fetching or conversion.",
+        "🧪 Testing the app with Jest to ensure a smooth user experience and reliable functionality across all devices.",
       ],
       pl: [
         "💸 Budowanie kalkulatora walut przy użyciu React.js od podstaw, w tym konfiguracja środowiska deweloperskiego i wdrożenie aplikacji.",
@@ -744,6 +769,7 @@ export const projects: Project[] = [
         "⚒️ Wykorzystanie hooków useState i useEffect w React do zarządzania stanem komponentu i obsługi efektów ubocznych.",
         "🤳 Projektowanie responsywnego interfejsu użytkownika, który działa bezproblemowo na urządzeniach mobilnych.",
         "❌ Implementacja obsługi błędów w celu wyświetlenia specjalnego okna w przypadku wystąpienia problemów podczas pobierania danych lub konwersji.",
+        "🧪 Testowanie aplikacji za pomocą Jest, aby zapewnić płynne doświadczenie użytkownika i niezawodną funkcjonalność na wszystkich urządzeniach.",
       ],
     },
     repo: "https://github.com/traczoskar/currency_calculator_react",
