@@ -739,7 +739,7 @@ export const projects: Project[] = [
         {
           name: "Jest Testing",
           content:
-            "🧪 The app is tested with Jest to ensure a smooth user experience and reliable functionality across all devices.",
+            "🧪 Aplikacja jest testowana za pomocą Jest, aby zapewnić płynne doświadczenie użytkownika i niezawodną funkcjonalność na wszystkich urządzeniach.",
         },
       ],
     },
